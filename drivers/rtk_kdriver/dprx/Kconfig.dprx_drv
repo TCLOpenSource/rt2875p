@@ -1,0 +1,57 @@
+config BUILD_DPRX_DRV
+        bool "BUILD Display Port RX driver"
+        depends on DPRX_DRV_ENABLE_RTK_DPRX_ADAPTER
+        default n
+        help
+                BUILD DPRX low level driver
+
+choice
+	prompt "DPRX_DRV_PRJ_CFG"
+	depends on DPRX_DRV_ENABLE_RTK_DPRX_ADAPTER
+       	help
+
+config DPRX_PRJ_MAC8P_KDRV
+	bool "DPRX DRV for Mac8P"
+	depends on DPRX_DRV_ENABLE_RTK_DPRX_ADAPTER
+	default y
+
+config DPRX_PRJ_RTD2885P_KDRV
+	bool "DPRX DRV for RTD2885P"
+	depends on DPRX_DRV_ENABLE_RTK_DPRX_ADAPTER
+
+endchoice
+
+config DPRX_DRV_USE_EXTERNAL_EXT_DRVIF
+	depends on DPRX_DRV_ENABLE_RTK_DPRX_ADAPTER
+	bool
+	default y
+
+config DPRX_DRV_ENABLE_VIRTUAL_PLATFORM
+	bool "Enable DPRX Virtual platform"
+	depends on BUILD_DPRX_DRV
+	default n
+	help
+		Running DPRX on Virtual Platform
+
+config DPRX_DRV_ENABLE_HDCP
+	bool "Enable DRPX Driver HDCP Support"
+	depends on BUILD_DPRX_DRV
+	default y
+	help
+		Enable DRPX Driver HDCP Support
+
+config DPRX_DRV_ENABLE_PHY
+	bool "Enable DPRX PHY"
+	depends on BUILD_DPRX_DRV
+	default y
+
+config DPRX_DRV_ENABLE_AUDIO
+	bool "Enable DPRX Audio"
+	depends on BUILD_DPRX_DRV
+	default y
+
+config DPRX_DRV_ENABLE_HDCP_CALCULATE_R0_BY_FW
+	bool "Enable HDCP CALCULATE R0 BY FW"
+	depends on BUILD_DPRX_DRV
+	default y
+

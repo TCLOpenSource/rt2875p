@@ -1,0 +1,10 @@
+__crc_register_temperature_callback = 0x1d4a4e33;
+__crc_init_rtk_thermal_sensor = 0x62f59668;
+__crc_exit_rtk_thermal_sensor = 0x81cc2dab;
+__crc_rtk_get_thermal_value = 0x40e42813;
+__crc_rtk_monitor_active_show = 0x01b9196b;
+__crc_rtk_monitor_active_store = 0x0aaf5ad9;
+__crc_rtk_monitor_delay_show = 0x02edfa3b;
+__crc_rtk_monitor_delay_store = 0x5c5f65d4;
+__crc_rtk_monitor_debug_show = 0x4ba5a4db;
+__crc_rtk_monitor_debug_store = 0x12f18b64;

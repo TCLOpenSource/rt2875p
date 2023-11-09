@@ -1,0 +1,13 @@
+config DOLBY_VISION_SECURITY_MODE
+	bool "Dolby Vision Security Mode"
+	depends on RTK_KDRV_DV
+	default n
+	help
+	  Dolbyvision Engine
+
+config DOLBY_VISION_SECURITY_MODE_DEMO
+	bool "demo for dolby security function"
+	depends on RTK_KDRV_DV
+	default n
+	help
+	  Dolbyvision Engine

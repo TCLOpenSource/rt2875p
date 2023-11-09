@@ -1,0 +1,8 @@
+#Copyright (C) 2007-2013 Realtek Semiconductor Corporation.
+# drivers/rtk_kdriver/extcon/Kconfig
+
+config RTK_KDRV_EXTCON
+	tristate "GPIO Extcon  device interface"
+	depends on EXTCON
+	help
+	  GPIO Switch Device Driver

@@ -1,0 +1,233 @@
+
+// Ref:
+//  https://source.android.com/devices/architecture/dto/syntax
+
+
+/ {
+	reserved-memory@LAYOUTNUM {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+
+		// devicetree identification board & overlay info
+		compatible = "realtek,rtd6748-1g", "realtek,rtd6748";
+
+
+		boot_memory {                       reg = <0x0 0x00000000 0x0 (1536 *_KB_)>;
+		};
+
+#ifdef CONFIG_REALTEK_MEMORY_MANAGEMENT_MODULE
+		reclaim_memory_rsvd {               reg = <0x0 _CMA_LOGO_ANIM_ 0x0 (72   *_MB_)>;
+		};
+#endif
+		dmem_memory {                       reg = <0x0 0x10000000 0x0 (0    *_MB_)>;
+			status = "disabled";
+			/* BAN_NORMAL if size */
+		};
+
+		comem_memory {                      reg = <0x0 0x12280000 0x0 (0    *_MB_)>;
+			status = "disabled";
+		};
+
+#if defined(CONFIG_RTK_KDRV_QUICKSHOW) || defined(CONFIG_RTK_KDRV_QUICKSHOW_MODULE) //FIXME can be always on after audio supporting reserved-memory
+		audio_memory {                      reg = <0x0 0x14400000 0x0 (16    *_MB_)>;
+			no-map;
+		};
+#else
+		audio_memory {                      reg = <0x0 0x14400000 0x0 (0    *_MB_)>;
+			status = "disabled";
+		};
+#endif
+
+		demod_memory {                      reg = <0x0 0x15400000 0x0 (8    *_MB_)>;
+			/* BAN_NOT_USED */
+		};
+
+		kboot_memory {                      reg = <0x0 0x15f00000 0x0 (0    *_MB_)>;
+			status = "disabled"; // it's 0 at rmm.c
+		};
+
+		kcpu_memory {                       reg = <0x0 0x16000000 0x0 (16   *_MB_)>;
+			no-map;
+			/* BAN_NOT_USED if ! OPTEE */
+		};
+
+		gic_mem {                           reg = <0x0 0x17c00000 0x0 (4    *_MB_)>; // HW FIXED
+			no-map;
+		};
+
+		rbus_memory {                       reg = <0x0 0x18000000 0x0 (2    *_MB_)>; // HW FIXED
+			no-map;
+		};
+
+		vcpu_memory {                       reg = <0x0 0x1a900000 0x0 (8    *_MB_)>;
+		};
+
+		rpc_memory {                        reg = <0x0 0x1b180000 0x0 (512  *_KB_)>;
+		};
+
+		acpu_memory {                       reg = <0x0 0x1b200000 0x0 (10   *_MB_)>;
+		};
+
+		/* The maximum reserved space for logbuf */
+		logbuf_memory {                     reg = <0x0 0x1ca00000 0x0 (4    *_MB_)>;
+		};
+
+		rom_memory {                        reg = <0x0 0x1fc00000 0x0 (32   *_KB_)>;
+		};
+
+		pstore_memory {                     reg = <0x0 0x1fd00000 0x0 (64   *_KB_)>;
+		};
+
+		irtbl_memory {                      reg = <0x0 0x1fff8000 0x0 (8    *_KB_)>;
+		};
+
+		ddr_bd1_memory {                    reg = <0x0 0x0 0x0 0x0>;
+			status = "disabled";
+			no-map;
+			/* BAN_NOT_USED if ddr_swap */
+		};
+		ddr_bd2_memory {                    reg = <0x0 0x0 0x0 0x0>;
+			status = "disabled";
+			/* BAN_NOT_USED if size */
+		};
+
+		// CARVEDOUT_VDEC_VBM
+		// (paired with ...CARVEOUT_HEAP_CHUNK_SIZE)
+		vdec-vbm_memory {                   reg = <0x0 0x0 0x0 0x0>;
+			no-map; // VDEC_VBM(remove)
+
+			status = "disabled";
+		};
+
+		// CARVEDOUT_CMA_VBM
+		// (paired with VBM_HEAP_...CHUNK_SIZE)
+		cma-vbm_memory  {                   reg = <0x0 0x20000000 0x0 (96   *_MB_)>;
+			/* no-map; */ // VDEC_VBM(remove), CMA_VBM(reserve)
+
+			compatible = "shared-dma-pool"; // CMA_VBM(reserve)
+			reusable;
+		};
+
+		scaler_memc {                       reg = <0x0 0x26000000 0x0 (0    *_MB_)>;
+			no-map;
+
+			status = "disabled"; /* 1GB only */
+		};
+
+		scaler_mdomain {                    reg = <0x0 0x26000000 0x0 (13   *_MB_)>;
+			no-map;
+		};
+
+		scaler_dinr {                       reg = <0x0 0x26d00000 0x0 (13   *_MB_)>;
+			no-map;
+		};
+
+//		scaler_vip {                        reg = <0x0 0x27a00000 0x0 (2    *_MB_)>;
+		scaler_vip {                        reg = <0x0 0x27a00000 0x0 (1848 *_KB_)>;
+			no-map;
+		};
+
+//		scaler_od {                         reg = <0x0 0x27c00000 0x0 (4    *_MB_)>;
+		scaler_od {                         reg = <0x0 0x27bce000 0x0 (4296 *_KB_)>;
+			no-map;
+		};
+
+		scaler_nn {                         reg = <0x0 0x28000000 0x0 (0    *_MB_)>;
+			no-map;
+		};
+
+		tp_memory {                         reg = <0x0 0x28000000 0x0 (8   *_MB_)>;
+			no-map;
+		};
+
+		// CARVEDOUT_GPU_RESERVED
+
+
+		// CARVEDOUT_VDEC_RINGBUF
+		svp_memory {                        reg = <0x0 0x3ec00000 0x0 (16   *_MB_)>;
+			no-map;
+		};
+
+		// CARVEDOUT_CMA_LOW
+
+		cma1_memory {                       reg = <0x0 _CMA_LO_START_ 0x0 _CMA_LO_SIZE_>;
+			compatible = "shared-dma-pool";
+			reusable;
+#ifndef CONFIG_REALTEK_MEMORY_MANAGEMENT_MODULE
+            linux,cma-default;
+#endif
+		};
+
+		// CARVEDOUT_CMA_HIGH
+		// CARVEDOUT_CMA_GPU_4K
+		/*
+		 * carvedout_buf_query[ CARVEDOUT_GPU_RESERVED ]
+		 *  (DRAM_size > 0xa0000)  CMA_HIGHMEM_M7_8K;
+		 *  (DRAM_size > 0x60000)  CMA_HIGHMEM_LARGE; //640MB
+		 *  (DRAM_size <= 0x60000) CMA_HIGHMEM_SMALL; //128MB
+		 *
+		 *  tp_memory end 0x28800000
+		 *  dram      end 0x40000000 ???
+		 *
+		 *  0x28800000 + 128MB(ZRAM_RESERVED_SIZE) + 128MB(CARVEDOUT_GPU_RESERVED)
+		 *  = 0x28800000 + 0x08000000 + 0x08000000 = 0x38800000
+		 *
+		 *  0x40000000 - 0x38800000 = 0x07800000
+		 *
+		 *  ??? PROBLEM ??? 1GB ??? svp required ????
+		 *   In 1GB, although 0x38800000 < kernel_highmem_size
+		 *   But 0x38800000 > 0x3ec00000 (svp) per above calc, and cma2 start is no longer higher than svp 0x3ec00000.
+		 *   Should cma2 be only 0x38800000 to 0x3ec00000 (size 0x06400000) ??? or re-position both svp and cma2 ???
+		 *
+		 */
+
+		/*
+		 * if carvedout start < CARVEDOUT_LIMIT(512MB), then NO cma2
+		 */
+
+		/*
+		 * if UI_4K, CMA_GPU_4K use an exclusive region from original CMA2
+		 */
+		cma-ui4k_memory {                   reg = <0x0 0x0 0x0 0x0>;
+			compatible = "shared-dma-pool";
+			status = "disabled";
+			reusable;
+		};
+		cma2_memory {                       reg = <0x0 0x38800000 0x0 0x06400000>;
+			compatible = "shared-dma-pool";
+			reusable;
+#ifdef CONFIG_REALTEK_MEMORY_MANAGEMENT_MODULE
+			movablecore;
+#endif
+		};
+
+		// CARVEDOUT_CMA_3
+		// CARVEDOUT_CMA_LOW_LIMIT
+		// CARVEDOUT_CMA_BW
+
+
+		spi_iomem {                         reg = <0x0 0x80200000 0x0 0x02000000>; // HW FIXED
+			no-map;
+		};
+	};
+
+
+	rtk_cma@LAYOUTNUM {
+		/*
+		 * early reserve of cma1_memory
+		 */
+
+		#address-cells = <2>;
+		#size-cells = <2>;
+
+		reclaim_memory {                    reg = <0x0 _CMA_LOGO_ANIM_ 0x0 (64   *_MB_)>;
+		};
+
+		last_image_memory {                 reg = <0x0 _CMA_LOGO_PIC_  0x0 (8    *_MB_)>;
+		};
+	};
+};
+
+
+

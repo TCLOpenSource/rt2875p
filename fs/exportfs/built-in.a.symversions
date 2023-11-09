@@ -1,0 +1,3 @@
+__crc_exportfs_encode_inode_fh = 0xb0294c97;
+__crc_exportfs_encode_fh = 0x63caafc5;
+__crc_exportfs_decode_fh = 0x1105a301;

@@ -1,0 +1,107 @@
+config SUPPORT_SCALER
+	bool "Scaler Driver"
+	default y
+	select RTK_HDMI_RX
+	help
+		SUPPORT Scaler Driver
+
+config USE_SHARE_COMMON
+    bool "Use Share Common"
+    default n
+    help
+        SUPPORT New Common
+
+config KDRIVER_USE_NEW_COMMON
+    bool "Use New Common"
+    default y
+    help
+        SUPPORT New Common
+
+config HDCP2_USE_DEFAULT_HDCP_KEY
+	bool "HDCP2 Use default HDCP Key"
+	default n
+	help
+		Use default HDCP Key for bringup
+
+if SUPPORT_SCALER
+config SUPPORT_SRC_VGA
+	bool "Support Source VGA"
+	default y
+	help
+		SUPPORT Source VGA
+
+config ENABLE_3D_SETTING
+	bool "Enable VDC 3D YC Separation"
+	default y
+	help
+		3D YC Separation
+
+config DYNAMIC_ALLOCATION_SCALER_MEMORY
+	bool "Enable dynamic memory allocation"
+	default y
+	help
+		SUPPORT memory dynamic allocation
+
+config DUAL_CHANNEL
+	bool "Enable dual channel"
+	default n
+	help
+		dual chanel open for pip
+
+
+config ENABLE_VD_27MHZ_MODE
+	bool "Enable VD 27MHz mode"
+	default y
+	help
+		enable VD 27MHz mode
+
+config FIX_CKILL_MODE
+	bool "Fix ckill mode"
+	default y
+	help
+		Fix ckill mode
+endif
+
+config RTK_KDRV_HDMI_ENABLE_V4L2
+	bool "Enable HDMI V4L2 Support"
+	default y
+	help
+	  Enable HDMI V4L2 Support
+
+
+config MEMC
+    bool "Enable MEMC"
+    default n
+    help
+        Provide realtek MEMC.
+
+config SUPPORT_SDR_MAX_RGB
+	bool "support SDR max RGB"
+	default n
+	help
+	  Enable support SDR max RGB
+
+config RTK_GAMUT_SUPPORT
+    bool "Enable Gamut Mode"
+    default y
+    help
+        Provide realtek turnkey gamut.
+
+config RTK_SW_OUTGAMMA_CT
+    bool "Enable software output gamma color tempurature"
+    default y
+    help
+        Provide realtek turnkey software output gamma color tempurature.
+		
+config SUPPORT_COLORSYSTEM_MANUAL_SET
+    bool "Enable support manual change Colorsystem display didn't No Signal"
+    default n
+    help
+        Enable support manual change Colorsystem display didn't No Signal.
+
+config SUPPORT_SRC_DPRX
+	bool "Support Source DPRX"
+	depends on RTK_DPRX
+	default y
+	help
+		SUPPORT Source DPRX

@@ -1,0 +1,5 @@
+config RTK_KDRV_ATSC3_ALP_DMX
+	bool "Enable Realtek ATSC3_ALP DMX Driver"
+	default n
+	help
+	

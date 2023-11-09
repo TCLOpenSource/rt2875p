@@ -1,0 +1,218 @@
+
+// Ref:
+//  https://source.android.com/devices/architecture/dto/syntax
+
+
+/ {
+	reserved-memory#LAYOUTNUM {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+
+		// devicetree identification board & overlay info
+		compatible = "realtek,rtd2851a-2g", "realtek,rtd2851a";
+
+
+		boot_memory {                       reg = <0x0 0x00000000 0x0 (1536 *_KB_)>;
+		};
+
+		dmem_memory {                       reg = <0x0 0x10000000 0x0 (0    *_MB_)>;
+			status = "disabled";
+			/* BAN_NORMAL if size */
+		};
+
+		comem_memory {                      reg = <0x0 0x10000000 0x0 (0    *_MB_)>;
+			status = "disabled";
+		};
+
+		qshow_memory {                      reg = <0x0 0x14400000 0x0 (16   *_MB_)>; // dias
+			no-map;
+		};
+
+		demod_memory {                      reg = <0x0 0x15400000 0x0 (8    *_MB_)>; // tv
+			/* BAN_NOT_USED */
+		};
+
+		kboot_memory {                      reg = <0x0 0x15f00000 0x0 (0    *_MB_)>;
+			status = "disabled"; // it's 0 at rmm.c
+		};
+
+		kcpu_memory {                       reg = <0x0 0x16000000 0x0 (18   *_MB_)>;
+			no-map;
+			/* BAN_NOT_USED if ! OPTEE */
+		};
+
+		rbus_memory {                       reg = <0x0 0x18000000 0x0 (2    *_MB_)>; // HW FIXED
+			no-map;
+		};
+
+		/* for both Video & Audio (Mac7p only) */
+		vcpu_memory {                       reg = <0x0 0x1a500000 0x0 (11   *_MB_)>; //+1 for quick show
+		};
+
+		rpc_memory {                        reg = <0x0 0x1b180000 0x0 (512  *_KB_)>;
+		};
+
+		/* share with vcpu_memory (Mac7p only) */
+		acpu_memory {                       reg = <0x0 0x0 0x0 0x0>;
+			status = "disabled";
+		};
+
+		// CARVEDOUT_VDEC_RINGBUF
+		svp_memory {                        reg = <0x0 0x1b200000 0x0 (16   *_MB_)>;
+			no-map;
+ 		};
+		/* Audio OPTEE memory (Mac7p only) */
+		sap_memory {                        reg = <0x0 0x1c200000 0x0 (6    *_MB_)>;
+			no-map;
+ 		};
+
+		/* The maximum reserved space for logbuf */
+		logbuf_memory {                     reg = <0x0 0x1ca00000 0x0 (4    *_MB_)>;
+		};
+
+		rom_memory {                        reg = <0x0 0x1fc00000 0x0 (32   *_KB_)>;
+		};
+
+		pstore_memory {                     reg = <0x0 0x1fd00000 0x0 (64   *_KB_)>;
+		};
+
+		irtbl_memory {                      reg = <0x0 0x1ffff000 0x0 (4    *_KB_)>;
+		};
+		/*
+		 * mac7p: it's runtime defined by carvedout_buf_query()
+		 * DDR: if 1.5G addr=0x1ffff000, size=0x1000 //1.5g has ddr_swap
+		 *      else 0
+		 * DDR2: if >=1G size=PAGE_SIZE<<(MAXORDER-1) => 4M
+		 *       else PAGE_SIZE => 4K
+		 *       addr=DRAM_Size-size !!! at the end of CMA2 !!!
+		 *
+		 * In legacy rtk_reserve( )
+		 * if (CARVEDOUT_DDR_BOUNDARY) memblock_reserve(); // 4KB
+		 * if (CARVEDOUT_DDR_END_BOUNDARY == PAGE_SIZE<<(MAXORDER-1)) add_ban_info(BAN_NOT_USED) // if 4MB
+		 * else if (PAGE_SIZE) memblock_reserve()); // if 4KB
+		 *
+		 */
+		ddr_bd1_memory {                    reg = <0x0 0x0 0x0 0x0>;
+			status = "disabled";
+			no-map;
+			/* BAN_NOT_USED if ddr_swap */
+		};
+		ddr_bd2_memory {                    reg = <0x0 0x7fc00000 0x0 (4    *_MB_)>;
+			/* BAN_NOT_USED if size */
+		};
+
+		// CARVEDOUT_VDEC_VBM
+		// (paired with ...CARVEOUT_HEAP_CHUNK_SIZE)
+		vdec-vbm_memory {                   reg = <0x0 0x20000000 0x0 (132  *_MB_)>;
+			//no-map; /* mac7p reserved */
+		};
+
+		// CARVEDOUT_CMA_VBM
+		// (paired with VBM_HEAP_...CHUNK_SIZE)
+		cma-vbm_memory  {                   reg = <0x0 0x0 0x0 0x0>;
+			/* no-map; */ // VDEC_VBM(remove), CMA_VBM(reserve)
+			status = "disabled";
+
+			compatible = "shared-dma-pool"; // CMA_VBM(reserve)
+			reusable;
+		};
+
+		scaler_memc {                       reg = <0x0 0x28400000 0x0 (0    *_MB_)>;
+			//no-map; /* mac7p reserved */
+			status = "disabled";
+		};
+
+		scaler_mdomain {                    reg = <0x0 0x28400000 0x0 (28   *_MB_)>;
+			//no-map; /* mac7p reserved */
+		};
+
+		scaler_dinr {                       reg = <0x0 0x2a000000 0x0 (9   *_MB_)>;
+			//no-map; /* mac7p reserved */
+		};
+
+		scaler_vip {                        reg = <0x0 0x2a900000 0x0 (2    *_MB_)>;
+			//no-map; /* mac7p reserved */
+		};
+
+		scaler_od {                         reg = <0x0 0x2ab00000 0x0 (0    *_MB_)>;
+			//no-map; /* mac7p reserved */
+			status = "disabled";
+		};
+
+		scaler_nn {                         reg = <0x0 0x2ab00000 0x0 (0    *_MB_)>;
+			//no-map; /* mac7p reserved */
+			status = "disabled";
+		};
+		_scaler_align {                     reg = <0x0 0x2ab00000 0x0 (1    *_MB_)>; // ??? legacy rtk_reserve 4MB-aligned ???
+		};
+
+		tp_memory {                         reg = <0x0 0x2ac00000 0x0 0x0>;
+			//no-map; /* mac7p reserved */
+			status = "disabled";
+		};
+
+		// CARVEDOUT_GPU_RESERVED
+
+		// CARVEDOUT_CMA_LOW
+
+		cma1_memory {                       reg = <0x0 _CMA_LO_START_ 0x0 _CMA_LO_SIZE_>;
+			compatible = "shared-dma-pool";
+			reusable;
+			linux,cma-default;
+		};
+
+		// CARVEDOUT_CMA_HIGH
+		// CARVEDOUT_CMA_GPU_4K
+		/*
+		 * carvedout_buf_query[ CARVEDOUT_GPU_RESERVED ]
+		 *  (DRAM_size > 0x60000)  CMA_HIGHMEM_LARGE; //720MB
+		 *  (DRAM_size == 0x60000) CMA_HIGHMEM_LARGE; //368MB
+		 *  (DRAM_size < 0x60000)  CMA_HIGHMEM_SMALL; //160MB
+		 *
+		 *  tp_memory end 0x2ac00000
+		 *  dram      end 0x80000000 : 0x20000000++0x60000000
+		 *
+		 *  0x2ac00000 + 128MB(ZRAM_RESERVED_SIZE) + 880MB(CARVEDOUT_GPU_RESERVED)
+		 *  = 0x2ac00000 + 0x08000000 + 0x37000000 = 0x69c00000
+		 *
+		 *  0x7fc00000 - 0x69c00000 = 0x16000000 = 352*_MB_
+		 */
+
+		/*
+		 * if carvedout start < CARVEDOUT_LIMIT(512MB), then NO cma2
+		 */
+
+		/*
+		 * if UI_4K, CMA_GPU_4K use an exclusive region from original CMA2
+		 */
+		cma-ui4k_memory {                   reg = <0x0 0x0 0x0 0x0>;
+			compatible = "shared-dma-pool";
+			reusable;
+			status = "disabled";
+		};
+		cma2_memory {                       reg = <0x0 0x69c00000 0x0 (352 *_MB_)>;
+			compatible = "shared-dma-pool";
+			reusable;
+		};
+
+		// CARVEDOUT_CMA_3
+		// CARVEDOUT_CMA_LOW_LIMIT
+		// CARVEDOUT_CMA_BW
+
+
+	};
+
+
+	rtk_cma#LAYOUTNUM {
+		#address-cells = <2>;
+		#size-cells = <2>;
+
+		reclaim_memory {                    reg = <0x0 _CMA_LOGO_ANIM_ 0x0 (40   *_MB_)>;
+		};
+
+		last_image_memory {                 reg = <0x0 _CMA_LOGO_PIC_  0x0 (8    *_MB_)>;
+		};
+	};
+};
+

@@ -1,0 +1,87 @@
+menu "DP RX"
+
+config RTK_DPRX
+	tristate "Enable DPRX Support"
+	default n
+	help
+		Enable DPRX
+
+config DPRX_VFE_ENABLE_VFE_STATE_CHECK
+	default y
+
+config DPRX_VFE_ENABLE_QUICK_SHOW
+	bool "Enable DPRX QUICK Show"
+	default y
+
+config DPRX_VFE_ENABLE_ONLINE_MEASURE_ERROR
+	bool "Enable DPRX online measure error"
+	depends on RTK_DPRX
+	default y
+
+config DPRX_VFE_ENABLE_HPD_LOW_GUARD_INTERVAL
+    bool "Enable DPRX HPD LOW Guard Interval"
+	default y
+
+config DPRX_GET_IC_VERSION
+	bool "Enable GET IC Version"
+	default y
+
+config DPRX_FORCE_CHECK_MODE_FAIL_CABLE_OFF_ON
+	bool "Force Cable off/on when check mode fail"
+	depends on RTK_DPRX
+	default n
+
+config DPRX_STATUS_MONITOR
+	bool "Force DPRX Status Monitor"
+	depends on RTK_DPRX
+	default y
+
+config DPRX_EANBLE_FREESYNC
+	bool "Enable FreeSync"
+	depends on RTK_DPRX
+	default y
+
+config DPRX_EANBLE_FEC
+	bool "Enable FEC"
+	depends on RTK_DPRX
+	default n
+
+config DPRX_FORCE_EANBLE_WAKEUP_BY_AUX
+	bool "Force Enable Wakeup by Aux"
+	depends on RTK_DPRX
+	default y
+
+config SUPPORT_GET_DRM_INFO
+	bool "Support Get DRM info"
+	depends on RTK_DPRX
+	default y
+
+config RTK_DPRX_SYSFS
+	bool "Enable DPRX SYSFS"
+	default y
+	help
+		Enable DPRX SYSFS
+
+config DPRX_DRV_ENABLE_RTK_DPRX_ADAPTER
+	bool "Enable RTK DPRX adpter"
+	select DPRX_DRV_USE_EXTERNAL_EXT_DRVIF
+	default y
+	help
+		Add RTK DPRX Adapter support
+
+config ENABLE_TYPEC_DPRX
+	bool "Enable TYPEC DPRX adpter"
+	default y
+
+config DPRX_BUILD_IN_TEST
+	bool "Enable DPRX Build in test"
+	depends on DPRX_DRV_ENABLE_RTK_DPRX_ADAPTER && RTK_DPRX_SYSFS
+	default y
+	help
+		Enable DPRX Build in test
+
+menu "RTK DPRX Driver"
+source "drivers/rtk_kdriver/dprx/Kconfig.dprx_drv"
+endmenu
+
+endmenu

@@ -1,0 +1,12 @@
+config RTK_KDRV_AUDIO_HW
+	tristate "Driver for Audio HW Control"
+	default n
+    select RTK_KDRV_AUDIO_HW_EARC	
+	help
+	  Driver for Audio HW Control
+	  
+config RTK_KDRV_AUDIO_HW_EARC
+	tristate "Driver for Audio HW eARC Control"
+	default n
+	help
+	  Driver for Audio HW eARC Control

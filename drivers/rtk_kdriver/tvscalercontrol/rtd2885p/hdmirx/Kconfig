@@ -1,0 +1,80 @@
+menu "HDMI RX"
+
+config RTK_HDMI_RX
+	tristate "Enable HDMI RX MAC"
+	default n
+	select RTK_KDRV_GPIO
+	select RTK_KDRV_DDC
+	help
+		Enable HDMI RX MAC
+
+config RTK_KDRV_HDMI_ENABLE_HDMI21
+	bool "Enable HDMI 2.1 Support"
+	default y
+	depends on RTK_HDMI_RX 
+	help
+	  Enable HDMI 2.1 Support
+
+config RTK_KDRV_HDMI_ENABLE_PHY
+	bool "Enable HDMI PHY Support"
+	default y
+	depends on RTK_HDMI_RX 
+	help
+		Enable PHY Support
+
+config RTK_KDRV_HDMI_ENABLE_DYNAMIC_POWER_SAVING
+	bool "Enable HDMI Dynamic Power Saving"
+	default y
+	depends on RTK_HDMI_RX 
+	help
+	  Enable HDMI Dynamic Power Saving	  
+
+config RTK_KDRV_HDMI_HDCP_REPEATER_ENABLE
+	bool "Enable HDMI HDCP Repeater"
+	default n
+	depends on RTK_HDMI_RX
+	help
+		Enable HDMI HDCP Repeater function
+
+config ENABLE_DOLBY_VISION_HDMI_AUTO_DETECT
+	bool "Enable Dolby Vision HDMI Auto Detect"
+	default n
+	depends on RTK_HDMI_RX 
+	help
+		Enable Dolby Vision HDMI Auto Detect
+
+config ENABLE_DOLBY_VISION_VSEM
+	bool "Enable Dolby Vision VSEM Receieve"
+	default n
+	depends on ENABLE_DOLBY_VISION_HDMI_AUTO_DETECT 
+	help
+		Enable Dolby Vision Vendor Specific EMP RX
+
+config ENABLE_HDR10_HDMI_AUTO_DETECT
+	bool "Enable HDR10 HDMI Auto Detect"
+	default n
+	depends on RTK_HDMI_RX 
+	help
+		Enable HDR10 HDMI Auto Detect
+
+config HDMI_DRV_HPD
+	bool "Enable HDMI_DRV_HPD"
+	default n
+	help
+		Provide realtek HDMI_DRV_HPD.
+
+config HDMI_RX_BUILT_IN_TEST
+        bool "Enable HDMI RX Built in test"
+        default y
+        help
+                Enable HDMI RX Built in test.
+
+config RTK_8KCODEC_HDMI_SOUND_WORKAROUND
+        bool "2893 hdmi sound workaround, 5v hotplug, audio only"
+        default n
+        help
+               2893 hdmi sound workaround, 5v hotplug, audio only
+
+#source drivers/rtk_kdriver/tvscalercontrol/hdmirx/bist/Kconfig	
+		
+endmenu

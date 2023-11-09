@@ -1,0 +1,12 @@
+config RTK_KDRV_USB_GADGET
+    tristate "RTK USB GADGET DEVICE SUPPORT"
+    select USB_GADGET
+    help
+      This is for Realtek USB Gadget devices.
+
+config RTK_KDRV_USB_GADGET_HID
+    tristate "RTK USB GADGET DEVICE SUPPORT"
+    depends on RTK_KDRV_USB_GADGET
+    help
+      This is for Realtek USB Gadget HID device.
+

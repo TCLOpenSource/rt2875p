@@ -1,0 +1,6 @@
+config RTK_KDRV_DFT
+	tristate "DFT (phase scan) driver."
+	depends on RTK_KDRIVER_SUPPORT
+	default n
+	help
+		DFT Driver

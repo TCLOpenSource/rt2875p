@@ -1,0 +1,12 @@
+source "drivers/rtk_kdriver/Kconfigs/$(CHIP_NAME)"
+source "drivers/rtk_kdriver/Kconfig.wifi"
+
+config RTK_FEATURE_FOR_GKI
+    bool "Config for driver to enable feature code"
+    default y
+    help
+	  This config is to used for enabling specfic feature with
+	  driver code if you want, but with remind, this config 
+	  enabling the google GKI ABI breakage, and will have missing
+	  symbol when driver module tring to module insert at running
+	  stage. 

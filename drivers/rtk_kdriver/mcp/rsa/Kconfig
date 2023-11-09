@@ -1,0 +1,17 @@
+menu "RSA function Support"
+
+config RTK_KDRV_MCP_RSA
+        bool "Support MCP RSA"
+        select MPILIB
+        select CRYPTO_RSA
+        default n
+        help
+          MCP RSA Driver
+
+config RTK_KDRV_MCP_RSA_TEST
+        bool "Support MCP RSA Test"
+        depends on RTK_KDRV_MCP_RSA && RTK_KDRV_MCP
+        default n
+        help
+          MCP RSA Driver Self Test
+endmenu

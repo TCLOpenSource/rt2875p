@@ -1,0 +1,204 @@
+
+// Ref:
+//  https://source.android.com/devices/architecture/dto/syntax
+
+
+/dts-v1/; 
+/plugin/;
+
+#define _KB_ 1024
+#define _MB_ 1024*1024
+
+/ {
+	compatible = "rtk,rtd6748";
+};
+
+
+&CHOSEN {
+	bootargs_ext="androidboot.dtbo_idx=2"; //[FIXME] androidboot.dtbo_idx: shouldn't it be defined by loader?
+	//bootargs_ext = "";
+};
+
+
+&RMM {
+	// devicetree identification [TEST] board & overlay info
+	compatible = "realtek,rtd6748-1gb", "realtek,rtd6748";
+
+	#address-cells = <2>;
+	#size-cells = <2>;
+
+	boot: boot_memory {
+				reg = <0x0 0x00000000 0x0 (1	*_MB_)>;
+	};
+
+	dmem: dmem_memory {
+				reg = <0x0 0x10000000 0x0 (0	*_MB_)>;
+	};
+
+	comem: comem_memory {
+				reg = <0x0 0x12280000 0x0 (0	*_MB_)>;
+	};
+
+	demod: demod_memory {
+				reg = <0x0 0x15400000 0x0 (8	*_MB_)>;
+	};
+
+	kboot: kboot_memory {
+				reg = <0x0 0x15f00000 0x0 (0	*_MB_)>;
+	};
+
+	kcpu: kcpu_memory {
+				reg = <0x0 0x16000000 0x0 (16	*_MB_)>;
+	};
+
+//	gic_mem: gic_mem {
+//	};
+//
+//	rbus: rbus_memory {
+//	};
+
+	vcpu: vcpu_memory {
+				reg = <0x0 0x1a900000 0x0 (8	*_MB_)>;
+	};
+
+	rpc: rpc_memory {
+				reg = <0x0 0x1b180000 0x0 (512	*_KB_)>;
+	};
+
+	acpu: acpu_memory {
+				reg = <0x0 0x1b200000 0x0 (10	*_MB_)>;
+	};
+	
+	/* The maximum reserved space for logbuf */
+	logbuf: logbuf_memory { 
+				reg = <0x0 0x1ca00000 0x0 (4	*_MB_)>;
+	};
+
+//	rom: rom_memory {
+//				reg = <0x0 0x1fc00000 0x0 (32	*_KB_)>;
+//	};
+
+	pstore: pstore_memory {
+				reg = <0x0 0x1fd00000 0x0 (64	*_KB_)>;
+	};
+
+	irtbl: irtbl_memory {
+				reg = <0x0 0x1fff8000 0x0 (8	*_KB_)>;
+	};
+
+//	ddr_bd1: ddr_bd1_memory {
+//	};
+//	ddr_bd2: ddr_bd2_memory {
+//	};
+
+	// CARVEDOUT_VDEC_VBM
+
+	// CARVEDOUT_CMA_VBM
+	vbm: cma-vbm_memory  {
+				reg = <0x0 0x20000000 0x0 (96	*_MB_)>;
+	};
+
+	scaler_memc: memc_memory {
+				reg = <0x0 0x26000000 0x0 (0	*_MB_)>;
+	};
+
+	scaler_mdomain: scaler_mdomain {
+				reg = <0x0 0x26000000 0x0 (13	*_MB_)>;
+	};
+
+	scaler_dinr: scaler_dinr {
+				reg = <0x0 0x26d00000 0x0 (13	*_MB_)>;
+	};
+
+	scaler_vip: scaler_vip {
+				reg = <0x0 0x27a00000 0x0 (2	*_MB_)>;
+	};
+
+	scaler_od: scaler_od {
+				reg = <0x0 0x27c00000 0x0 (4	*_MB_)>;
+	};
+
+	scaler_nn: scaler_nn {
+				reg = <0x0 0x28000000 0x0 (0	*_MB_)>;
+	};
+
+	tp: tp_memory {
+				reg = <0x0 0x28000000 0x0 (8	*_MB_)>;
+	};
+
+	svp: svp_memory {
+				reg = <0x0 0x3ec00000 0x0 (16	*_MB_)>;
+	};
+
+	// CARVEDOUT_CMA_LOW
+	cma1: cma1_memory {
+				reg = <0x0 0x03800000 0x0 (128	*_MB_)>;
+	};
+
+	// CARVEDOUT_CMA_HIGH
+	// CARVEDOUT_CMA_GPU_4K
+	/*
+	 * carvedout_buf_query[ CARVEDOUT_GPU_RESERVED ]
+	 *  (DRAM_size > 0xa0000)  CMA_HIGHMEM_M7_8K;
+	 *  (DRAM_size > 0x60000)  CMA_HIGHMEM_LARGE; //640MB
+	 *  (DRAM_size <= 0x60000) CMA_HIGHMEM_SMALL; //128MB
+	 *
+	 *  tp_memory end 0x28800000
+	 *  dram      end 0x40000000 ???
+	 *
+	 *  0x28800000 + 128MB(ZRAM_RESERVED_SIZE) + 128MB(CARVEDOUT_GPU_RESERVED)
+	 *  = 0x28800000 + 0x08000000 + 0x08000000 = 0x38800000
+	 *
+	 *  0x40000000 - 0x38800000 = 0x07800000
+	 *
+	 *  ??? PROBLEM ??? 1GB ??? svp required ????
+	 *   In 1GB, although 0x38800000 < kernel_highmem_size
+	 *   But 0x38800000 > 0x3ec00000 (svp) per above calc, and cma2 start is no longer higher than svp 0x3ec00000.
+	 *   Should cma2 be only 0x38000000 to 0x3ec00000 (size 0x06c00000) ??? or re-position both svp and cma2 ???
+	 *   
+	 */
+
+	/*
+	 * if carvedout start < CARVEDOUT_LIMIT(512MB), then NO cma2
+	 */
+
+	/*
+	 * if UI_4K, CMA_GPU_4K use an exclusive region from original CMA2
+	 */
+	cma_ui4k: cma_ui4k_memory {
+				reg = <0x0 0x0 0x0 0x0>;
+				status = "disabled";
+	};
+	cma2: cma2_memory {
+				reg = <0x0 0x38001000 0x0 0x06bff000>; /* need to check with 1GB */
+	};
+
+	// CARVEDOUT_CMA_GPU_4K
+	// CARVEDOUT_CMA_3
+	// CARVEDOUT_CMA_LOW_LIMIT
+	// CARVEDOUT_CMA_BW
+
+};
+
+
+&RTK_CMA {
+	/*
+	 * early reserve of cma1_memory
+	 */
+
+	#address-cells = <2>;
+	#size-cells = <2>;
+
+	reclaim_memory {
+				reg = <0x0 0x03800000 0x0 (40 	*_MB_)>;
+	};
+	last_image_memory@0a000000 {
+				reg = <0x0 0x0a000000 0x0 (8 	*_MB_)>;
+	};
+};
+
+
+&ODM {
+};
+
+

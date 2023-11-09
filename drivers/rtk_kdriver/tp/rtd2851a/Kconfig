@@ -1,0 +1,7 @@
+config RTK_KDRV_MULTI_TP_CLOCK
+	bool "Enable multiple tp clock"
+	depends on RTK_KDRV_TP
+	default y if RTK_KDRV_TP
+	help
+		Enable multiple tp clock.
+

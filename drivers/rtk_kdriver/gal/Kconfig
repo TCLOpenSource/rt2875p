@@ -1,0 +1,59 @@
+#SE driver
+config RTK_KDRV_SE
+	tristate "SE (2D Graphic/Streaming Engine) Driver."
+	depends on RTK_KDRIVER_SUPPORT
+	select RTK_KDRIVER
+	default n
+	help
+		For drawing
+
+#GDMA drvier
+config RTK_KDRV_GDMA
+	tristate "GDMA Driver"
+	depends on RTK_KDRIVER_SUPPORT
+	select RTK_KDRIVER
+	default n
+	help
+		For display
+
+config RTK_KDRV_REFDECMP
+	tristate "decmp Driver"
+        depends on RTK_KDRIVER_SUPPORT
+        select RTK_KDRIVER
+        default n
+        help
+                For display
+
+#GDMA drvier
+config RTK_KDRV_GDMA_RLINK
+       bool "GDMA Rlink Driver"
+       depends on RTK_KDRIVER_SUPPORT
+       select RTK_KDRIVER
+       default n
+       help
+               For display
+
+config RTK_KDRV_GDMA_SPLIT_2
+       bool "GDMA Split mode 2"
+       depends on RTK_KDRIVER_SUPPORT
+       select RTK_KDRIVER
+       default n
+       help
+               For display
+			   
+config RTK_KDRV_GDMA_SPLIT_3
+       bool "GDMA Split mode 3"
+       depends on RTK_KDRIVER_SUPPORT
+       select RTK_KDRIVER
+       default n
+       help
+               For display
+
+#GAL driver
+config RTK_KDRV_GAL
+	bool "GAL Driver"
+	depends on RTK_KDRIVER_SUPPORT && RTK_KDRV_SE && RTK_KDRV_GDMA && ION_REALTEK
+	select RTK_KDRIVER
+	default n
+	help
+		For kadapter

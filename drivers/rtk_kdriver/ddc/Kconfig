@@ -1,0 +1,25 @@
+config RTK_KDRV_DDC
+	tristate "Enable DDC"
+	default n
+	help
+		DDC Platform Device Driver
+
+config RTK_KDRV_DDCCI
+    bool "Enable DDCCI"
+    default y
+    help
+        DDC-CI Platform Device Driver
+
+config RTK_KDRV_DDCCI_HID
+    bool "Enable DDCCI HID"
+    depends on  RTK_KDRV_DDCCI
+    default n
+    help
+        DDC-CI HID Function
+
+config RTK_KDRV_DDCCI_USING_POLLING
+    bool "Enable DDCCI POLLING FEATURE"
+    depends on  RTK_KDRV_DDCCI
+    default y
+    help
+        DDC-CI Polling Feature Function

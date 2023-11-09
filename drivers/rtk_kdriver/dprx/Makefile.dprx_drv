@@ -1,0 +1,24 @@
+#
+# Makefile for the Realtek DPRX DRV
+#
+
+#============================================
+# Step1 : Setup Path
+#============================================
+DPRX_DRV_PATH:=$(obj)/driver/
+
+#============================================
+# Step2 : build
+#============================================
+obj-$(CONFIG_RTK_DPRX)  += driver/
+
+#============================================
+# Step3 : Setup Path info
+#============================================
+KBUILD_CFLAGS += -I $(DPRX_DRV_PATH)/api/inc/
+KBUILD_CFLAGS += -I $(DPRX_DRV_PATH)/aux_channel/inc/
+KBUILD_CFLAGS += -I $(DPRX_DRV_PATH)/virtual_platform/inc/
+KBUILD_CFLAGS += -I $(DPRX_DRV_PATH)/mac/inc/
+KBUILD_CFLAGS += -I $(DPRX_DRV_PATH)/phy/inc/
+KBUILD_CFLAGS += -I $(DPRX_DRV_PATH)/hdcp/inc/
+KBUILD_CFLAGS += -I $(DPRX_DRV_PATH)/include

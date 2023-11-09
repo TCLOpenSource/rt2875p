@@ -1,0 +1,9 @@
+menu "DSCD"
+
+config RTK_DSCD
+	tristate "Enable dscd Support"
+	default y
+	help
+		Enable dscd
+
+endmenu

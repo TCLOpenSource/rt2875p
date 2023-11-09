@@ -1,0 +1,66 @@
+/* rtk 6748 otp table */
+
+/ {
+	rtk_otp_table {
+		compatible = "realtek,rtk-otp_table";
+		func_boot_type_sel     = <1408  0    1>;
+		func_mem_obf_en        = <1426  0    2>;
+		chip_type_hdr_disable  = <1208  1345 2>;
+		chip_type_nnip_disable = <1263  1367 1>;
+		sw_func_mheg5          = <1223  1324 1>;
+		sw_func_hbbtv          = <1225  1326 1>;
+/*		sw_func_hbbtv_20_seraphic = <1234 1335 1>; */
+		sw_func_hbbtv_20_vewd = <1238 1338 1>;
+		sw_func_ciplus         = <1233  1334 1>;
+		sw_func_ginga          = <1236  1337 1>;
+		sw_func_fvp            = <1239  1340 1>;
+		chip_type_remark_en    = <1391 0    1>;
+		wafer_info_slot        = <1128 0    69>;
+		wafer_info_all         = <1144 0    64>;
+		hw_usb_disconnect_level = <2304 0    16>;
+		hw_usb_squelch_level    = <2240 0    16>;
+		hw_usb_swing_level      = <1555 0    12>;
+		hw_usb_disconnect_done  = <2320 0    1>;
+		hw_usb_squelch_done     = <2256 0    1>;
+		hw_usb_swing_done       = <1567 0    1>;
+/*		hw_emmc_ldo_trim_info   = <1575 0    3>;   */
+		rtk_otp_debug_field     = <1412  0    1>;
+		hw_ifd_iadc_ldo         = <2688 0    4>;
+		hw_ifd_qadc_ldo         = <2692 0    4>;
+		hw_cpu_package_size     = <1120 0    3>;
+		hw_package_info_feature = <1123 0 2>;
+		hw_ddr_info             = <1088 0    32>;
+		chip_type_ve_avs3_disable =<1267 1371 1>;
+		chip_type_edp_tx_disable = <1279 1380 1>;     
+		chip_type_dp_rx_disable =<1295 1387 1>;
+		chip_type_cuva_hdr_disable = <1265 1369 1>;
+		chip_type_usb_c_bb_disable = <1293 1385 1>;
+		chip_type_usb_c_pd_disable = <1294 1386 1>;
+		io_pcmcia1_disable = <1432 0 1>;
+		io_sc1_disable = <1435 0 1>;
+		chip_type_ve_vvc_disable = <1266 1370 1>;
+		mp_status_dp_rx_aux_tx_z0=<2234 0 5>;
+		mp_status_dp_rx_aux_tx_z0_done=<2239 0 1>;
+		mp_status_dp_rx_aux_rx_z0=<2266 0 5>;  
+		mp_status_dp_rx_aux_rx_z0_done=<2271 0 1>;  
+		hw_dp_rx_aux_rx_vth=<2290 0 6>;     
+		hw_dp_rx_aux_rx_vth_done=<2296 0 1>;   
+		hw_mp_status_ft_iddq_done = <2298 0 1>;
+		hw_iddq_core_power = <2272 0 9>;
+		hw_iddq_scpu_power = <2281 0 9>;
+		sw_func_virtual_camera = <1241 1342 1>;
+		hw_q_vcm_sel_ft_done = <2326 0 1>;   
+		hw_q_vcm_sel_ft = <2324 0 2>;      
+		hw_vd_adc_ldo           = <2652 0    4>;
+		chip_type_dolby_hw5_core1_disable = <1296 1388 1>;
+		chip_type_dolby_hw5_core2_disable = <1297 1389 1>;
+		chip_type_srnn_disable = <1298 1390 1>;
+		hw_earc_cp = <2656 0 9>;
+		hw_earc_ft = <2379 0 8>;
+		chip_type_memc_disable = <1214 1361 1>;
+		sw_func_hdr_10_plus = <1229 1330 1>;
+		hw_hdmi_rx_z0           = <2504 0    24>;
+		sw_func_set_type         = <1242  1343 2>;
+		chip_type_siliconworks_demura_disable = <1244 1363 1>;
+	};
+};

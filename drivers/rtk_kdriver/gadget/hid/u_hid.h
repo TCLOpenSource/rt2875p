@@ -1,0 +1,29 @@
+#ifndef U_HID_H
+#define U_HID_H
+
+#include <linux/usb/composite.h>
+#include "rtk_hidg_dev_info.h"
+
+struct f_hid_opts {
+               char nid[MAX_NID_SIZE];
+	struct usb_function_instance	func_inst;
+	int				minor;
+	unsigned char			subclass;
+	unsigned char			protocol;
+	unsigned short			report_length;
+	unsigned short			report_desc_length;
+	unsigned char			*report_desc;
+	bool				report_desc_alloc;
+
+	/*
+	 * Protect the data form concurrent access by read/write
+	 * and create symlink/remove symlink.
+	 */
+	 struct mutex			lock;
+	 int				refcnt;
+};
+
+int ghid_setup(struct usb_gadget *g, int count);
+void ghid_cleanup(void);
+
+#endif /* U_HID_H */

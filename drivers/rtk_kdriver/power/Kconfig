@@ -1,0 +1,11 @@
+if POWER_SUPPLY
+
+config RTK_POWER
+	tristate "Realtek power driver"
+	help
+	  This driver is used for realtek testing. It's safe to say M here.
+
+	  Choose this option if you want to monitor battery status on
+	  Compaq/HP iPAQ h3100 and h3600.
+
+endif # POWER_SUPPLY

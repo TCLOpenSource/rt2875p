@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: GPL-2.0
+config ION_DVR_HEAP
+	tristate "Ion DVR heap support"
+	depends on ION && REALTEK_MEMORY_MANAGEMENT
+	help
+	  Choose this option to enable DVR heaps with Ion. This heap is backed
+	  by the RTK CMA serials APIs.

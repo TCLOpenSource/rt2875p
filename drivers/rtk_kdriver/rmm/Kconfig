@@ -1,0 +1,36 @@
+config REALTEK_MEMORY_MANAGEMENT
+	tristate "Realtek memory management"
+	default y
+	help
+		Code added for Realtek memory management
+
+config CMA_RTK_ALLOCATOR
+	bool "Use RTK blueprint"
+	default y
+	depends on REALTEK_MEMORY_MANAGEMENT
+	help
+	  Use RTK blueprint to replace bitmap allocator.
+
+config CMA_FIRST_POLICY
+	bool "Use CMA memory first"
+	default n
+	depends on REALTEK_MEMORY_MANAGEMENT
+	help
+	  Use CMA memory first if user allocate movable memory.
+
+config REALTEK_MANAGE_OVERLAPPED_REGION
+	bool "Manage the memory region overlapped by RBUS & NOR."
+	default n
+	depends on CMA_RTK_ALLOCATOR && REALTEK_MEMORY_MANAGEMENT
+	help
+		Put the memory region overlapped by RBUS & NOR under the control of linux.
+
+config REALTEK_DEV_MEM
+	tristate "Provide the /dev/rtkmem interface."
+	default n
+	help
+		Provide an interface to replace /dev/mem.
+
+source "drivers/rtk_kdriver/rmm/dma-buf/Kconfig"
+source "drivers/rtk_kdriver/rmm/ion/Kconfig"
+

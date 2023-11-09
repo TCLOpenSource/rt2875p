@@ -1,0 +1,32 @@
+1.dtc_android tool:(It is compiled by merlin5 android10 dtc source code.)
+
+you must download merlin5 android10 source code
+
+1)source code path:kernel/android/android-10/external/dtc
+
+2)merlin5 android10 dtc source code version
+commit c7db36e4961918d5f0715984f6d28484e635ece3
+Merge: 61ca401 5978887
+Author: Martin Liu <liumartin@google.com>
+Date:   Tue Mar 19 21:41:19 2019 -0700
+
+    dtc: add fdtget in Android.bp am: 38bd6fab2a am: a4b7498ee0
+    am: 5978887fd0
+    
+    Change-Id: Ib4ad5dffefa4f9c8d764f258cdd9fe4dde090a8b
+    
+3)compile step:
+
+(1)into kernel/android/android-10/build
+run cmd:
+source envsetup.sh
+lunch
+(I choose [3]RealtekATV-userdebug)
+
+(2)into kernel/android/android-10/external/dtc
+run cmd:
+mm
+make dtc
+
+
+2.dtc_linux tool:(It copy from kernel/linux/linux-4.14/scripts/dtc/dtc)

@@ -1,0 +1,17 @@
+rtd_outl(0xb8060030,0x00000101);    // RSTN_ETN bit[8]
+ScalerTimer_DelayXms(20);
+
+rtd_outl(0xb8060040,0x00000901);    // CLKEN_ETN_RBUS bit[11],CLKEN_ETN bit[8]
+
+rtd_outl(0xb8016c18,0x00000000);    //plletn_pow bit[23]=0,plletn_powldo bit[22]=0
+ScalerTimer_DelayXms(20);
+
+rtd_outl(0xb8016c3c, 0x00000000);   // Afe_pow_state bit[29]=0
+ScalerTimer_DelayXms(20);
+
+rtd_outl(0xb8016c04,0x00000006);    //CLKEN_ETNMAC bit[2]=0,CLKEN_ETNSYS bit[1]=0
+ScalerTimer_DelayXms(20);
+rtd_outl(0xb8016c00,0x0000000e);    //RSTN_ETNPHY bit[3]=0,RSTN_ETNMAC bit[2]=0,RSTN_ETNSYS bit[1]=0,
+ScalerTimer_DelayXms(20);
+
+rtd_outl(0xb8060040,0x00000900);    // CLKEN_ETN_RBUS bit[11]=0,CLKEN_ETN bit[8]=0

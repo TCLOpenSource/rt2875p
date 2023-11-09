@@ -1,0 +1,11 @@
+#Copyright (C) 2007-2013 Realtek Semiconductor Corporation.
+# drivers/cec/Kconfig
+
+config RTK_KDRV_CEC
+	tristate "rtk cec driver based on cec framework"
+	default n
+	select MEDIA_CEC_SUPPORT
+	select CEC_CORE
+	help
+	  rtk cec driver based on cec framework
+	

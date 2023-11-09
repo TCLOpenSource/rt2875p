@@ -1,0 +1,184 @@
+menu "HDMI TX"
+#########################################
+config TX_CHANGE_TIMING
+        bool "hdmitx timing change"
+                default y
+choice
+       prompt "choose which Timing as default HDMITX output"
+       help
+        choose HDMI TX default timing for different project.
+       config 8kp60_HDMI21
+          bool "8kp60_HDMI2.1"
+       help
+         output 8kp60 with HDMI 2.1
+
+       config 4kp60_HDMI21
+          bool "4kp60_HDMI2.1"
+       help
+         output 4kp60 with HDMI 2.1
+
+       config 4kp60_HDMI20
+          bool "4kp60_HDMI2.0"
+       help
+         output 4kp60 with HDMI 2.0
+
+       config 2kp60_HDMI20
+          bool "2kp60_HDMI2.0"
+       help
+         output 2kp60 with HDMI 2.0
+endchoice
+
+config HDMITX_OUTPUT_DEFAULT_TIMING
+        int
+        range 0 3
+        default 0 if 4kp60_HDMI20
+        default 1 if 4kp60_HDMI21
+        default 2 if 8kp60_HDMI21
+        default 3 if 2kp60_HDMI20
+        help
+                choose output timing .
+                   select 4kp60_HDMI20 if RTK_H5X_HDMITX_OUTPUT_TIMING=0
+                   select 4kp60_HDMI21 if RTK_H5X_HDMITX_OUTPUT_TIMING=1
+                   select 8kp60_HDMI21 if RTK_H5X_HDMITX_OUTPUT_TIMING=2
+                   select 2kp60_HDMI20 if RTK_H5X_HDMITX_OUTPUT_TIMING=3
+                (backward compatible.)
+
+#########################################
+config HDMITX_OUTPUT_CONFIG
+        bool "HDMITX output port config"
+                default n
+choice
+       prompt "Select HDMITX output to HDMIRX port number"
+       default HDMIRX_PORT_4
+       help
+        Select HDMITX output to HDMIRX port number for different project.
+       config HDMIRX_PORT_NONE
+          bool "No Limit"
+       help
+         Don't limit HDMITX output to HDMIRX port number
+       config HDMIRX_PORT_1
+          bool "HDMIRX Port1"
+       help
+         Limit HDMITX output to HDMIRX Port1
+       config HDMIRX_PORT_2
+          bool "HDMIRX Port2"
+       help
+         Limit HDMITX output to HDMIRX Port2
+       config HDMIRX_PORT_3
+          bool "HDMIRX Port3"
+       help
+         Limit HDMITX output to HDMIRX Port3
+       config HDMIRX_PORT_4
+          bool "HDMIRX Port4"
+       help
+         Limit HDMITX output to HDMIRX Port4
+endchoice
+
+config HDMIRX_CONNECT_PORT_NUMBER
+        int
+        range 0 4
+        default 0 if HDMIRX_PORT_NONE
+        default 1 if HDMIRX_PORT_1
+        default 2 if HDMIRX_PORT_2
+        default 3 if HDMIRX_PORT_3
+        default 4 if HDMIRX_PORT_4
+        help
+                limit hdmitx output to hdmirx port number
+                   select HDMIRX_PORT_NONE if Don't Limit HDMITX output
+                   select HDMIRX_PORT_1 if Limit HDMITX output to HDMIRX port1
+                   select HDMIRX_PORT_2 if Limit HDMITX output to HDMIRX port2
+                   select HDMIRX_PORT_3 if Limit HDMITX output to HDMIRX port3
+                   select HDMIRX_PORT_4 if Limit HDMITX output to HDMIRX port4
+                (backward compatible.)
+
+#########################################
+config HDMITX_LANE_SWAP_CONFIG
+        bool "HDMITX Lane Swap config"
+                default y
+choice
+       prompt "Select HDMITX Lane Swap config"
+       default HDMIRX_LANE_SWAP_H5D_DEFAULT
+       help
+        Select HDMITX lane swap for different project.
+       config HDMIRX_LANE_SWAP_H5D_DEFAULT
+          bool "Lane CK/C/B/A mapping to src 3/2/1/0"
+       help
+         HDMITX lane CK/C/B/A mapping to src 3/2/1/0 (for H5D demo/LGE dongle)
+       config HDMIRX_LANE_SWAP_H5D_ONE_BOARD
+          bool "Lane CK/C/B/A mapping to src 2/3/0/1"
+       help
+         HDMITX lane CK/C/B/A mapping to src 2/3/0/1 (for LGE one board)
+endchoice
+
+config HDMITX_LANE_SRC_SEL
+        int
+        default 228 if HDMIRX_LANE_SWAP_H5D_DEFAULT
+        default 177 if HDMIRX_LANE_SWAP_H5D_ONE_BOARD
+        help
+                hdmitx lane source select
+                   select HDMIRX_LANE_SWAP_H5D_DEFAULT for H5D demo or LGE dongle project (3<<6|2<<4|1<<2|0 = 0xe4=228)
+                   select HDMIRX_LANE_SWAP_H5D_ONE_BOARD for LGE one board project (2<<6| 3<<4| 0<<2| 1 = 0xb1=177)
+                (backward compatible.)
+
+#########################################
+config HDMITX_PN_SWAP_CONFIG
+        bool "HDMITX PN Swap config"
+                default y
+choice
+       prompt "Select HDMITX PN Swap config"
+       default HDMIRX_PN_SWAP_NONE
+       help
+        Select HDMITX PN swap for different project.
+       config HDMIRX_PN_SWAP_NONE
+          bool "Lane 0/1/2/3 PN NOT swap"
+       help
+         HDMITX lane 0/1/2/3 NOT swap (for H5D demo/LGE dongle/LGE one board)
+       config HDMIRX_PN_SWAP_F
+          bool "Lane all of 0/1/2/3 need do PN swap"
+       help
+         HDMITX lane Lane all of 0/1/2/3 need do PN swap (for Mac6p combo board)
+endchoice
+
+config HDMITX_LANE_PN_SWAP_CFG
+        int
+        default 0 if HDMIRX_PN_SWAP_NONE
+        default 15 if HDMIRX_PN_SWAP_F
+        help
+                hdmitx lane source select
+                   select HDMIRX_PN_SWAP_NONE for H5D demo or LGE dongle or LGE one board project
+                   select HDMIRX_PN_SWAP_F for Mac6p combo board project
+                (backward compatible.)
+
+#########################################
+config HDMITX_CHECK_EDID_INFO
+    bool "HDMITX EDID Info Check"
+            default n
+    help
+        Support check EDID to enable HDMITX output
+
+config HDMITX_SHOW_PATTERN_ENABLE
+    bool "HDMITX Show Colorbar Pattern when boot up"
+            default n
+    help
+        Support HDMITX show colorbar pattern when boot up
+
+config HDMITX_TOGGLE_PATTERN_PATTERN
+    bool "HDMITX Toggle Colorbar Pattern when boot up"
+            default n
+    help
+        Support HDMITX toggle colorbar pattern when boot up
+
+config HDMITX_BYPASS_LINK_TRAINING
+    bool "HDMITX force bypass HPD/EDID/Link Training control flow"
+            default n
+    help
+        Support force bypass HPD/EDID/Link Training control flow (ONLY FOR SPECIAL HDMIRX)
+
+config HDMITX_HDCP22_ENABLE
+    bool "HDMITX HDCP22 function enable"
+            default n
+    help
+        Support HDCP22 function enable when boot up
+
+endmenu
+

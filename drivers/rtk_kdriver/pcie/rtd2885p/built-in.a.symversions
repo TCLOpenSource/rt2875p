@@ -1,0 +1,5 @@
+__crc_rtk_pcie_int_msi_sta_clr_exp = 0x8030cf63;
+__crc_rtk_pcie_send_mem_rd = 0x3cc39141;
+__crc_rtk_pcie_send_mem_wr = 0x39ba623d;
+__crc_rtk_pcie_rc_write = 0x832326f4;
+__crc_rtk_pcie_rc_read = 0xb03fb6c5;

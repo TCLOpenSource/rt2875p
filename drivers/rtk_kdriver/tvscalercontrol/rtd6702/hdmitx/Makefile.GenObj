@@ -1,0 +1,49 @@
+#
+# Makefile for the Realtek HDMI TX drivers.
+#
+##ROS_INCLUDE_PATH +=  -I ROS/include
+##subdir-ccflags-y +=  $(ROS_INCLUDE_PATH) $(HDMITX_INCLUDE_PATH)
+subdir-ccflags-y +=  $(HDMITX_INCLUDE_PATH)
+HDMITX_LIB_HOME = ../../../../../verify/hdmitx21
+HDMITX_KDRV_DIR = tvscalercontrol/rtd6702/tvscalercontrol/hdmitx
+
+## For Local Test Only
+#KBUILD_CFLAGS += -D_MARK2_ZEBU_BRING_UP_LOCAL_RUN
+
+## HDMITX PHY
+obj-y += $(HDMITX_LIB_HOME)/src/hdmitx_phy.o $(HDMITX_LIB_HOME)/src/hdmitx_phy_timing_table.o
+obj-y += $(HDMITX_LIB_HOME)/src/hdmitx_phy_swing_table_general.o $(HDMITX_LIB_HOME)/src/hdmitx_phy_swing_table_o18.o $(HDMITX_LIB_HOME)/src/hdmitx_phy_swing_table_o20.o
+
+## HDMITX 2.0
+obj-y += $(HDMITX_LIB_HOME)/src/ScalerHdmiMacTx0.o $(HDMITX_LIB_HOME)/src/ScalerHdmiMacTx.o $(HDMITX_LIB_HOME)/src/ScalerHdmiPhyTx.o $(HDMITX_LIB_HOME)/src/ScalerHdmiMacTx0_EXINT0.o
+
+## HDMITX 2.1
+obj-y +=  $(HDMITX_LIB_HOME)/src/ScalerHdmi21MacTx.o $(HDMITX_LIB_HOME)/src/ScalerHdmi21MacTx0.o $(HDMITX_LIB_HOME)/src/hdmitx_dsc.o $(HDMITX_LIB_HOME)/src/hdmitx_dsc_pps_table.o
+
+
+## HDMITX HDCP
+ifeq (y,$(filter y, $(CONFIG_HDMITX_20_21_HDCP_SUPPORT)))
+## HDMITX 2.0
+obj-y += $(HDMITX_LIB_HOME)/src/ScalerHdmiHdcp14Tx.o $(HDMITX_LIB_HOME)/src/ScalerHdmiHdcp14Tx0.o $(HDMITX_LIB_HOME)/src/ScalerHdmiHdcp14Tx_EXINT0.o $(HDMITX_LIB_HOME)/src/ScalerHdmiHdcp2Tx.o $(HDMITX_LIB_HOME)/src/ScalerHdmiHdcp2Tx0.o $(HDMITX_LIB_HOME)/src/ScalerHdmiHdcp2Tx_EXINT0.o
+## HDMITX 2.1
+obj-y += $(HDMITX_LIB_HOME)/src/ScalerHdmi21Hdcp2Tx0.o
+endif
+
+## H5X Scaler
+obj-y += $(HDMITX_LIB_HOME)/src/ScalerTx.o
+
+## HW script for function verify
+obj-y += $(HDMITX_LIB_HOME)/verify/hdmitx_hwsdScript.o
+
+## HDMITX flow control
+obj-y += hdmitx.o hdmitx_lib.o hdmitx_config.o hdmitx_timing.o
+
+#KBUILD_CFLAGS += -Wall -Werror
+KBUILD_CFLAGS += -Wall
+
+clean: $(DEP_MODULES_CLEAN)
+	rm -f *.o $(HDMITX_LIB_HOME)/src/*.o $(HDMITX_LIB_HOME)/verify/*.o
+	rm -f $(HDMITX_KDRV_DIR)/Makefile $(HDMITX_KDRV_DIR)/*.o $(HDMITX_KDRV_DIR)/obj/*.o
+
+cleanall: clean
+

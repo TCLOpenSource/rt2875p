@@ -1,0 +1,225 @@
+
+// Ref:
+//  https://source.android.com/devices/architecture/dto/syntax
+
+
+/ {
+	reserved-memory@LAYOUTNUM {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+
+		// devicetree identification board & overlay info
+		compatible = "realtek,rtd6748-1g5", "realtek,rtd6748";
+
+
+		boot_memory {                       reg = <0x0 0x00000000 0x0 (1536 *_KB_)>;
+		};
+
+#ifdef CONFIG_REALTEK_MEMORY_MANAGEMENT_MODULE
+		reclaim_memory_rsvd {               reg = <0x0 _CMA_LOGO_ANIM_ 0x0 (72   *_MB_)>;
+		};
+#endif
+		dmem_memory {                       reg = <0x0 0x10000000 0x0 (0    *_MB_)>;
+			status = "disabled";
+			/* BAN_NORMAL if size */
+		};
+
+		comem_memory {                      reg = <0x0 0x12280000 0x0 (0    *_MB_)>;
+			status = "disabled";
+		};
+
+#if defined(CONFIG_RTK_KDRV_QUICKSHOW) || defined(CONFIG_RTK_KDRV_QUICKSHOW_MODULE) //FIXME can be always on after audio supporting reserved-memory
+		audio_memory {                      reg = <0x0 0x14400000 0x0 (16    *_MB_)>;
+			no-map;
+		};
+#else
+		audio_memory {                      reg = <0x0 0x14400000 0x0 (0    *_MB_)>;
+			status = "disabled";
+		};
+#endif
+
+		demod_memory {                      reg = <0x0 0x15400000 0x0 (8    *_MB_)>;
+			/* BAN_NOT_USED */
+		};
+
+		kboot_memory {                      reg = <0x0 0x15f00000 0x0 (0    *_MB_)>;
+			status = "disabled"; // it's 0 at rmm.c
+		};
+
+		kcpu_memory {                       reg = <0x0 0x16000000 0x0 (18   *_MB_)>;
+			no-map;
+			/* BAN_NOT_USED if ! OPTEE */
+		};
+
+		gic_mem {                           reg = <0x0 0x17c00000 0x0 (4    *_MB_)>; // HW FIXED
+			no-map;
+		};
+
+		rbus_memory {                       reg = <0x0 0x18000000 0x0 (2    *_MB_)>; // HW FIXED
+			no-map;
+		};
+
+		vcpu_memory {                       reg = <0x0 0x1a900000 0x0 (8    *_MB_)>;
+		};
+
+		rpc_memory {                        reg = <0x0 0x1b180000 0x0 (512  *_KB_)>;
+		};
+
+		acpu_memory {                       reg = <0x0 0x1b200000 0x0 (10   *_MB_)>;
+		};
+
+		/* The maximum reserved space for logbuf */
+		logbuf_memory {                     reg = <0x0 0x1ca00000 0x0 (4    *_MB_)>;
+		};
+
+		rom_memory {                        reg = <0x0 0x1fc00000 0x0 (32   *_KB_)>;
+		};
+
+		pstore_memory {                     reg = <0x0 0x1fd00000 0x0 (64   *_KB_)>;
+		};
+
+		irtbl_memory {                      reg = <0x0 0x1fff8000 0x0 (8    *_KB_)>;
+		};
+
+		ddr_bd1_memory {                    reg = <0x0 0x0 0x0 0x0>;
+			status = "disabled";
+			no-map;
+			/* BAN_NOT_USED if ddr_swap */
+		};
+		ddr_bd2_memory {                    reg = <0x0 0x7fc00000 0x0 (4    *_MB_)>; /* 1G5 only */
+			status = "okay";
+			/* BAN_NOT_USED if size */
+		};
+
+		// CARVEDOUT_VDEC_VBM
+		// (paired with ...CARVEOUT_HEAP_CHUNK_SIZE)
+		vdec-vbm_memory {                   reg = <0x0 0x0 0x0 0x0>;
+			no-map; // VDEC_VBM(remove)
+
+			status = "disabled";
+		};
+
+		// CARVEDOUT_CMA_VBM
+		// (paired with VBM_HEAP_...CHUNK_SIZE)
+		cma-vbm_memory  {                   reg = <0x0 0x20000000 0x0 (200  *_MB_)>;
+			/* no-map; */ // VDEC_VBM(remove), CMA_VBM(reserve)
+
+			compatible = "shared-dma-pool"; // CMA_VBM(reserve)
+			reusable;
+		};
+
+		scaler_memc {                       reg = <0x0 0x2c800000 0x0 (71   *_MB_)>;
+			no-map;
+		};
+
+		scaler_mdomain {                    reg = <0x0 0x30f00000 0x0 (13   *_MB_)>;
+			no-map;
+		};
+
+		scaler_dinr {                       reg = <0x0 0x31c00000 0x0 (13   *_MB_)>;
+			no-map;
+		};
+
+//		scaler_vip {                        reg = <0x0 0x32900000 0x0 (2    *_MB_)>;
+		scaler_vip {                        reg = <0x0 0x32900000 0x0 (1848 *_KB_)>;
+			no-map;
+		};
+
+//		scaler_od {                         reg = <0x0 0x32b00000 0x0 (4    *_MB_)>;
+		scaler_od {                         reg = <0x0 0x32ace000 0x0 (4296 *_KB_)>;
+			no-map;
+		};
+
+		scaler_nn {                         reg = <0x0 0x32f00000 0x0 (1    *_MB_)>;
+			no-map;
+		};
+
+		tp_memory {                         reg = <0x0 0x33000000 0x0 (24   *_MB_)>;
+			no-map;
+		};
+
+		// CARVEDOUT_GPU_RESERVED
+
+
+		// CARVEDOUT_VDEC_RINGBUF
+		svp_memory {                        reg = <0x0 0x3ec00000 0x0 (16   *_MB_)>;
+			no-map;
+		};
+
+		// CARVEDOUT_CMA_LOW
+
+		cma1_memory {                       reg = <0x0 _CMA_LO_START_ 0x0 _CMA_LO_SIZE_>;
+			compatible = "shared-dma-pool";
+			reusable;
+#ifndef CONFIG_REALTEK_MEMORY_MANAGEMENT_MODULE
+            linux,cma-default;
+#endif
+		};
+
+		// CARVEDOUT_CMA_HIGH
+		// CARVEDOUT_CMA_GPU_4K
+		/*
+		 * carvedout_buf_query[ CARVEDOUT_GPU_RESERVED ]
+		 *  (DRAM_size > 0xa0000)  CMA_HIGHMEM_M7_8K;
+		 *  (DRAM_size > 0x60000)  CMA_HIGHMEM_LARGE; //640MB
+		 *  (DRAM_size <= 0x60000) CMA_HIGHMEM_SMALL; //128MB
+		 *
+		 *  tp_memory end 0x34800000
+		 *  dram      end 0x60000000
+		 *
+		 *  0x34800000 + 128MB(ZRAM_RESERVED_SIZE) + 128MB(CARVEDOUT_GPU_RESERVED)
+		 *  = 0x34800000 + 0x08000000 + 0x08000000 = 0x44800000
+		 *
+		 *  0x60000000 - 0x44800000 = 0x1B800000 = 440*_MB_
+		 */
+
+		/*
+		 * if carvedout start < CARVEDOUT_LIMIT(512MB), then NO cma2
+		 */
+
+		/*
+		 * if UI_4K, CMA_GPU_4K use an exclusive region from original CMA2
+		 */
+		cma-ui4k_memory {                   reg = <0x0 0x0 0x0 0x0>;
+			compatible = "shared-dma-pool";
+			status = "disabled";
+			reusable;
+		};
+		cma2_memory {                       reg = <0x0 0x44800000 0x0 0x1B800000>;
+			compatible = "shared-dma-pool";
+			reusable;
+#ifdef CONFIG_REALTEK_MEMORY_MANAGEMENT_MODULE
+			movablecore;
+#endif
+		};
+
+		// CARVEDOUT_CMA_3
+		// CARVEDOUT_CMA_LOW_LIMIT
+		// CARVEDOUT_CMA_BW
+
+
+		spi_iomem {                         reg = <0x0 0x80200000 0x0 0x02000000>; // HW FIXED
+			no-map;
+		};
+	};
+
+
+	rtk_cma@LAYOUTNUM {
+		/*
+		 * early reserve of cma1_memory
+		 */
+
+		#address-cells = <2>;
+		#size-cells = <2>;
+
+		reclaim_memory {                    reg = <0x0 _CMA_LOGO_ANIM_ 0x0 (64   *_MB_)>;
+		};
+
+		last_image_memory {                 reg = <0x0 _CMA_LOGO_PIC_  0x0 (8    *_MB_)>;
+		};
+	};
+};
+
+
+

@@ -1,0 +1,46 @@
+#
+# Makefile for the Realtek HDMI TX drivers.
+#
+##ROS_INCLUDE_PATH +=  -I ROS/include
+##subdir-ccflags-y +=  $(ROS_INCLUDE_PATH) $(HDMITX_INCLUDE_PATH)
+subdir-ccflags-y +=  $(HDMITX_INCLUDE_PATH)
+HDMITX_KDRV_DIR = tvscalercontrol/rtd6702/tvscalercontrol/hdmitx
+
+## HDMITX PHY
+obj-y += obj/hdmitx_phy.o obj/hdmitx_phy_timing_table.o
+obj-y +=  obj/hdmitx_phy_swing_table_general.o obj/hdmitx_phy_swing_table_o18.o obj/hdmitx_phy_swing_table_o20.o
+
+## HDMITX 2.0
+obj-y += obj/ScalerHdmiMacTx0.o obj/ScalerHdmiMacTx.o obj/ScalerHdmiPhyTx.o obj/ScalerHdmiMacTx0_EXINT0.o
+
+## HDMITX 2.1
+obj-y +=  obj/ScalerHdmi21MacTx.o obj/ScalerHdmi21MacTx0.o obj/hdmitx_dsc.o obj/hdmitx_dsc_pps_table.o
+
+
+## HDMITX HDCP
+ifeq (y,$(filter y, $(CONFIG_HDMITX_20_21_HDCP_SUPPORT)))
+## HDMITX 2.0
+obj-y += obj/ScalerHdmiHdcp14Tx.o obj/ScalerHdmiHdcp14Tx0.o obj/ScalerHdmiHdcp14Tx_EXINT0.o obj/ScalerHdmiHdcp2Tx.o obj/ScalerHdmiHdcp2Tx0.o obj/ScalerHdmiHdcp2Tx_EXINT0.o
+## HDMITX 2.1
+obj-y += obj/ScalerHdmi21Hdcp2Tx0.o
+endif
+
+## H5X Scaler
+obj-y += obj/ScalerTx.o
+
+## HW script for function verify
+#obj-y += obj/hdmitx_hwsdScript.o
+
+ifeq (y,$(filter y, $(CONFIG_ENABLE_HDMITX)))
+obj-y += hdmitx.o hdmitx_lib.o hdmitx_config.o hdmitx_timing.o
+endif
+
+#KBUILD_CFLAGS += -Wall -Werror
+KBUILD_CFLAGS += -Wall
+
+clean: $(DEP_MODULES_CLEAN)
+	rm -f *.o $(HDMITX_LIB_HOME)/src/*.o $(HDMITX_LIB_HOME)/verify/*.o
+	rm -f $(HDMITX_KDRV_DIR)/Makefile $(HDMITX_KDRV_DIR)/*.o $(HDMITX_KDRV_DIR)/obj/*.o
+
+cleanall: clean
+

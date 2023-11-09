@@ -1,0 +1,14 @@
+config RTK_KDRV_IRTX
+	bool "IRTX Support"
+	
+config RTK_KDRV_IRTX_CHARDEV
+	bool "IRTX device interface"
+	depends on RTK_KDRV_IRTX
+	help
+	  Say Y here to use irtx-* device files, usually found in the /dev/irtx/
+	  directory on your system.  They make it possible to have user-space
+	  programs use the IRTX bus.
+
+	  This support is also available as a module.  If so, the module 
+	  will be called irtx-dev.
+

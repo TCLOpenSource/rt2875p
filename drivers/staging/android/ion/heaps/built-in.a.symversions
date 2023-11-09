@@ -1,0 +1,6 @@
+__crc_ion_page_pool_alloc = 0xbe31c913;
+__crc_ion_page_pool_free = 0x94eff644;
+__crc_ion_page_pool_nr_pages = 0xb0bf3235;
+__crc_ion_page_pool_shrink = 0xcf07e4bd;
+__crc_ion_page_pool_create = 0x8d34af3f;
+__crc_ion_page_pool_destroy = 0xb0b129d7;

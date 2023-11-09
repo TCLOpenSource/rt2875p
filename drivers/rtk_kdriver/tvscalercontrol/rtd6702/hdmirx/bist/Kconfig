@@ -1,0 +1,24 @@
+config HDMI_RX_BUILT_IN_TEST
+	bool "Enable HDMI RX Built in test"
+	default n
+	help
+		Enable HDMI RX Built in test.
+
+choice
+	prompt "HDMI RX Test Case"
+	depends on HDMI_RX_BUILT_IN_TEST
+	default HDMI_RX_TEST
+
+config STANDALONE_HDMI_RX_TEST
+	bool "Standalone HDMI RX test (without scaler)"
+	default n
+	help
+		HDMI RX Built in test.
+
+config ZEBU_HDMI_21_RX_BUILT_IN_TEST
+	bool "Zebu HDMI 2.1 RX Built in test"
+	default n
+	help
+		Zebu HDMI 2.1 RX Built in test.
+
+endchoice 

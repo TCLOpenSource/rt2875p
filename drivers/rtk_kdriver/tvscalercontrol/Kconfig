@@ -1,0 +1,3 @@
+
+source "drivers/rtk_kdriver/tvscalercontrol/$(CHIP_NAME)/Kconfig"
+source "drivers/rtk_kdriver/tvscalercontrol/$(CHIP_NAME)/hdmirx/Kconfig"

@@ -1,0 +1,189 @@
+/* ----------------------------------------------------------------------------
+ File Name: DTMBIP_User_Define.c
+
+ Description:
+
+ Version 2.0 : Created   2013.03.05  S_harp Wang
+				 2.2 : Modified  2013.05.20  S_harp Wang
+ ---------------------------------------------------------------------------- */
+#include "dtmb_demod_rtk_type.h"
+#include "dtmb_demod_rtk.h"
+#include "dtmb_demod_rtk_user.h"
+#include "tv_osal.h"
+#include "rbus/sw_def_reg.h"
+//#include "rbus/sys_reg_reg.h"
+
+/*****************************************************************************
+According different platform settings, customer needs to modify as below functions.
+*****************************************************************************/
+#define NUMBER_LOST_BEFORE_UNLOCK 6
+#define MONITOR_DELAY_MS		  500
+
+#ifndef REG_DTMBIP_START_ADDR
+#define REG_DTMBIP_START_ADDR   0xb8170000
+#endif
+
+
+static UINT8 DTMBIP_LockConut = NUMBER_LOST_BEFORE_UNLOCK;
+
+/**********************************************************
+** Task Monitor
+**
+**********************************************************/
+void DTMBIP_MonitorTask(void)
+{
+	UINT8 LockResult, locked, status;
+	while (1) {
+		DTMBIP_IsDemodLocked(TRUE, &LockResult, &locked, &status);
+		if (LockResult == 1) {
+			DTMBIP_LockConut = NUMBER_LOST_BEFORE_UNLOCK;
+			/*Locked*/
+		} else {
+			DTMBIP_LockConut--;
+		}
+		if (DTMBIP_LockConut == 0) {
+			/* signal is unlock, it needs to report to AP.
+			ÇëPlease implements it according to different playform.
+			*/
+		}
+		DTMBIP_Wait(MONITOR_DELAY_MS);
+	}
+}
+
+/********************************
+ ³õÊ¼»¯¸ßÆµÍ·
+********************************/
+#if 0
+UINT8 DTMBIP_TunerInit(void)
+{
+	UINT8 err = DTMB_NO_ERROR;
+	/****************************
+	*
+	* ´Ë´¦Ó¦ÊÇtunerµÄ³õÊ¼»¯²Ù×÷£¬¾ßÌå
+	* Ðè¸ù¾Ý¿Í»§µÄÊµ¼ÊÇé¿ö¡£
+	*
+	****************************/
+	Tuner_Init();
+
+	return (err);
+}
+#endif
+
+BOOL DTMBIP_TunerLock(UINT32 Frequency)
+{
+
+	return TRUE;
+}
+
+
+/********************************
+Tuner Setting
+********************************/
+BOOL DTMBIP_SetTuner(UINT32 Frequency, UINT8 tunerMode)
+{
+#if (0)
+	UINT8 Address = 0xC0;/*Tuner I2C Address, It needs to modify according by different tuner*/
+	UINT8 TunerData[6], Temp;
+	UINT16 tunerDivi;
+	UINT8 ReadData = 0;
+#endif
+	/* Set Tuner I2C, input the tuner i2c device addr */
+	/* It needs to be confirmed by different platform*/
+	//HDIC2311_OpenTunerI2C(Address);
+
+	/****************************
+	*
+	* Here is the operation about tuner frequency setting
+	* It needs to be implement by customer.
+	*
+	****************************/
+	//SetTuner(Frequency, tunerMode);
+
+	//HDIC2311_CloseTunerI2C();
+	/*Return Tuner Lock Status */
+	return TRUE;
+}
+
+/********************************
+ I2C Write Register
+********************************/
+UINT8 DTMBIP_WriteRegister(UINT16 Register, UINT8 Data)
+{
+	UINT8 err = DTMB_NO_ERROR;
+	UINT32 Reg = 0;
+	Reg = REG_DTMBIP_START_ADDR + ((UINT32)Register) * 4;
+	rtd_outl(Reg, (UINT32)Data);
+
+
+	return (err);
+}
+/*
+//	UINT8 err = HDIC_NO_ERROR;
+	UINT8 RegisterData[3];
+
+	RegisterData[0] = (UINT8)((Register&0xFF00)>>8);
+	RegisterData[1] = (UINT8)(Register&0xFF);
+	RegisterData[2] = Data;
+
+	return (Write_I2C(RegisterData, 3)==0) ? 0 : -1;
+return 0;
+}
+*/
+/********************************
+ I2C Read Register
+********************************/
+UINT8 DTMBIP_ReadRegister(UINT16 Register, UINT8 *Data)
+{
+	UINT8 err = DTMB_NO_ERROR;
+
+	UINT32 Reg = 0;
+	Reg = REG_DTMBIP_START_ADDR + ((UINT32)Register) * 4;
+	*Data = (UINT8)rtd_inl(Reg);
+
+
+
+	return (err);
+}
+/*
+//	UINT8 err = HDIC_NO_ERROR;
+	UINT8 RegisterData[2];
+
+	RegisterData[0] = (UINT8)((Register&0xFF00)>>8);
+	RegisterData[1] = (UINT8)(Register&0xFF);
+
+	return (Read_I2C(RegisterData, 2, Data, 1)==0) ? 0 : -1;
+return 0;
+}
+*/
+
+/********************************
+Delay Function
+********************************/
+void DTMBIP_Wait(UINT16 millisecond)
+{
+	/* It implements at different	platforms */
+	//Sleep(millisecond);
+	tv_osal_msleep(millisecond);
+}
+
+/********************************
+IC HW Reset
+********************************/
+void DTMBIP_HWReset(void)
+{
+	/*Ð¾Æ¬Ó²¸´Î»£¬¿É¸ù¾ÝÓ²¼þÇé¿öÊµÏÖ£¬µÍµçÆ½¸´Î»£¬±£³Ö10MS*/
+	/* Ðè¸ù¾ÝÊµ¼ÊÆ½Ì¨ÊµÏÖ	*/
+	//DTMB_HW_Reset();
+	rtd_outl(SYS_REG_SYS_CLKEN0_reg, 0x00100000); //Set dtmb clk bit20 => low
+	rtd_outl(SYS_REG_SYS_SRST0_reg, 0x00700000); //Active Reset(low) bit20, bit21 and bit22
+	tv_osal_msleep(5);
+	rtd_outl(SYS_REG_SYS_CLKEN0_reg, 0x00100001); //Set dtmb clk bit20 => high
+	rtd_outl(SYS_REG_SYS_CLKEN0_reg, 0x00100000); //Set dtmb clk bit20 => low
+	tv_osal_msleep(5);
+	rtd_outl(SYS_REG_SYS_SRST0_reg, 0x00700001); //Release reset bit20, bit21 and bit22
+	rtd_outl(SYS_REG_SYS_CLKEN0_reg, 0x00100001); //Set dtmb clk bit20 => high
+	tv_osal_msleep(10);
+
+	REALTEK_H_DTMB_BASE_DBG("DTMB H/W Reset !!!");
+	return;
+}

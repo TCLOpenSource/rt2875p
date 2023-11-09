@@ -1,0 +1,4 @@
+__crc_rtk_ai_set_enable_status = 0x68acb974;
+__crc_rtk_ai_mc_enableNpuLoadCheck = 0xd42fbeb7;
+__crc_rtk_ai_mc_getNpuLoad = 0x98f9a205;
+__crc_aiCamInit = 0xef88faeb;

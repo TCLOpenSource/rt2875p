@@ -1,0 +1,39 @@
+#
+# Makefile for the Realtek DPRX Prebuild
+#
+
+#============================================
+# Step1 : Check prebuild library Path
+#         path I : prebuild/$(CHIP_NAME)
+#                  new mode (with chip name)
+#         path II: prebuild
+#                  legacy mode (for backwrad compatible)
+#============================================
+DPRX_DRV_LIB_PATH:=$(obj)/prebuild/$(CHIP_NAME)
+
+ifeq ("$(wildcard $(DPRX_DRV_LIB_PATH))","")
+DPRX_DRV_LIB_PATH:=$(obj)/prebuild/
+endif
+
+#============================================
+# Step2 : Gen Prebuild library
+#============================================
+
+ifneq ("$(wildcard $(DPRX_DRV_LIB_PATH))","")
+EXTRACT_PREBUILD_OBJ :=  $(shell rm -rf $(obj)/objs; tar -zxvf $(DPRX_DRV_LIB_PATH)/prebuild-objs.tar.gz -C $(obj)/prebuild/)
+GEN_PREBUIL_MK := $(shell $(obj)/gen_dp_drv_lib.sh $(obj))
+#new library
+DPRX_DRV_PATH:=$(DPRX_DRV_LIB_PATH)/inc/
+include $(obj)/dprx_drv.mk
+endif
+
+#============================================
+# Step3 : Setup Path info
+#============================================
+KBUILD_CFLAGS += -I $(DPRX_DRV_PATH)/api/inc/
+KBUILD_CFLAGS += -I $(DPRX_DRV_PATH)/aux_channel/inc/
+KBUILD_CFLAGS += -I $(DPRX_DRV_PATH)/virtual_platform/inc/
+KBUILD_CFLAGS += -I $(DPRX_DRV_PATH)/mac/inc/
+KBUILD_CFLAGS += -I $(DPRX_DRV_PATH)/phy/inc/
+KBUILD_CFLAGS += -I $(DPRX_DRV_PATH)/hdcp/inc/
+KBUILD_CFLAGS += -I $(DPRX_DRV_PATH)/include

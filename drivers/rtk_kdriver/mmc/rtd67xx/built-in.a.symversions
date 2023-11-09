@@ -1,0 +1,11 @@
+__crc_export_em_sg_make_script = 0x8105f9cf;
+__crc_export_em_reinit_idmac_pre = 0x0dccf70a;
+__crc_export_em_reinit_idmac_post = 0xf0748768;
+__crc_export_mmc_send_data_cmd = 0xa81515c8;
+__crc_mmc_fast_read = 0x186db084;
+__crc_mmc_fast_write = 0x3da658a5;
+__crc_rtkcr_parse_token = 0xbc9e0a21;
+__crc_rtkcr_chk_param = 0x287f3e6f;
+__crc_rtkcr_set_mis_gpio = 0xa8472814;
+__crc_rtkcr_set_iso_gpio = 0x10e78121;
+__crc_get_emmc_type_select = 0x0469787f;

@@ -1,0 +1,8 @@
+rtd_outl(0xb8000104, 0x00008001);	//<23>RSTN_IF_DEMOD
+rtd_outl(0xb8000114, 0x00008001);	//<23>CLKEN_IF_DEMOD
+
+//Mac6P IFD power down script
+rtd_outl(0xb8033104, 0x00000140);	//<24>REG_ADC2X_DIFPOW turn off
+rtd_outl(0xb8033124, 0x00000000);	//<8>REG_POW_I_PGA, <0>REG_POW_I_ADC turn Off
+
+rtd_outl(0xb8000114, 0x00008000);	//<23>CLKEN_IF_DEMOD

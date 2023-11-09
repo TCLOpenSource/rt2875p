@@ -1,0 +1,19 @@
+menu "Realtek Thermal Support"
+
+if THERMAL
+config RTK_KDRV_THERMAL_SENSOR
+	depends on RTK_KDRIVER_SUPPORT
+	tristate "Realtek thermal management"
+	default n
+	help
+		Realtek thermal sensor
+endif
+
+config RTK_KDRV_DYNAMIC_REFRESH_SETTING
+	bool "Dynamic referesh rate setting"
+	depends on RTK_KDRV_THERMAL_SENSOR
+	default n
+	help
+		Base on different thermal value,
+		adjust setting for Dram refresh rate dynamically.
+endmenu

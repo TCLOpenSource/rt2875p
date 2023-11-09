@@ -1,0 +1,12 @@
+config RTK_SUPPORT_TWO_HWTLV
+	bool "hw tlv filter Support"
+	depends on RTK_KDRV_TP
+	default y
+
+config RTK_KDRV_MULTI_TP_CLOCK
+	bool "Enable multiple tp clock"
+	depends on RTK_KDRV_TP
+	default y if RTK_KDRV_TP
+	help
+		Enable multiple tp clock.
+

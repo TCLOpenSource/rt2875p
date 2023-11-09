@@ -1,0 +1,1 @@
+obj-$(CONFIG_RTK_KDRV_SPI_MASTER_GENERAL) += spi-rtk.o

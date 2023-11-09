@@ -1,0 +1,8 @@
+__crc_ir_keymap_type = 0x00aeddbc;
+__crc_ir_suspend_protocol = 0x151d7e52;
+__crc_ir_get_standby_protocol = 0x73ba3c7d;
+__crc_ir_proto_get_boot_powerup_keylist = 0x1107cfd9;
+__crc_ir_proto_irda_init = 0xd9cd08ee;
+__crc_venus_ir_gen_keyupdown_event = 0xd503fa7d;
+__crc_venus_ir_scancode_to_keycode = 0xc1ba8235;
+__crc_venus_ir_keylist_to_scanlist = 0xe4ba480d;

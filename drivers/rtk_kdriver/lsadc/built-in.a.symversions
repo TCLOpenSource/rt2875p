@@ -1,0 +1,15 @@
+__crc_rtk_lsadc_get_adcValue_byName = 0x9f8a7985;
+__crc_rtk_lsadc_get_adcValue = 0x33c68603;
+__crc_rtk_lsadc_get_threshold = 0x6f828535;
+__crc_rtk_lsadc_get_activeStatus = 0xc23fe767;
+__crc_rtk_lsadc_get_padSwitch = 0xd9bef090;
+__crc_rtk_lsadc_get_voltageMode = 0x3f50b2da;
+__crc_rtk_lsadc_set_threshold = 0x3bc6a669;
+__crc_rtk_lsadc_set_active = 0xb76694fa;
+__crc_rtk_lsadc_set_padSwitch = 0x66818297;
+__crc_rtk_lsadc_set_voltageMode = 0xe73bd0ba;
+__crc_rtk_lsadc_set_adcValue = 0xda190a04;
+__crc_rtk_lsadc_enable_int = 0x7db64b80;
+__crc_rtk_lsadc_request_irq = 0x71b91a9d;
+__crc_rtk_lsadc_free_irq = 0x9d9524cc;
+__crc_rtk_lsadc_defualt_enable = 0x7a9dc59b;

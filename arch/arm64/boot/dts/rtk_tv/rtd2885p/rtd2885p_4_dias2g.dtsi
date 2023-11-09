@@ -1,0 +1,226 @@
+
+// Ref:
+//  https://source.android.com/devices/architecture/dto/syntax
+
+
+/ {
+	reserved-memory@LAYOUTNUM {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+
+		// devicetree identification board & overlay info
+		compatible = "realtek,rtd2885p-dias2g", "realtek,rtd2885p";
+
+
+		boot_memory {                       reg = <0x0 0x00000000 0x0 (1536 *_KB_)>;
+		};
+
+#ifdef CONFIG_REALTEK_MEMORY_MANAGEMENT_MODULE
+		/* for legacy reclaim & last it takes 64+8MB, but referring bootcode it takes 39+N (N for boot logo)
+			the boot logo reserved-memory which will be reclaimed should starts from _CMA_LKOGO_ANIM_,
+			enough for raw/jpeg logo, no overlap during kernel boot and before android logo */
+		reclaim_memory_rsvd {               reg = <0x0 _CMA_LOGO_ANIM_ 0x0 (72   *_MB_)>;
+		};
+#endif
+
+		dmem_memory {                       reg = <0x0 0x10000000 0x0 (0    *_MB_)>;
+			status = "disabled";
+			/* BAN_NORMAL if size */
+		};
+
+		comem_memory {                      reg = <0x0 0x10000000 0x0 (0    *_MB_)>;
+			status = "disabled";
+		};
+
+		audio_memory {                      reg = <0x0 0x14400000 0x0 (16   *_MB_)>; // dias
+			no-map;
+		};
+
+		demod_memory {                      reg = <0x0 0x15400000 0x0 (0    *_MB_)>;
+			status = "disabled";
+			/* BAN_NOT_USED */
+		};
+
+		kboot_memory {                      reg = <0x0 0x15f00000 0x0 (0    *_MB_)>;
+			status = "disabled"; // it's 0 at rmm.c
+		};
+
+		kcpu_memory {                       reg = <0x0 0x16000000 0x0 (18   *_MB_)>;
+			no-map;
+			/* BAN_NOT_USED if ! OPTEE */
+		};
+
+		gic_mem {                           reg = <0x0 0x17c00000 0x0 (4    *_MB_)>; // HW FIXED
+			no-map;
+		};
+
+		rbus_memory {                       reg = <0x0 0x18000000 0x0 (2    *_MB_)>; // HW FIXED
+			no-map;
+		};
+
+		vcpu_memory {                       reg = <0x0 0x1a900000 0x0 (8    *_MB_)>;
+		};
+
+		rpc_memory {                        reg = <0x0 0x1b180000 0x0 (512  *_KB_)>;
+		};
+
+		acpu_memory {                       reg = <0x0 0x1b200000 0x0 (11   *_MB_)>;
+		};
+
+		/* The maximum reserved space for logbuf */
+		logbuf_memory {                     reg = <0x0 0x1ca00000 0x0 (4    *_MB_)>;
+		};
+
+		rom_memory {                        reg = <0x0 0x1fc00000 0x0 (32   *_KB_)>;
+		};
+
+		pstore_memory {                     reg = <0x0 0x1fd00000 0x0 (64   *_KB_)>;
+		};
+
+		irtbl_memory {                      reg = <0x0 0x1ffff000 0x0 (4    *_KB_)>;
+		};
+
+		ddr_bd1_memory {                    reg = <0x0 0x0 0x0 0x0>;
+			status = "disabled";
+			no-map;
+			/* BAN_NOT_USED if ddr_swap */
+		};
+		ddr_bd2_memory {                    reg = <0x0 0x0 0x0 0x0>;
+			status = "disabled";
+			/* BAN_NOT_USED if size */
+		};
+
+		// CARVEDOUT_VDEC_VBM
+		// (paired with ...CARVEOUT_HEAP_CHUNK_SIZE)
+		vdec-vbm_memory {                   reg = <0x0 0x0 0x0 0x0>;
+			no-map; // VDEC_VBM(remove)
+
+			status = "disabled";
+		};
+
+		// CARVEDOUT_CMA_VBM
+		// (paired with VBM_HEAP_...CHUNK_SIZE)
+		cma-vbm_memory  {                   reg = <0x0 0x20000000 0x0 (208  *_MB_)>;
+			/* no-map; */ // VDEC_VBM(remove), CMA_VBM(reserve)
+
+			compatible = "shared-dma-pool"; // CMA_VBM(reserve)
+			reusable;
+		};
+
+		scaler_memc {                       reg = <0x0 0x2d000000 0x0 (84   *_MB_)>;
+			no-map;
+		};
+
+		scaler_mdomain {                    reg = <0x0 0x32400000 0x0 (28   *_MB_)>;
+			no-map;
+		};
+
+		scaler_dinr {                       reg = <0x0 0x34000000 0x0 (10   *_MB_)>;
+			no-map;
+		};
+
+		scaler_vip {                        reg = <0x0 0x34a00000 0x0 (3    *_MB_)>;
+			no-map;
+		};
+
+		scaler_od {                         reg = <0x0 0x34d00000 0x0 (5    *_MB_)>;
+			no-map;
+		};
+
+		scaler_nn {                         reg = <0x0 0x35200000 0x0 (1    *_MB_)>;
+			no-map;
+		};
+		_scaler_align {                     reg = <0x0 0x35300000 0x0 (1    *_MB_)>; // ??? scaler reserve 4MB-aligned ???
+		};
+
+		tp_memory {                         reg = <0x0 0x35400000 0x0 (0    *_MB_)>;
+			//no-map;
+			status = "disabled";
+		};
+
+		// CARVEDOUT_GPU_RESERVED
+
+
+		// CARVEDOUT_VDEC_RINGBUF
+		svp_memory {                        reg = <0x0 0x3f000000 0x0 (16   *_MB_)>;
+			no-map;
+		};
+
+		// CARVEDOUT_CMA_LOW
+
+		cma1_memory {                       reg = <0x0 _CMA_LO_START_ 0x0 _CMA_LO_SIZE_>;
+			compatible = "shared-dma-pool";
+			reusable;
+#ifndef CONFIG_REALTEK_MEMORY_MANAGEMENT_MODULE
+			linux,cma-default;
+#endif
+		};
+
+		// CARVEDOUT_CMA_HIGH
+		// CARVEDOUT_CMA_GPU_4K
+		/*
+		 * carvedout_buf_query[ CARVEDOUT_GPU_RESERVED ]
+		 *  (layout_idx == MM_LAYOUT_1G5)
+		 *      if (DRAM_size == 0x80000)  CMA_HIGHMEM_DIAS_2GB; //684MB
+		 *
+		 *  tp_memory end 0x35400000
+		 *  dram      end 0x80000000
+		 *
+		 *  0x35400000 + 128MB(ZRAM_RESERVED_SIZE) + 684MB(CARVEDOUT_GPU_RESERVED)
+		 *  = 0x35400000 + 0x08000000 + 0x2ac00000 = 0x68000000
+		 *
+		 *  0x80000000 - 0x68000000 = 0x18000000 = 384*_MB_
+		 */
+
+		/*
+		 * if carvedout start < CARVEDOUT_LIMIT(512MB), then NO cma2
+		 */
+
+		/*
+		 * if UI_4K, CMA_GPU_4K use an exclusive region from original CMA2
+		 */
+		cma-ui4k_memory {                   reg = <0x0 0x0 0x0 0x0>;
+			compatible = "shared-dma-pool";
+			reusable;
+			status = "disabled";
+		};
+		cma2_memory {                       reg = <0x0 0x68000000 0x0 (384 *_MB_)>;
+			compatible = "shared-dma-pool";
+			reusable;
+		};
+
+		// CARVEDOUT_CMA_3
+		// CARVEDOUT_CMA_LOW_LIMIT
+		// CARVEDOUT_CMA_BW
+
+
+		spi_iomem {                         reg = <0x0 0x80200000 0x0 0x02000000>; // HW FIXED
+			no-map;
+		};
+	};
+
+
+	rtk_cma@LAYOUTNUM {
+		/*
+		 * early reserve of cma1_memory
+		 */
+
+		#address-cells = <2>;
+		#size-cells = <2>;
+
+		reclaim_memory {                    reg = <0x0 _CMA_LOGO_ANIM_ 0x0 (64   *_MB_)>;
+		};
+
+		last_image_memory {                 reg = <0x0 _CMA_LOGO_PIC_  0x0 (8    *_MB_)>;
+		};
+
+		//qshow reservation align with cma-vbm_memory start, cannot oversize
+		//cma-vbm_memory  {                   reg = <0x0 0x20000000 0x0 (140  *_MB_)>;
+		qshow_scaler {                      reg = <0x0 0x20000000 0x0 (48   *_MB_)>;
+		};
+	};
+};
+
+
+

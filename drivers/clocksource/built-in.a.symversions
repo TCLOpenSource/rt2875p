@@ -1,0 +1,3 @@
+__crc_timer_of_init = 0x4becbf99;
+__crc_arch_timer_read_counter = 0x75fb9062;
+__crc_timer_unstable_counter_workaround = 0xaddf7c33;

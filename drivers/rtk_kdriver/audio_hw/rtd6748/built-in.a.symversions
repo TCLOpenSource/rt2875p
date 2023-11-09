@@ -1,0 +1,13 @@
+__crc_Audio_HW_Earc_Get_Rx_Status = 0xe2ac1cda;
+__crc_Audio_HW_Earc_Read_Transaction = 0xf4ce72a9;
+__crc_Audio_HW_Earc_Write_Latency = 0x92d1ed08;
+__crc_Audio_HW_Earc_SetAPHY = 0x7bb838df;
+__crc_Audio_HW_Earc_Init_Detection = 0x2f21f351;
+__crc_AudioHw_Earc_Isr = 0x6222ea4e;
+__crc_Audio_HW_Earc_Disable_Detection = 0x683b3288;
+__crc_Audio_HW_Earc_ResetHdmiHpd = 0x0c945433;
+__crc_Audio_HW_Earc_En = 0x62cf3a5e;
+__crc_AIO_ReadRegister = 0x24f42a2d;
+__crc_AIO_WriteRegister = 0x2ce5afdc;
+__crc_g_Earc_State = 0xd0d9c174;
+__crc_Audio_HW_earc_suspend = 0x98df2a9f;

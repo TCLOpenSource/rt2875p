@@ -1,0 +1,9 @@
+menu "H5CX Support drivers"
+
+config H5CX_SUPPORT
+    bool "H5CX host drivers"
+    default y
+    help
+	Help message of H5CX_SUPPORT
+
+endmenu

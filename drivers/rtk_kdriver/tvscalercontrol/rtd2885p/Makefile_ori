@@ -1,0 +1,27 @@
+#
+# Makefile for the Realtek scaler drivers.
+#
+KBUILD_CPPFLAGS += -I drivers/rtk_kdriver/memc_isr/$(CHIP_NAME)
+
+obj-y :=scaler_vfedev.o scaler_vscdev.o scaler_vbedev.o scaler_vpqdev.o scaler_vpqdev_unittest.o scaler_vpqleddev.o scaler_vtdev.o scaler_hdcp2dev.o scaler_vpqmemcdev.o io/ i3ddma/ vip/ vdc/ panel/ scaler/ scalerdrv/ pcbsource/ vdac/ avd/ vbi/ vo/
+ifeq (y,$(filter y, $(CONFIG_CUSTOMER_TV010)))
+obj-y +=scaler_vpqdev_extern_tv010.o
+else
+obj-y +=scaler_vpqdev_extern.o scaler_vrdev.o
+endif
+
+obj-$(CONFIG_SUPPORT_SRC_ADC) += adcSource/ scaler_drv_verify/
+
+# VD Driver
+obj-$(CONFIG_SUPPORT_COLORSYSTEM_MANUAL_SET) += avd/
+ 
+ifeq (y,$(filter y, $(CONFIG_OPTEE_HDCP2)))
+#do noting, mv hdcp2 to optee os
+else
+obj-y += hdcp2_2/
+endif
+#obj-y := io/ adcSource/ frontend/ hdmirx/ scaler/ scalerdrv/ vdc/ vip/ tve/ vdac/ hdcp2_2/ i3ddma/
+#SUBDIRS += io adcSource frontend hdmiRx scaler scalerDrv vdc vip tve vdac hdcp2_2
+#
+KBUILD_CFLAGS += -Wall -Werror
+

@@ -1,0 +1,13 @@
+
+/*----------------------------------------
+ * print api for MODULE_NAME
+ *---------------------------------------*/
+#define rtd_pr_PRINT_PREFIX_emerg(fmt, ...)              _rtd_pr_emerg(  MODULE_TAG, fmt, ##__VA_ARGS__)
+#define rtd_pr_PRINT_PREFIX_alert(fmt, ...)              _rtd_pr_alert(  MODULE_TAG, fmt, ##__VA_ARGS__)
+#define rtd_pr_PRINT_PREFIX_crit(fmt, ...)               _rtd_pr_crit(   MODULE_TAG, fmt, ##__VA_ARGS__)
+#define rtd_pr_PRINT_PREFIX_err(fmt, ...)                _rtd_pr_err(    MODULE_TAG, fmt, ##__VA_ARGS__)
+#define rtd_pr_PRINT_PREFIX_warn(fmt, ...)               _rtd_pr_warn(   MODULE_TAG, fmt, ##__VA_ARGS__)
+#define rtd_pr_PRINT_PREFIX_notice(fmt, ...)             _rtd_pr_notice( MODULE_TAG, fmt, ##__VA_ARGS__)
+#define rtd_pr_PRINT_PREFIX_info(fmt, ...)               _rtd_pr_info(   MODULE_TAG, fmt, ##__VA_ARGS__)
+#define rtd_pr_PRINT_PREFIX_debug(fmt, ...)              _rtd_pr_debug(  MODULE_TAG, fmt, ##__VA_ARGS__)
+#define rtd_pr_PRINT_PREFIX_print(level, fmt, ...)       _rtd_pr_print(level, MODULE_TAG, fmt, ##__VA_ARGS__)

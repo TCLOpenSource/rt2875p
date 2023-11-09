@@ -1,0 +1,622 @@
+menu "Realtek platform dependent drivers"
+
+config RTK_KDRIVER_SUPPORT
+    bool "RTK platform dependent drivers"
+    default n
+    select RTK_KDRIVER
+    help
+
+config RTK_KDRIVER
+    bool
+	depends on RTK_KDRIVER_SUPPORT
+	default n
+
+#Memory Management
+source "drivers/rtk_kdriver/rmm/Kconfig"
+
+#mach-rtk
+source "drivers/rtk_kdriver/mach-rtk/Kconfig_$(CHIP_NAME)"
+
+#Platform
+source "drivers/rtk_kdriver/platform/Kconfig"
+
+#PCBMGR
+source "drivers/rtk_kdriver/pcbmgr/Kconfig"
+
+#SCALER & HDMI RX
+source "drivers/rtk_kdriver/tvscalercontrol/Kconfig"
+
+#DPRX
+source "drivers/rtk_kdriver/dprx/Kconfig"
+
+config RTK_KDRV_COMMON
+	tristate "RTK KDRV common driver"
+	default y
+	help
+	  Realtek KDRV common driver
+
+# RTK_SEMAPHORE
+config RTK_SEMAPHORE
+	tristate "Provide rtk_semaphore for RTK Semaphore"
+	default y if !ARCH_RTK299O && !ARCH_RTK289X
+	help
+	  rtk_semaphore
+
+config RTK_SEMAPHORE_TEST
+	tristate "Provide test case for RTK Semaphore"
+	depends on RTK_SEMAPHORE
+	default n
+
+# AMP
+# Please notice that this is only for REALTEK_AMP_TAS5711 & REALTEK_AMP_ACL1310
+# If use different IC, please change this.
+config RTK_KDRV_AMP
+         tristate "Do AMP_TAS5711 or ACL1310 init in kernel STR , if not,do not enable"
+         default n
+         help
+          Amp initial
+
+config RTK_AMP_USER_RESUME
+	bool "do RTK Amp ACL1310 resume() in user resume flow"
+	depends on RTK_KDRV_AMP
+	default n if RTK_KDRV_AMP
+	help
+	  Amp resume() happen in user resume flow
+#RPC
+config RTK_KDRV_RPC
+	tristate "Use RPC to communicate with Audio & Video."
+	default y
+	help
+	  Use RPC mechanism
+
+#TEE
+config RTK_KDRV_TEE
+	tristate "Use rtk tee to communicate with rtk optee"
+	default y
+	depends on TEE
+	depends on OPTEE
+	help
+	  Use TEE mechanism
+
+config OPTEE_SECURE_SVP_PROTECTION
+	tristate "SVP Protection"
+	depends on OPTEE
+	help
+		Set SVP Protection in OPTEE
+
+config RTK_KDRV_SUPPORT_ACPU2
+	bool "Support ACPU2"
+	depends on RTK_KDRV_RPC
+	default n
+	help
+	  Enable ACPU2 support
+
+config RTK_KDRV_SUPPORT_VCPU2
+	bool "Support VCPU2"
+	depends on RTK_KDRV_RPC
+	default n
+	help
+	  Enable VCPU2 support
+
+# EMCU
+config RTK_KDRV_EMCU
+	tristate "EMCU Driver"
+	default y
+	help
+	  Driver use to control EMCU in standby mode
+
+choice 1
+	prompt "Customer Parameter"
+	depends on RTK_KDRV_EMCU
+	default TV001_PLATFORM
+	help
+	  Select layout of share memory for customer
+
+config TV001_PLATFORM
+	bool "EMCU_TV001"
+	help
+	  for TV001 platform
+
+config TV030_PLATFORM
+	bool "EMCU_TV030"
+	help
+	  for TV030 platform
+
+endchoice
+
+config EMCU_AUTO_PARSER
+	bool "EMCU driver auto parse pcb parameter"
+	default n
+	help
+	  EMCU parse pcb parameter by self. It's need bootcode setting pcb param.
+
+config RTK_KDRV_EMCU_DCOFF_TIMEOUT
+	int "EMCU timeout to wait for WFIL2"
+	default 3
+	depends on RTK_KDRV_EMCU
+	help
+	  The second EMCU will wait for WFIL2, and then AC reboot.
+	  Config as 0 will stop EMCU reboot, to keep for debugging.
+
+# RTD LOGBUF
+config REALTEK_LOGBUF
+	tristate "Realtek Logbuf"
+	default y
+	help
+		Support Realtek Logbuf
+
+# RTD EVENT LOG
+config REALTEK_EVENT_LOG
+	tristate "Realtek Event Log"
+	default y
+	help
+		Support Realtek Event Log
+
+# USBDUMP
+config RTK_USBDUMP_ENABLE
+        tristate "Realtek usb dump enable"
+	depends on REALTEK_LOGBUF
+        default n
+        help
+                Support Realtek usbdump
+
+config CRYPTO_RTK_LZMA
+    tristate "Realtek ZACC LZMA enable"
+    default n
+    help
+        Support Realtek LZMA driver
+
+# ONLINE-HLEP
+config RTK_ONLINE_HELP
+        tristate "Realtek on-line help"
+        default y
+        help
+                Support on-line help
+
+# DDR
+config RTK_DRV_DDR_SCAN
+	tristate "DDR Scan Driver"
+	default y
+	help
+		Support DDR Scan Driver
+
+# DDR Register Dump
+config RTK_DDR_REG_DUMP
+	bool "DDR Register Dump"
+    depends on RTK_DRV_DDR_SCAN
+	default y
+	help
+		Support DDR Register Dump
+
+
+# HW Monitor
+source "drivers/rtk_kdriver/hw_monitor/Kconfig"
+
+
+# GPIO
+source "drivers/rtk_kdriver/gpio/Kconfig"
+
+# LEDS
+config RTK_KDRV_LEDS
+        tristate "Support LEDS Device"
+        default y if RTK_LEDS_GPIO
+        help
+          Support LEDS Device
+
+# PWM
+config RTK_KDRV_PWM
+	tristate "PWM Driver"
+	default n
+	depends on RTK_KDRIVER_SUPPORT
+	select RTK_KDRIVER
+	help
+	  PWM Device Driver
+
+# I2C
+source "drivers/rtk_kdriver/i2c/Kconfig"
+
+# IRTX
+source "drivers/rtk_kdriver/irtx/Kconfig"
+
+# PCMCIA
+config RTK_KDRV_PCMCIA
+	tristate "PCMCIA Driver"
+	default n
+	depends on RTK_KDRIVER_SUPPORT
+	select RTK_KDRIVER
+	select RTK_KDRV_GPIO
+	help
+	  PCMCIA Device Driver
+
+# LG BOARD
+config RTK_KDRV_LG_BOARD
+        bool "LG BOARD arbiter to load one of the PCMCIA and smart card driver"
+        default n
+        depends on RTK_KDRIVER_SUPPORT
+        select RTK_KDRIVER
+        help
+          LG BOARD arbiter to load one of the PCMCIA and smart card driver"
+
+
+# MISC DRIVER INTERRUPT CONTROL CENTER
+config RTK_KDRV_MISC_INTERRUPT
+        bool "RTK KDRIVER MISC IP INTERRUPT CONTROL CENTER "
+        default y
+        help
+          RTK kdriver MISC ip interrupt control center,if want to share MISC interrupt , please must enable this
+		  
+# LNB UART patch
+config RTK_KDRV_LNB_UART
+	bool "LG PCB LNB UART patch Driver"
+	depends on RTK_KDRIVER_SUPPORT
+	select RTK_KDRIVER
+	default n
+	help
+	  LG PCB LNB UART patch Driver
+
+# PINMUX
+config RTK_KDRV_PINMUX
+        tristate "Pinmux Driver"
+        default n
+        depends on RTK_KDRIVER_SUPPORT
+        select RTK_KDRIVER
+        help
+          Pinmux Driver
+
+#Misc driver
+config RTK_KDRV_MISC_DEV
+	tristate "Misc device Driver"
+	default n
+	depends on RTK_KDRIVER_SUPPORT
+        select RTK_KDRIVER
+        help
+          Misc Driver
+
+
+config MEM_BACKGROUND_TEST
+	bool "Memory test in background"
+	default y
+	depends on RTK_KDRV_MISC_DEV
+        help
+          Memory test in background
+
+
+#ETN driver
+config RTK_KDRV_R8168
+	tristate "Realtek 8168 gigabit ethernet support"
+	select FW_LOADER
+	select CRC32
+	select NET_CORE
+	select MII
+	select RTK_KDRIVER
+	depends on ETHERNET
+	depends on RTK_KDRIVER_SUPPORT
+	default y if !ARCH_RTK289X
+	help
+	  Say Y here if you have a Realtek 8168 Gigabit Ethernet adapter.
+
+	  To compile this driver as a module, choose M here: the module
+	  will be called r8168.  This is recommended.
+
+config RTK_KDRV_8168_EVENT
+    	bool "Use kobject link down/up event"
+	depends on RTK_KDRV_R8168
+    	default n
+    	help
+      	  If you want to use kobject link down/up event, say Y.
+
+
+source "drivers/rtk_kdriver/smartcard/Kconfig"
+source "drivers/rtk_kdriver/rtk_cec/Kconfig"
+source "drivers/rtk_kdriver/ddc/Kconfig"
+source "drivers/rtk_kdriver/switch/Kconfig"
+source "drivers/rtk_kdriver/extcon/Kconfig"
+
+# OTP : One Time Programming memory
+config RTK_KDRV_OTP
+	tristate "OTP Driver"
+	depends on RTK_KDRIVER_SUPPORT
+	select RTK_KDRIVER
+	default n
+	help
+	  OTP (One Time Programming) Device
+
+# OTP : Enable get HDCP key from OTP API
+config RTK_KDRV_HDCP_KEY_FROM_OTP
+	bool "Enable get HDCP key from OTP API"
+	depends on RTK_KDRV_OTP
+	default n
+	help
+	  get HDCP key from OTP API
+
+# CW : Control Word
+source "drivers/rtk_kdriver/cw/Kconfig"
+
+# RNG : Random Number Generator
+config RTK_KDRV_RNG
+	tristate "RNG (Random Number Generator) Driver."
+	depends on RTK_KDRIVER_SUPPORT
+	select RTK_KDRIVER
+	default n
+	help
+	  provide HW Random number generator
+
+# CP
+source "drivers/rtk_kdriver/mcp/Kconfig"
+
+# DV : Dolbyvision engine
+source "drivers/rtk_kdriver/dolby_idk_1_6_1_1/Kconfig"
+config RTK_KDRV_DV
+	bool "DV (Dolbyvision Engine) Driver."
+	depends on RTK_KDRIVER_SUPPORT
+	select RTK_KDRIVER
+	default n
+	help
+	  Dolbyvision Engine
+
+config DOLBY_IDK_1_6_1_1
+	bool "Dolby Vision IDK 1.6.1.1"
+	depends on RTK_KDRV_DV
+	default n
+	help
+	  Dolbyvision Engine
+
+config SUPPORT_DOLBY_VSIF
+	bool "Dolby Vision HDMI SourceLed"
+	depends on RTK_KDRV_DV
+	default n
+	help
+	  Dolbyvision Engine
+
+config DOLBY_BACKLIGHT_CTRL_ADIM_PDIM
+	bool "Dolby Vision Backlight Control by ADim PDim"
+	depends on RTK_KDRV_DV
+	default n
+	help
+	  Dolbyvision Engine
+
+# MD : Move data engine
+config RTK_KDRV_MD
+	tristate "MD (Move Data Engine) Driver."
+	depends on RTK_KDRIVER_SUPPORT
+	select RTK_KDRIVER
+	default n
+	help
+	  Move Data engine
+
+# LSADC: Low-speed ADC
+config RTK_KDRV_LSADC
+	tristate "LSADC (Low-speed ADC) Driver."
+	depends on RTK_KDRIVER_SUPPORT
+	select RTK_KDRIVER
+	default y
+	help
+	  low speed ADC
+
+# KEYPAD
+config RTK_KDRV_KEYPAD
+	tristate "KeyPad Driver."
+	depends on RTK_KDRV_LSADC && RTK_KDRV_GPIO
+	default y
+	help
+	  Driver of Realtek use to control keypad
+
+#SPI
+config RTK_KDRV_SPI
+  tristate "SPI driver"
+  depends on RTK_KDRIVER_SUPPORT
+  default y
+  help
+    SPI feature support
+
+config RTK_KDRV_SPI_MASTER_GENERAL
+  tristate "Realtek spi master controler general driver"
+  depends on SPI_MASTER && !RTK_KDRV_SPI
+  default n
+  help
+    Enables Realtek SPI controller driver.    
+
+#RTC
+config RTK_KDRV_RTC
+	tristate "RTC (Real-Time Clock Engine) Driver."
+	depends on RTK_KDRIVER_SUPPORT
+	select RTK_KDRIVER
+	default n
+	help
+	  Real-Time Clock feature support
+
+#Watch Dog
+config RTK_KDRV_WATCHDOG
+	tristate "Watch Dog Driver."
+	depends on RTK_KDRIVER_SUPPORT
+	select RTK_KDRIVER
+	default y
+	help
+	  Watch Dog feature support
+
+#THERMAL
+source "drivers/rtk_kdriver/thermal/Kconfig"
+
+#DFT
+source "drivers/rtk_kdriver/dft/Kconfig"
+
+#Power
+source "drivers/rtk_kdriver/power/Kconfig"
+
+#CPU Frequency
+config RTK_KDRV_CPU_FREQUENCY
+	tristate "CPU Frequency Driver"
+	depends on RTK_KDRIVER_SUPPORT
+	depends on CPU_FREQ
+	select RTK_KDRIVER
+	default y
+	help
+	  CPU Frequency
+
+config PV88080_PMIC
+	bool "USING PV88080 control power"
+	depends on RTK_KDRV_CPU_FREQUENCY
+	default n
+	help
+		SCPU DVS feature support
+
+
+#QoS Control
+config RTK_KDRV_QOS_CONTROL
+	tristate "QoS Control"
+	depends on RTK_KDRIVER_SUPPORT
+	select RTK_KDRIVER
+	default n
+	help
+	  QoS Control
+
+#Watch point
+config RTK_KDRV_WATCHPOINT
+	tristate "Simple Hardware Watchpoint"
+	depends on HAVE_HW_BREAKPOINT
+	default n
+	help
+	  Simple hardware watchpoint driver
+
+#Frame Buffer
+config RTK_KDRV_FB_NOTIFY
+    tristate "rtk fb notify"
+    depends on FB
+    default n
+    help
+       fb_notify that is taken apart from linux kernel fbdev core
+
+config RTK_KDRV_VENUS_FB
+	tristate "RTK Frame Buffer Support"
+	select FB
+	select FB_CFB_FILLRECT
+	select FB_CFB_COPYAREA
+	select FB_CFB_IMAGEBLIT
+    select RTK_KDRV_FB_NOTIFY
+	select FB_SOFT_CURSOR
+	select MAGELLAN_CANVAS
+	select SET_WIN_ALPHA_AS_FF
+	default n
+	help
+	   Frame buffer driver for Realtek
+
+#RTICE
+source "drivers/rtk_kdriver/rtice/Kconfig"
+
+#Voltage
+config REALTEK_VOLTAGE_CTRL
+	bool "SCPU voltage control"
+	default n
+	help
+	  SCPU Voltage Control.
+
+# IR
+source "drivers/rtk_kdriver/ir/Kconfig"
+
+#dccti
+source "drivers/rtk_kdriver/dccti/Kconfig"
+
+#ISR Debug
+config RTK_KDEV_DEBUG_ISR
+	bool "Handle Debug MEMC interrupt in SCPU"
+	depends on RTK_KDRIVER_SUPPORT
+	select RTK_KDRIVER
+	default n
+	help
+		handle Debug MEMC interrupt in SCPU.
+
+# RTK AI
+config RTK_AI_DRV
+        tristate "ENABLE RTK AI SUPPORT"
+        default n
+        select RTK_PQMASK_DRV
+        help
+          Driver use to control rtk ai 
+
+config RTK_AI_OPTEE
+        bool "ENABLE RTK AI OPTEE"
+        default n
+        help
+          Driver use to enable ai svp
+
+config RTK_AICAM_DRV
+        tristate "ENABLE RTK AI CAM SUPPORT"
+        default n
+        help
+          Driver use to control rtk ai camera
+
+config RTK_PQMASK_DRV
+        bool "ENABLE RTK PQMASK SUPPORT"
+        default n
+        help
+          Driver use to control PQMASK
+
+# RTK Business Display Model
+config RTK_BUSINESS_DISPLAY_MODEL
+        bool "SUPPORT RTK BUSINESS DISPLAY MODEL"
+        default n
+        help
+          Support rtk business display model
+
+# CRT
+config RTK_KDRV_CRT
+        tristate "CRT Driver"
+        default y
+        help
+          Realtek CRT driver
+
+#USB HCD platform
+source "drivers/rtk_kdriver/usb/Kconfig"
+
+comment "DTV Related Drivers"
+
+source "drivers/rtk_kdriver/demod/Kconfig"
+source "drivers/rtk_kdriver/tp/Kconfig"
+source "drivers/rtk_kdriver/delivery/Kconfig"
+source "drivers/rtk_kdriver/japan4k_dmx/Kconfig"
+source "drivers/rtk_kdriver/atsc3_dmx/Kconfig"
+source "drivers/rtk_kdriver/bluetooth/Kconfig"
+
+comment "HAL Drivers"
+
+source "drivers/rtk_kdriver/demux/Kconfig"
+source "drivers/rtk_kdriver/audio/Kconfig"
+source "drivers/rtk_kdriver/vdec/Kconfig"
+source "drivers/rtk_kdriver/audio_hw/Kconfig"
+source "drivers/rtk_kdriver/crm/Kconfig"
+source "drivers/rtk_kdriver/omx/Kconfig"
+source "drivers/rtk_kdriver/vad/Kconfig"
+source "drivers/rtk_kdriver/svad/Kconfig"
+
+source "drivers/rtk_kdriver/rtk_drm/Kconfig"
+comment "GAL realted Drivers"
+source "drivers/rtk_kdriver/gal/Kconfig"
+
+comment "RTK Uart Drivers"
+source "drivers/rtk_kdriver/uart/Kconfig"
+
+comment "RTK Led Drivers"
+source "drivers/rtk_kdriver/leds/Kconfig"
+
+comment "RTK USB Gadget Devices Driver"
+source "drivers/rtk_kdriver/gadget/Kconfig"
+
+comment "RTK EMMC Devices Driver"
+source "drivers/rtk_kdriver/mmc/Kconfig"
+
+#PCIE platform
+#comment "RTK PCIE Drivers"
+#source "drivers/rtk_kdriver/pcie/Kconfig"
+
+###################################################################
+# DTV Related drivers
+###################################################################
+
+endmenu
+
+source "drivers/$(ENV_RTK_R8KCODEC_PATH)/Kconfig"
+
+if "$(H5CX_COMBO)" = "y"
+source "drivers/rtk_kdriver/Kconfig.h5cx"
+endif
+

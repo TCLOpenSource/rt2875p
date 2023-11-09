@@ -1,0 +1,14 @@
+rtd_outl(0xb8000104, 0x00000801);//rst
+rtd_outl(0xb8000114, 0x00000801);//clk
+
+rtd_part_outl(0xb8020104, 18, 18, 0x0); // APLL LOD power down
+rtd_part_outl(0xb8020104,  0,  0, 0x1); // APLL power down
+rtd_part_outl(0xb8020064,  9,  9, 0x1); // VGA SMT power down
+rtd_part_outl(0xb8020000,  7,  0, 0x0); // ADC SOY Bandgap power down
+
+rtd_maskl(0xB8020054,0xfffbffff,0x40000);
+rtd_maskl(0xB802005c,0xfffffffe,0x00000);
+rtd_maskl(0xB802006c,0xfffffffe,0x00000);
+rtd_maskl(0xB8020000,0xffffffbf,0x00000);
+
+rtd_outl(0xb8000114, 0x00000800);//clk

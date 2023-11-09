@@ -1,0 +1,16 @@
+__crc_ion_alloc = 0xd60623c7;
+__crc_ion_free = 0xddf5d395;
+__crc_ion_query_heaps_kernel = 0xa4abc39a;
+__crc___ion_device_add_heap = 0x7f70bfc2;
+__crc_ion_device_remove_heap = 0x9de413e3;
+__crc_ion_buffer_zero = 0xd2406dcd;
+__crc_ion_buffer_prep_noncached = 0x40a1ed08;
+__crc_ion_heap_map_kernel = 0xc2812834;
+__crc_ion_heap_unmap_kernel = 0x872a8a8f;
+__crc_ion_heap_map_user = 0x8702733c;
+__crc_ion_page_pool_alloc = 0xbe31c913;
+__crc_ion_page_pool_free = 0x94eff644;
+__crc_ion_page_pool_nr_pages = 0xb0bf3235;
+__crc_ion_page_pool_shrink = 0xcf07e4bd;
+__crc_ion_page_pool_create = 0x8d34af3f;
+__crc_ion_page_pool_destroy = 0xb0b129d7;

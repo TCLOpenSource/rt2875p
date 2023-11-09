@@ -1,0 +1,23 @@
+
+config DMABUF_HEAPS_DVR
+	tristate "DMA-BUF DVR heap support"
+	depends on DMABUF_HEAPS && DMA_CMA && REALTEK_MEMORY_MANAGEMENT
+	help
+	  Choose this option to enable DVR heaps with DMA-BUF. This heap is backed
+	  by the RTK CMA serials APIs.
+
+config DMABUF_CARVEOUT_HEAP
+    tristate "DMA-BUF carveout heap support"
+	depends on DMABUF_HEAPS && REALTEK_MEMORY_MANAGEMENT
+    help
+      Choose this option to enable carveout heaps with DMA-BUF. Carveout heaps
+      are backed by memory reserved from the system. Allocation times are
+      typically faster at the cost of memory not being used. Unless you
+      know your system has these regions, you should say N here.
+
+config DMABUF_HEAPS_VBM
+	tristate "DMA-BUF VBM Heap"
+	depends on DMABUF_HEAPS && DMA_CMA && REALTEK_MEMORY_MANAGEMENT
+	help
+	  Choose this option to enable dma-buf VBM heaps. This heap is backed
+	  by the RTK CMA serials APIs and using VBM.

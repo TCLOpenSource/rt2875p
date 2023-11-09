@@ -1,0 +1,5 @@
+__crc_ffs_lock = 0x57f469c5;
+__crc_ffs_name_dev = 0x2b42346f;
+__crc_ffs_single_dev = 0xdc2885dc;
+__crc_acc_ctrlrequest = 0x0dcf87af;
+__crc_acc_disconnect = 0x3980acd8;

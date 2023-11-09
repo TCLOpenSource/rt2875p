@@ -1,0 +1,200 @@
+
+// Ref:
+//  https://source.android.com/devices/architecture/dto/syntax
+
+
+/dts-v1/; 
+/plugin/;
+
+#define _KB_ 1024
+#define _MB_ 1024*1024
+
+/ {
+	compatible = "rtk,rtd6748";
+};
+
+
+&CHOSEN {
+	bootargs_ext="androidboot.dtbo_idx=1"; //[FIXME] androidboot.dtbo_idx: shouldn't it be defined by loader?
+	//bootargs_ext = "";
+};
+
+
+&RMM {
+	// devicetree identification [TEST] board & overlay info
+	compatible = "realtek,rtd6748-1g5", "realtek,rtd6748";
+
+	#address-cells = <2>;
+	#size-cells = <2>;
+
+	boot: boot_memory {
+				reg = <0x0 0x00000000 0x0 (1	*_MB_)>;
+	};
+
+	dmem: dmem_memory {
+				reg = <0x0 0x10000000 0x0 (0	*_MB_)>;
+	};
+
+	comem: comem_memory {
+				reg = <0x0 0x12280000 0x0 (0	*_MB_)>;
+	};
+
+	demod: demod_memory {
+				reg = <0x0 0x15400000 0x0 (8	*_MB_)>;
+	};
+
+	kboot: kboot_memory {
+				reg = <0x0 0x15f00000 0x0 (0	*_MB_)>;
+	};
+
+	kcpu: kcpu_memory {
+				reg = <0x0 0x16000000 0x0 (18	*_MB_)>;
+	};
+
+//	gic_mem: gic_mem {
+//	};
+//
+//	rbus: rbus_memory {
+//	};
+
+	vcpu: vcpu_memory {
+				reg = <0x0 0x1a900000 0x0 (8	*_MB_)>;
+	};
+
+	rpc: rpc_memory {
+				reg = <0x0 0x1b180000 0x0 (512	*_KB_)>;
+	};
+
+	acpu: acpu_memory {
+				reg = <0x0 0x1b200000 0x0 (10	*_MB_)>;
+	};
+	
+	/* The maximum reserved space for logbuf */
+	logbuf: logbuf_memory { 
+				reg = <0x0 0x1ca00000 0x0 (4	*_MB_)>;
+	};
+
+//	rom: rom_memory {
+//				reg = <0x0 0x1fc00000 0x0 (32	*_KB_)>;
+//	};
+
+	pstore: pstore_memory {
+				reg = <0x0 0x1fd00000 0x0 (64	*_KB_)>;
+	};
+
+	irtbl: irtbl_memory {
+				reg = <0x0 0x1fff8000 0x0 (8	*_KB_)>;
+	};
+
+//	ddr_bd1: ddr_bd1_memory {
+//	};
+	ddr_bd2: ddr_bd2_memory { // 1G5 only???
+				reg = <0x0 0x7fc00000 0x0 (4	*_MB_)>; /* 1G5 only? */
+				status = "okay";
+	};
+
+	// CARVEDOUT_VDEC_VBM
+
+	// CARVEDOUT_CMA_VBM
+	vbm: cma-vbm_memory  {
+				reg = <0x0 0x20000000 0x0 (200	*_MB_)>;
+	};
+
+	scaler_memc: memc_memory {
+				reg = <0x0 0x2c800000 0x0 (71	*_MB_)>;
+	};
+
+	scaler_mdomain: scaler_mdomain {
+				reg = <0x0 0x30f00000 0x0 (13	*_MB_)>;
+	};
+
+	scaler_dinr: scaler_dinr {
+				reg = <0x0 0x31c00000 0x0 (13	*_MB_)>;
+	};
+
+	scaler_vip: scaler_vip {
+				reg = <0x0 0x32900000 0x0 (2	*_MB_)>;
+	};
+
+	scaler_od: scaler_od {
+				reg = <0x0 0x32b00000 0x0 (4	*_MB_)>;
+	};
+
+	scaler_nn: scaler_nn {
+				reg = <0x0 0x32f00000 0x0 (1	*_MB_)>;
+	};
+
+	tp: tp_memory {
+				reg = <0x0 0x33000000 0x0 (24	*_MB_)>;
+	};
+
+	svp: svp_memory {
+				reg = <0x0 0x3ec00000 0x0 (16	*_MB_)>;
+	};
+
+	// CARVEDOUT_CMA_LOW
+	cma1: cma1_memory {
+				reg = <0x0 0x03800000 0x0 (128	*_MB_)>;
+	};
+
+	// CARVEDOUT_CMA_HIGH
+	// CARVEDOUT_CMA_GPU_4K
+	/*
+	 * carvedout_buf_query[ CARVEDOUT_GPU_RESERVED ]
+	 *  (DRAM_size > 0xa0000)  CMA_HIGHMEM_M7_8K;
+	 *  (DRAM_size > 0x60000)  CMA_HIGHMEM_LARGE; //640MB
+	 *  (DRAM_size <= 0x60000) CMA_HIGHMEM_SMALL; //128MB
+	 *
+	 *  tp_memory end 0x34800000
+	 *  dram      end 0x60000000
+	 *
+	 *  0x34800000 + 128MB(ZRAM_RESERVED_SIZE) + 128MB(CARVEDOUT_GPU_RESERVED)
+	 *  = 0x34800000 + 0x08000000 + 0x08000000 = 0x44800000
+	 *
+	 *  0x60000000 - 0x44800000 = 0x1B800000 = 440*_MB_
+	 */
+
+	/*
+	 * if carvedout start < CARVEDOUT_LIMIT(512MB), then NO cma2
+	 */
+
+	/*
+	 * if UI_4K, CMA_GPU_4K use an exclusive region from original CMA2
+	 */
+	cma_ui4k: cma_ui4k_memory {
+				reg = <0x0 0x0 0x0 0x0>;
+				status = "disabled";
+	};
+	cma2: cma2_memory {
+				reg = <0x0 0x44800000 0x0 0x1B800000>;
+	};
+
+	// CARVEDOUT_CMA_GPU_4K
+	// CARVEDOUT_CMA_3
+	// CARVEDOUT_CMA_LOW_LIMIT
+	// CARVEDOUT_CMA_BW
+
+};
+
+
+&RTK_CMA {
+	/*
+	 * early reserve of cma1_memory
+	 */
+
+	#address-cells = <2>;
+	#size-cells = <2>;
+
+	reclaim_memory {
+				reg = <0x0 0x03800000 0x0 (40 	*_MB_)>;
+	};
+	last_image_memory@0a000000 {
+				reg = <0x0 0x0a000000 0x0 (8 	*_MB_)>;
+	};
+};
+
+
+&ODM {
+};
+
+

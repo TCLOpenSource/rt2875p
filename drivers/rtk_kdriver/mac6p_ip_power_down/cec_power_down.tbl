@@ -1,0 +1,8 @@
+rtd_outl(0xb8060034,0x00000081); // cec reset
+rtd_outl(0xb8060044,0x00000081); //cec clock disable 
+
+rtd_part_outl(0xb8061e04, 16, 16, 1);	//CEC PAD EN MODE
+rtd_part_outl(0xb8061e04, 17, 17, 0);	//CEC PAD EN	
+rtd_part_outl(0xb8061e00, 31, 30, 0);	//CEC disable
+
+rtd_outl(0xb8060044,0x00000080); //cec clock disable 

@@ -1,0 +1,4 @@
+__crc_ce_aes_expandkey = 0x68f275ad;
+__crc_ce_aes_setkey = 0x7ed6cd90;
+__crc_sha256_block_data_order = 0xb455924d;
+__crc_sha512_block_data_order = 0x6402c8df;

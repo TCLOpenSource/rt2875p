@@ -1,0 +1,6 @@
+rtd_outl(0xb8000104, 0x00010001); //rst
+rtd_outl(0xb8000114, 0x00010001); //clk
+
+rtd_outl(0xb8006b44, 0x00000000);//power off
+
+rtd_outl(0xb8000114, 0x00010000); //clk

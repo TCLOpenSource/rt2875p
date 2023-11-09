@@ -1,0 +1,1136 @@
+/*
+ * rtd6748_R device tree source
+ *
+*/
+
+#include <dt-bindings/interrupt-controller/irq.h>
+#include <dt-bindings/interrupt-controller/arm-gic.h>
+
+#include <rtk-dt-binding_chip/rtk_kdriver/rmm/rmm_carvedout.h>
+#include <rtk-dt-binding_linux/generated/autoconf.h>
+#include <rtk-dt-binding_linux/generated/uapi/linux/version.h>
+
+/dts-v1/;
+/include/ "skeleton.dtsi"
+#include "rtk_usb_6748.dtsi"
+/include/ "rtd6748_otp_table.dtsi"
+
+#define _KB_ 1024
+#define _MB_ 1024*1024
+
+/* define cma1 from end to specified size ahead, and boottime borrowed regions */
+#if defined(CONFIG_RTK_KDRV_QUICKSHOW) || defined(CONFIG_RTK_KDRV_QUICKSHOW_MODULE) //FIXME can be always on after audio supporting reserved-memory
+#define _CMA_LO_SIZE_       (112 * _MB_)
+#else
+#define _CMA_LO_SIZE_       (128 * _MB_)
+#endif
+#define _CMA_LO_END_        (0x10000000)
+#define _CMA_LO_START_      (_CMA_LO_END_ - _CMA_LO_SIZE_)  // cma1 region
+
+#ifdef CONFIG_REALTEK_MEMORY_MANAGEMENT_MODULE
+#define _CMA_LOGO_ANIM_     (0x03800000 + 0   *_MB_)    // anim
+#define _CMA_LOGO_PIC_      (0x03800000 + 64  *_MB_)    // pic
+#else
+#define _CMA_LOGO_ANIM_     (_CMA_LO_START_ + 0   *_MB_)    // anim
+#define _CMA_LOGO_PIC_      (_CMA_LO_START_ + 64  *_MB_)    // pic
+#endif
+
+
+/ {
+	model = "realtek,rtd6748";
+	compatible = "rtk,rtd6748";
+	interrupt-parent = <&gic>;
+	#address-cells = <2>;
+	#size-cells = <2>;
+
+	firmware {
+		android {
+			compatible = "android,firmware";
+			hardware = "rtd6748";
+		};
+	};
+
+	CHOSEN: chosen {
+#if defined(CONFIG_GKI_HACKS_TO_FIX) && defined(CONFIG_RTK_KDRV_SERIAL_8250_MODULE)
+		bootargs = "earlycon cgroup.memory=nokmem firmware_class.path=/vendor/firmware androidboot.console=ttyRTK1 console=ttyRTK1,115200";
+#else
+		bootargs = "earlycon cgroup.memory=nokmem firmware_class.path=/vendor/firmware swiotlb=,noforce";
+#endif
+		stdout-path = &uart1;
+	};
+
+	cpus {
+		#address-cells = <0x1>;
+		#size-cells = <0>;
+
+		cpu-map {
+			cluster0: cluster0 {
+				#cooling-cells = <2>; /* min followed by max */
+
+				core0 {
+					cpu = <&A55_0>;
+				};
+				core1 {
+					cpu = <&A55_1>;
+				};
+				core2 {
+					cpu = <&A75_0>;
+				};
+				core3 {
+					cpu = <&A75_1>;
+				};
+			};
+
+		};
+
+		A55_0: cpu@0 {
+			compatible = "arm,cortex-a55","arm,armv8";
+			reg = <0x0>;
+			device_type = "cpu";
+			enable-method = "psci";
+			clock-names = "vlittle";
+			operating-points-v2 = <&cpu_opp_table_little_75>;
+			capacity-dmips-mhz = <532>;
+			dynamic-power-coefficient = <250>;
+		};
+		A55_1: cpu@100 {
+			compatible = "arm,cortex-a55","arm,armv8";
+			reg = <0x100>;
+			device_type = "cpu";
+			enable-method = "psci";
+			clock-names = "vlittle";
+			operating-points-v2 = <&cpu_opp_table_little_75>;
+			capacity-dmips-mhz = <532>;
+			dynamic-power-coefficient = <250>;
+		};
+		A75_0: cpu@300 {
+			compatible = "arm,cortex-a75","arm,armv8";
+			reg = <0x300>;
+			device_type = "cpu";
+			enable-method = "psci";
+			clock-names = "vlittle";
+			operating-points-v2 = <&cpu_opp_table_big_75>;
+			capacity-dmips-mhz = <1024>;
+			dynamic-power-coefficient = <790>;
+		};
+		A75_1: cpu@400 {
+			compatible = "arm,cortex-a75","arm,armv8";
+			reg = <0x400>;
+			device_type = "cpu";
+			enable-method = "psci";
+			clock-names = "vlittle";
+			operating-points-v2 = <&cpu_opp_table_big_75>;
+			capacity-dmips-mhz = <1024>;
+			dynamic-power-coefficient = <790>;
+		};
+
+	};
+
+	cpu_opp_table_list_75 {
+		operating-points-0 = <&cpu_opp_table_little_75>;
+		operating-points-1 = <&cpu_opp_table_little_75>;
+		operating-points-2 = <&cpu_opp_table_big_75>;
+		operating-points-3 = <&cpu_opp_table_big_75>;
+	};
+
+	cpu_opp_table_list_85 {
+		operating-points-0 = <&cpu_opp_table_little_85>;
+		operating-points-1 = <&cpu_opp_table_little_85>;
+		operating-points-2 = <&cpu_opp_table_big_85>;
+		operating-points-3 = <&cpu_opp_table_big_85>;
+	};
+
+	cpu_opp_table_little_75: cpu_opp_table_little_75 {
+		compatible = "operating-points-v2";
+		opp-shared;
+
+		opp-1 {
+			opp-hz = /bits/ 64 <600000000>;
+			opp-microvolt = <960000>;
+			opp-level = <1>;
+		};
+		opp-2 {
+			opp-hz = /bits/ 64 <1066000000>;
+			opp-microvolt = <1060000>;
+			opp-level = <2>;
+		};
+		opp-3 {
+			opp-hz = /bits/ 64 <1173000000>;
+			opp-microvolt = <1160000>;
+			opp-level = <3>;
+			/*	turbo-mode; */
+		};
+		opp-4 {
+			opp-hz = /bits/ 64 <1182000000>;
+			opp-microvolt = <1260000>;
+			opp-level = <4>;
+			/*	turbo-mode; */
+		};
+	};
+
+	cpu_opp_table_little_85: cpu_opp_table_little_85 {
+		compatible = "operating-points-v2";
+		opp-shared;
+
+		opp-1 {
+			opp-hz = /bits/ 64 <600000000>;
+			opp-microvolt = <960000>;
+			opp-level = <1>;
+		};
+		opp-2 {
+			opp-hz = /bits/ 64 <1080000000>;
+			opp-microvolt = <1060000>;
+			opp-level = <2>;
+		};
+		opp-3 {
+			opp-hz = /bits/ 64 <1244000000>;
+			opp-microvolt = <1160000>;
+			opp-level = <3>;
+			/*	turbo-mode; */
+		};
+		opp-4 {
+			opp-hz = /bits/ 64 <1333000000>;
+			opp-microvolt = <1260000>;
+			opp-level = <4>;
+			/*	turbo-mode; */
+		};
+	};
+
+	cpu_opp_table_big_75: cpu_opp_table_big_75 {
+		compatible = "operating-points-v2";
+		opp-shared;
+
+		opp-1 {
+				opp-hz = /bits/ 64 <600000000>;
+				opp-microvolt = <960000>;
+				opp-level = <1>;
+		};
+		opp-2 {
+				opp-hz = /bits/ 64 <700000000>;
+				opp-microvolt = <1060000>;
+				opp-level = <2>;
+		};
+		opp-3 {
+				opp-hz = /bits/ 64 <1200000000>;
+				opp-microvolt = <1060000>;
+				opp-level = <2>;
+		};
+		opp-4 {
+				opp-hz = /bits/ 64 <1320000000>;
+				opp-microvolt = <1160000>;
+				opp-level = <3>;
+				/*	turbo-mode; */
+		};
+		opp-5 {
+				opp-hz = /bits/ 64 <1330000000>;
+				opp-microvolt = <1260000>;
+				opp-level = <4>;
+				/*	turbo-mode; */
+		};
+	};
+
+	cpu_opp_table_big_85: cpu_opp_table_big_85 {
+		compatible = "operating-points-v2";
+		opp-shared;
+
+		opp-1 {
+				opp-hz = /bits/ 64 <600000000>;
+				opp-microvolt = <960000>;
+				opp-level = <1>;
+		};
+		opp-2 {
+				opp-hz = /bits/ 64 <700000000>;
+				opp-microvolt = <1060000>;
+				opp-level = <2>;
+		};
+		opp-3 {
+				opp-hz = /bits/ 64 <1215000000>;
+				opp-microvolt = <1060000>;
+				opp-level = <2>;
+		};
+		opp-4 {
+				opp-hz = /bits/ 64 <1400000000>;
+				opp-microvolt = <1160000>;
+				opp-level = <3>;
+				/*	turbo-mode; */
+		};
+		opp-5 {
+				opp-hz = /bits/ 64 <1500000000>;
+				opp-microvolt = <1260000>;
+				opp-level = <4>;
+				/*	turbo-mode; */
+		};
+	};
+
+	cpufreq_85 {
+		compatible = "arm,rtk-cpufreq_85";
+		freq = <1067000 1200000 1080000 1215000>;
+	};
+
+	cpufreq_75 {
+		compatible = "arm,rtk-cpufreq_75";
+		freq = <1067000 1200000 1066000 1200000>;
+	};
+
+	psci {
+		compatible  = "arm,psci-0.2";
+		method = "smc";
+	};
+
+	MEMORY:memory {
+		device_type = "memory";
+		reg = <0x0 0x0 0x0 0x0>;
+	};
+
+
+	RMM: reserved-memory {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+
+		//! Default REF platform memory layout dts
+		//!  there will be other concatenated dtb and overlay dto for different board variants
+		compatible = "realtek,rtd6748";
+
+#if defined(RTK_MEM_LAYOUT_DEVICETREE)
+
+		boot: boot_memory {                 reg = <0x0 0x00000000 0x0 (1536 *_KB_)>;
+		};
+
+#ifdef CONFIG_REALTEK_MEMORY_MANAGEMENT_MODULE
+		reclaim_memory_rsvd {               reg = <0x0 _CMA_LOGO_ANIM_ 0x0 (72   *_MB_)>;
+		};
+#endif
+		dmem: dmem_memory {                 reg = <0x0 0x10000000 0x0 (0    *_MB_)>;
+			status = "disabled";
+			/* BAN_NORMAL if size */
+		};
+
+		comem: comem_memory {               reg = <0x0 0x12280000 0x0 (0    *_MB_)>;
+			status = "disabled";
+		};
+
+#if defined(CONFIG_RTK_KDRV_QUICKSHOW) || defined(CONFIG_RTK_KDRV_QUICKSHOW_MODULE) //FIXME can be always on after audio supporting reserved-memory
+		audio: audio_memory {               reg = <0x0 0x14400000 0x0 (16   *_MB_)>;
+			no-map;
+		};
+#else
+		audio: audio_memory {               reg = <0x0 0x14400000 0x0 (0    *_MB_)>;
+			status = "disabled";
+		};
+#endif
+
+		demod: demod_memory {               reg = <0x0 0x15400000 0x0 (8    *_MB_)>;
+			/* BAN_NOT_USED */
+		};
+
+		kboot: kboot_memory {               reg = <0x0 0x15f00000 0x0 (0    *_MB_)>;
+			status = "disabled"; // it's 0 at rmm.c
+		};
+
+		kcpu: kcpu_memory {                 reg = <0x0 0x16000000 0x0 (18   *_MB_)>;
+			no-map;
+			/* BAN_NOT_USED if ! OPTEE */
+		};
+
+		gic_mem: gic_mem {                  reg = <0x0 0x17c00000 0x0 (4    *_MB_)>; // HW FIXED
+			no-map;
+		};
+
+		rbus: rbus_memory {                 reg = <0x0 0x18000000 0x0 (2    *_MB_)>; // HW FIXED
+			no-map;
+		};
+
+
+	#if 0 // CONFIG_REALTEK_SECURE_DDK
+		gpufw: gpufw_memory {               reg = <0x0 (0x1a50000-(512*_KB_)) 0x0 (512*_KB)>;
+		};
+	#endif
+
+		vcpu: vcpu_memory {                 reg = <0x0 0x1a900000 0x0 (8    *_MB_)>;
+		};
+
+		rpc: rpc_memory {                   reg = <0x0 0x1b180000 0x0 (512  *_KB_)>;
+		};
+
+		acpu: acpu_memory {                 reg = <0x0 0x1b200000 0x0 (10   *_MB_)>;
+		};
+
+		/*
+		 * The maximum reserved space for logbuf
+		 *  bootloader can specify smaller size (e.g. 512K) and update loaded fdt to free unused.
+		 */
+		logbuf: logbuf_memory {             reg = <0x0 0x1ca00000 0x0 (4    *_MB_)>;
+
+			/* rtdlog_get_buffer_size() should be early in kernel */
+		};
+
+		rom: rom_memory {                   reg = <0x0 0x1fc00000 0x0 (32   *_KB_)>;
+		};
+
+		pstore: pstore_memory {             reg = <0x0 0x1fd00000 0x0 (64   *_KB_)>;
+
+		};
+
+		irtbl: irtbl_memory {               reg = <0x0 0x1fff8000 0x0 (8    *_KB_)>;
+		};
+
+		ddr_bd1: ddr_bd1_memory {           reg = <0x0 0x0 0x0 0x0>;
+			status = "disabled";
+			no-map;
+			/* BAN_NOT_USED if ddr_swap */
+		};
+		ddr_bd2: ddr_bd2_memory {           reg = <0x0 0x0 0x0 0x0>;
+			status = "disabled";
+			/* BAN_NOT_USED if size */
+		};
+
+	#if 0
+		gal: gal_memory {
+			status = "disabled";
+			/* BAN_NOT_USED */
+		};
+	#endif
+
+		// CARVEDOUT_VDEC_VBM
+		// (paired with ...CARVEOUT_HEAP_CHUNK_SIZE)
+		vdec_vbm: vdec-vbm_memory {         reg = <0x0 0x0 0x0 0x0>;
+			no-map; // VDEC_VBM(remove), CMA_VBM(reserve)
+			status = "disabled";
+		};
+
+		// CARVEDOUT_CMA_VBM
+		// (paired with VBM_HEAP_...CHUNK_SIZE)
+		vbm: cma-vbm_memory {               reg = <0x0 0x20000000 0x0 (200  *_MB_)>;
+			/* no-map; */ // VDEC_VBM(remove), CMA_VBM(reserve)
+
+			// CARVEDOUT_CMA_VBM
+			//! 1. should be shared-dma_pool for native reserve-memory to reserve it for dma/cma
+			//! 2. 'xxxx'_memory should be paired with rtkcma_list[ ] name in auth
+			compatible = "shared-dma-pool"; // CMA_VBM(reserve)
+			reusable;
+		};
+
+		scaler_memc: scaler_memc {          reg = <0x0 0x2c800000 0x0 (87   *_MB_)>;
+			no-map;
+		};
+
+		scaler_mdomain: scaler_mdomain {    reg = <0x0 0x31f00000 0x0 (13   *_MB_)>;
+			no-map;
+		};
+
+		scaler_dinr: scaler_dinr {          reg = <0x0 0x32c00000 0x0 (13   *_MB_)>;
+			no-map;
+		};
+
+		scaler_vip: scaler_vip {            reg = <0x0 0x33900000 0x0 (2    *_MB_)>;
+			no-map;
+		};
+
+		scaler_od: scaler_od {              reg = <0x0 0x33b00000 0x0 (4    *_MB_)>;
+			no-map;
+		};
+
+		scaler_nn: scaler_nn {              reg = <0x0 0x33f00000 0x0 (1    *_MB_)>;
+			no-map;
+		};
+
+		tp: tp_memory {                     reg = <0x0 0x34000000 0x0 (24   *_MB_)>;
+			no-map;
+		};
+
+		// CARVEDOUT_GPU_RESERVED
+
+
+		// CARVEDOUT_VDEC_RINGBUF
+		svp: svp_memory {                   reg = <0x0 0x3ec00000 0x0 (16   *_MB_)>;
+			no-map;
+		};
+
+		// CARVEDOUT_CMA_LOW
+
+		cma1: cma1_memory {                 reg = <0x0 _CMA_LO_START_ 0x0 _CMA_LO_SIZE_>;
+			compatible = "shared-dma-pool";
+			reusable;
+#ifndef CONFIG_REALTEK_MEMORY_MANAGEMENT_MODULE
+            linux,cma-default;
+#endif
+		};
+
+		// CARVEDOUT_CMA_HIGH
+		// CARVEDOUT_CMA_GPU_4K
+		/*
+		 * carvedout_buf_query[ CARVEDOUT_GPU_RESERVED ]
+		 *  (DRAM_size > 0xa0000)  CMA_HIGHMEM_M7_8K;
+		 *  (DRAM_size > 0x60000)  CMA_HIGHMEM_LARGE; //640MB
+		 *  (DRAM_size <= 0x60000) CMA_HIGHMEM_SMALL; //128MB
+		 *
+		 *  tp_memory end 0x35800000
+		 *  dram      end 0x80000000 : 0x20000000+0x60000000
+		 *
+		 *  0x35800000 + 128MB(ZRAM_RESERVED_SIZE) + 640MB(CARVEDOUT_GPU_RESERVED)
+		 *  = 0x35800000 + 0x08000000 + 0x28000000 = 0x65800000
+		 *
+		 *  0x80000000 - 0x65800000 = 0x1A800000 = 424*_MB_
+		 */
+
+		/*
+		 * if carvedout start < CARVEDOUT_LIMIT(512MB), then NO cma2
+		 */
+
+		/*
+		 * if UI_4K, CMA_GPU_4K use an exclusive region from original CMA2
+		 */
+
+		cma_ui4k: cma-ui4k_memory {         reg = <0x0 0x0 0x0 0x0>;
+			compatible = "shared-dma-pool";
+			status = "disabled";
+			reusable;
+		};
+		cma2: cma2_memory {                 reg = <0x0 0x65800000 0x0 0x1A800000>;
+			compatible = "shared-dma-pool";
+			reusable;
+		};
+
+		// CARVEDOUT_CMA_GPU_4K
+		// CARVEDOUT_CMA_3
+		// CARVEDOUT_CMA_LOW_LIMIT
+		// CARVEDOUT_CMA_BW
+
+
+		spi_iomem {                         reg = <0x0 0x80200000 0x0 0x02000000>; // HW FIXED
+			no-map;
+		};
+
+		// could be map to unused carvedout_buf
+		dummy: dummy_memory {
+			reg = <0x0 0x0 0x0 0x0>;
+			status = "disabled";
+		};
+
+#else // ! RTK_MEM_LAYOUT_DEVICETREE
+		/*
+		 * if ! RTK_MEM_LAYOUT_DEVICETREE
+		 *  legacy kernel builtin carvedout layout
+		 */
+
+		gic_mem: gic_mem {                  reg = <0x0 0x17c00000 0x0 (4    *_MB_)>; // HW FIXED
+			no-map;
+		};
+
+		// disabled vip/od regions for only bootloader setup bootargs
+
+		scaler_vip: scaler_vip {            reg = <0x0 0x33900000 0x0 (2    *_MB_)>;
+			status = "disabled";
+		};
+
+		scaler_od: scaler_od {              reg = <0x0 0x33b00000 0x0 (4    *_MB_)>;
+			status = "disabled";
+		};
+#endif //RTK_MEM_LAYOUT_DEVICETREE
+
+	};
+
+
+
+	//[TODO] for GKI, cma1 region is reserved in the very beginning but will be returned back to buddy after init.
+	//         reserve_dvr_memory() may not be loaded and reserves it in time to avoid other driver access.
+	//         may need to be more careful on module loading order.
+
+	/*
+	 * CMA param
+	 */
+	RTK_CMA: rtk_cma {
+		#address-cells = <2>;
+		#size-cells = <2>;
+
+#if defined(RTK_MEM_LAYOUT_DEVICETREE)
+#else // ! RTK_MEM_LAYOUT_DEVICETREE
+		cma1_memory {                       reg = <0x0 _CMA_LO_START_  0x0 _CMA_LO_SIZE_>;
+		};
+#endif
+
+		reclaim_memory {                    reg = <0x0 _CMA_LOGO_ANIM_ 0x0 (40   *_MB_)>;
+		};
+
+		last_image_memory {                 reg = <0x0 _CMA_LOGO_PIC_  0x0 (8    *_MB_)>;
+		};
+	};
+
+
+	carvedout_buf {
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		compatible = "realtek,rtd6748";
+		memory-region = <&MEMORY>;
+
+		/* carvedout idx, refer rmm.h */
+
+		bufnum = < CARVEDOUT_NUM >;
+
+		@CARVEDOUT_BOOTCODE {
+			memory-region = "boot_memory";
+			reg = < CARVEDOUT_BOOTCODE >;
+		};
+		@CARVEDOUT_DEMOD {
+			memory-region = "demod_memory";
+			reg = < CARVEDOUT_DEMOD >;
+		};
+		@CARVEDOUT_AV_DMEM {
+			memory-region = "dmem_memory";
+			reg = < CARVEDOUT_AV_DMEM >;
+		};
+		@CARVEDOUT_VDEC_COMEM {
+			memory-region = "comem_memory";
+			reg = < CARVEDOUT_VDEC_COMEM >;
+		};
+		@CARVEDOUT_AUDIO {
+			memory-region = "audio_memory";
+			reg = < CARVEDOUT_AUDIO >;
+		};
+		@CARVEDOUT_K_BOOT {
+			memory-region = "kboot_memory";
+			reg = < CARVEDOUT_K_BOOT >;
+		};
+		@CARVEDOUT_K_OS {
+			memory-region = "kcpu_memory";
+			reg = < CARVEDOUT_K_OS >;
+		};
+		@CARVEDOUT_MAP_GIC {
+			memory-region = "gic_mem";
+			reg = < CARVEDOUT_MAP_GIC >;
+		};
+		@CARVEDOUT_MAP_RBUS {
+			memory-region = "rbus_memory";
+			reg = < CARVEDOUT_MAP_RBUS >;
+		};
+		//CARVEDOUT_GPU_FW {
+		//};
+		@CARVEDOUT_V_OS {
+			memory-region = "vcpu_memory";
+			reg = < CARVEDOUT_V_OS >;
+		};
+		@CARVEDOUT_MAP_RPC {
+			memory-region = "rpc_memory";
+			reg = < CARVEDOUT_MAP_RPC >;
+		};
+		@CARVEDOUT_A_OS {
+			memory-region = "acpu_memory";
+			reg = < CARVEDOUT_A_OS >;
+		};
+		@CARVEDOUT_LOGBUF {
+			memory-region = "logbuf_memory";
+			reg = < CARVEDOUT_LOGBUF >;
+		};
+		@CARVEDOUT_ROMCODE {
+			memory-region = "rom_memory";
+			reg = < CARVEDOUT_ROMCODE >;
+		};
+		@CARVEDOUT_RAMOOPS {
+			memory-region = "pstore_memory";
+			reg = < CARVEDOUT_RAMOOPS >;
+		};
+		@CARVEDOUT_IR_TABLE {
+			memory-region = "irtbl_memory";
+			reg = < CARVEDOUT_IR_TABLE >;
+		};
+
+		@CARVEDOUT_DDR_BOUNDARY {
+			memory-region = "ddr_bd1_memory";
+			reg = < CARVEDOUT_DDR_BOUNDARY >;
+		};
+		@CARVEDOUT_DDR_BOUNDARY_2 {
+			memory-region = "ddr_bd2_memory";
+			reg = < CARVEDOUT_DDR_BOUNDARY_2 >;
+		};
+
+		@CARVEDOUT_VDEC_RINGBUF {
+			memory-region = "svp_memory";
+			reg = < CARVEDOUT_VDEC_RINGBUF >;
+		};
+
+		//CARVEDOUT_SCALER
+
+		@CARVEDOUT_SCALER_MEMC {
+			memory-region = "scaler_memc";
+			reg = < CARVEDOUT_SCALER_MEMC >;
+		};
+		@CARVEDOUT_SCALER_MDOMAIN {
+			memory-region = "scaler_mdomain";
+			reg = < CARVEDOUT_SCALER_MDOMAIN >;
+		};
+		@CARVEDOUT_SCALER_DI_NR {
+			memory-region = "scaler_dinr";
+			reg = < CARVEDOUT_SCALER_DI_NR >;
+		};
+		@CARVEDOUT_SCALER_NN {
+			memory-region = "scaler_nn";
+			reg = < CARVEDOUT_SCALER_NN >;
+		};
+		@CARVEDOUT_SCALER_VIP {
+			memory-region = "scaler_vip";
+			reg = < CARVEDOUT_SCALER_VIP >;
+		};
+		@CARVEDOUT_SCALER_OD {
+			memory-region = "scaler_od";
+			reg = < CARVEDOUT_SCALER_OD >;
+		};
+
+		@CARVEDOUT_VDEC_VBM {
+			memory-region = "vdec-vbm_memory";
+			reg = < CARVEDOUT_VDEC_VBM>;
+		};
+
+		@CARVEDOUT_CMA_VBM {
+			memory-region = "cma-vbm_memory";
+			reg = < CARVEDOUT_CMA_VBM >;
+		};
+
+		@CARVEDOUT_TP {
+			memory-region = "tp_memory";
+			reg = < CARVEDOUT_TP >;
+		};
+
+		@CARVEDOUT_CMA_LOW {
+			memory-region = "cma1_memory";
+			reg = < CARVEDOUT_CMA_LOW >;
+		};
+
+		@CARVEDOUT_CMA_HIGH {
+			memory-region = "cma2_memory";
+			reg = < CARVEDOUT_CMA_HIGH >;
+		};
+
+		@CARVEDOUT_CMA_GPU_4K {
+			memory-region = "cma-ui4k_memory";
+			reg = < CARVEDOUT_CMA_GPU_4K >;
+		};
+	};
+
+
+	firmware {
+		optee {
+			compatible = "linaro,optee-tz";
+			method = "smc";
+		};
+	};
+
+	gic:interrupt-controller@17c00000 {
+		compatible = "arm,gic-v3";
+		#interrupt-cells = <0x3>;
+		#address-cells = <0x2>;
+		#size-cells = <0x2>;
+		interrupt-controller;
+		redistributor-stride = <0x0 0x20000>;
+		#redistributor-regions = <1>;
+		reg = <0x0 0x17c00000 0x0 0x10000>,	   // GICD
+				<0x0 0x17c40000 0x0 0x200000>;	  // GICR
+		interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>;
+	};
+
+	soc {
+		compatible = "simple-bus";
+		#address-cells = <1>;
+		#size-cells = <1>;
+		ranges = <0 0 0 0xffffffff>; // 32bit addressing
+
+		reg_bus: common@18000000 {
+			compatible = "realtek,common";
+			#address-cells = <1>;
+			#size-cells = <1>;
+			reg = <0x18000000 0x200000>;
+			ranges = <0 0x18000000 0x200000>;
+#if 0
+			my_driver: syscon@0 {
+				compatible = "syscon", "simple-mfd";
+			};
+#endif
+		};
+	};
+
+	timer {
+		compatible = "arm,armv7-timer";
+		interrupts =
+			<GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
+			<GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
+			<GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
+			<GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>;
+		clock-frequency = <27000000>;
+		always-on = "true";
+		arm,no-tick-in-suspend;
+	};
+
+	uart1: serial@1801B100 {
+		#address-cells = <2>;
+		size-cells = <2>;
+		compatible = "realtek,rtd29xx-uart", "ns16550";
+		reg-shift = <2>;
+		reg-io-width = <4>;
+		reg = <0x00000000 0x1801B100 0x00000000 0x1000>;
+		interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>,
+					<GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	cec0: cec@b8061E00 {
+		compatible = "realtek,rtk-cec";
+		reg = <0x00000000 0x18061E00 0x00000000 0x1000>;
+		interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+
+	lsadc {
+		compatible = "realtek,rtk-lsadc";
+		reg = <0x00000000 0x18061500 0x00000000 0x100>;
+		interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	watchdog@18062200 {
+		compatible = "realtek,watchdog";
+		interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	md0:md@1800b000 {
+		compatible = "realtek,rtk-md";
+		reg = <0x00000000 0x1800b000 0x00000000 0x230>;
+		interrupts = <GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	mcp0:MCP@18015100 {
+		compatible = "realtek,rtk-mcp";
+		reg = <0x00000000 0x18015100 0x00000000 0x1000>;
+		interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+
+	rtk_pwm@1801b900 {
+		compatible = "realtek, rtk-pwm";
+		reg = <0x00000000 0x1801b900 0x00000000 0x194>, //misc pwm
+				<0x00000000 0x18061280 0x00000000 0x34>;  //iso pwm
+		interrupts = <GIC_SPI 37 IRQ_TYPE_LEVEL_HIGH>;  //misc pwm int
+	};
+
+	rtk_pcmcia@1801B700 {
+		compatible = "realtek,PCMCIA";
+		reg = <0x00000000 0x1801B700 0x00000000 0x24>;
+		interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;//IRQ_TYPE_EDGE_BOTH
+	};
+
+	realtek_scd@1801B800 {
+		compatible = "realtek,rtk_smartcard";
+		reg = <0x00000000 0x1801B800 0x00000000 0x7C>;
+		interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;//IRQ_TYPE_EDGE_BOTH
+	};
+
+	rtk_gpio@1801bd00 {
+		compatible = "realtek, rtk-gpio";
+		reg = <0x00000000 0x1801bd00 0x00000000 0xc0>, //misc gpio
+				<0x00000000 0x18061100 0x00000000 0x4c>;
+		interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>,  //misc gpio int*/
+				<GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;  //iso gpio int*/
+	};
+
+	rtk_switch_gpio {
+		compatible = "realtek, rtk-switch_gpio";
+	};
+
+	rtk_keypad {
+		compatible = "realtek, rtk-keypad";
+	};
+
+	rtd_lsadc {
+		compatible = "realtek, rtk-lsadc";
+		interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	rtk_i2c@1801b200 {
+		compatible = "simple-bus";
+		reg = <0x00000000 0x1801b200 0x00000000 0x3fc>, //misc i2c
+				<0x00000000 0x18062500 0x00000000 0x1fc>; //iso i2c
+		i2c0{
+			compatible = "realtek, rtk-i2c";
+			interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>; //mis irq
+			pcb_info = <0 0 1 0>;	//logical_id:0, i2c_mode:0.hw_i2c	phy_id, src
+						//							1.gpio_i2c sda,	scl
+		};
+		i2c1{
+			compatible = "realtek, rtk-i2c";
+			interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>; //misc irq
+			pcb_info = <1 0 3 0>;	//logical_id:1, i2c_mode:0.hw_i2c	phy_id, src
+						//							1.gpio_i2c sda,	scl
+		};
+		i2c2{
+			compatible = "realtek, rtk-i2c";
+			interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>; //iso irq
+			pcb_info = <2 0 5 2>;	//logical_id2:, i2c_mode:0.hw_i2c	phy_id, src
+						//							1.gpio_i2c sda,	scl
+		};
+		i2c3{
+			compatible = "realtek, rtk-i2c";
+			interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>; //misc irq
+			pcb_info = <3 0 3 0>;   //logical_id2:, i2c_mode:0.hw_i2c   phy_id, src
+						//                          1.gpio_i2c sda, scl
+		};
+	};
+
+	gpu@18110000{
+                compatible = "img,bxe";
+                reg = <0x00000000 0x18110000 0x00000000 0x10000>;
+                interrupts = <GIC_SPI 14 IRQ_TYPE_LEVEL_HIGH>;
+                interrupt-names = "RGX";
+                clock-names = "clk_img";
+        };
+
+	gdma@1802f200 {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		device_type = "osd";
+		compatible = "realtek,gdma";
+		reg = <0x00000000 0x1802f200 0x00000000 0xe00>;
+		interrupts = <GIC_SPI 7 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+    gdecmp@1802f200 {
+        #address-cells = <2>;
+        #size-cells = <2>;
+        device_type = "osd";
+        compatible = "realtek,gdecmp";
+        reg = <0x00000000 0x18069000 0x00000000 0xf00>;
+        interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
+    };
+
+	thermal@18000000 {
+		compatible = "rtk_rtk299s-tmu";
+		reg = <0 0x18000000 0 0x400>;
+		interrupts = <GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>;
+		status = "okay";
+		throttle = <90 100 120 140>;
+	};
+
+	rtk_monitor@18000000 {
+		compatible = "rtk_monitor";
+		status = "okay";
+	};
+
+	spi: rtkspi@80200000 {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		compatible = "realtek,rtk_spi";
+		reg = <0x0 0x80200000 0x0 0x02000000>;
+	};
+
+	spi0 {
+		compatible = "realtek,rtk_spi_master";
+		reg = <0x0 0x80200000 0x0 0x02000000>;
+		status = "okay";
+		#address-cells = <2>;
+		#size-cells = <2>;  
+		spidev@0 {
+			compatible = "semtech,sx1301";
+			spi-max-frequency = <16000000>;
+			reg = <0x0>;
+		};
+	};
+
+	rtkrpc@1b100000 {
+		compatible = "realtek,venus-rpc";
+		reg = <0x0 0x1b100000 0x0 0x00100000>;
+		interrupts = <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	emmc@18010800 {
+		compatible = "realtek,rtk-emmc";
+		reg = <0x00000000 0x18010800 0x00000000 0x400>;
+		interrupts = <GIC_SPI 18 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	sdio@18010c00 {
+		compatible = "realtek,rtk-sdio";
+		reg = <0x00000000 0x18010c00 0x00000000 0x400>;
+		interrupts = <GIC_SPI 18 IRQ_TYPE_LEVEL_HIGH>;
+		bus-width = <4>;
+		max-frequency = <37000000>;
+		cap-sd-highspeed;
+		cap-mmc-hw-reset;
+		broken-cd;
+	};
+
+	hw_monitor@1805C020 {
+		compatible = "realtek,hw-monitor";
+	};
+
+	dcmt@18007200 {
+		compatible = "realtek,dcmt";
+		interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	sb2@1801A000 {
+		compatible = "realtek,sb2";
+		interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>,
+					<GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "SB2_INT",
+				"SW_INT";
+	};
+
+	zacc-enc{
+		compatible = "realtek, zacc-enc";
+	};
+
+	zacc-dec{
+		compatible = "realtek, zacc-dec";
+	};
+
+	misc@18061000 {
+		compatible = "realtek,misc";
+		interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	arm_wrapper@1805C020 {
+		compatible = "realtek,arm_wrapper";
+		interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	irda0@18061400 {
+		compatible = "rtk_irda_dts";
+		interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
+		//interrupts = < 0 31 0 >;
+	};
+
+	se@1800c000 {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		device_type = "2dgraphic";
+		compatible = "realtek,se";
+		reg = <0x00000000 0x1800c000 0x00000000 0xf00>;
+		interrupts = <GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	etn@18016000 {
+		compatible = "realtek,rtk_8168";
+		reg = <0x00000000 0x18016000 0x00000000 0x1000>;
+		interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+//	clock-controller@18000350 {
+//		compatible = "realtek,rtd299s-clock";
+//		reg = <0x18000350 0x4b0>;
+//		#clock-cells = <1>;
+//	};
+
+	pmu {
+		compatible = "arm,armv8-pmuv3";
+//		interrupts = <GIC_SPI 31 IRQ_TYPE_EDGE_BOTH>;
+		interrupts = <GIC_PPI  7 IRQ_TYPE_EDGE_BOTH>; // PPI 23
+	};
+
+	dsu-pmu-0 {
+		compatible = "arm,dsu-pmu";
+		interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
+		cpus = <&A55_0>, <&A55_1>, <&A75_0>, <&A75_1>;
+	};
+
+
+	vdec {
+		compatible = "realtek,vdec";
+	};
+
+	vdo0 {
+		compatible = "realtek,vdo";
+		port = <0>;
+	};
+
+	vdo1 {
+		compatible = "realtek,vdo";
+		port = <1>;
+	};
+
+	vcap {
+		compatible = "realtek,vcap";
+	};
+
+	venc {
+		compatible = "realtek,venc";
+	};
+
+	vdogav {
+		compatible = "realtek,vdogav";
+	};
+
+	ODM:odm{
+	};
+
+	earc{
+		compatible = "realtek,rtk-earc";
+		interrupts = <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	vgip_isr {
+		compatible = "realtek,vgip_isr";
+		interrupts = <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	ddomain_isr {
+		compatible = "realtek,ddomain_isr";
+		interrupts = <GIC_SPI 7 IRQ_TYPE_LEVEL_HIGH>;
+  	};
+
+	memc_isr {
+		compatible = "realtek,memc_isr";
+		interrupts = <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	vbe {
+		compatible = "realtek,vbe";
+		interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	tp {
+		compatible = "realtek,tp";
+		interrupts = <GIC_SPI 22 IRQ_TYPE_EDGE_RISING>;
+	};
+
+	hdmi_rx {
+		compatible = "realtek,hdmi_rx";
+		interrupts = <GIC_SPI 23 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	dolby_vision {
+		compatible = "realtek,dolby_vision";
+		interrupts = <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "SOFTWARE_IRQ", "MISC_IRQ";
+	};
+
+	galcore@18073000 {
+		compatible = "realtek,galcore";
+		reg = <0x00000000 0x18073000 0x00000000 0x2000>;
+		interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	rtk_ddc {
+		compatible = "realtek,rtk_ddc";
+		interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
+	};
+};
+
+
+#if defined(RTK_MEM_LAYOUT_DEVICETREE)
+// multiple layouts
+
+#undef LAYOUTNUM
+#define LAYOUTNUM	1
+#include "rtd6748/rtd6748_0_2g.dtsi"
+
+#undef LAYOUTNUM
+#define LAYOUTNUM	2
+#include "rtd6748/rtd6748_1_1g5.dtsi"
+
+#undef LAYOUTNUM
+#define LAYOUTNUM	3
+#include "rtd6748/rtd6748_2_1g.dtsi"
+
+#undef LAYOUTNUM
+#define LAYOUTNUM	4
+#include "rtd6748/rtd6748_3_8k.dtsi"
+
+#endif

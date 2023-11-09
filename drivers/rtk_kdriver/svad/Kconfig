@@ -1,0 +1,7 @@
+config RTK_KDRV_SVAD
+	tristate "Driver for SVAD Manager"
+	default n
+	depends on RTK_KDRV_I2C
+	depends on RTK_KDRV_I2C_ALGO_RTK
+	help
+	  Driver for SVAD Manager

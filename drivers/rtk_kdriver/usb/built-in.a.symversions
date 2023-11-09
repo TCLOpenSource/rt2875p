@@ -1,0 +1,16 @@
+__crc_rtk_usb_test_mode_suspend_flag = 0xedefbf6f;
+__crc_rtk_gUsbHubSuspendResume = 0xf07f902c;
+__crc_is_enable_xhci_device_mode = 0xf5c5af65;
+__crc_rtk_xhci_port_test_mode = 0x4baa6134;
+__crc_is_usb3_on = 0xdee2b808;
+__crc_usb3_crt_on = 0xf6a7f829;
+__crc_usb3_crt_off = 0xbe75fc33;
+__crc_rtk_ehci_port_test_mode = 0xd3192e4e;
+__crc_id_get_companion_ehci_completion = 0x7065c419;
+__crc_get_ehci_platform_device = 0x0d970f19;
+__crc_is_usb2_on = 0x43ed597e;
+__crc_usb2_crt_on = 0x19f54ec8;
+__crc_usb2_crt_off = 0x69977c6b;
+__crc_rtk_otg_is_enable = 0x536f5fab;
+__crc_rtk_otg_is_via_hub_port = 0xa8346a35;
+__crc_rtk_otg_crt_on_off = 0xd5e0e234;

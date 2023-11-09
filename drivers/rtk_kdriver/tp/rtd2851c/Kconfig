@@ -1,0 +1,4 @@
+config RTK_SUPPORT_TWO_HWTLV
+	bool "hw tlv filter Support"
+	depends on RTK_KDRV_TP
+	default n

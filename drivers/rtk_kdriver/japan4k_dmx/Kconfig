@@ -1,0 +1,5 @@
+config RTK_KDRV_JP4K
+	bool "Enable Realtek JAPAN4k DMX Driver"
+	default n
+	help
+	  Say Y here if you want to support japan4k demux on your platform

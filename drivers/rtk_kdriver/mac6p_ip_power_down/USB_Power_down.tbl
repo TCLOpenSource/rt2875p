@@ -1,0 +1,12 @@
+////from new flow//////
+/////power down////
+rtd_outl(0xb8000118,0x00020000);  //0x1800_0118[17] = 1'b0//disable DWC hclk_i and top clock
+ScalerTimer_DelayXms(1); 
+rtd_outl(0xb8000118,0x40000000); //0x1800_0118[30] = 1'b0//disable DWC phy_clk_i/ohci_0_clk12_i/ohci_0_clk48_i/utmi_phy_clock_i
+ScalerTimer_DelayXms(1); 
+rtd_outl(0xb8000108,0x40000000); //0x1800_0108[30] = 1'b0//assert DWC phy_rst_i_n and utmi_reset_i reset
+ScalerTimer_DelayXms(1); 
+rtd_outl(0xb8000108,0x00020000); //0x1800_0108[17] = 1'b0//assert PHY RESET_0/1/2 reset and assert DWC hreset_i_n, aux_well_rst_i_n and top reset
+ScalerTimer_DelayXms(1); 
+rtd_outl(0xb800010c,0x00000070); //0x1800_010c[6:4] = 3'b000 //PHY POR_N_0/1/2 reset
+ScalerTimer_DelayXms(1); 

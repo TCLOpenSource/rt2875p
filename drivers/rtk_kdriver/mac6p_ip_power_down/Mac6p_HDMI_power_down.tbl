@@ -1,0 +1,60 @@
+//POW_PR move to bit24
+rtd_outl(0xb8000104, 0x00000401);//rst
+rtd_outl(0xb8000114, 0x00000401);//clk
+
+//============================HDMI Power Down=================================================
+
+rtd_part_outl(0xb800DA44, 24, 24, 0x0); //Port0 B channel PR power,hardware default=0x0
+rtd_part_outl(0xb800DA64, 24, 24, 0x0); //Port0 G channel PR power
+rtd_part_outl(0xb800DA74, 24, 24, 0x0); //Port0 R channel PR power
+
+rtd_part_outl(0xb800DA94, 24, 24, 0x0); //Port1 B channel PR power,hardware default=0x0
+rtd_part_outl(0xb800DAB4, 24, 24, 0x0); //Port1 G channel PR power
+rtd_part_outl(0xb800DAC4, 24, 24, 0x0); //Port1 R channel PR power
+
+rtd_part_outl(0xb800DAE4, 24, 24, 0x0); //Port2 B channel PR power,hardware default=0x0
+rtd_part_outl(0xb800DB04, 24, 24, 0x0); //Port2 G channel PR power
+rtd_part_outl(0xb800DB14, 24, 24, 0x0); //Port2 R channel PR power
+
+rtd_part_outl(0xb800DA44, 0, 0, 0x0); //Port0 B channel EQ power,hardware default=0x1(Enable)
+rtd_part_outl(0xb800DA64, 0, 0, 0x0); //Port0 G channel EQ power
+rtd_part_outl(0xb800DA74, 0, 0, 0x0); //Port0 R channel EQ power
+
+rtd_part_outl(0xb800DA94, 0, 0, 0x0); //Port1 B channel EQ power,hardware default=0x1(Enable)
+rtd_part_outl(0xb800DAB4, 0, 0, 0x0); //Port1 G channel EQ power
+rtd_part_outl(0xb800DAC4, 0, 0, 0x0); //Port1 R channel EQ power
+
+rtd_part_outl(0xb800DAE4, 0, 0, 0x0); //Port2 B channel EQ power,hardware default=0x1(Enable)
+rtd_part_outl(0xb800DB04, 0, 0, 0x0); //Port2 G channel EQ power
+rtd_part_outl(0xb800DB14, 0, 0, 0x0); //Port2 R channel EQ power
+
+rtd_part_outl(0xb800DA50, 1, 1, 0x0); //Port0 CKAFE power,hardware default=0x1(Enable)
+rtd_part_outl(0xb800DAA0, 1, 1, 0x0); //Port1 CKAFE power
+rtd_part_outl(0xb800DAF0, 1, 1, 0x0); //Port2 CKAFE power
+
+rtd_part_outl(0xb800DA50, 2, 2, 0x0); //Port0 bias,hardware default=0x1(Enable)
+rtd_part_outl(0xb800DAA0, 2, 2, 0x0); //Port1 bias
+rtd_part_outl(0xb800DAF0, 2, 2, 0x0); //Port2 bias
+
+rtd_part_outl(0xb800DA50, 8, 8, 0x0); //Port0 CKD2S_EN,hardware default=0x0(Disable),WebOs=0x1(Enable)
+rtd_part_outl(0xb800DAA0, 8, 8, 0x0); //Port1 CKD2S_EN
+rtd_part_outl(0xb800DAF0, 8, 8, 0x0); //Port2 CKD2S_EN
+
+rtd_part_outl(0xb800DA54, 25, 25, 0x0); //Port0 CMU LDO_A,LD0_D,hardware default=0x1(Enable)
+rtd_part_outl(0xb800DAA4, 25, 25, 0x0); //Port1 CMU LDO_A,LD0_D
+rtd_part_outl(0xb800DAF4, 25, 25, 0x0); //Port2 CMU LDO_A,LD0_D
+
+rtd_part_outl(0xb800DA58, 1, 1, 0x0); //Port0 CMU_WDPOW,hardware default=0x1(Enable)
+rtd_part_outl(0xb800DAA8, 1, 1, 0x0); //Port1 CMU_WDPOW
+rtd_part_outl(0xb800DAF8, 1, 1, 0x0); //Port2 CMU_WDPOW
+
+
+rtd_part_outl(0xb800DA10, 3, 3, 0x0); //Port0 CMU enable,hardware default=0x0(Disable),WebOs=0x0(Disable)
+rtd_part_outl(0xb800DA10, 10, 10, 0x0); //Port1 CMU enable
+rtd_part_outl(0xb800DA10, 17, 17, 0x0); //Port2 CMU enable
+
+rtd_part_outl(0xb800DB20, 2, 0, 0x0); //Port0 R/G/B channel Demux Rstb,hardware default=0x0(Disable),WebOs=0x0(Disable)
+rtd_part_outl(0xb800DB20, 5, 3, 0x0); //Port1 R/G/B channel Demux Rstb
+rtd_part_outl(0xb800DB20, 8, 6, 0x0); //Port2 R/G/B channel Demux Rstb
+
+rtd_outl(0xb8000114, 0x00000400);//clk

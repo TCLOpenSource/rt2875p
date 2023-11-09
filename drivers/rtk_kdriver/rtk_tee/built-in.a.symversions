@@ -1,0 +1,3 @@
+__crc_optee_rtc_set_info_send = 0xc79fb68c;
+__crc_optee_logbuf_setup_info_send = 0xd1067922;
+__crc_optee_hdcp2_force_depends_on_rtktee = 0xb8f763d8;

@@ -1,0 +1,60 @@
+menu "RTK USB Driver"
+
+config RTK_KDRV_USB
+    tristate "RTK USB driver support"
+    depends on USB
+
+config RTK_KDRV_XHCI_HCD_PLATFORM
+    tristate "RTK XHCI HCD Platform support"
+    depends on USB_XHCI_HCD
+    help
+      Said Y to enable XHCI controller.
+
+config RTK_KDRV_XHCI_SAVE_POWER_WHEN_NO_U3
+    bool "Save power consumption when USB3.0 is not in use"
+    depends on RTK_KDRV_XHCI_HCD_PLATFORM
+    help
+    Some platforms have no U3 port.
+    To power off this function can reduce power consumption.
+	Said Y to disable U3 function.
+
+config RTK_KDRV_EHCI_HCD_PLATFORM
+    tristate "RTK EHCI HCD Platform support"
+    depends on USB_EHCI_HCD
+    help
+      Said Y to enable EHCI controller.
+
+config RTK_KDRV_OHCI_HCD_PLATFORM
+    tristate "RTK OHCI HCD Platform support"
+    depends on USB_OHCI_HCD
+    help
+      Said Y to enable OHCI controller.
+
+
+#config RTK_RESUME_SEQ_FOR_USB_DONGLE
+#    tristate "Put wifi dongle as the last resume device"
+#    depends on RTK_KDRV_USB
+#    help
+#      Some external devices (such as fixed WIFI) will prolong the boot time.
+#      Put these devices in the last initialization to speed up the boot
+#      Said Y to enable.
+
+config RTK_KDRV_XHCI_DRD_PLATFORM
+    tristate "RTK XHCI DRD Platform support"
+    depends on USB_XHCI_HCD
+    select USB_GADGET
+    select USB_DWC3
+    select USB_DWC3_GADGET
+    select RTK_KDRV_XHCI_HCD_PLATFORM
+    help
+      Said Y to enable XHCI controller.
+
+config RTK_KDRV_USB_OTG_PLATFORM
+    tristate "RTK USB OTG Platform support"
+    select USB_GADGET
+    select USB_DWC2
+    select USB_DWC2_PERIPHERAL
+    help
+      Said Y to enable XHCI controller.
+
+endmenu

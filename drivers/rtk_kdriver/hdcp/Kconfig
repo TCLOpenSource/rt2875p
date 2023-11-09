@@ -1,0 +1,17 @@
+config RTK_HDCP_OPTEE
+    tristate "Enable HDCP OPTEE"
+    default n
+    help
+        Enable HDCP OPTEE
+
+config OPTEE_HDCP2
+    bool "Enable OPTEE_HDCP2"
+    default n
+    help
+        Enable OPTEE_HDCP2
+
+config OPTEE_HDCP14
+    bool "Enable OPTEE_HDCP14"
+    default n
+    help
+        Enable OPTEE_HDCP14

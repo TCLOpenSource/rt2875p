@@ -1,0 +1,11 @@
+config RTK_KDRV_USB_HUB
+    tristate "RTK USB HUB driver support releated with typec appliaction"
+    default n
+    depends on USB
+       
+
+config RTK_KDRV_USB_BB
+    tristate "RTK USB HUB driver support releated with typec appliaction"
+    default n
+    depends on USB
+

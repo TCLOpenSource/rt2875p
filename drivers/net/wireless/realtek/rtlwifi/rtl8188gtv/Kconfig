@@ -1,0 +1,6 @@
+config RTL8188GTVU
+	tristate "Realtek 8188GTV USB WiFi"
+	depends on USB
+	---help---
+	  Help message of RTL8818FU
+

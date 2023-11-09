@@ -1,0 +1,6 @@
+#menu "dccti tcp dev for dv"
+config RTK_DCCTI_DRV
+	tristate "dccti tcp dev for dv"
+	default n
+	help
+		dccti_tcp_dev for DV

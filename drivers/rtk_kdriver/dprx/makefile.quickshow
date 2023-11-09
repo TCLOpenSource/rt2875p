@@ -1,0 +1,93 @@
+# Global config
+FLAG += -DCONFIG_RTK_DPRX
+FLAG += -DCONFIG_ENABLE_TYPEC_DPRX
+FLAG += -DCONFIG_DPRX_PRJ_PLATFROM_UBOOT
+FLAG += -DDPRX_QS_WITH_FACTORY_EDID
+FLAG += -DENABLE_DPRX_AUX_CHANNEL_DEBOUNCE
+FLAG += -DENABLE_DPRX_LT_EVENT_MONITOR
+
+# Header Files
+INC += -I $(DPRX_VFE_PATH)/../include/rtk_kdriver/dprx
+INC += -I $(DPRX_VFE_PATH)/
+INC += -I $(DPRX_VFE_PATH)/vfe/inc
+INC += -I $(DPRX_VFE_PATH)/osal/inc
+INC += -I $(DPRX_VFE_PATH)/util/inc
+INC += -I $(DPRX_VFE_PATH)/platform/inc
+INC += -I $(DPRX_VFE_PATH)/adapter/inc
+
+# Source Files
+
+# VFE
+SUB_SRC_C += $(DPRX_VFE_PATH)/vfe/src/dprx_vfe_api.c
+SUB_SRC_C += $(DPRX_VFE_PATH)/vfe/src/dprx_vfe.c
+SUB_SRC_C += $(DPRX_VFE_PATH)/vfe/src/dprx_drvif.c
+
+# Platform
+SUB_SRC_C += $(DPRX_VFE_PATH)/platform/src/dprx_platform-rtk_tv.c
+SUB_SRC_C += $(DPRX_VFE_PATH)/adapter/src/dprx_adapter.c
+SUB_SRC_C += $(DPRX_VFE_PATH)/adapter/src/dprx_adapter-pseudo.c
+
+# DDC
+SUB_SRC_C += $(DPRX_VFE_PATH)/util/src/dprx_edid.c
+SUB_SRC_C += $(DPRX_VFE_PATH)/util/src/dprx_edid-rtkddc.c
+
+# HPD
+SUB_SRC_C += $(DPRX_VFE_PATH)/util/src/dprx_hpd.c
+SUB_SRC_C += $(DPRX_VFE_PATH)/util/src/dprx_hpd-typec.c
+SUB_SRC_C += $(DPRX_VFE_PATH)/util/src/dprx_hpd-rtktv.c
+
+# Adapter
+
+FLAG += -DFORCE_MAX_LINK_RATE_TO_HBR2
+
+#********************************************************************
+# Project Config Selection
+#********************************************************************
+
+ifeq ($(CHIP_NAME), rtd2851c)
+FLAG += -DCONFIG_DPRX_PRJ_MAC8P_QUICK_SWHOW
+else ifeq ($(CHIP_NAME), rtd2851f)
+FLAG += -DCONFIG_DPRX_PRJ_MAC8P_QUICK_SWHOW
+else ifeq ($(CHIP_NAME), rtd2885p)
+FLAG += -DCONFIG_DPRX_PRJ_RTD2885P_QUICK_SWHOW
+else
+# FIX ME
+endif
+
+FLAG += -DCONFIG_DPRX_DRV_ENABLE_RTK_DPRX_ADAPTER
+FLAG += -DCONFIG_SUPPORT_GET_DRM_INFO
+FLAG += -DDPRX_DEBUG_DETECT_MODE
+
+ifeq ($(CONFIG_BUILD_DPRX_DRV),y)
+INC += -I $(DPRX_VFE_PATH)/driver/include
+INC += -I $(DPRX_VFE_PATH)/driver/aux_channel/inc
+INC += -I $(DPRX_VFE_PATH)/driver/api/inc/
+INC += -I $(DPRX_VFE_PATH)/driver/mac/inc/
+INC += -I $(DPRX_VFE_PATH)/driver/phy/inc/
+INC += -I $(DPRX_VFE_PATH)/driver/hdcp/inc/
+else
+INC += -I $(DPRX_VFE_PATH)/prebuild/inc/include
+INC += -I $(DPRX_VFE_PATH)/prebuild/inc/aux_channel/inc
+INC += -I $(DPRX_VFE_PATH)/prebuild/inc/api/inc/
+INC += -I $(DPRX_VFE_PATH)/prebuild/inc/mac/inc/
+INC += -I $(DPRX_VFE_PATH)/prebuild/inc/phy/inc/
+INC += -I $(DPRX_VFE_PATH)/prebuild/inc/hdcp/inc/
+endif
+
+SUB_SRC_C += $(DPRX_VFE_PATH)/adapter/src/dprx_adapter-rtk_dprx.c
+SUB_SRC_C += $(DPRX_VFE_PATH)/adapter/src/dprx_adapter-rtk_dprx-priv.c
+SUB_SRC_C += $(DPRX_VFE_PATH)/adapter/src/dprx_adapter-rtk_dprx-wrapper.c
+SUB_SRC_C += $(DPRX_VFE_PATH)/adapter/src/dprx_adapter-rtk_dprx-plat-quickshow.c
+
+# DDC
+ifeq ($(CHIP_NAME), rtd2851c)
+FLAG += -DCONFIG_ARCH_RTK2851C
+else ifeq ($(CHIP_NAME), rtd2851f)
+FLAG += -DCONFIG_ARCH_RTK2851F
+else ifeq ($(CHIP_NAME), rtd2885p)
+FLAG += -DCONFIG_ARCH_RTK2885P
+else
+# FIX ME
+endif
+SUB_SRC_C += rtk_kdriver/ddc/rtk_ddc_lib.c
+SUB_SRC_C += rtk_kdriver/ddc/rtk_ddc_priv.c

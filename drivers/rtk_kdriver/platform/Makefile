@@ -1,0 +1,2 @@
+obj-$(CONFIG_CUSTOMER_TV002) += tv002/
+obj-$(CONFIG_CUSTOMER_TV006) += tv006/

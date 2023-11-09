@@ -1,0 +1,5 @@
+config RTK_KDRV_VAD
+	tristate "Driver for VAD Manager"
+	default n
+	help
+	  Driver for VAD Manager

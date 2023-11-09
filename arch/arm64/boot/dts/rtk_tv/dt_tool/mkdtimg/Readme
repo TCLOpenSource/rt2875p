@@ -1,0 +1,41 @@
+1.mkdtimg tool:(It is compiled by merlin5 android10 mkdtimg source code.)
+
+you must download merlin5 android10 source code
+
+1)source code path:kernel/android/android-10/system/libufdt/utils/src
+
+2)merlin5 android10 mkdtimg source code version
+commit 715ca232a5b4b870968eceedc332eb84cf312963
+Merge: b62b90b a2c32fd
+Author: Xin Li <delphij@google.com>
+Date:   Mon Feb 25 01:48:14 2019 -0800
+
+    Merge stage-aosp-master into pi-dev-plus-aosp
+    am: a2c32fd184
+    
+    Change-Id: I746664b6ea4d80da2399874dd09be240ca1eb3d0
+    
+3)compile step:
+
+(1)into kernel/android/android-10/build
+run cmd:
+source envsetup.sh
+lunch
+(I choose [3]RealtekATV-userdebug)
+
+(2)into kernel/android/android-10/system/libufdt/utils/src
+run cmd:
+mm
+tool Install path: out/host/linux-x86/bin/mkdtimg
+
+2.make dtbo img cmd:
+
+For example:
+mkdtimg create dtbo.img --page_size=4096 overlay.dtb --id=0x0001 --custom0=0xabc
+
+--page_size 		is flash page size.
+overlay.dtb 		is input dtbo file name
+--id						is dtbo index for megre sequence
+--customX				is customer's id
+
+you can refer to mkdtboimg.sh

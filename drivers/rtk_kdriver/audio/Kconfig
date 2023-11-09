@@ -1,0 +1,13 @@
+config RTK_KDRV_AUDIO
+	tristate "Driver for Audio HAL Manager"
+	depends on RTK_KDRV_RPC
+	default n
+	help
+	  Driver for Audio HAL Manager
+
+config SND_KDRV_REALTEK
+    tristate "REALTEK ALSA Driver use kdriver"
+    depends on RTK_KDRV_AUDIO
+    select SND_PCM
+    select SND_HWDEP
+    default n

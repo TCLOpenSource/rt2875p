@@ -1,0 +1,53 @@
+/* rtk 6748 otp table */
+
+/ {
+	rtk_otp_table {
+		compatible = "realtek,rtk-otp_table";
+		func_boot_type_sel     = <512  0    4>;
+		func_mem_obf_en        = <576  0    4>;
+		chip_type_hdr_disable  = <930  1090 2>;
+		chip_type_nnip_disable = <943  1103 1>;
+		sw_func_mheg5          = <967  1127 1>;
+		sw_func_hbbtv_20_vewd = <982 1142 1>;
+		sw_func_hbbtv_20_seraphic = <983 1143 1>;
+		sw_func_ciplus         = <977  1137 1>;
+		sw_func_ginga          = <980  1140 1>;
+		sw_func_fvp            = <991  1151 1>;
+		chip_type_remark_en    = <1247 0    1>;
+		wafer_info_slot        = <1312 0    69>;
+		wafer_info_all         = <1328 0    64>;
+		hw_usb_disconnect_level = <3104 0    16>;
+		hw_usb_squelch_level    = <3072 0    16>;
+		hw_usb_swing_level      = <3168 0    16>;
+		hw_usb_disconnect_done  = <3120 0    1>;
+		hw_usb_squelch_done     = <3088 0    1>;
+		hw_usb_swing_done       = <3184 0    1>;
+		hw_emmc_ldo_trim_info   = <3888 0    3>;
+		hdcp_1_4_bksv_key       = <5376 0    40>;
+		hdcp_1_4_private_key    = <5416 0    2560>;
+		rtk_otp_debug_field     = <520  0    4>;
+		hw_mcm_atsc3            = <3121 0    1>;
+		hw_ifd_iadc_ldo         = <3904 0    4>;
+		hw_ifd_qadc_ldo         = <3908 0    4>;
+		hw_hdmi_rx_z0           = <3840 0    24>;
+		hw_hdmi_rx_ldo          = <3936 0    32>;
+		mp_wafer_version        = <4385 0    3>;
+		mp_scpu_over_freq       = <4388 0    1>;
+		hw_cpu_package_size     = <2472 0    3>;
+		hw_cpu_package_feature = <2475 0 2>;
+		hw_vd_adc_ldo           = <3900 0    4>;
+		hw_ddr_info             = <1248 0    32>;
+		io_pcmcia_disable = <608 0 4>;
+		io_sc_disable = <620 0 4>;
+		hw_mp_status_ft_iddq_done = <3092 0 3>;
+		hw_iddq_core_power = <1664 0 9>;
+		hw_iddq_scpu_power = <1673 0 9>;
+		sw_func_karaoke=<989 1149 1>;
+		sw_func_virtual_camera = <990 1150 1>;	
+		chip_type_memc_disable = <937 1097 1>;
+		sw_func_hdr_10_plus = <973 1133 1>;
+		hw_hdmi_rx_hysterisis = <3927 0 9>;
+		hw_ypp_ldo = <3864 0 8>;
+		chip_type_siliconworks_demura_disable = <939 1099 1>;	
+	};
+};

@@ -1,0 +1,10 @@
+__crc_emcu_LED_FALSH_event = 0x74f46083;
+__crc_emcu_WOL_event = 0x9ba25481;
+__crc_emcu_WOW_event = 0x3979d9e6;
+__crc_emcu_set_RTC = 0xbbf04239;
+__crc_emcu_set_ddc = 0xe9f493a2;
+__crc_send_packet = 0xcc052a78;
+__crc_powerMgr_set_wakeup_source_undef = 0xe44c5fbd;
+__crc_powerMgr_get_wakeup_source = 0x74d080e7;
+__crc_emcu_chk_event = 0xce7d2b14;
+__crc_rtk_pm_load_8051 = 0xce4f9d3b;

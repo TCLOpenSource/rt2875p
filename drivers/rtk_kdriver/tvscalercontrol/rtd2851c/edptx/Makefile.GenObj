@@ -1,0 +1,29 @@
+#
+# Makefile for the Realtek HDMI TX drivers.
+#
+##ROS_INCLUDE_PATH +=  -I ROS/include
+#EDPTX_INCLUDE_PATH += -I include
+subdir-ccflags-y += $(EDPTX_INCLUDE_PATH)
+EDPTX_LIB_HOME = ../../../../../verify/eDP
+
+## EDPTX Scaler Display DP TX
+obj-y += $(EDPTX_LIB_HOME)/src/ScalerDisplayDpTx.o  $(EDPTX_LIB_HOME)/src/ScalerDisplayDpTxX.o $(EDPTX_LIB_HOME)/src/scalerEDpTx.o $(EDPTX_LIB_HOME)/src/ScalerDPTxPhySwingTable.o 
+
+## EDPTX D-domain HW script (FOR VERIFY ONLY)
+#ifeq (y,$(filter y, $(CONFIG_ENABLE_EDPTX_DDOMAIN_HW_SCRIPT)))
+#obj-y += src/edptx_hwSdScript.o
+#endif
+
+## EDPTX flow control
+obj-y += $(EDPTX_LIB_HOME)/UserCommonPowerPanelAction.o
+
+obj-y += edptx.o
+
+#KBUILD_CFLAGS += -Wall -Werror
+KBUILD_CFLAGS += -Wall
+
+clean: $(DEP_MODULES_CLEAN)
+	rm -f $(EDPTX_INCLUDE_PATH)/*.o $(EDPTX_INCLUDE_PATH)/src/*.o
+
+cleanall: clean
+

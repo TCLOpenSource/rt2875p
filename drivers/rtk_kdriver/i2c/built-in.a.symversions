@@ -1,0 +1,11 @@
+__crc_i2c_rtk_add_bus = 0x471c75a8;
+__crc_i2c_rtk_del_bus = 0xfbb3402c;
+__crc_i2c_master_recv_ex = 0x64a602f7;
+__crc_i2c_master_send_ex = 0x5683f84f;
+__crc_i2c_master_recv_ex_flag = 0x44c76926;
+__crc_i2c_master_send_ex_flag = 0xeaf8dd5f;
+__crc_i2c_master_EDDC_ex = 0x77b6fcb9;
+__crc_create_rtk_i2c_handle = 0xf2702934;
+__crc_destroy_rtk_i2c_handle = 0x7eb67127;
+__crc_get_rtk_i2c_phy_count = 0x6021beda;
+__crc_create_rtk_g2c_handle = 0x93212dc0;

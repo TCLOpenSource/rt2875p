@@ -1,0 +1,40 @@
+/* rtk 2851a otp table */
+
+/ {
+	rtk_otp_table {
+		compatible = "realtek,rtk-otp_table";
+		func_boot_type_sel     = <512  0    4>;
+		func_mem_obf_en        = <576  0    4>;
+		chip_type_hdr_disable  = <930  1090 2>;
+		chip_type_nnip_disable = <943  1103 1>;
+		sw_func_mheg5          = <967  1127 1>;
+		sw_func_hbbtv          = <969  1129 1>;
+		sw_func_hbbtv_20_vewd = <982 1142 1>;
+		sw_func_hbbtv_20_seraphic = <983 1143 1>;
+		sw_func_ciplus         = <977  1137 1>;
+		sw_func_ginga          = <980  1140 1>;
+		sw_func_fvp            = <991  1151 1>;
+		chip_type_remark_en    = <1247 0    1>;
+		wafer_info_slot        = <1312 0    69>;
+		wafer_info_all         = <1328 0    65>;
+		hw_usb_disconnect_level = <1920 0    12>;
+		hw_usb_squelch_level    = <1888 0    12>;
+		hw_usb_disconnect_done  = <1932 0    1>;
+		hw_usb_squelch_done     = <1900 0    1>;
+		
+		hw_ifd_iadc_ldo         = <1588 0    4>;
+		hw_ifd_qadc_ldo         = <1592 0    4>;
+		hw_hdmi_rx_z0           = <1504 0    18>;
+		sw_over_freq = <2970 0 3>;
+		io_pcmcia_disable = <608 0 4>;
+		io_sc_disable = <620 0 4>;
+		hw_mp_status_ft_iddq_done = <2480 0 3>;
+		hw_iddq_core_power = <1934 0 9>;
+		hw_iddq_scpu_power = <1943 0 9>;
+		sw_func_virtual_camera = <990 1150 1>;
+		chip_type_memc_disable = <937 1097 1>;
+		sw_func_hdr_10_plus = <973 1133 1>;
+		hw_ypp_ldo = <1528 0 8>;
+	};
+};
+

@@ -1,0 +1,9 @@
+menu "MEASURE"
+
+config RTK_MEASURE
+	tristate "Enable measure Support"
+	default y
+	help
+		Enable measure
+
+endmenu

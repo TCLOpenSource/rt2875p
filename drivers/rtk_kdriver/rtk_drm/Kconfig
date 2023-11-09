@@ -1,0 +1,12 @@
+
+config DRM_REALTEK
+	tristate "DRM Support for Realtek SoCs"
+	depends on DRM && RTK_KDRV_GDMA
+	select DRM_GEM_CMA_HELPER
+    select DRM_GEM_SHMEM_HELPER
+	select DRM_KMS_HELPER
+    default n
+	help
+	  The module will be called rtk_drm
+	  This driver provides kernel mode setting and
+	  buffer management to userspace.

@@ -1,0 +1,12 @@
+__crc_register_get_disp_htotal_ptr = 0xd730c926;
+__crc_register_get_disp_vtotal_ptr = 0xb575ffe7;
+__crc_register_get_disp_dclk_ptr = 0x34b909b9;
+__crc_register_get_disp_refresh_rate_ptr = 0x17d3e42b;
+__crc_rtk_pwm_backlight_enable = 0x8dc0b240;
+__crc_rtk_pwm_backlight_status = 0xc22978bb;
+__crc_rtk_pwm_backlight_set_duty = 0x32d53c5e;
+__crc_rtk_pwm_set_param = 0xdab4256d;
+__crc_rtk_pwm_get_param = 0xd0da0a85;
+__crc_rtk_pwm_set_scaler_source = 0xe53048a5;
+__crc_rtk_pwm_set_tracking = 0xaea085ca;
+__crc_rwPanelTool = 0xc9bd5a76;

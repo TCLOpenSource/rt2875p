@@ -1,0 +1,6 @@
+__crc_rtk_gic_raise_softirq = 0x6925ffb7;
+__crc_set_rtkaudio_device_ptr = 0x153a9d1c;
+__crc_get_rpc_device_ptr = 0x4e391891;
+__crc_register_kernel_rpc = 0x15b9cb9a;
+__crc_send_krpc = 0x8ecc5868;
+__crc_send_rpc_command = 0x4b07e6fd;

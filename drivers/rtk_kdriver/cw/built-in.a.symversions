@@ -1,0 +1,14 @@
+__crc_rtk_cw_request_cw = 0x34823479;
+__crc_rtk_cw_request_cw_array = 0x9de71158;
+__crc_rtk_cw_request_multi_cws = 0xc9376bb9;
+__crc_rtk_cw_release_cw_by_module = 0x0a51b6af;
+__crc_rtk_cw_release_cw = 0x998a7c76;
+__crc_rtk_cw_set_cw = 0xa36223d7;
+__crc_rtk_cw_set_nonseq_cw = 0xf6fa72d1;
+__crc_rtk_cw_get_cw = 0x6c4a6b5d;
+__crc_rtk_cw_get_nonseq_cw = 0x66dfc942;
+__crc_rtk_cw_query_used_cw_by_module = 0xa437fbad;
+__crc_rtk_cw_query_free_cw = 0xe21503a5;
+__crc_rtk_cw_dump_cw_status = 0xf420aa96;
+__crc_rtk_cw_register_cw_manager = 0xc3c7aa76;
+__crc_rtk_cw_unregister_cw_manager = 0x24a2b275;

@@ -1,0 +1,30 @@
+
+// Ref:
+//  https://source.android.com/devices/architecture/dto/syntax
+
+
+/dts-v1/; 
+/plugin/;
+
+/ {
+	compatible = "rtk,rtd6748";
+};
+
+
+&CHOSEN {
+	//[FIXME][HACK] not define androidboot.dtbo_idx can make loader skipping(fail) merge to save fdt space
+	// also to backward compatible to legacy loader behavior of no dtbo merged if choosing this dtbo.
+	bootargs_ext = "";
+};
+
+
+&RMM {
+	// dummy devicetree overlay for legacy uboot overlay
+	compatible = "realtek,dummy";
+};
+
+
+&ODM {
+};
+
+

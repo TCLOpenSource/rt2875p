@@ -1,0 +1,6 @@
+__crc_ion_dvr_check_youtube_enter = 0xa45604b0;
+__crc_ion_dvr_enable_debug = 0x7d5700ac;
+__crc_ion_free_register_callback = 0x6c901148;
+__crc_ion_dvr_free_ve_addr = 0xd2fe372d;
+__crc_ion_dvr_alloc_ve_addr = 0xe93da5c8;
+__crc_ion_dvr_set_ve_addr = 0x95202616;

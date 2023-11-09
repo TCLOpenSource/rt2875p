@@ -1,0 +1,25 @@
+config RTK_KDRV_DEMOD
+	tristate "DTV Demod Driver"
+	depends on RTK_KDRIVER_SUPPORT	
+	default n
+	help	  
+
+config RTK_KDRV_KHAL_DEMOD
+	tristate "DTV KHAL Demod Driver "
+	depends on RTK_KDRIVER_SUPPORT
+	default n
+	help
+	
+config RTK_KDRV_DEMOD_TEST
+	tristate "DTV Demod Test"
+	depends on RTK_KDRV_DEMOD
+	default n
+	help
+
+	 Dummy flag
+
+config RTK_KDRV_DEMOD_SCAN_THREAD_ENABLE
+	tristate "DTV Demod Driver Scan Thread"
+	depends on RTK_KDRIVER_SUPPORT	
+	default n
+	help	  

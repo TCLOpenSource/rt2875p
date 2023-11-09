@@ -1,0 +1,7 @@
+config RTK_KDRV_TP
+	tristate "TP Driver (MPEG2-Transport)"
+	select RTK_KDRV_CW
+	depends on RTK_KDRIVER_SUPPORT
+	default n		  
+
+source "drivers/rtk_kdriver/tp/$(CHIP_NAME)/Kconfig"

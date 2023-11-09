@@ -1,0 +1,4 @@
+__crc_key_type_encrypted = 0xf9274956;
+__crc_ecryptfs_get_auth_tok_key = 0x0805f2c8;
+__crc_ecryptfs_get_versions = 0x263beb75;
+__crc_ecryptfs_fill_auth_tok = 0x3891ffc8;

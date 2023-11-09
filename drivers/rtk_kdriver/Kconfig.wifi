@@ -1,0 +1,63 @@
+menu "Realtek platform WIFI drivers"
+
+config RTK_KDRV_WIFI
+    bool "Enable Realtek WIFI driver"
+	default n
+
+config RTK_KDRV_RTLWIFI
+    bool "Enable Realtek WIFI driver"
+	default y
+
+config RTL8852BU
+    tristate "Realtek 8852B USB WiFi (WIFI-6)"
+    depends on USB && (RTK_KDRV_WIFI || RTK_KDRV_RTLWIFI)
+    select RTLWIFI
+    select RTLWIFI_USB
+     default n
+    help
+      Help message of RTL8852BU
+
+config RTL8822CU
+    tristate "Realtek 8822C USB WiFi (WIFI-5)"
+    depends on USB && (RTK_KDRV_WIFI || RTK_KDRV_RTLWIFI)
+    select RTLWIFI
+    select RTLWIFI_USB
+    default m
+    help
+      Help message of RTL8822CU
+
+config RTL8822EU
+    tristate "Realtek 8822E USB WiFi (WIFI-5)"
+    depends on USB && (RTK_KDRV_WIFI || RTK_KDRV_RTLWIFI)
+    select RTLWIFI
+    select RTLWIFI_USB
+    default m
+    help
+      Help message of RTL8822EU
+
+# RTK_FIXME_64 : added for rtk_btusb
+config ANDROID_VERSION
+	int "Number of Android version"
+    default 10
+    help
+		This option tell which android version use.
+
+config RTL8852BE
+    tristate "Realtek 8852BE USB WiFi (WIFI-6)"
+    depends on USB && (RTK_KDRV_WIFI || RTK_KDRV_RTLWIFI)
+    select RTLWIFI
+    select RTLWIFI_USB
+     default n
+    help
+      Help message of RTL8852BE
+
+config RTL8822CE
+    tristate "Realtek 8822CE USB WiFi (WIFI-5)"
+    depends on USB && (RTK_KDRV_WIFI || RTK_KDRV_RTLWIFI)
+    select RTLWIFI
+    select RTLWIFI_USB
+    default n
+    help
+      Help message of RTL8822CE
+
+endmenu

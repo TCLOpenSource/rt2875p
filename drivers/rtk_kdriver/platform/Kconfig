@@ -1,0 +1,1 @@
+source "drivers/rtk_kdriver/platform/tv006/Kconfig"

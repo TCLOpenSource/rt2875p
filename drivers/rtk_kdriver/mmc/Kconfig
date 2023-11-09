@@ -1,0 +1,96 @@
+menu "RTK MMC Driver"
+
+config MMC_RTKEMMC_PLUS
+    tristate "Realtek EMMC PLUS Host Driver"
+    depends on MMC && MMC_BLOCK
+    help
+      This selects Realtek EMMC PLUS controller.
+
+      If unsure, say N.
+
+config RTKEMMC_HS200
+    tristate "Realtek EMMC HS200 Function"
+    depends on MMC_RTKEMMC_PLUS
+    help
+      This is HS200 SDR function enable.
+
+      If unsure, say N.
+
+config RTKEMMC_HS400
+    tristate "Realtek EMMC HS400(HS200 DDR) Function"
+    depends on RTKEMMC_HS200
+    help
+      This is HS200 DDR function enable.
+
+      If unsure, say N.
+
+config RTKEMMC_HS200_CLOCK
+	int "Clock runing on HS200 SDR & DDR, Mhz"
+	depends on RTKEMMC_HS200 || RTKEMMC_HS400
+	range 50  200
+	default 120
+	help
+	  clock runing on HS200 mode.
+	  Form clock 50Mhz to 200Mhz.
+	  Default is 150Mhz.
+
+	  If unsure, say 150 here.
+
+config MMC_RTKEMMC_SHOW_EXTCSD
+    tristate "show eMMC EXT_CSD."
+    depends on MMC_RTKEMMC_PLUS
+    help
+      show eMMC EXT_CSD when initial flow.
+
+      If unsure, say N.
+
+config MMC_RTKEMMC_HK_ATTR
+    tristate "EMMC extra function."
+    depends on MMC_RTKEMMC_PLUS
+    help
+      Open hacking command function.
+      this funcion can modify ext_csd and other function.
+
+      If unsure, say N.
+
+config MMC_RTKEMMC_VENDOR_IOCTL
+    tristate "enable ioctl function of RTK."
+    depends on MMC_RTKEMMC_PLUS
+    help
+      show enable ioctl function of RTK.
+
+      If unsure, say N.
+
+config MMC_RTKEMMC_RST_N_ENABLE
+    tristate "enable eMMC HW reset function on ext_csd."
+    depends on MMC_RTKEMMC_PLUS
+    help
+      enable eMMC HW reset function on ext_csd.
+
+      If unsure, say N.
+
+config MMC_HW_SEMAPHORE
+    tristate "enable eMMC HW semaphore."
+    depends on MMC_RTKEMMC_PLUS
+    help
+      enable eMMC HW rsemaphore.
+
+      If unsure, say N.
+
+config RTKEMMC_COWORK_WITH_KCPU
+    tristate "enable eMMC cowork with kcpu."
+    depends on MMC_RTKEMMC_PLUS
+    help
+      enable eMMC cowork with kcpu.
+
+      If unsure, say N.
+
+config MMC_RTKSD
+    tristate "Realtek MMC/SD Host Driver"
+    depends on MMC && MMC_BLOCK
+    help
+      This selects Realtek MMC/SD card reader.
+
+      If unsure, say N.
+
+endmenu

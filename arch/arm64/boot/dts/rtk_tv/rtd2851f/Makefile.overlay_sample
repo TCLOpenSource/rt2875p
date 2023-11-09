@@ -1,0 +1,29 @@
+# SPDX-License-Identifier: GPL-2.0-only
+
+dtb-$(CONFIG_ARCH_RTK2851A) += rtd2851a64_Q.dtb
+dtb-$(CONFIG_ARCH_RTK2885M) += rtd2885m64_R.dtb
+dtb-$(CONFIG_ARCH_RTK6748) += rtd6748.dtb
+# Leverage native makefiles for c def, and flags individually to save dtbo space.
+#dtb-$(CONFIG_ARCH_RTK6748) += rtd6748_0_def.dtbo rtd6748_1_1g5.dtbo rtd6748_2_1gb.dtbo rtd6748_3_8k.dtbo rtd6748_n.dtbo
+#DTC_FLAGS_rtd6748 = -a 4 -@
+#DTC_FLAGS_rtd6748_0_def = -a 4
+#DTC_FLAGS_rtd6748_1_1g5 = -a 4
+#DTC_FLAGS_rtd6748_n     = -a 4
+dtb-$(CONFIG_ARCH_RTK6702) += rtd6702.dtb
+
+# upstream DTC_INCLUDE and dtc_cpp_flags is not appendable, need to rework Makefile.lib or put to dtc/include-prefixes
+DTC_INCLUDE += $(srctree)/drivers/rtk_kdriver/include/$(CHIP_NAME)/rtk_kdriver
+
+
+.PHONY: dtbo.img
+
+dtbo.img: *.dtbo
+	@echo "Creating dtbo image with mkdtboimg"
+	@rm -f dtbo.img
+	./dt_tool/mkdtimg/mkdtboimg.py create dtbo.img --page_size=4096 --version=1 --custom0=0x1 --id=0x67480000 \
+		"rtd6748_0_def.dtbo" --custom1=0x0 --flags=0 \
+		"rtd6748_1_1g5.dtbo" --custom1=0x1 --flags=0 \
+		"rtd6748_2_1gb.dtbo" --custom1=0x2 --flags=0 \
+		"rtd6748_3_8k.dtbo"  --custom1=0x3 --flags=0 \
+		"rtd6748_n.dtbo" --id=0x7FFF0000 --custom1=0xFF --flags=0 > /dev/null
+

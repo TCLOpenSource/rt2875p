@@ -1,0 +1,187 @@
+#include <linux/kernel.h>
+#include <linux/module.h>
+#include <rtk_kdriver/rtd_log.h>
+#include <linux/string.h>
+#define RTD_LOG_MODULE(module,level) {RTD_LOG_MODULE_##module,level,#module,1}
+struct MODULE_MAP module_map[RTD_LOG_MODULE_MAX_ID] =
+{
+    RTD_LOG_MODULE(MEASURE,5),
+    RTD_LOG_MODULE(QOS,5),
+    RTD_LOG_MODULE(RMM,5),
+    RTD_LOG_MODULE(SPI_DEV,5),
+    RTD_LOG_MODULE(SPI_NOR,5),
+    RTD_LOG_MODULE(RTK_TEE,5),
+    RTD_LOG_MODULE(RPC,5),
+    RTD_LOG_MODULE(CRT,5),
+    RTD_LOG_MODULE(PLATFORM,5),
+    RTD_LOG_MODULE(POWER,5),
+    RTD_LOG_MODULE(MACH_RTK,5),
+    RTD_LOG_MODULE(HW_MONITOR,5),
+    RTD_LOG_MODULE(DFT,5),
+    RTD_LOG_MODULE(VENUSFB,5),
+    RTD_LOG_MODULE(GDECMP,5),
+    RTD_LOG_MODULE(UART,5),
+    RTD_LOG_MODULE(RTICE,5),
+    RTD_LOG_MODULE(SWITCH,5),
+    RTD_LOG_MODULE(PCB_MGR,5),
+    RTD_LOG_MODULE(OMX,5),
+    RTD_LOG_MODULE(CRM,5),
+    RTD_LOG_MODULE(RTC,5),
+    RTD_LOG_MODULE(VDEC,5),
+    RTD_LOG_MODULE(USB_GADGET,5),
+    RTD_LOG_MODULE(ZQ,5),
+    RTD_LOG_MODULE(DDR_SCAN,5),
+    RTD_LOG_MODULE(CPU_FREQ,5),
+    RTD_LOG_MODULE(OHCI_PLAT,5),
+    RTD_LOG_MODULE(RTK_USB,5),
+    RTD_LOG_MODULE(OTG_PLAT,5),
+    RTD_LOG_MODULE(XHCI_DRD,5),
+    RTD_LOG_MODULE(XHCI_PLAT,5),
+    RTD_LOG_MODULE(EHCI_PLAT,5),
+    RTD_LOG_MODULE(AVD,6),
+    RTD_LOG_MODULE(ADC,6),
+    RTD_LOG_MODULE(VDC,6),
+    RTD_LOG_MODULE(VBI,6),
+    RTD_LOG_MODULE(ONMS,6),
+    RTD_LOG_MODULE(OFFMS,6),
+    RTD_LOG_MODULE(MEMC,6),
+    RTD_LOG_MODULE(MEMC_LIB,6),
+    RTD_LOG_MODULE(NEW_GAME_MODE,6),
+    RTD_LOG_MODULE(SCALER_MEMORY,6),
+    RTD_LOG_MODULE(VBE,6),
+    RTD_LOG_MODULE(VPQ,5),
+    RTD_LOG_MODULE(VPQ_GSR,5),
+    RTD_LOG_MODULE(HDMITX,6),
+    RTD_LOG_MODULE(VFE,6),
+    RTD_LOG_MODULE(VSC,6),
+    RTD_LOG_MODULE(I3DDMA,6),
+    RTD_LOG_MODULE(IOREG,6),
+    RTD_LOG_MODULE(SMT,6),
+    RTD_LOG_MODULE(HDR,6),
+    RTD_LOG_MODULE(VR,6),
+    RTD_LOG_MODULE(VT,6),
+    RTD_LOG_MODULE(VO,6),
+    RTD_LOG_MODULE(VGIP_ISR,6),
+    RTD_LOG_MODULE(DDOMAIN_ISR,6),
+    RTD_LOG_MODULE(PIF_ISR,5),
+    RTD_LOG_MODULE(HIST,5),
+    RTD_LOG_MODULE(VPQ_AI,5),
+    RTD_LOG_MODULE(VPQEX,5),
+    RTD_LOG_MODULE(VPQUT,5),
+    RTD_LOG_MODULE(VPQMASK,5),
+    RTD_LOG_MODULE(VIP_RINGBUF,5),
+    RTD_LOG_MODULE(VPQMASK_COLOR,5),
+    RTD_LOG_MODULE(SRNN,5),
+    RTD_LOG_MODULE(VPQ_OD,5),
+    RTD_LOG_MODULE(VPQ_FCIC,5),
+    RTD_LOG_MODULE(VPQ_ISR,5),
+    RTD_LOG_MODULE(AI_DBG,5),
+    RTD_LOG_MODULE(RTK_UTIL_TASKS,5),
+    RTD_LOG_MODULE(SE,5),
+    RTD_LOG_MODULE(GDMA,5),
+    RTD_LOG_MODULE(DPRX,6),
+    RTD_LOG_MODULE(QUICK_SHOW,6),
+    RTD_LOG_MODULE(HDCP,6),
+    RTD_LOG_MODULE(DELI,5),
+    RTD_LOG_MODULE(SE_FILM,5),
+    RTD_LOG_MODULE(DPQ,5),
+    RTD_LOG_MODULE(PQ,5),
+    RTD_LOG_MODULE(EMMC,5),
+    RTD_LOG_MODULE(EVENTLOG,5),
+    RTD_LOG_MODULE(CARD,5),
+    RTD_LOG_MODULE(SPI,5),
+    RTD_LOG_MODULE(rtk_spi_master,5),
+    RTD_LOG_MODULE(USB_BB,5),
+    RTD_LOG_MODULE(USB_HUB,5),
+    RTD_LOG_MODULE(PCIE,5),
+    RTD_LOG_MODULE(ETH,5),
+    RTD_LOG_MODULE(HDMI,5),
+    RTD_LOG_MODULE(AMP,5),
+    RTD_LOG_MODULE(AudioHW,5),
+    RTD_LOG_MODULE(ADSP,5),
+    RTD_LOG_MODULE(TP,5),
+    RTD_LOG_MODULE(DEMUX,5),
+    RTD_LOG_MODULE(ATSC3,5),
+    RTD_LOG_MODULE(ATSC3ALP,5),
+    RTD_LOG_MODULE(JAPAN4K,5),
+    RTD_LOG_MODULE(DEMOD,5),
+    RTD_LOG_MODULE(DISEQC,5),
+    RTD_LOG_MODULE(LNBUART,5),
+    RTD_LOG_MODULE(LNBGPIO,5),
+    RTD_LOG_MODULE(MD,5),
+    RTD_LOG_MODULE(CW,5),
+    RTD_LOG_MODULE(MCP,5),
+    RTD_LOG_MODULE(OTP,5),
+    RTD_LOG_MODULE(RCP,5),
+    RTD_LOG_MODULE(RNG,5),
+    RTD_LOG_MODULE(RSA,5),
+    RTD_LOG_MODULE(WRAP,5),
+    RTD_LOG_MODULE(DCMT,5),
+    RTD_LOG_MODULE(HWM,5),
+    RTD_LOG_MODULE(THERMAL,5),
+    RTD_LOG_MODULE(SEMAPHORE,5),
+    RTD_LOG_MODULE(CEC,5),
+    RTD_LOG_MODULE(DDC,5),
+    RTD_LOG_MODULE(DDC_CI,5),
+    RTD_LOG_MODULE(RTK_EXTCON,5),
+    RTD_LOG_MODULE(GPIO,5),
+    RTD_LOG_MODULE(KEYPAD,5),
+    RTD_LOG_MODULE(LED,5),
+    RTD_LOG_MODULE(LEDSERIAL,5),
+    RTD_LOG_MODULE(LSADC,5),
+    RTD_LOG_MODULE(I2C,5),
+    RTD_LOG_MODULE(IR,5),
+    RTD_LOG_MODULE(IRMD,5),
+    RTD_LOG_MODULE(IRTX,5),
+    RTD_LOG_MODULE(PCMCIA,5),
+    RTD_LOG_MODULE(PWM,5),
+    RTD_LOG_MODULE(PWM_LD,5),
+    RTD_LOG_MODULE(SCD,5),
+    RTD_LOG_MODULE(EMCU,5),
+    RTD_LOG_MODULE(MISC,5),
+    RTD_LOG_MODULE(MISC_DRIVER_INTERRUPT,5),
+    RTD_LOG_MODULE(USBDUMP,5),
+    RTD_LOG_MODULE(RTDLOG,5),
+    RTD_LOG_MODULE(ONLINE_HELP,5),
+    RTD_LOG_MODULE(LG_COUNTRY_TYPE,5),
+};
+EXPORT_SYMBOL(module_map);
+
+bool check_log_module(char *module_name,unsigned int *module)
+{
+    int i;
+    for(i=0;sizeof(module_map)/sizeof(struct MODULE_MAP)>i;i++)
+    {
+        if((!strcmp(module_name,module_map[i].name))&&(module_map[i].save_flag))
+        {
+            *module = i;
+            return true;
+        }
+    }
+
+    return false;
+}
+bool check_log_levle(char *level_buf,unsigned int module)
+{
+    int level = 0;
+
+    level = simple_strtoul(level_buf+1, NULL, 10);
+
+    if(level <= module_map[module].level)
+        return true;
+
+    return false;
+}
+bool check_log_level_and_module(char *level_buf,char *module_name)
+{
+    int module = 0;
+    if(check_log_module(module_name+3,&module) == false)
+        return false;
+
+    if(check_log_levle(level_buf,module) == false)
+        return false;
+
+    return true;
+}
+EXPORT_SYMBOL(check_log_level_and_module);
+MODULE_LICENSE("GPL");

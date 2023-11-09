@@ -1,0 +1,9 @@
+__crc_register_rtkvdec_notifier = 0xa66fb89e;
+__crc_unregister_rtkvdec_notifier = 0x4b4e36d3;
+__crc_rtkvdec_vtm_state = 0x2adaca20;
+__crc_rtkvdec_cobuffer_alloc = 0x50a2683a;
+__crc_rtkvdec_cobuffer_free = 0xf0e56402;
+__crc_rtkvdec_show_sharedmemory = 0x0f4e42a4;
+__crc_rtkvdec_svp_hdmi_cma_region_record = 0x2e5b1eb5;
+__crc_rtkvdec_svp_enable_protection = 0xa2ce2ab8;
+__crc_rtkvdec_svp_disable_protection = 0x4f843d37;

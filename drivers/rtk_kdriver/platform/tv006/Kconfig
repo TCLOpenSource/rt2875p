@@ -1,0 +1,9 @@
+menu "Platform dependent drivers (TV006)"
+depends on CUSTOMER_TV006
+
+config RTK_KDRV_GPIO_WDT_DEBUG_LOG
+        bool "Enable GPIO Interrupt for WDT Debug"
+        select RTK_KDRV_GPIO
+        default y
+
+endmenu

@@ -1,0 +1,3 @@
+__crc_pcb_enum_all = 0x90f6bef8;
+__crc_pcb_mgr_get_enum_info_byname = 0xc6fadaf3;
+__crc_realtek_sysfs_pcb_enum_dir_init = 0x13fca30f;

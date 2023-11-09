@@ -1,0 +1,40 @@
+menuconfig RTK_KDRV_HW_MONITOR
+	tristate "HW_MONITOR support"
+	depends on RTK_KDRIVER_SUPPORT
+	default y
+	help
+	  This option adds Realtek HW Monitor support.
+
+
+if  RTK_KDRV_HW_MONITOR
+
+# SB2
+config RTK_KDRV_SB2
+	tristate "SB2 Driver"
+	default n
+	help
+	  System Bridge II Driver
+
+
+config REALTEK_ARM_WRAPPER
+	tristate "ARM WRAPPER Detector Enable"
+	default n
+	help
+	  support ARM WRAPPER Detector
+
+config REALTEK_ARM_WRAPPER_MONITOR_TEXT
+	bool "ARM WRAPPER monitor text"
+	depends on REALTEK_ARM_WRAPPER
+	default n
+	help
+	  support ARM WRAPPER monitor text
+
+#Memory Trash Detecter
+config RTK_KDRV_DC_MEMORY_TRASH_DETCTER
+	tristate "DCU Memory Trash Detector"
+	default n
+	help
+	  Memory Trash Detecter
+
+endif
+

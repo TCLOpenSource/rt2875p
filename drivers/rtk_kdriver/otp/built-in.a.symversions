@@ -1,0 +1,15 @@
+__crc_rtk_is_dobly_Vision_supported = 0x7ada1e2c;
+__crc_rtk_get_hdcp_1_4_bksv_key = 0x9f2b6be0;
+__crc_rtk_get_hdcp_1_4_private_key = 0x4672d436;
+__crc_rtk_get_hdcp_2_2_key = 0x3d91a588;
+__crc_rtk_get_hdcp_2_2_bksb_key = 0x4e7077b1;
+__crc_rtk_is_NNIP_function_disable = 0x4b59499f;
+__crc_rtk_is_pcmcia_disable = 0x9fc400d6;
+__crc_rtk_is_sc_disable = 0x1442dcbd;
+__crc_rtk_get_iddq_core_power = 0xed34251b;
+__crc_rtk_get_iddq_scpu_power = 0xffbe6ca7;
+__crc_rtk_get_set_type = 0x1939a5fc;
+__crc_rtk_get_package_feature = 0xea22aae7;
+__crc_rtk_otp_field_read = 0x39264500;
+__crc_rtk_otp_field_read_by_name = 0x8d3dae25;
+__crc_rtk_otp_field_read_int_by_name = 0x3f35b44f;

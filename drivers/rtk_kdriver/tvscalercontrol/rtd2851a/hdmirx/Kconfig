@@ -1,0 +1,72 @@
+menu "HDMI RX"
+
+config RTK_HDMI_RX
+	bool "Enable HDMI RX MAC"
+	default n
+	select RTK_KDRV_GPIO
+	select RTK_KDRV_DDC
+	help
+		Enable HDMI RX MAC
+
+config RTK_KDRV_HDMI_ENABLE_PHY
+	bool "Enable HDMI PHY Support"
+	default y
+	depends on RTK_HDMI_RX 
+	help
+		Enable PHY Support
+
+config RTK_KDRV_HDMI_ENABLE_DYNAMIC_POWER_SAVING
+	bool "Enable HDMI Dynamic Power Saving"
+	default n
+	depends on RTK_HDMI_RX 
+	help
+	  Enable HDMI Dynamic Power Saving	  
+
+config OPTEE_HDCP2
+	bool "Enable OPTEE_HDCP2"
+	default n
+	help
+		Enable OPTEE_HDCP2
+
+config OPTEE_HDCP14
+	bool "Enable OPTEE_HDCP14"
+	default n
+	help
+		Enable OPTEE_HDCP14
+
+config ENABLE_DOLBY_VISION_HDMI_AUTO_DETECT
+	bool "Enable Dolby Vision HDMI Auto Detect"
+	default n
+	depends on RTK_HDMI_RX && SUPPORT_SCALER 
+	help
+		Enable Dolby Vision HDMI Auto Detect
+
+config ENABLE_DOLBY_VISION_VSEM
+	bool "Enable Dolby Vision VSEM Receieve"
+	default n
+	depends on ENABLE_DOLBY_VISION_HDMI_AUTO_DETECT 
+	help
+		Enable Dolby Vision Vendor Specific EMP RX
+
+config ENABLE_HDR10_HDMI_AUTO_DETECT
+	bool "Enable HDR10 HDMI Auto Detect"
+	default n
+	depends on RTK_HDMI_RX 
+	help
+		Enable HDR10 HDMI Auto Detect
+
+config HDMI_DRV_HPD
+	bool "Enable HDMI_DRV_HPD"
+	default n
+	help
+		Provide realtek HDMI_DRV_HPD.
+
+config HDMI_RX_BUILT_IN_TEST
+        bool "Enable HDMI RX Built in test"
+        default y
+        help
+                Enable HDMI RX Built in test.
+
+#source drivers/rtk_kdriver/tvscalercontrol/hdmirx/bist/Kconfig	
+		
+endmenu

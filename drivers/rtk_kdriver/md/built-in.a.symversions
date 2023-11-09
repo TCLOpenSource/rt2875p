@@ -1,0 +1,6 @@
+__crc_smd_memcpy = 0xb77f9a60;
+__crc_smd_waitComplete = 0x15fd463b;
+__crc_smd_checkFinish = 0x9a6684b0;
+__crc_smd_checkComplete = 0xd8ded428;
+__crc_smd_memfill = 0x56cd6374;
+__crc_smd_fdma_copy = 0x0d4f1f2d;

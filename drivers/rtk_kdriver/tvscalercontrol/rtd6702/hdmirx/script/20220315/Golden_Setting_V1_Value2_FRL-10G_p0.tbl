@@ -1,0 +1,2912 @@
+//=====[DFE_ini_frl]=====//
+_rtd_part_outl(0x1800dd70, 31, 0, 0x00000000);
+//R lane
+_rtd_part_outl(0x180b7c00, 31, 0, 0x00000000);
+_rtd_part_outl(0x180b7c04, 31, 0, 0x00000000);
+_rtd_part_outl(0x180b7c08, 31, 0, 0x20C00000);
+_rtd_part_outl(0x180b7c0c, 31, 0, 0x05b47400);
+_rtd_part_outl(0x180b7c10, 31, 0, 0xc0004000);
+_rtd_part_outl(0x180b7c14, 31, 0, 0x00280000);
+_rtd_part_outl(0x180b7c18, 31, 0, 0x1038ffe0);
+_rtd_part_outl(0x180b7c1c, 31, 0, 0x7FF07FE0);
+_rtd_part_outl(0x180b7c20, 31, 0, 0x3e0383e0);
+_rtd_part_outl(0x180b7c24, 31, 0, 0x00000000);
+_rtd_part_outl(0x180b7c28, 31, 0, 0x009D00E7);
+_rtd_part_outl(0x180b7c2c, 31, 0, 0xFF00FFC0);
+_rtd_part_outl(0x180b7c30, 31, 0, 0xff005400);
+//G lane
+_rtd_part_outl(0x180b7c40, 31, 0, 0x00000000);
+_rtd_part_outl(0x180b7c44, 31, 0, 0x00000000);
+_rtd_part_outl(0x180b7c48, 31, 0, 0x20C00000);
+_rtd_part_outl(0x180b7c4c, 31, 0, 0x05b47400);
+_rtd_part_outl(0x180b7c50, 31, 0, 0xc0004000);
+_rtd_part_outl(0x180b7c54, 31, 0, 0x00280000);
+_rtd_part_outl(0x180b7c58, 31, 0, 0x1038ffe0);
+_rtd_part_outl(0x180b7c5c, 31, 0, 0x7FF07FE0);
+_rtd_part_outl(0x180b7c60, 31, 0, 0x3e0383e0);
+_rtd_part_outl(0x180b7c64, 31, 0, 0x00000000);
+_rtd_part_outl(0x180b7c68, 31, 0, 0x009D00E7);
+_rtd_part_outl(0x180b7c6c, 31, 0, 0xFF00FFC0);
+_rtd_part_outl(0x180b7c70, 31, 0, 0xff005400);
+//B lane
+_rtd_part_outl(0x180b7c80, 31, 0, 0x00000000);
+_rtd_part_outl(0x180b7c84, 31, 0, 0x00000000);
+_rtd_part_outl(0x180b7c88, 31, 0, 0x20C00000);
+_rtd_part_outl(0x180b7c8c, 31, 0, 0x05b47400);
+_rtd_part_outl(0x180b7c90, 31, 0, 0xc0004000);
+_rtd_part_outl(0x180b7c94, 31, 0, 0x00280000);
+_rtd_part_outl(0x180b7c98, 31, 0, 0x1038ffe0);
+_rtd_part_outl(0x180b7c9c, 31, 0, 0x7FF07FE0);
+_rtd_part_outl(0x180b7ca0, 31, 0, 0x3e0383e0);
+_rtd_part_outl(0x180b7ca4, 31, 0, 0x00000000);
+_rtd_part_outl(0x180b7ca8, 31, 0, 0x009D00E7);
+_rtd_part_outl(0x180b7cac, 31, 0, 0xFF00FFC0);
+_rtd_part_outl(0x180b7cb0, 31, 0, 0xff005400);
+//CK lane
+_rtd_part_outl(0x180b7cc0, 31, 0, 0x00000000);
+_rtd_part_outl(0x180b7cc4, 31, 0, 0x00000000);
+_rtd_part_outl(0x180b7cc8, 31, 0, 0x20C00000);
+_rtd_part_outl(0x180b7ccc, 31, 0, 0x05b47400);
+_rtd_part_outl(0x180b7cd0, 31, 0, 0xc0004000);
+_rtd_part_outl(0x180b7cd4, 31, 0, 0x00280000);
+_rtd_part_outl(0x180b7cd8, 31, 0, 0x1038ffe0);
+_rtd_part_outl(0x180b7cdc, 31, 0, 0x7FF07FE0);
+_rtd_part_outl(0x180b7ce0, 31, 0, 0x3e0383e0);
+_rtd_part_outl(0x180b7ce4, 31, 0, 0x00000000);
+_rtd_part_outl(0x180b7ce8, 31, 0, 0x009D00E7);
+_rtd_part_outl(0x180b7cec, 31, 0, 0xFF00FFC0);
+_rtd_part_outl(0x180b7cf0, 31, 0, 0xff005400);
+// *************************************************************************************************************************************
+//B-Lane_initial DFE Value_Start
+_rtd_part_outl(0x180b7ca8, 9, 5, 5); //VTHP_INIT_B[4:0]	9:5	R/W	0x0F		VTHP INIT
+_rtd_part_outl(0x180b7ca8, 4, 0, 5); //VTHN_INIT_B[4:0]	4:0	R/W	0x0F		VTHN INIT
+_rtd_part_outl(0x180b7ca0, 4, 0, 15); //LEQ_INIT_B[4:0]	4:0		R/W	0x00	LEQ INIT
+_rtd_part_outl(0x180b7ca4, 31, 24, 16); //TAP0_INIT_B[7:0]	31:24	R/W	0x00	TAP0 INIT
+_rtd_part_outl(0x180b7ca4, 23, 18, 0); //TAP1_INIT_B[5:0]	23:18	R/W	0x00	TAP1 INIT
+_rtd_part_outl(0x180b7ca4, 17, 12, 0); //TAP2_INIT_B[5:0]	17:12	R/W	0x00	TAP2 INIT
+_rtd_part_outl(0x180b7ca4, 11, 6, 0); //TAP3_INIT_B[5:0]	11:6	R/W	0x00	TAP3 INIT
+_rtd_part_outl(0x180b7ca4, 5, 0, 0); //TAP4_INIT_B[5:0]	5:0		R/W	0x00	TAP4 INIT
+//B-Lane DFE COEF LOAD IN
+_rtd_part_outl(0x180b7c8c, 0, 0, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP0 LOAD IN
+_rtd_part_outl(0x180b7c8c, 1, 1, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP1 LOAD IN
+_rtd_part_outl(0x180b7c8c, 2, 2, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP2 LOAD IN
+_rtd_part_outl(0x180b7c8c, 3, 3, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP3 LOAD IN
+_rtd_part_outl(0x180b7c8c, 4, 4, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP4 LOAD IN
+_rtd_part_outl(0x180b7c8c, 5, 5, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	Vth LOAD IN
+_rtd_part_outl(0x180b7c88, 31, 31, 1); //EQ_SELREG_B	31	R/W	0x0	EQ SELREG	LEQ LOAD IN
+_rtd_part_outl(0x180b7c8c, 5, 0, 0); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP LOAD IN
+_rtd_part_outl(0x180b7c88, 31, 31, 0x0); //EQ_SELREG_B	31	R/W	0x0	EQ SELREG	LEQ LOAD IN
+//B-Lane_initial DFE Value_Stop
+// *************************************************************************************************************************************
+//G-Lane_initial DFE Value_Start
+_rtd_part_outl(0x180b7c68, 9, 5, 5); //VTHP_INIT_B[4:0]	9:5	R/W	0x0F		VTHP INIT
+_rtd_part_outl(0x180b7c68, 4, 0, 5); //VTHN_INIT_B[4:0]	4:0	R/W	0x0F		VTHN INIT
+_rtd_part_outl(0x180b7c60, 4, 0, 15); //LEQ_INIT_B[4:0]	4:0		R/W	0x00	LEQ INIT
+_rtd_part_outl(0x180b7c64, 31, 24, 16); //TAP0_INIT_B[7:0]	31:24	R/W	0x00	TAP0 INIT
+_rtd_part_outl(0x180b7c64, 23, 18, 0); //TAP1_INIT_B[5:0]	23:18	R/W	0x00	TAP1 INIT
+_rtd_part_outl(0x180b7c64, 17, 12, 0); //TAP2_INIT_B[5:0]	17:12	R/W	0x00	TAP2 INIT
+_rtd_part_outl(0x180b7c64, 11, 6, 0); //TAP3_INIT_B[5:0]	11:6	R/W	0x00	TAP3 INIT
+_rtd_part_outl(0x180b7c64, 5, 0, 0); //TAP4_INIT_B[5:0]	5:0		R/W	0x00	TAP4 INIT
+//G-Lane DFE COEF LOAD IN
+_rtd_part_outl(0x180b7c4c, 0, 0, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP0 LOAD IN
+_rtd_part_outl(0x180b7c4c, 1, 1, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP1 LOAD IN
+_rtd_part_outl(0x180b7c4c, 2, 2, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP2 LOAD IN
+_rtd_part_outl(0x180b7c4c, 3, 3, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP3 LOAD IN
+_rtd_part_outl(0x180b7c4c, 4, 4, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP4 LOAD IN
+_rtd_part_outl(0x180b7c4c, 5, 5, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	Vth LOAD IN
+_rtd_part_outl(0x180b7c48, 31, 31, 1); //EQ_SELREG_B	31	R/W	0x0	EQ SELREG	LEQ LOAD IN
+_rtd_part_outl(0x180b7c4c, 5, 0, 0); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP LOAD IN
+_rtd_part_outl(0x180b7c48, 31, 31, 0x0); //EQ_SELREG_B	31	R/W	0x0	EQ SELREG	LEQ LOAD IN
+//G-Lane_initial DFE Value_Stop
+// *************************************************************************************************************************************
+//R-Lane_initial DFE Value_Start
+_rtd_part_outl(0x180b7c28, 9, 5, 5); //VTHP_INIT_B[4:0]	9:5	R/W	0x0F		VTHP INIT
+_rtd_part_outl(0x180b7c28, 4, 0, 5); //VTHN_INIT_B[4:0]	4:0	R/W	0x0F		VTHN INIT
+_rtd_part_outl(0x180b7c20, 4, 0, 15); //LEQ_INIT_B[4:0]	4:0		R/W	0x00	LEQ INIT
+_rtd_part_outl(0x180b7c24, 31, 24, 16); //TAP0_INIT_B[7:0]	31:24	R/W	0x00	TAP0 INIT
+_rtd_part_outl(0x180b7c24, 23, 18, 0); //TAP1_INIT_B[5:0]	23:18	R/W	0x00	TAP1 INIT
+_rtd_part_outl(0x180b7c24, 17, 12, 0); //TAP2_INIT_B[5:0]	17:12	R/W	0x00	TAP2 INIT
+_rtd_part_outl(0x180b7c24, 11, 6, 0); //TAP3_INIT_B[5:0]	11:6	R/W	0x00	TAP3 INIT
+_rtd_part_outl(0x180b7c24, 5, 0, 0); //TAP4_INIT_B[5:0]	5:0		R/W	0x00	TAP4 INIT
+//R-Lane DFE COEF LOAD IN
+_rtd_part_outl(0x180b7c0c, 0, 0, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP0 LOAD IN
+_rtd_part_outl(0x180b7c0c, 1, 1, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP1 LOAD IN
+_rtd_part_outl(0x180b7c0c, 2, 2, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP2 LOAD IN
+_rtd_part_outl(0x180b7c0c, 3, 3, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP3 LOAD IN
+_rtd_part_outl(0x180b7c0c, 4, 4, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP4 LOAD IN
+_rtd_part_outl(0x180b7c0c, 5, 5, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	Vth LOAD IN
+_rtd_part_outl(0x180b7c08, 31, 31, 1); //EQ_SELREG_B	31	R/W	0x0	EQ SELREG	LEQ LOAD IN
+_rtd_part_outl(0x180b7c0c, 5, 0, 0); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP LOAD IN
+_rtd_part_outl(0x180b7c08, 31, 31, 0x0); //EQ_SELREG_B	31	R/W	0x0	EQ SELREG	LEQ LOAD IN
+//R-Lane_initial DFE Value_Stop
+// *************************************************************************************************************************************
+//CK-Lane_initial DFE Value_Start
+_rtd_part_outl(0x180b7ce8, 9, 5, 5); //VTHP_INIT_B[4:0]	9:5	R/W	0x0F		VTHP INIT
+_rtd_part_outl(0x180b7ce8, 4, 0, 5); //VTHN_INIT_B`[4:0]	4:0	R/W	0x0F		VTHN INIT
+_rtd_part_outl(0x180b7ce0, 4, 0, 15); //LEQ_INIT_B[4:0]	4:0		R/W	0x00	LEQ INIT
+_rtd_part_outl(0x180b7ce4, 31, 24, 16); //TAP0_INIT_B[7:0]	31:24	R/W	0x00	TAP0 INIT
+_rtd_part_outl(0x180b7ce4, 23, 18, 0); //TAP1_INIT_B[5:0]	23:18	R/W	0x00	TAP1 INIT
+_rtd_part_outl(0x180b7ce4, 17, 12, 0); //TAP2_INIT_B[5:0]	17:12	R/W	0x00	TAP2 INIT
+_rtd_part_outl(0x180b7ce4, 11, 6, 0); //TAP3_INIT_B[5:0]	11:6	R/W	0x00	TAP3 INIT
+_rtd_part_outl(0x180b7ce4, 5, 0, 0); //TAP4_INIT_B[5:0]	5:0		R/W	0x00	TAP4 INIT
+//CK-Lane DFE COEF LOAD IN
+_rtd_part_outl(0x180b7ccc, 0, 0, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP0 LOAD IN
+_rtd_part_outl(0x180b7ccc, 1, 1, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP1 LOAD IN
+_rtd_part_outl(0x180b7ccc, 2, 2, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP2 LOAD IN
+_rtd_part_outl(0x180b7ccc, 3, 3, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP3 LOAD IN
+_rtd_part_outl(0x180b7ccc, 4, 4, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP4 LOAD IN
+_rtd_part_outl(0x180b7ccc, 5, 5, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	Vth LOAD IN
+_rtd_part_outl(0x180b7cc8, 31, 31, 1); //EQ_SELREG_B	31	R/W	0x0	EQ SELREG	LEQ LOAD IN
+_rtd_part_outl(0x180b7ccc, 5, 0, 0); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP LOAD IN
+_rtd_part_outl(0x180b7cc8, 31, 31, 0x0); //EQ_SELREG_B	31	R/W	0x0	EQ SELREG	LEQ LOAD IN
+//CK-Lane_initial DFE Value_Stop
+//**************************************************************************************************************************************
+_rtd_part_outl(0x180b7cf4, 17, 15, 3); //rotation_mode Adaption flow control mode
+_rtd_part_outl(0x180b7cb4, 17, 15, 3); //rotation_mode Adaption flow control mode
+_rtd_part_outl(0x180b7c74, 17, 15, 3); //rotation_mode Adaption flow control mode
+_rtd_part_outl(0x180b7c34, 17, 15, 3); //rotation_mode Adaption flow control mode
+//=====[DPHY_Fix_frl]=====//
+//DPHY fix start
+_rtd_part_outl(0x1800dc00, 0, 0, 0x1); //[DPHY fix]  reg_p0_b_dig_rst_n
+_rtd_part_outl(0x1800dc00, 1, 1, 0x1); //[DPHY fix]  reg_p0_g_dig_rst_n
+_rtd_part_outl(0x1800dc00, 2, 2, 0x1); //[DPHY fix]  reg_p0_r_dig_rst_n
+_rtd_part_outl(0x1800dc00, 3, 3, 0x1); //[DPHY fix]  reg_p0_ck_dig_rst_n
+_rtd_part_outl(0x1800dc00, 4, 4, 0x0); //[DPHY fix]  reg_p0_b_cdr_rst_n
+_rtd_part_outl(0x1800dc00, 5, 5, 0x0); //[DPHY fix]  reg_p0_g_cdr_rst_n
+_rtd_part_outl(0x1800dc00, 6, 6, 0x0); //[DPHY fix]  reg_p0_r_cdr_rst_n
+_rtd_part_outl(0x1800dc00, 7, 7, 0x0); //[DPHY fix]  reg_p0_ck_cdr_rst_n
+_rtd_part_outl(0x1800dc00, 8, 8, 0x0); //[DPHY fix]  reg_p0_b_clk_inv
+_rtd_part_outl(0x1800dc00, 9, 9, 0x0); //[DPHY fix]  reg_p0_g_clk_inv
+_rtd_part_outl(0x1800dc00, 10, 10, 0x0); //[DPHY fix]  reg_p0_r_clk_inv
+_rtd_part_outl(0x1800dc00, 11, 11, 0x0); //[DPHY fix]  reg_p0_ck_clk_inv
+_rtd_part_outl(0x1800dc00, 12, 12, 0x0); //[DPHY fix]  reg_p0_b_shift_inv
+_rtd_part_outl(0x1800dc00, 13, 13, 0x0); //[DPHY fix]  reg_p0_g_shift_inv
+_rtd_part_outl(0x1800dc00, 14, 14, 0x0); //[DPHY fix]  reg_p0_r_shift_inv
+_rtd_part_outl(0x1800dc00, 15, 15, 0x0); //[DPHY fix]  reg_p0_ck_shift_inv
+_rtd_part_outl(0x1800dc00, 24, 24, 0x0); //[DPHY fix]  reg_p0_b_data_order
+_rtd_part_outl(0x1800dc00, 25, 25, 0x0); //[DPHY fix]  reg_p0_g_data_order
+_rtd_part_outl(0x1800dc00, 26, 26, 0x0); //[DPHY fix]  reg_p0_r_data_order
+_rtd_part_outl(0x1800dc00, 27, 27, 0x0); //[DPHY fix]  reg_p0_ck_data_order
+_rtd_part_outl(0x1800dc00, 28, 28, 0x0); //[DPHY fix]  reg_p0_b_dyn_kp_en
+_rtd_part_outl(0x1800dc00, 29, 29, 0x0); //[DPHY fix]  reg_p0_g_dyn_kp_en
+_rtd_part_outl(0x1800dc00, 30, 30, 0x0); //[DPHY fix]  reg_p0_r_dyn_kp_en
+_rtd_part_outl(0x1800dc00, 31, 31, 0x0); //[DPHY fix]  reg_p0_ck_dyn_kp_en
+_rtd_part_outl(0x1800dc04, 5, 0, 0x00); //[]  reg_p0_b_kp
+_rtd_part_outl(0x1800dc04, 11, 6, 0x00); //[]  reg_p0_g_kp
+_rtd_part_outl(0x1800dc04, 17, 12, 0x00); //[]  reg_p0_r_kp
+_rtd_part_outl(0x1800dc04, 23, 18, 0x00); //[]  reg_p0_ck_kp
+_rtd_part_outl(0x1800dc04, 24, 24, 0x0); //[]  reg_p0_b_dfe_edge_out
+_rtd_part_outl(0x1800dc04, 25, 25, 0x0); //[]  reg_p0_b_dfe_edge_out
+_rtd_part_outl(0x1800dc04, 26, 26, 0x0); //[]  reg_p0_r_dfe_edge_out
+_rtd_part_outl(0x1800dc04, 27, 27, 0x0); //[]  reg_p0_ck_dfe_edge_out
+_rtd_part_outl(0x1800dc08, 5, 0, 0x0c); //[]  reg_p0_b_bbw_kp
+_rtd_part_outl(0x1800dc08, 11, 6, 0x0c); //[]  reg_p0_g_bbw_kp
+_rtd_part_outl(0x1800dc08, 17, 12, 0x0c); //[]  reg_p0_r_bbw_kp
+_rtd_part_outl(0x1800dc08, 23, 18, 0x0c); //[]  reg_p0_ck_bbw_kp
+_rtd_part_outl(0x1800dc0c, 2, 0, 0x1); //[]  reg_p0_b_ki
+_rtd_part_outl(0x1800dc0c, 5, 3, 0x1); //[]  reg_p0_g_ki
+_rtd_part_outl(0x1800dc0c, 8, 6, 0x1); //[]  reg_p0_r_ki
+_rtd_part_outl(0x1800dc0c, 11, 9, 0x1); //[]  reg_p0_ck_ki
+_rtd_part_outl(0x1800dc0c, 12, 12, 0x0); //[]  reg_p0_b_st_mode
+_rtd_part_outl(0x1800dc0c, 13, 13, 0x0); //[]  reg_p0_g_st_mode
+_rtd_part_outl(0x1800dc0c, 14, 14, 0x0); //[]  reg_p0_r_st_mode
+_rtd_part_outl(0x1800dc0c, 15, 15, 0x0); //[]  reg_p0_ck_st_mode
+_rtd_part_outl(0x1800dc0c, 18, 16, 0x1); //[]  reg_p0_b_bbw_ki
+_rtd_part_outl(0x1800dc0c, 21, 19, 0x1); //[]  reg_p0_g_bbw_ki
+_rtd_part_outl(0x1800dc0c, 24, 22, 0x1); //[]  reg_p0_r_bbw_ki
+_rtd_part_outl(0x1800dc0c, 27, 25, 0x1); //[]  reg_p0_ck_bbw_ki
+_rtd_part_outl(0x1800dc0c, 28, 28, 0x0); //[]  reg_p0_b_bbw_st_mode
+_rtd_part_outl(0x1800dc0c, 29, 29, 0x0); //[]  reg_p0_g_bbw_st_mode
+_rtd_part_outl(0x1800dc0c, 30, 30, 0x0); //[]  reg_p0_r_bbw_st_mode
+_rtd_part_outl(0x1800dc0c, 31, 31, 0x0); //[]  reg_p0_ck_bbw_st_mode
+_rtd_part_outl(0x1800dc10, 0, 0, 0x0); //[]  reg_p0_b_bypass_sdm_int
+_rtd_part_outl(0x1800dc10, 11, 1, 0x000); //[]  reg_p0_b_int_init
+_rtd_part_outl(0x1800dc10, 21, 12, 0x000); //[]  reg_p0_b_acc2_period
+_rtd_part_outl(0x1800dc10, 22, 22, 0x0); //[]  reg_p0_b_acc2_manual
+_rtd_part_outl(0x1800dc10, 23, 23, 0x0); //[]  reg_p0_b_squ_tri
+_rtd_part_outl(0x1800dc14, 0, 0, 0x0); //[]  reg_p0_g_bypass_sdm_int
+_rtd_part_outl(0x1800dc14, 11, 1, 0x000); //[]  reg_p0_g_int_init
+_rtd_part_outl(0x1800dc14, 21, 12, 0x000); //[]  reg_p0_g_acc2_period
+_rtd_part_outl(0x1800dc14, 22, 22, 0x0); //[]  reg_p0_g_acc2_manual
+_rtd_part_outl(0x1800dc14, 23, 23, 0x0); //[]  reg_p0_g_squ_tri
+_rtd_part_outl(0x1800dc18, 0, 0, 0x0); //[]  reg_p0_r_bypass_sdm_int
+_rtd_part_outl(0x1800dc18, 11, 1, 0x000); //[]  reg_p0_r_int_init
+_rtd_part_outl(0x1800dc18, 21, 12, 0x000); //[]  reg_p0_r_acc2_period
+_rtd_part_outl(0x1800dc18, 22, 22, 0x0); //[]  reg_p0_r_acc2_manual
+_rtd_part_outl(0x1800dc18, 23, 23, 0x0); //[]  reg_p0_r_squ_tri
+_rtd_part_outl(0x1800dc1c, 0, 0, 0x0); //[]  reg_p0_ck_bypass_sdm_int
+_rtd_part_outl(0x1800dc1c, 11, 1, 0x000); //[]  reg_p0_ck_int_init
+_rtd_part_outl(0x1800dc1c, 21, 12, 0x000); //[]  reg_p0_ck_acc2_period
+_rtd_part_outl(0x1800dc1c, 22, 22, 0x0); //[]  reg_p0_ck_acc2_manual
+_rtd_part_outl(0x1800dc1c, 23, 23, 0x0); //[]  reg_p0_ck_squ_tri
+_rtd_part_outl(0x1800dc20, 0, 0, 0x0); //[]  reg_p0_b_pi_m_mode
+_rtd_part_outl(0x1800dc20, 3, 1, 0x0); //[]  reg_p0_b_testout_sel
+_rtd_part_outl(0x1800dc20, 8, 4, 0x00); //[]  reg_p0_b_timer_lpf
+_rtd_part_outl(0x1800dc20, 13, 9, 0x00); //[]  reg_p0_b_timer_eq
+_rtd_part_outl(0x1800dc20, 18, 14, 0x00); //[]  reg_p0_b_timer_ber
+_rtd_part_outl(0x1800dc24, 0, 0, 0x0); //[]  reg_p0_g_pi_m_mode
+_rtd_part_outl(0x1800dc24, 3, 1, 0x0); //[]  reg_p0_g_testout_sel
+_rtd_part_outl(0x1800dc24, 8, 4, 0x00); //[]  reg_p0_g_timer_lpf
+_rtd_part_outl(0x1800dc24, 13, 9, 0x00); //[]  reg_p0_g_timer_eq
+_rtd_part_outl(0x1800dc24, 18, 14, 0x00); //[]  reg_p0_g_timer_ber
+_rtd_part_outl(0x1800dc28, 0, 0, 0x0); //[]  reg_p0_r_pi_m_mode
+_rtd_part_outl(0x1800dc28, 3, 1, 0x0); //[]  reg_p0_r_testout_sel
+_rtd_part_outl(0x1800dc28, 8, 4, 0x00); //[]  reg_p0_r_timer_lpf
+_rtd_part_outl(0x1800dc28, 13, 9, 0x00); //[]  reg_p0_r_timer_eq
+_rtd_part_outl(0x1800dc28, 18, 14, 0x00); //[]  reg_p0_r_timer_ber
+_rtd_part_outl(0x1800dc2c, 0, 0, 0x0); //[]  reg_p0_ck_pi_m_mode
+_rtd_part_outl(0x1800dc2c, 3, 1, 0x0); //[]  reg_p0_ck_testout_sel
+_rtd_part_outl(0x1800dc2c, 8, 4, 0x00); //[]  reg_p0_ck_timer_lpf
+_rtd_part_outl(0x1800dc2c, 13, 9, 0x00); //[]  reg_p0_ck_timer_eq
+_rtd_part_outl(0x1800dc2c, 18, 14, 0x00); //[]  reg_p0_ck_timer_ber
+_rtd_part_outl(0x1800dc30, 31, 0, 0x000000ff); //[]  reg_p0_b_st_m_value
+_rtd_part_outl(0x1800dc34, 31, 0, 0x000000ff); //[]  reg_p0_g_st_m_value
+_rtd_part_outl(0x1800dc38, 31, 0, 0x000000ff); //[]  reg_p0_r_st_m_value
+_rtd_part_outl(0x1800dc3c, 31, 0, 0x000000ff); //[]  reg_p0_ck_st_m_value
+//Clock Ready
+_rtd_part_outl(0x1800dc40, 0, 0, 0x0); //[]  reg_p0_b_force_clkrdy
+_rtd_part_outl(0x1800dc40, 1, 1, 0x0); //[]  reg_p0_g_force_clkrdy
+_rtd_part_outl(0x1800dc40, 2, 2, 0x0); //[]  reg_p0_r_force_clkrdy
+_rtd_part_outl(0x1800dc40, 3, 3, 0x0); //[]  reg_p0_ck_force_clkrdy
+_rtd_part_outl(0x1800dc40, 7, 4, 0x0); //[]  reg_p0_b_timer_clk
+_rtd_part_outl(0x1800dc40, 11, 8, 0x0); //[]  reg_p0_g_timer_clk
+_rtd_part_outl(0x1800dc40, 15, 12, 0x0); //[]  reg_p0_r_timer_clk
+_rtd_part_outl(0x1800dc40, 19, 16, 0x0); //[]  reg_p0_ck_timer_clk
+_rtd_part_outl(0x1800dc44, 11, 8, 0xf); //[DPHY fix]  reg_p0_b_offset_delay_cnt
+_rtd_part_outl(0x1800dc44, 13, 12, 0x0); //[DPHY fix]  reg_p0_b_offset_stable_cnt
+_rtd_part_outl(0x1800dc44, 19, 14, 0x0b); //[DPHY fix]  reg_p0_b_offset_divisor
+_rtd_part_outl(0x1800dc44, 26, 20, 0x28); //[DPHY fix]  reg_p0_b_offset_timeout
+_rtd_part_outl(0x1800dc48, 0, 0, 0x0); //[]  reg_p0_b_offset_en_ope
+_rtd_part_outl(0x1800dc48, 1, 1, 0x0); //[]  reg_p0_b_offset_pc_ope
+_rtd_part_outl(0x1800dc48, 6, 2, 0x10); //[]  reg_p0_b_offset_ini_ope
+_rtd_part_outl(0x1800dc48, 7, 7, 0x0); //[]  reg_p0_b_offset_gray_en_ope
+_rtd_part_outl(0x1800dc48, 8, 8, 0x0); //[]  reg_p0_b_offset_manual_ope
+_rtd_part_outl(0x1800dc48, 9, 9, 0x0); //[]  reg_p0_b_offset_z0_ok_ope
+_rtd_part_outl(0x1800dc48, 10, 10, 0x0); //[]  reg_p0_b_offset_en_opo
+_rtd_part_outl(0x1800dc48, 11, 11, 0x0); //[]  reg_p0_b_offset_pc_opo
+_rtd_part_outl(0x1800dc48, 16, 12, 0x10); //[]  reg_p0_b_offset_ini_opo
+_rtd_part_outl(0x1800dc48, 17, 17, 0x0); //[]  reg_p0_b_offset_gray_en_opo
+_rtd_part_outl(0x1800dc48, 18, 18, 0x0); //[]  reg_p0_b_offset_manual_opo
+_rtd_part_outl(0x1800dc48, 19, 19, 0x0); //[]  reg_p0_b_offset_z0_ok_opo
+_rtd_part_outl(0x1800dc48, 20, 20, 0x0); //[]  reg_p0_b_offset_en_one
+_rtd_part_outl(0x1800dc48, 21, 21, 0x0); //[]  reg_p0_b_offset_pc_one
+_rtd_part_outl(0x1800dc48, 26, 22, 0x10); //[]  reg_p0_b_offset_ini_one
+_rtd_part_outl(0x1800dc48, 27, 27, 0x0); //[]  reg_p0_b_offset_gray_en_one
+_rtd_part_outl(0x1800dc48, 28, 28, 0x0); //[]  reg_p0_b_offset_manual_one
+_rtd_part_outl(0x1800dc48, 29, 29, 0x0); //[]  reg_p0_b_offset_z0_ok_one
+_rtd_part_outl(0x1800dc4c, 0, 0, 0x0); //[DPHY fix]  reg_p0_b_offset_en_ono
+_rtd_part_outl(0x1800dc4c, 1, 1, 0x0); //[DPHY fix]  reg_p0_b_offset_pc_ono
+_rtd_part_outl(0x1800dc4c, 6, 2, 0x10); //[DPHY fix]  reg_p0_b_offset_ini_ono
+_rtd_part_outl(0x1800dc4c, 7, 7, 0x0); //[DPHY fix]  reg_p0_b_offset_gray_en_ono
+_rtd_part_outl(0x1800dc4c, 8, 8, 0x0); //[DPHY fix]  reg_p0_b_offset_manual_ono
+_rtd_part_outl(0x1800dc4c, 9, 9, 0x0); //[DPHY fix]  reg_p0_b_offset_z0_ok_ono
+_rtd_part_outl(0x1800dc4c, 16, 12, 0x10); //[DPHY fix]  reg_p0_b_offset_ini_de
+_rtd_part_outl(0x1800dc4c, 17, 17, 0x0); //[DPHY fix]  reg_p0_b_offset_gray_en_de
+_rtd_part_outl(0x1800dc4c, 26, 22, 0x10); //[DPHY fix]  reg_p0_b_offset_ini_do
+_rtd_part_outl(0x1800dc4c, 27, 27, 0x0); //[DPHY fix]  reg_p0_b_offset_gray_en_do
+_rtd_part_outl(0x1800dc50, 6, 2, 0x10); //[DPHY fix]  reg_p0_b_offset_ini_ee
+_rtd_part_outl(0x1800dc50, 7, 7, 0x0); //[DPHY fix]  reg_p0_b_offset_gray_en_ee
+_rtd_part_outl(0x1800dc50, 16, 12, 0x10); //[DPHY fix]  reg_p0_b_offset_ini_eo
+_rtd_part_outl(0x1800dc50, 17, 17, 0x0); //[DPHY fix]  reg_p0_b_offset_gray_en_eo
+_rtd_part_outl(0x1800dc50, 26, 22, 0x10); //[DPHY fix]  reg_p0_b_offset_ini_eq
+_rtd_part_outl(0x1800dc50, 27, 27, 0x0); //[DPHY fix]  reg_p0_b_offset_gray_en_eq
+_rtd_part_outl(0x1800dc50, 29, 29, 0x0); //[DPHY fix]  reg_p0_b_offset_z0_ok_eq
+_rtd_part_outl(0x1800dc54, 11, 8, 0xf); //[DPHY fix]  reg_p0_g_offset_delay_cnt
+_rtd_part_outl(0x1800dc54, 13, 12, 0x0); //[DPHY fix]  reg_p0_g_offset_stable_cnt
+_rtd_part_outl(0x1800dc54, 19, 14, 0x0b); //[DPHY fix]  reg_p0_g_offset_divisor
+_rtd_part_outl(0x1800dc54, 26, 20, 0x28); //[DPHY fix]  reg_p0_g_offset_timeout
+_rtd_part_outl(0x1800dc58, 0, 0, 0x0); //[]  reg_p0_g_offset_en_ope
+_rtd_part_outl(0x1800dc58, 1, 1, 0x0); //[]  reg_p0_g_offset_pc_ope
+_rtd_part_outl(0x1800dc58, 6, 2, 0x10); //[]  reg_p0_g_offset_ini_ope
+_rtd_part_outl(0x1800dc58, 7, 7, 0x0); //[]  reg_p0_g_offset_gray_en_ope
+_rtd_part_outl(0x1800dc58, 8, 8, 0x0); //[]  reg_p0_g_offset_manual_ope
+_rtd_part_outl(0x1800dc58, 9, 9, 0x0); //[]  reg_p0_g_offset_z0_ok_ope
+_rtd_part_outl(0x1800dc58, 10, 10, 0x0); //[]  reg_p0_g_offset_en_opo
+_rtd_part_outl(0x1800dc58, 11, 11, 0x0); //[]  reg_p0_g_offset_pc_opo
+_rtd_part_outl(0x1800dc58, 16, 12, 0x10); //[]  reg_p0_g_offset_ini_opo
+_rtd_part_outl(0x1800dc58, 17, 17, 0x0); //[]  reg_p0_g_offset_gray_en_opo
+_rtd_part_outl(0x1800dc58, 18, 18, 0x0); //[]  reg_p0_g_offset_manual_opo
+_rtd_part_outl(0x1800dc58, 19, 19, 0x0); //[]  reg_p0_g_offset_z0_ok_opo
+_rtd_part_outl(0x1800dc58, 20, 20, 0x0); //[]  reg_p0_g_offset_en_one
+_rtd_part_outl(0x1800dc58, 21, 21, 0x0); //[]  reg_p0_g_offset_pc_one
+_rtd_part_outl(0x1800dc58, 26, 22, 0x10); //[]  reg_p0_g_offset_ini_one
+_rtd_part_outl(0x1800dc58, 27, 27, 0x0); //[]  reg_p0_g_offset_gray_en_one
+_rtd_part_outl(0x1800dc58, 28, 28, 0x0); //[]  reg_p0_g_offset_manual_one
+_rtd_part_outl(0x1800dc58, 29, 29, 0x0); //[]  reg_p0_g_offset_z0_ok_one
+_rtd_part_outl(0x1800dc5c, 0, 0, 0x0); //[DPHY fix]  reg_p0_g_offset_en_ono
+_rtd_part_outl(0x1800dc5c, 6, 2, 0x10); //[DPHY fix]  reg_p0_g_offset_ini_ono
+_rtd_part_outl(0x1800dc5c, 7, 7, 0x0); //[DPHY fix]  reg_p0_g_offset_gray_en_ono
+_rtd_part_outl(0x1800dc5c, 1, 1, 0x0); //[DPHY fix]  reg_p0_g_offset_pc_ono
+_rtd_part_outl(0x1800dc5c, 8, 8, 0x0); //[DPHY fix]  reg_p0_g_offset_manual_ono
+_rtd_part_outl(0x1800dc5c, 9, 9, 0x0); //[DPHY fix]  reg_p0_g_offset_z0_ok_ono
+_rtd_part_outl(0x1800dc5c, 16, 12, 0x10); //[DPHY fix]  reg_p0_g_offset_ini_de
+_rtd_part_outl(0x1800dc5c, 17, 17, 0x0); //[DPHY fix]  reg_p0_g_offset_gray_en_de
+_rtd_part_outl(0x1800dc5c, 26, 22, 0x10); //[DPHY fix]  reg_p0_g_offset_ini_do
+_rtd_part_outl(0x1800dc5c, 27, 27, 0x0); //[DPHY fix]  reg_p0_g_offset_gray_en_do
+_rtd_part_outl(0x1800dc60, 6, 2, 0x10); //[DPHY fix]  reg_p0_g_offset_ini_ee
+_rtd_part_outl(0x1800dc60, 7, 7, 0x0); //[DPHY fix]  reg_p0_g_offset_gray_en_ee
+_rtd_part_outl(0x1800dc60, 16, 12, 0x10); //[DPHY fix]  reg_p0_g_offset_ini_eo
+_rtd_part_outl(0x1800dc60, 17, 17, 0x0); //[DPHY fix]  reg_p0_g_offset_gray_en_eo
+_rtd_part_outl(0x1800dc60, 26, 22, 0x10); //[DPHY fix]  reg_p0_g_offset_ini_eq
+_rtd_part_outl(0x1800dc60, 27, 27, 0x0); //[DPHY fix]  reg_p0_g_offset_gray_en_eq
+_rtd_part_outl(0x1800dc60, 29, 29, 0x0); //[DPHY fix]  reg_p0_g_offset_z0_ok_eq
+_rtd_part_outl(0x1800dc64, 11, 8, 0xf); //[DPHY fix]  reg_p0_r_offset_delay_cnt
+_rtd_part_outl(0x1800dc64, 13, 12, 0x0); //[DPHY fix]  reg_p0_r_offset_stable_cnt
+_rtd_part_outl(0x1800dc64, 19, 14, 0x0b); //[DPHY fix]  reg_p0_r_offset_divisor
+_rtd_part_outl(0x1800dc64, 26, 20, 0x28); //[DPHY fix]  reg_p0_r_offset_timeout
+_rtd_part_outl(0x1800dc68, 0, 0, 0x0); //[]  reg_p0_r_offset_en_ope
+_rtd_part_outl(0x1800dc68, 1, 1, 0x0); //[]  reg_p0_r_offset_pc_ope
+_rtd_part_outl(0x1800dc68, 6, 2, 0x10); //[]  reg_p0_r_offset_ini_ope
+_rtd_part_outl(0x1800dc68, 7, 7, 0x0); //[]  reg_p0_r_offset_gray_en_ope
+_rtd_part_outl(0x1800dc68, 8, 8, 0x0); //[]  reg_p0_r_offset_manual_ope
+_rtd_part_outl(0x1800dc68, 9, 9, 0x0); //[]  reg_p0_r_offset_z0_ok_ope
+_rtd_part_outl(0x1800dc68, 10, 10, 0x0); //[]  reg_p0_r_offset_en_opo
+_rtd_part_outl(0x1800dc68, 11, 11, 0x0); //[]  reg_p0_r_offset_pc_opo
+_rtd_part_outl(0x1800dc68, 16, 12, 0x10); //[]  reg_p0_r_offset_ini_opo
+_rtd_part_outl(0x1800dc68, 17, 17, 0x0); //[]  reg_p0_r_offset_gray_en_opo
+_rtd_part_outl(0x1800dc68, 18, 18, 0x0); //[]  reg_p0_r_offset_manual_opo
+_rtd_part_outl(0x1800dc68, 19, 19, 0x0); //[]  reg_p0_r_offset_z0_ok_opo
+_rtd_part_outl(0x1800dc68, 20, 20, 0x0); //[]  reg_p0_r_offset_en_one
+_rtd_part_outl(0x1800dc68, 21, 21, 0x0); //[]  reg_p0_r_offset_pc_one
+_rtd_part_outl(0x1800dc68, 26, 22, 0x10); //[]  reg_p0_r_offset_ini_one
+_rtd_part_outl(0x1800dc68, 27, 27, 0x0); //[]  reg_p0_r_offset_gray_en_one
+_rtd_part_outl(0x1800dc68, 28, 28, 0x0); //[]  reg_p0_r_offset_manual_one
+_rtd_part_outl(0x1800dc68, 29, 29, 0x0); //[]  reg_p0_r_offset_z0_ok_one
+_rtd_part_outl(0x1800dc6c, 0, 0, 0x0); //[DPHY fix]  reg_p0_r_offset_en_ono
+_rtd_part_outl(0x1800dc6c, 1, 1, 0x0); //[DPHY fix]  reg_p0_r_offset_pc_ono
+_rtd_part_outl(0x1800dc6c, 6, 2, 0x10); //[DPHY fix]  reg_p0_r_offset_ini_ono
+_rtd_part_outl(0x1800dc6c, 7, 7, 0x0); //[DPHY fix]  reg_p0_r_offset_gray_en_ono
+_rtd_part_outl(0x1800dc6c, 8, 8, 0x0); //[DPHY fix]  reg_p0_r_offset_manual_ono
+_rtd_part_outl(0x1800dc6c, 9, 9, 0x0); //[DPHY fix]  reg_p0_r_offset_z0_ok_ono
+_rtd_part_outl(0x1800dc6c, 16, 12, 0x10); //[DPHY fix]  reg_p0_r_offset_ini_de
+_rtd_part_outl(0x1800dc6c, 17, 17, 0x0); //[DPHY fix]  reg_p0_r_offset_gray_en_de
+_rtd_part_outl(0x1800dc6c, 26, 22, 0x10); //[DPHY fix]  reg_p0_r_offset_ini_do
+_rtd_part_outl(0x1800dc6c, 27, 27, 0x0); //[DPHY fix]  reg_p0_r_offset_gray_en_do
+_rtd_part_outl(0x1800dc70, 6, 2, 0x10); //[DPHY fix]  reg_p0_r_offset_ini_ee
+_rtd_part_outl(0x1800dc70, 7, 7, 0x0); //[DPHY fix]  reg_p0_r_offset_gray_en_ee
+_rtd_part_outl(0x1800dc70, 16, 12, 0x10); //[DPHY fix]  reg_p0_r_offset_ini_eo
+_rtd_part_outl(0x1800dc70, 17, 17, 0x0); //[DPHY fix]  reg_p0_r_offset_gray_en_eo
+_rtd_part_outl(0x1800dc70, 26, 22, 0x10); //[DPHY fix]  reg_p0_r_offset_ini_eq
+_rtd_part_outl(0x1800dc70, 27, 27, 0x0); //[DPHY fix]  reg_p0_r_offset_gray_en_eq
+_rtd_part_outl(0x1800dc70, 29, 29, 0x0); //[DPHY fix]  reg_p0_r_offset_z0_ok_eq
+_rtd_part_outl(0x1800dc74, 11, 8, 0xf); //[DPHY fix]  reg_p0_ck_offset_delay_cnt
+_rtd_part_outl(0x1800dc74, 13, 12, 0x0); //[DPHY fix]  reg_p0_ck_offset_stable_cnt
+_rtd_part_outl(0x1800dc74, 19, 14, 0x0b); //[DPHY fix]  reg_p0_ck_offset_divisor
+_rtd_part_outl(0x1800dc74, 26, 20, 0x28); //[DPHY fix]  reg_p0_ck_offset_timeout
+_rtd_part_outl(0x1800dc78, 0, 0, 0x0); //[]  reg_p0_ck_offset_en_ope
+_rtd_part_outl(0x1800dc78, 1, 1, 0x0); //[]  reg_p0_ck_offset_pc_ope
+_rtd_part_outl(0x1800dc78, 6, 2, 0x10); //[]  reg_p0_ck_offset_ini_ope
+_rtd_part_outl(0x1800dc78, 7, 7, 0x0); //[]  reg_p0_ck_offset_gray_en_ope
+_rtd_part_outl(0x1800dc78, 8, 8, 0x0); //[]  reg_p0_ck_offset_manual_ope
+_rtd_part_outl(0x1800dc78, 9, 9, 0x0); //[]  reg_p0_ck_offset_z0_ok_ope
+_rtd_part_outl(0x1800dc78, 10, 10, 0x0); //[]  reg_p0_ck_offset_en_opo
+_rtd_part_outl(0x1800dc78, 11, 11, 0x0); //[]  reg_p0_ck_offset_pc_opo
+_rtd_part_outl(0x1800dc78, 16, 12, 0x10); //[]  reg_p0_ck_offset_ini_opo
+_rtd_part_outl(0x1800dc78, 17, 17, 0x0); //[]  reg_p0_ck_offset_gray_en_opo
+_rtd_part_outl(0x1800dc78, 18, 18, 0x0); //[]  reg_p0_ck_offset_manual_opo
+_rtd_part_outl(0x1800dc78, 19, 19, 0x0); //[]  reg_p0_ck_offset_z0_ok_opo
+_rtd_part_outl(0x1800dc78, 20, 20, 0x0); //[]  reg_p0_ck_offset_en_one
+_rtd_part_outl(0x1800dc78, 21, 21, 0x0); //[]  reg_p0_ck_offset_pc_one
+_rtd_part_outl(0x1800dc78, 26, 22, 0x10); //[]  reg_p0_ck_offset_ini_one
+_rtd_part_outl(0x1800dc78, 27, 27, 0x0); //[]  reg_p0_ck_offset_gray_en_one
+_rtd_part_outl(0x1800dc78, 28, 28, 0x0); //[]  reg_p0_ck_offset_manual_one
+_rtd_part_outl(0x1800dc78, 29, 29, 0x0); //[]  reg_p0_ck_offset_z0_ok_one
+_rtd_part_outl(0x1800dc7c, 0, 0, 0x0); //[DPHY fix]  reg_p0_ck_offset_en_ono
+_rtd_part_outl(0x1800dc7c, 1, 1, 0x0); //[DPHY fix]  reg_p0_ck_offset_pc_ono
+_rtd_part_outl(0x1800dc7c, 6, 2, 0x10); //[DPHY fix]  reg_p0_ck_offset_ini_ono
+_rtd_part_outl(0x1800dc7c, 7, 7, 0x0); //[DPHY fix]  reg_p0_ck_offset_gray_en_ono
+_rtd_part_outl(0x1800dc7c, 8, 8, 0x0); //[DPHY fix]  reg_p0_ck_offset_manual_ono
+_rtd_part_outl(0x1800dc7c, 9, 9, 0x0); //[DPHY fix]  reg_p0_ck_offset_z0_ok_ono
+_rtd_part_outl(0x1800dc7c, 16, 12, 0x10); //[DPHY fix]  reg_p0_ck_offset_ini_de
+_rtd_part_outl(0x1800dc7c, 17, 17, 0x0); //[DPHY fix]  reg_p0_ck_offset_gray_en_de
+_rtd_part_outl(0x1800dc7c, 26, 22, 0x10); //[DPHY fix]  reg_p0_ck_offset_ini_do
+_rtd_part_outl(0x1800dc7c, 27, 27, 0x0); //[DPHY fix]  reg_p0_ck_offset_gray_en_do
+_rtd_part_outl(0x1800dc80, 6, 2, 0x10); //[DPHY fix]  reg_p0_ck_offset_ini_ee
+_rtd_part_outl(0x1800dc80, 7, 7, 0x0); //[DPHY fix]  reg_p0_ck_offset_gray_en_ee
+_rtd_part_outl(0x1800dc80, 16, 12, 0x10); //[DPHY fix]  reg_p0_ck_offset_ini_eo
+_rtd_part_outl(0x1800dc80, 17, 17, 0x0); //[DPHY fix]  reg_p0_ck_offset_gray_en_eo
+_rtd_part_outl(0x1800dc80, 26, 22, 0x10); //[DPHY fix]  reg_p0_ck_offset_ini_eq
+_rtd_part_outl(0x1800dc80, 27, 27, 0x0); //[DPHY fix]  reg_p0_ck_offset_gray_en_eq
+_rtd_part_outl(0x1800dc80, 29, 29, 0x0); //[DPHY fix]  reg_p0_ck_offset_z0_ok_eq
+_rtd_part_outl(0x1800dc88, 2, 2, 0x0); //[DPHY fix]  reg_p0_b_pn_swap_en
+_rtd_part_outl(0x1800dc88, 3, 3, 0x1); //[DPHY fix]  reg_p0_b_dfe_data_en
+_rtd_part_outl(0x1800dc88, 7, 5, 0x3); //[DPHY fix]  reg_p0_b_inbuf_num
+_rtd_part_outl(0x1800dc88, 10, 10, 0x0); //[DPHY fix]  reg_p0_g_pn_swap_en
+_rtd_part_outl(0x1800dc88, 11, 11, 0x1); //[DPHY fix]  reg_p0_g_dfe_data_en
+_rtd_part_outl(0x1800dc88, 15, 13, 0x3); //[DPHY fix]  reg_p0_g_inbuf_num
+_rtd_part_outl(0x1800dc88, 18, 18, 0x0); //[DPHY fix]  reg_p0_r_pn_swap_en
+_rtd_part_outl(0x1800dc88, 19, 19, 0x1); //[DPHY fix]  reg_p0_r_dfe_data_en
+_rtd_part_outl(0x1800dc88, 23, 21, 0x3); //[DPHY fix]  reg_p0_r_fifo_en
+_rtd_part_outl(0x1800dc88, 26, 26, 0x0); //[DPHY fix]  reg_p0_ck_pn_swap_en
+_rtd_part_outl(0x1800dc88, 27, 27, 0x1); //[DPHY fix]  reg_p0_ck_dfe_data_en
+_rtd_part_outl(0x1800dc88, 31, 29, 0x3); //[DPHY fix]  reg_p0_ck_inbuf_num
+_rtd_part_outl(0x1800dc8c, 0, 0, 0x0); //[]  reg_p0_b_001_enable
+_rtd_part_outl(0x1800dc8c, 1, 1, 0x0); //[]  reg_p0_b_101_enable
+_rtd_part_outl(0x1800dc8c, 2, 2, 0x0); //[]  reg_p0_b_en_bec_acc
+_rtd_part_outl(0x1800dc8c, 3, 3, 0x0); //[]  reg_p0_b_en_bec_read
+_rtd_part_outl(0x1800dc8c, 12, 12, 0x0); //[]  reg_p0_g_001_enable
+_rtd_part_outl(0x1800dc8c, 13, 13, 0x0); //[]  reg_p0_g_101_enable
+_rtd_part_outl(0x1800dc8c, 14, 14, 0x0); //[]  reg_p0_g_en_bec_acc
+_rtd_part_outl(0x1800dc8c, 15, 15, 0x0); //[]  reg_p0_g_en_bec_read
+_rtd_part_outl(0x1800dc90, 0, 0, 0x0); //[]  reg_p0_r_001_enable
+_rtd_part_outl(0x1800dc90, 1, 1, 0x0); //[]  reg_p0_r_101_enable
+_rtd_part_outl(0x1800dc90, 2, 2, 0x0); //[]  reg_p0_r_en_bec_acc
+_rtd_part_outl(0x1800dc90, 3, 3, 0x0); //[]  reg_p0_r_en_bec_read
+_rtd_part_outl(0x1800dc90, 12, 12, 0x0); //[]  reg_p0_ck_001_enable
+_rtd_part_outl(0x1800dc90, 13, 13, 0x0); //[]  reg_p0_ck_101_enable
+_rtd_part_outl(0x1800dc90, 14, 14, 0x0); //[]  reg_p0_ck_en_bec_acc
+_rtd_part_outl(0x1800dc90, 15, 15, 0x0); //[]  reg_p0_ck_en_bec_read
+_rtd_part_outl(0x1800dcb8, 0, 0, 0x0); //[DPHY fix]  reg_p0_b_cp2adp_en
+_rtd_part_outl(0x1800dcb8, 1, 1, 0x0); //[DPHY fix]  reg_p0_b_stable_time_mode
+_rtd_part_outl(0x1800dcb8, 2, 2, 0x0); //[DPHY fix]  reg_p0_b_bypass_k_band_mode
+_rtd_part_outl(0x1800dcb8, 18, 18, 0x0); //[DPHY fix]  reg_p0_b_calib_late
+_rtd_part_outl(0x1800dcb8, 19, 19, 0x0); //[DPHY fix]  reg_p0_b_calib_manual
+_rtd_part_outl(0x1800dcb8, 22, 20, 0x2); //[DPHY fix]  reg_p0_b_calib_time
+_rtd_part_outl(0x1800dcb8, 27, 23, 0x0c); //[DPHY fix]  reg_p0_b_adp_time
+_rtd_part_outl(0x1800dcb8, 28, 28, 0x0); //[DPHY fix]  reg_p0_b_adap_eq_off
+_rtd_part_outl(0x1800dcb8, 29, 29, 0x0); //[DPHY fix]  reg_p0_b_cp_en_manual
+_rtd_part_outl(0x1800dcb8, 30, 30, 0x0); //[DPHY fix]  reg_p0_b_adp_en_manual
+_rtd_part_outl(0x1800dcb8, 31, 31, 0x1); //[DPHY fix]  reg_p0_b_auto_mode
+_rtd_part_outl(0x1800dcbc, 31, 28, 0x8); //[DPHY fix] reg_p0_b_cp2adp_time
+_rtd_part_outl(0x1800dcc0, 1, 1, 0x1); //[] reg_p0_b_calib_reset_sel
+_rtd_part_outl(0x1800dcc0, 3, 2, 0x0); //[] reg_p0_b_vc_sel
+_rtd_part_outl(0x1800dcc0, 5, 4, 0x0); //[] reg_p0_b_cdr_c
+_rtd_part_outl(0x1800dcc0, 11, 6, 0x00); //[] reg_p0_b_cdr_r
+_rtd_part_outl(0x1800dcc0, 31, 12, 0x77750); //[] reg_p0_b_cdr_cp
+_rtd_part_outl(0x1800dcc4, 2, 0, 0x0); //[DPHY fix] reg_p0_b_init_time
+_rtd_part_outl(0x1800dcc4, 7, 3, 0x04); //[DPHY fix] reg_p0_b_cp_time
+_rtd_part_outl(0x1800dcc8, 6, 2, 0x01); //[DPHY fix]  reg_p0_b_timer_6
+_rtd_part_outl(0x1800dcc8, 7, 7, 0x0); //[DPHY fix]  reg_p0_b_timer_5
+_rtd_part_outl(0x1800dcc8, 11, 8, 0x7); //[DPHY fix]  reg_p0_b_vco_fine_init
+_rtd_part_outl(0x1800dcc8, 15, 12, 0x7); //[DPHY fix]  reg_p0_b_vco_coarse_init
+_rtd_part_outl(0x1800dcc8, 16, 16, 0x0); //[DPHY fix]  reg_p0_b_bypass_coarse_k_mode
+_rtd_part_outl(0x1800dcc8, 18, 17, 0x0); //[DPHY fix]  reg_p0_b_vco_fine_time_sel
+_rtd_part_outl(0x1800dcc8, 19, 19, 0x0); //[DPHY fix]  reg_p0_b_xtal_24m_en
+_rtd_part_outl(0x1800dcc8, 23, 20, 0x0); //[DPHY fix]  reg_p0_b_vco_fine_manual
+_rtd_part_outl(0x1800dcc8, 27, 24, 0x0); //[DPHY fix]  reg_p0_b_vco_coarse_manual
+_rtd_part_outl(0x1800dcc8, 28, 28, 0x0); //[DPHY fix]  reg_p0_b_coarse_calib_manual
+_rtd_part_outl(0x1800dcc8, 29, 29, 0x0); //[DPHY fix]  reg_p0_b_acdr_ckfld_en
+_rtd_part_outl(0x1800dcc8, 30, 30, 0x0); //[DPHY fix]  reg_p0_b_pll_to_acdr_manual_en
+_rtd_part_outl(0x1800dcc8, 31, 31, 0x0); //[DPHY fix]  reg_p0_b_pll_to_acdr_rdy_manual
+_rtd_part_outl(0x1800dccc, 4, 0, 0x01); //[]  reg_p0_b_timer_4
+_rtd_part_outl(0x1800dccc, 7, 5, 0x0); //[]  reg_p0_b_vc_chg_time
+_rtd_part_outl(0x1800dccc, 16, 16, 0x1); //[]  reg_p0_b_old_mode
+_rtd_part_outl(0x1800dccc, 21, 17, 0x10); //[]  reg_p0_b_slope_band
+_rtd_part_outl(0x1800dccc, 22, 22, 0x0); //[]  reg_p0_b_slope_manual
+_rtd_part_outl(0x1800dccc, 23, 23, 0x0); //[]  reg_p0_b_rxidle_bypass
+_rtd_part_outl(0x1800dccc, 24, 24, 0x0); //[]  reg_p0_b_pfd_bypass
+_rtd_part_outl(0x1800dccc, 29, 25, 0x00); //[]  reg_p0_b_pfd_time
+_rtd_part_outl(0x1800dccc, 30, 30, 0x0); //[]  reg_p0_b_pfd_en_manual
+_rtd_part_outl(0x1800dccc, 31, 31, 0x0); //[]  reg_p0_b_start_en_manual
+_rtd_part_outl(0x1800dcd0, 9, 5, 0x08); //[]  reg_p0_b_cp_time_2
+_rtd_part_outl(0x1800dcd8, 0, 0, 0x0); //[DPHY fix]  reg_p0_g_cp2adp_en
+_rtd_part_outl(0x1800dcd8, 1, 1, 0x0); //[DPHY fix]  reg_p0_g_stable_time_mode
+_rtd_part_outl(0x1800dcd8, 2, 2, 0x0); //[DPHY fix]  reg_p0_g_bypass_k_band_mode
+_rtd_part_outl(0x1800dcd8, 18, 18, 0x0); //[DPHY fix]  reg_p0_g_calib_late
+_rtd_part_outl(0x1800dcd8, 19, 19, 0x0); //[DPHY fix]  reg_p0_g_calib_manual
+_rtd_part_outl(0x1800dcd8, 22, 20, 0x2); //[DPHY fix]  reg_p0_g_calib_time
+_rtd_part_outl(0x1800dcd8, 27, 23, 0x0c); //[DPHY fix]  reg_p0_g_adp_time
+_rtd_part_outl(0x1800dcd8, 28, 28, 0x0); //[DPHY fix]  reg_p0_g_adap_eq_off
+_rtd_part_outl(0x1800dcd8, 29, 29, 0x0); //[DPHY fix]  reg_p0_g_cp_en_manual
+_rtd_part_outl(0x1800dcd8, 30, 30, 0x0); //[DPHY fix]  reg_p0_g_adp_en_manual
+_rtd_part_outl(0x1800dcd8, 31, 31, 0x1); //[DPHY fix]  reg_p0_g_auto_mode
+_rtd_part_outl(0x1800dcdc, 31, 28, 0x8); //[DPHY fix] reg_p0_g_cp2adp_time
+_rtd_part_outl(0x1800dce0, 1, 1, 0x1); //[] reg_p0_g_calib_reset_sel
+_rtd_part_outl(0x1800dce0, 3, 2, 0x0); //[] reg_p0_g_vc_sel
+_rtd_part_outl(0x1800dce0, 5, 4, 0x0); //[] reg_p0_g_cdr_c
+_rtd_part_outl(0x1800dce0, 11, 6, 0x00); //[] reg_p0_g_cdr_r
+_rtd_part_outl(0x1800dce0, 31, 12, 0x77750); //[] reg_p0_g_cdr_cp
+_rtd_part_outl(0x1800dce4, 2, 0, 0x0); //[DPHY fix] reg_p0_g_init_time
+_rtd_part_outl(0x1800dce4, 7, 3, 0x04); //[DPHY fix] reg_p0_g_cp_time
+_rtd_part_outl(0x1800dce8, 6, 2, 0x01); //[DPHY fix]  reg_p0_g_timer_6
+_rtd_part_outl(0x1800dce8, 7, 7, 0x0); //[DPHY fix]  reg_p0_g_timer_5
+_rtd_part_outl(0x1800dce8, 11, 8, 0x7); //[DPHY fix]  reg_p0_g_vco_fine_init
+_rtd_part_outl(0x1800dce8, 15, 12, 0x7); //[DPHY fix]  reg_p0_g_vco_coarse_init
+_rtd_part_outl(0x1800dce8, 16, 16, 0x0); //[DPHY fix]  reg_p0_g_bypass_coarse_k_mode
+_rtd_part_outl(0x1800dce8, 18, 17, 0x0); //[DPHY fix]  reg_p0_g_vco_fine_time_sel
+_rtd_part_outl(0x1800dce8, 19, 19, 0x0); //[DPHY fix]  reg_p0_g_xtal_24m_en
+_rtd_part_outl(0x1800dce8, 23, 20, 0x0); //[DPHY fix]  reg_p0_g_vco_fine_manual
+_rtd_part_outl(0x1800dce8, 27, 24, 0x0); //[DPHY fix]  reg_p0_g_vco_coarse_manual
+_rtd_part_outl(0x1800dce8, 28, 28, 0x0); //[DPHY fix]  reg_p0_g_coarse_calib_manual
+_rtd_part_outl(0x1800dce8, 29, 29, 0x0); //[DPHY fix]  reg_p0_g_acdr_ckfld_en
+_rtd_part_outl(0x1800dce8, 30, 30, 0x0); //[DPHY fix]  reg_p0_g_pll_to_acdr_manual_en
+_rtd_part_outl(0x1800dce8, 31, 31, 0x0); //[DPHY fix]  reg_p0_g_pll_to_acdr_rdy_manual
+_rtd_part_outl(0x1800dcec, 4, 0, 0x01); //[]  reg_p0_g_timer_4
+_rtd_part_outl(0x1800dcec, 7, 5, 0x0); //[]  reg_p0_g_vc_chg_time
+_rtd_part_outl(0x1800dcec, 16, 16, 0x1); //[]  reg_p0_g_old_mode
+_rtd_part_outl(0x1800dcec, 21, 17, 0x10); //[]  reg_p0_g_slope_band
+_rtd_part_outl(0x1800dcec, 22, 22, 0x0); //[]  reg_p0_g_slope_manual
+_rtd_part_outl(0x1800dcec, 23, 23, 0x0); //[]  reg_p0_g_rxidle_bypass
+_rtd_part_outl(0x1800dcec, 24, 24, 0x0); //[]  reg_p0_g_pfd_bypass
+_rtd_part_outl(0x1800dcec, 29, 25, 0x00); //[]  reg_p0_g_pfd_time
+_rtd_part_outl(0x1800dcec, 30, 30, 0x0); //[]  reg_p0_g_pfd_en_manual
+_rtd_part_outl(0x1800dcec, 31, 31, 0x0); //[]  reg_p0_g_start_en_manual
+_rtd_part_outl(0x1800dcf0, 9, 5, 0x08); //[]  reg_p0_g_cp_time_2
+_rtd_part_outl(0x1800dcf4, 0, 0, 0x0); //[DPHY fix]  reg_p0_r_cp2adp_en
+_rtd_part_outl(0x1800dcf4, 1, 1, 0x0); //[DPHY fix]  reg_p0_r_stable_time_mode
+_rtd_part_outl(0x1800dcf4, 2, 2, 0x0); //[DPHY fix]  reg_p0_r_bypass_k_band_mode
+_rtd_part_outl(0x1800dcf4, 18, 18, 0x0); //[DPHY fix]  reg_p0_r_calib_late
+_rtd_part_outl(0x1800dcf4, 19, 19, 0x0); //[DPHY fix]  reg_p0_r_calib_manual
+_rtd_part_outl(0x1800dcf4, 22, 20, 0x2); //[DPHY fix]  reg_p0_r_calib_time
+_rtd_part_outl(0x1800dcf4, 27, 23, 0x0c); //[DPHY fix]  reg_p0_r_adp_time
+_rtd_part_outl(0x1800dcf4, 28, 28, 0x0); //[DPHY fix]  reg_p0_r_adap_eq_off
+_rtd_part_outl(0x1800dcf4, 29, 29, 0x0); //[DPHY fix]  reg_p0_r_cp_en_manual
+_rtd_part_outl(0x1800dcf4, 30, 30, 0x0); //[DPHY fix]  reg_p0_r_adp_en_manual
+_rtd_part_outl(0x1800dcf4, 31, 31, 0x1); //[DPHY fix]  reg_p0_r_auto_mode
+_rtd_part_outl(0x1800dcf8, 31, 28, 0x8); //[DPHY fix] reg_p0_r_cp2adp_time
+_rtd_part_outl(0x1800dcfc, 1, 1, 0x1); //[] reg_p0_r_calib_reset_sel
+_rtd_part_outl(0x1800dcfc, 3, 2, 0x0); //[] reg_p0_r_vc_sel
+_rtd_part_outl(0x1800dcfc, 5, 4, 0x0); //[] reg_p0_r_cdr_c
+_rtd_part_outl(0x1800dcfc, 11, 6, 0x00); //[] reg_p0_r_cdr_r
+_rtd_part_outl(0x1800dcfc, 31, 12, 0x77750); //[] reg_p0_r_cdr_cp
+_rtd_part_outl(0x1800dd00, 2, 0, 0x0); //[DPHY fix] reg_p0_r_init_time
+_rtd_part_outl(0x1800dd00, 7, 3, 0x04); //[DPHY fix] reg_p0_r_cp_time
+_rtd_part_outl(0x1800dd04, 6, 2, 0x01); //[DPHY fix]  reg_p0_r_timer_6
+_rtd_part_outl(0x1800dd04, 7, 7, 0x0); //[DPHY fix]  reg_p0_r_timer_5
+_rtd_part_outl(0x1800dd04, 11, 8, 0x7); //[DPHY fix]  reg_p0_r_vco_fine_init
+_rtd_part_outl(0x1800dd04, 15, 12, 0x7); //[DPHY fix]  reg_p0_r_vco_coarse_init
+_rtd_part_outl(0x1800dd04, 16, 16, 0x0); //[DPHY fix]  reg_p0_r_bypass_coarse_k_mode
+_rtd_part_outl(0x1800dd04, 18, 17, 0x0); //[DPHY fix]  reg_p0_r_vco_fine_time_sel
+_rtd_part_outl(0x1800dd04, 19, 19, 0x0); //[DPHY fix]  reg_p0_r_xtal_24m_en
+_rtd_part_outl(0x1800dd04, 23, 20, 0x0); //[DPHY fix]  reg_p0_r_vco_fine_manual
+_rtd_part_outl(0x1800dd04, 27, 24, 0x0); //[DPHY fix]  reg_p0_r_vco_coarse_manual
+_rtd_part_outl(0x1800dd04, 28, 28, 0x0); //[DPHY fix]  reg_p0_r_coarse_calib_manual
+_rtd_part_outl(0x1800dd04, 29, 29, 0x0); //[DPHY fix]  reg_p0_r_acdr_ckfld_en
+_rtd_part_outl(0x1800dd04, 30, 30, 0x0); //[DPHY fix]  reg_p0_r_pll_to_acdr_manual_en
+_rtd_part_outl(0x1800dd04, 31, 31, 0x0); //[DPHY fix]  reg_p0_r_pll_to_acdr_rdy_manual
+_rtd_part_outl(0x1800dd08, 4, 0, 0x01); //[]  reg_p0_r_timer_4
+_rtd_part_outl(0x1800dd08, 7, 5, 0x0); //[]  reg_p0_r_vc_chg_time
+_rtd_part_outl(0x1800dd08, 16, 16, 0x1); //[]  reg_p0_r_old_mode
+_rtd_part_outl(0x1800dd08, 21, 17, 0x10); //[]  reg_p0_r_slope_band
+_rtd_part_outl(0x1800dd08, 22, 22, 0x0); //[]  reg_p0_r_slope_manual
+_rtd_part_outl(0x1800dd08, 23, 23, 0x0); //[]  reg_p0_r_rxidle_bypass
+_rtd_part_outl(0x1800dd08, 24, 24, 0x0); //[]  reg_p0_r_pfd_bypass
+_rtd_part_outl(0x1800dd08, 29, 25, 0x00); //[]  reg_p0_r_pfd_time
+_rtd_part_outl(0x1800dd08, 30, 30, 0x0); //[]  reg_p0_r_pfd_en_manual
+_rtd_part_outl(0x1800dd08, 31, 31, 0x0); //[]  reg_p0_r_start_en_manual
+_rtd_part_outl(0x1800dd0c, 9, 5, 0x08); //[]  reg_p0_r_cp_time_2
+_rtd_part_outl(0x1800dd10, 0, 0, 0x0); //[DPHY fix]  reg_p0_ck_cp2adp_en
+_rtd_part_outl(0x1800dd10, 1, 1, 0x0); //[DPHY fix]  reg_p0_ck_stable_time_mode
+_rtd_part_outl(0x1800dd10, 2, 2, 0x0); //[DPHY fix]  reg_p0_ck_bypass_k_band_mode
+_rtd_part_outl(0x1800dd10, 18, 18, 0x0); //[DPHY fix]  reg_p0_ck_calib_late
+_rtd_part_outl(0x1800dd10, 19, 19, 0x0); //[DPHY fix]  reg_p0_ck_calib_manual
+_rtd_part_outl(0x1800dd10, 22, 20, 0x2); //[DPHY fix]  reg_p0_ck_calib_time
+_rtd_part_outl(0x1800dd10, 27, 23, 0x0c); //[DPHY fix]  reg_p0_ck_adp_time
+_rtd_part_outl(0x1800dd10, 28, 28, 0x0); //[DPHY fix]  reg_p0_ck_adap_eq_off
+_rtd_part_outl(0x1800dd10, 29, 29, 0x0); //[DPHY fix]  reg_p0_ck_cp_en_manual
+_rtd_part_outl(0x1800dd10, 30, 30, 0x0); //[DPHY fix]  reg_p0_ck_adp_en_manual
+_rtd_part_outl(0x1800dd10, 31, 31, 0x1); //[DPHY fix]  reg_p0_ck_auto_mode
+_rtd_part_outl(0x1800dd14, 31, 28, 0x8); //[DPHY fix] reg_p0_ck_cp2adp_time
+_rtd_part_outl(0x1800dd18, 1, 1, 0x1); //[] reg_p0_ck_calib_reset_sel
+_rtd_part_outl(0x1800dd18, 3, 2, 0x0); //[] reg_p0_ck_vc_sel
+_rtd_part_outl(0x1800dd18, 5, 4, 0x0); //[] reg_p0_ck_cdr_c
+_rtd_part_outl(0x1800dd18, 11, 6, 0x00); //[] reg_p0_ck_cdr_r
+_rtd_part_outl(0x1800dd18, 31, 12, 0x77750); //[] reg_p0_ck_cdr_cp
+_rtd_part_outl(0x1800dd1c, 2, 0, 0x0); //[DPHY fix] reg_p0_ck_init_time
+_rtd_part_outl(0x1800dd1c, 7, 3, 0x04); //[DPHY fix] reg_p0_ck_cp_time
+_rtd_part_outl(0x1800dd20, 6, 2, 0x01); //[DPHY fix]  reg_p0_ck_timer_6
+_rtd_part_outl(0x1800dd20, 7, 7, 0x0); //[DPHY fix]  reg_p0_ck_timer_5
+_rtd_part_outl(0x1800dd20, 11, 8, 0x7); //[DPHY fix]  reg_p0_ck_vco_fine_init
+_rtd_part_outl(0x1800dd20, 15, 12, 0x7); //[DPHY fix]  reg_p0_ck_vco_coarse_init
+_rtd_part_outl(0x1800dd20, 16, 16, 0x0); //[DPHY fix]  reg_p0_ck_bypass_coarse_k_mode
+_rtd_part_outl(0x1800dd20, 18, 17, 0x0); //[DPHY fix]  reg_p0_ck_vco_fine_time_sel
+_rtd_part_outl(0x1800dd20, 19, 19, 0x0); //[DPHY fix]  reg_p0_ck_xtal_24m_en
+_rtd_part_outl(0x1800dd20, 23, 20, 0x0); //[DPHY fix]  reg_p0_ck_vco_fine_manual
+_rtd_part_outl(0x1800dd20, 27, 24, 0x0); //[DPHY fix]  reg_p0_ck_vco_coarse_manual
+_rtd_part_outl(0x1800dd20, 28, 28, 0x0); //[DPHY fix]  reg_p0_ck_coarse_calib_manual
+_rtd_part_outl(0x1800dd20, 29, 29, 0x0); //[DPHY fix]  reg_p0_ck_acdr_ckfld_en
+_rtd_part_outl(0x1800dd20, 30, 30, 0x0); //[DPHY fix]  reg_p0_ck_pll_to_acdr_manual_en
+_rtd_part_outl(0x1800dd20, 31, 31, 0x0); //[DPHY fix]  reg_p0_ck_pll_to_acdr_rdy_manual
+_rtd_part_outl(0x1800dd24, 4, 0, 0x01); //[]  reg_p0_ck_timer_4
+_rtd_part_outl(0x1800dd24, 7, 5, 0x0); //[]  reg_p0_ck_vc_chg_time
+_rtd_part_outl(0x1800dd24, 16, 16, 0x1); //[]  reg_p0_ck_old_mode
+_rtd_part_outl(0x1800dd24, 21, 17, 0x10); //[]  reg_p0_ck_slope_band
+_rtd_part_outl(0x1800dd24, 22, 22, 0x0); //[]  reg_p0_ck_slope_manual
+_rtd_part_outl(0x1800dd24, 23, 23, 0x0); //[]  reg_p0_ck_rxidle_bypass
+_rtd_part_outl(0x1800dd24, 24, 24, 0x0); //[]  reg_p0_ck_pfd_bypass
+_rtd_part_outl(0x1800dd24, 29, 25, 0x00); //[]  reg_p0_ck_pfd_time
+_rtd_part_outl(0x1800dd24, 30, 30, 0x0); //[]  reg_p0_ck_pfd_en_manual
+_rtd_part_outl(0x1800dd24, 31, 31, 0x0); //[]  reg_p0_ck_start_en_manual
+_rtd_part_outl(0x1800dd28, 9, 5, 0x08); //[]  reg_p0_ck_cp_time_2
+//MOD
+_rtd_part_outl(0x1800dd2c, 0, 0, 0x1); //[]  reg_p0_ck_md_rstb
+_rtd_part_outl(0x1800dd2c, 1, 1, 0x1); //[]  reg_p0_ck_md_auto
+_rtd_part_outl(0x1800dd2c, 3, 2, 0x0); //[]  reg_p0_ck_md_sel
+_rtd_part_outl(0x1800dd2c, 7, 4, 0x0); //[]  reg_p0_ck_md_adj
+_rtd_part_outl(0x1800dd2c, 13, 8, 0x03); //[]  reg_p0_ck_md_threshold
+_rtd_part_outl(0x1800dd2c, 20, 14, 0x00); //[]  reg_p0_ck_md_debounce
+_rtd_part_outl(0x1800dd2c, 25, 21, 0x00); //[]  reg_p0_ck_error_limit
+_rtd_part_outl(0x1800dd2c, 29, 26, 0x0); //[]  reg_p0_ck_md_reserved
+_rtd_part_outl(0x1800dd30, 2, 0, 0x0); //[]  reg_p0_mod_sel
+//PLLCDR
+_rtd_part_outl(0x1800dd34, 0, 0, 0x0); //[]  reg_p0_b_pllcdr_manual_enable
+_rtd_part_outl(0x1800dd34, 1, 1, 0x0); //[]  reg_p0_g_pllcdr_manual_enable
+_rtd_part_outl(0x1800dd34, 2, 2, 0x0); //[]  reg_p0_r_pllcdr_manual_enable
+_rtd_part_outl(0x1800dd34, 3, 3, 0x0); //[]  reg_p0_ck_pllcdr_manual_enable
+_rtd_part_outl(0x1800dd34, 4, 4, 0x1); //[]  reg_p0_b_pllcdr_vcoband_manual_enable
+_rtd_part_outl(0x1800dd34, 5, 5, 0x1); //[]  reg_p0_g_pllcdr_vcoband_manual_enable
+_rtd_part_outl(0x1800dd34, 6, 6, 0x1); //[]  reg_p0_r_pllcdr_vcoband_manual_enable
+_rtd_part_outl(0x1800dd34, 7, 7, 0x1); //[]  reg_p0_ck_pllcdr_vcoband_manual_enable
+_rtd_part_outl(0x1800dd34, 19, 16, 0x0); //[]  reg_p0_b_acdr_icp_sel_manual
+_rtd_part_outl(0x1800dd34, 23, 20, 0x0); //[]  reg_p0_g_acdr_icp_sel_manual
+_rtd_part_outl(0x1800dd34, 27, 24, 0x0); //[]  reg_p0_r_acdr_icp_sel_manual
+_rtd_part_outl(0x1800dd34, 31, 28, 0x0); //[]  reg_p0_ck_acdr_icp_sel_manual
+_rtd_part_outl(0x1800dd38, 3, 0, 0x8); //[]  reg_p0_b_acdr_vco_coarse_i_manual
+_rtd_part_outl(0x1800dd38, 7, 4, 0x8); //[]  reg_p0_g_acdr_vco_coarse_i_manual
+_rtd_part_outl(0x1800dd38, 11, 8, 0x8); //[]  reg_p0_r_acdr_vco_coarse_i_manual
+_rtd_part_outl(0x1800dd38, 15, 12, 0x8); //[]  reg_p0_ck_acdr_vco_coarse_i_manual
+_rtd_part_outl(0x1800dd38, 19, 16, 0x0); //[]  reg_p0_b_acdr_vco_fine_i_manual
+_rtd_part_outl(0x1800dd38, 23, 20, 0x0); //[]  reg_p0_g_acdr_vco_fine_i_manual
+_rtd_part_outl(0x1800dd38, 27, 24, 0x0); //[]  reg_p0_r_acdr_vco_fine_i_manual
+_rtd_part_outl(0x1800dd38, 31, 28, 0x0); //[]  reg_p0_ck_acdr_vco_fine_i_manual
+_rtd_part_outl(0x1800dd6c, 0, 0, 0x1); //[DPHY fix]  reg_p0_acdr_en
+_rtd_part_outl(0x1800dd6c, 2, 2, 0x1); //[DPHY fix]  reg_p0_pow_on_manual
+_rtd_part_outl(0x1800dd6c, 3, 3, 0x1); //[DPHY fix]  reg_p0_pow_on_manual_aphy_en
+_rtd_part_outl(0x1800dd6c, 4, 4, 0x0); //[DPHY fix]  reg_p0_pow_on_manual_b_en
+_rtd_part_outl(0x1800dd6c, 5, 5, 0x0); //[DPHY fix]  reg_p0_pow_on_manual_g_en
+_rtd_part_outl(0x1800dd6c, 6, 6, 0x0); //[DPHY fix]  reg_p0_pow_on_manual_r_en
+_rtd_part_outl(0x1800dd6c, 7, 7, 0x0); //[DPHY fix]  reg_p0_pow_on_manual_ck_en
+_rtd_part_outl(0x1800dd6c, 8, 8, 0x1); //[DPHY fix]  reg_p0_pow_save_bypass_b
+_rtd_part_outl(0x1800dd6c, 9, 9, 0x1); //[DPHY fix]  reg_p0_pow_save_bypass_g
+_rtd_part_outl(0x1800dd6c, 10, 10, 0x1); //[DPHY fix]  reg_p0_pow_save_bypass_r
+_rtd_part_outl(0x1800dd6c, 11, 11, 0x1); //[DPHY fix]  reg_p0_pow_save_bypass_ck
+_rtd_part_outl(0x1800dd6c, 12, 12, 0x0); //[DPHY fix]  reg_p0_pow_save_xtal_24m_enable
+_rtd_part_outl(0x1800dd6c, 14, 13, 0x3); //[DPHY fix]  reg_p0_pow_save_rst_dly_sel
+_rtd_part_outl(0x1800dd70, 17, 16, 0x0); //[DPHY fix]  reg_tap1_mask
+_rtd_part_outl(0x1800dd7c, 31, 31, 0x0); //[DPHY fix]  reg_port_out_sel
+_rtd_part_outl(0x1800dd80, 7, 0, 0x00); //[]  reg_p0_dig_reserved_3
+_rtd_part_outl(0x1800dd80, 15, 8, 0x00); //[]  reg_p0_dig_reserved_2
+_rtd_part_outl(0x1800dd80, 23, 16, 0x00); //[]  reg_p0_dig_reserved_1
+_rtd_part_outl(0x1800dd80, 31, 24, 0x00); //[]  reg_p0_dig_reserved_0
+//=====[DPHY_Para_frl]=====//
+// DPHY para start
+_rtd_part_outl(0x1800dc00, 17, 16, 0x0); //[DPHY para]  reg_p0_b_rate_sel
+_rtd_part_outl(0x1800dc00, 19, 18, 0x0); //[DPHY para]  reg_p0_g_rate_sel
+_rtd_part_outl(0x1800dc00, 21, 20, 0x0); //[DPHY para]  reg_p0_r_rate_sel
+_rtd_part_outl(0x1800dc00, 23, 22, 0x0); //[DPHY para]  reg_p0_ck_rate_sel
+_rtd_part_outl(0x1800dc88, 0, 0, 0x1); //[DPHY para]  reg_p0_b_10b18b_sel
+_rtd_part_outl(0x1800dc88, 1, 1, 0x0); //[DPHY para]  reg_p0_b_clk_div2_en
+_rtd_part_outl(0x1800dc88, 8, 8, 0x1); //[DPHY para]  reg_p0_g_10b18b_sel
+_rtd_part_outl(0x1800dc88, 9, 9, 0x0); //[DPHY para]  reg_p0_g_clk_div2_en
+_rtd_part_outl(0x1800dc88, 16, 16, 0x1); //[DPHY para]  reg_p0_r_10b18b_sel
+_rtd_part_outl(0x1800dc88, 17, 17, 0x0); //[DPHY para]  reg_p0_r_clk_div2_en
+_rtd_part_outl(0x1800dc88, 24, 24, 0x1); //[DPHY para]  reg_p0_ck_10b18b_sel
+_rtd_part_outl(0x1800dc88, 25, 25, 0x0); //[DPHY para]  reg_p0_ck_clk_div2_en
+_rtd_part_outl(0x1800dd3c, 7, 0, 0x0a); //[]  reg_p0_b_acdr_pll_config_1
+_rtd_part_outl(0x1800dd3c, 15, 8, 0xac); //[]  reg_p0_b_acdr_pll_config_2
+_rtd_part_outl(0x1800dd3c, 23, 16, 0x0f); //[]  reg_p0_b_acdr_pll_config_3
+_rtd_part_outl(0x1800dd3c, 31, 24, 0x00); //[]  reg_p0_b_acdr_pll_config_4
+_rtd_part_outl(0x1800dd40, 7, 0, 0x0b); //[]  reg_p0_b_acdr_cdr_config_1
+_rtd_part_outl(0x1800dd40, 15, 8, 0x81); //[]  reg_p0_b_acdr_cdr_config_2
+_rtd_part_outl(0x1800dd40, 23, 16, 0x03); //[]  reg_p0_b_acdr_cdr_config_3
+_rtd_part_outl(0x1800dd40, 31, 24, 0x00); //[]  reg_p0_b_acdr_cdr_config_4
+_rtd_part_outl(0x1800dd44, 7, 0, 0x00); //[]  reg_p0_b_acdr_manual_config_1
+_rtd_part_outl(0x1800dd44, 15, 8, 0x00); //[]  reg_p0_b_acdr_manual_config_2
+_rtd_part_outl(0x1800dd44, 23, 16, 0x00); //[]  reg_p0_b_acdr_manual_config_3
+_rtd_part_outl(0x1800dd44, 31, 24, 0x00); //[]  reg_p0_b_acdr_manual_config_4
+_rtd_part_outl(0x1800dd48, 7, 0, 0x0a); //[]  reg_p0_g_acdr_pll_config_1
+_rtd_part_outl(0x1800dd48, 15, 8, 0xac); //[]  reg_p0_g_acdr_pll_config_2
+_rtd_part_outl(0x1800dd48, 23, 16, 0x0f); //[]  reg_p0_g_acdr_pll_config_3
+_rtd_part_outl(0x1800dd48, 31, 24, 0x00); //[]  reg_p0_g_acdr_pll_config_4
+_rtd_part_outl(0x1800dd4c, 7, 0, 0x0b); //[]  reg_p0_g_acdr_cdr_config_1
+_rtd_part_outl(0x1800dd4c, 15, 8, 0x81); //[]  reg_p0_g_acdr_cdr_config_2
+_rtd_part_outl(0x1800dd4c, 23, 16, 0x03); //[]  reg_p0_g_acdr_cdr_config_3
+_rtd_part_outl(0x1800dd4c, 31, 24, 0x00); //[]  reg_p0_g_acdr_cdr_config_4
+_rtd_part_outl(0x1800dd50, 7, 0, 0x00); //[]  reg_p0_g_acdr_manual_config_1
+_rtd_part_outl(0x1800dd50, 15, 8, 0x00); //[]  reg_p0_g_acdr_manual_config_2
+_rtd_part_outl(0x1800dd50, 23, 16, 0x00); //[]  reg_p0_g_acdr_manual_config_3
+_rtd_part_outl(0x1800dd50, 31, 24, 0x00); //[]  reg_p0_g_acdr_manual_config_4
+_rtd_part_outl(0x1800dd54, 7, 0, 0x0a); //[]  reg_p0_r_acdr_pll_config_1
+_rtd_part_outl(0x1800dd54, 15, 8, 0xac); //[]  reg_p0_r_acdr_pll_config_2
+_rtd_part_outl(0x1800dd54, 23, 16, 0x0f); //[]  reg_p0_r_acdr_pll_config_3
+_rtd_part_outl(0x1800dd54, 31, 24, 0x00); //[]  reg_p0_r_acdr_pll_config_4
+_rtd_part_outl(0x1800dd58, 7, 0, 0x0b); //[]  reg_p0_r_acdr_cdr_config_1
+_rtd_part_outl(0x1800dd58, 15, 8, 0x81); //[]  reg_p0_r_acdr_cdr_config_2
+_rtd_part_outl(0x1800dd58, 23, 16, 0x03); //[]  reg_p0_r_acdr_cdr_config_3
+_rtd_part_outl(0x1800dd58, 31, 24, 0x00); //[]  reg_p0_r_acdr_cdr_config_4
+_rtd_part_outl(0x1800dd5c, 7, 0, 0x00); //[]  reg_p0_r_acdr_manual_config_1
+_rtd_part_outl(0x1800dd5c, 15, 8, 0x00); //[]  reg_p0_r_acdr_manual_config_2
+_rtd_part_outl(0x1800dd5c, 23, 16, 0x00); //[]  reg_p0_r_acdr_manual_config_3
+_rtd_part_outl(0x1800dd5c, 31, 24, 0x00); //[]  reg_p0_r_acdr_manual_config_4
+_rtd_part_outl(0x1800dd60, 7, 0, 0x0e); //[]  reg_p0_ck_acdr_pll_config_1
+_rtd_part_outl(0x1800dd60, 15, 8, 0xbc); //[]  reg_p0_ck_acdr_pll_config_2
+_rtd_part_outl(0x1800dd60, 23, 16, 0x0f); //[]  reg_p0_ck_acdr_pll_config_3
+_rtd_part_outl(0x1800dd60, 31, 24, 0x00); //[]  reg_p0_ck_acdr_pll_config_4
+_rtd_part_outl(0x1800dd64, 7, 0, 0x0b); //[]  reg_p0_ck_acdr_cdr_config_1
+_rtd_part_outl(0x1800dd64, 15, 8, 0x81); //[]  reg_p0_ck_acdr_cdr_config_2
+_rtd_part_outl(0x1800dd64, 23, 16, 0x03); //[]  reg_p0_ck_acdr_cdr_config_3
+_rtd_part_outl(0x1800dd64, 31, 24, 0x00); //[]  reg_p0_ck_acdr_cdr_config_4
+_rtd_part_outl(0x1800dd68, 7, 0, 0x00); //[]  reg_p0_ck_acdr_manual_config_1
+_rtd_part_outl(0x1800dd68, 15, 8, 0x00); //[]  reg_p0_ck_acdr_manual_config_2
+_rtd_part_outl(0x1800dd68, 23, 16, 0x00); //[]  reg_p0_ck_acdr_manual_config_3
+_rtd_part_outl(0x1800dd68, 31, 24, 0x00); //[]  reg_p0_ck_acdr_manual_config_4
+//=====[APHY_Fix_frl]=====//
+//APHY fix start
+_rtd_part_outl(0x1800da04, 4, 0, 0x0b); //[]  REG_Z0_ADJR_0
+_rtd_part_outl(0x1800da08, 0, 0, 0x1); //[]  REG_Z0_Z0POW_B
+_rtd_part_outl(0x1800da08, 4, 4, 0x1); //[]  REG_Z0_Z0POW_CK
+_rtd_part_outl(0x1800da08, 8, 8, 0x1); //[]  REG_Z0_Z0POW_G
+_rtd_part_outl(0x1800da08, 12, 12, 0x1); //[]  REG_Z0_Z0POW_R
+_rtd_part_outl(0x1800da08, 24, 24, 0x0); //[]  REG_Z0_Z300_SEL
+_rtd_part_outl(0x1800da10, 0, 0, 0x0); //[]  Z0_P_OFF
+_rtd_part_outl(0x1800da10, 1, 1, 0x0); //[]  Z0_N_OFF
+_rtd_part_outl(0x1800da10, 3, 2, 0x3); //[]  Z0_RFIX_SEL
+_rtd_part_outl(0x1800da10, 7, 4, 0x0); //[]  dummy.
+_rtd_part_outl(0x1800da10, 8, 8, 0x0); //[]  fast sw sel
+_rtd_part_outl(0x1800da10, 9, 9, 0x0); //[]  fast sw clock div enable
+_rtd_part_outl(0x1800da10, 12, 10, 0x0); //[]  fast sw clock div select (delay time=
+_rtd_part_outl(0x1800da10, 13, 13, 0x0); //[]  Enable AVDD10 voltage probe.
+_rtd_part_outl(0x1800da10, 15, 14, 0x0); //[]  IO overvoltage detect bit select
+_rtd_part_outl(0x1800da10, 16, 16, 0x1); //[]  CK_TX EN
+_rtd_part_outl(0x1800da10, 17, 17, 0x0); //[]  CK_MD selection.
+_rtd_part_outl(0x1800da10, 19, 18, 0x3); //[]  1.8V CK-detect hysteresis window select.
+_rtd_part_outl(0x1800da10, 20, 20, 0x0); //[]  CK-PAD to CK-detect switch enable.
+_rtd_part_outl(0x1800da10, 21, 21, 0x0); //[]  Standby mode CK-detect & AC-couple
+_rtd_part_outl(0x1800da10, 22, 22, 0x0); //[]  dummy
+_rtd_part_outl(0x1800da10, 23, 23, 0x0); //[]  div32 rstb (CK-detect use).
+_rtd_part_outl(0x1800da10, 27, 24, 0x0); //[]  test voltage/test current/test clock select  @[6:5]
+_rtd_part_outl(0x1800da10, 28, 28, 0x0); //[]  dummy
+_rtd_part_outl(0x1800da10, 30, 29, 0x0); //[]  tst pad mode sel
+_rtd_part_outl(0x1800da10, 31, 31, 0x0); //[]  dummy
+_rtd_part_outl(0x1800da14, 7, 0, 0x10); //[]  REG_TOP_IN_5 dummy
+_rtd_part_outl(0x1800da18, 0, 0, 0x1); //[APHY fix]  REG_HDMIRX_BIAS_EN bandgap reference power
+_rtd_part_outl(0x1800da18, 10, 8, 0x0); //[APHY fix]  REG_BG_RBGLOOP2 dummy
+_rtd_part_outl(0x1800da18, 13, 11, 0x0); //[APHY fix]  REG_BG_RBG dummy
+_rtd_part_outl(0x1800da18, 15, 14, 0x0); //[APHY fix]  REG_BG_RBG2 dummy
+_rtd_part_outl(0x1800da18, 16, 16, 0x0); //[APHY fix]  REG_BG_POW dummy
+_rtd_part_outl(0x1800da18, 17, 17, 0x0); //[APHY fix]  REG_BG_ENVBGUP
+_rtd_part_outl(0x1800da20, 7, 0, 0x00); //[]  dummy
+_rtd_part_outl(0x1800da20, 15, 8, 0x00); //[]  dummy
+_rtd_part_outl(0x1800da20, 23, 16, 0x00); //[]  dummy
+_rtd_part_outl(0x1800da20, 31, 24, 0x00); //[]  dummy
+_rtd_part_outl(0x1800da24, 7, 0, 0x00); //[]  dummy
+_rtd_part_outl(0x1800da24, 15, 8, 0x00); //[]  dummy
+_rtd_part_outl(0x1800da24, 23, 16, 0x00); //[]  dummy
+_rtd_part_outl(0x1800da24, 31, 24, 0x00); //[]  dummy
+_rtd_part_outl(0x1800da30, 1, 1, 0x0); //[APHY fix]  CK-Lane INPOFF_SINGLE_EN
+_rtd_part_outl(0x1800da30, 2, 2, 0x0); //[APHY fix]  CK-Lane INNOFF_SINGLE_EN
+_rtd_part_outl(0x1800da30, 3, 3, 0x1); //[APHY fix]  CK-Lane POW_AC_COUPLE
+_rtd_part_outl(0x1800da30, 5, 4, 0x1); //[APHY fix]  CK-Lane RXVCM_SEL[1:0]
+_rtd_part_outl(0x1800da34, 21, 21, 0x1); //[APHY fix]   	CK-Lane RS_CAL_EN
+_rtd_part_outl(0x1800da34, 25, 25, 0x1); //[APHY fix]   	CK-Lane POW_DATALANE_BIAS
+_rtd_part_outl(0x1800da34, 26, 26, 0x0); //[APHY fix]   	CK-Lane REG_FORCE_STARTUP(Const-GM)
+_rtd_part_outl(0x1800da34, 27, 27, 0x0); //[APHY fix]   	CK-Lane REG_POWB_STARTUP
+_rtd_part_outl(0x1800da38, 8, 8, 0x1); //[APHY fix]  		CK-Lane POW_DFE
+_rtd_part_outl(0x1800da38, 14, 12, 0x6); //[APHY fix] 		CK-Lane DFE_SUMAMP_ ISEL
+_rtd_part_outl(0x1800da38, 15, 15, 0x0); //[APHY fix] 		CK-Lane DFE_SUMAMP_DCGAIN_MAX
+_rtd_part_outl(0x1800da38, 19, 18, 0x0); //[APHY fix] 		CK-Lane Dummy
+_rtd_part_outl(0x1800da38, 20, 20, 0x0); //[APHY fix] 		CK-Lane DFE CKI_DELAY_EN
+_rtd_part_outl(0x1800da38, 21, 21, 0x0); //[APHY fix] 		CK-Lane DFE CKIB_DELAY_EN
+_rtd_part_outl(0x1800da38, 22, 22, 0x0); //[APHY fix] 		CK-Lane DFE CKQ_DELAY_EN
+_rtd_part_outl(0x1800da38, 23, 23, 0x0); //[APHY fix] 		CK-Lane DFE CKQB_DELAY_EN
+_rtd_part_outl(0x1800da38, 24, 24, 0x0); //[APHY fix] 		CK-Lane EN_EYE_MNT
+_rtd_part_outl(0x1800da38, 25, 25, 0x0); //[APHY fix] 		CK-Lane DEMUX input clock phase select:(for eye mnt)
+_rtd_part_outl(0x1800da38, 26, 26, 0x0); //[APHY fix] 		CK-Lane VTH_MANUAL
+_rtd_part_outl(0x1800da38, 27, 27, 0x0); //[APHY fix] 		CK-Lane DA_EG_VOS_PULLLOW(koffset disable)
+_rtd_part_outl(0x1800da38, 31, 29, 0x0); //[APHY fix] 			CK-Lane dummy
+_rtd_part_outl(0x1800da3c, 2, 0, 0x0); //[APHY fix]  	CK-Lane DFE_TAP_DELAY
+_rtd_part_outl(0x1800da3c, 7, 7, 0x1); //[APHY fix]   		CK-Lane DFE_ADAPT_EN
+_rtd_part_outl(0x1800da3c, 8, 8, 0x0); //[APHY fix]   	CK-Lane rstb of dtata-lane test div8
+_rtd_part_outl(0x1800da3c, 9, 9, 0x0); //[APHY fix]   	CK-Lane TRANSITION CNT enable.
+_rtd_part_outl(0x1800da3c, 16, 16, 0x0); //[APHY fix]  		CK-Lane QCG1_EN
+_rtd_part_outl(0x1800da3c, 17, 17, 0x0); //[APHY fix]  		CK-Lane QCG1 injection-locked EN
+_rtd_part_outl(0x1800da3c, 18, 18, 0x1); //[APHY fix]  		CK-Lane QCG2_EN
+_rtd_part_outl(0x1800da3c, 19, 19, 0x0); //[APHY fix]  		CK-Lane QCG2 injection-locked EN
+_rtd_part_outl(0x1800da3c, 20, 20, 0x1); //[APHY fix]  		CK-Lane QCG FLD divider(/8) rstb
+_rtd_part_outl(0x1800da3c, 21, 21, 0x1); //[APHY fix]  		CK-Lane QCG FLD SEL
+_rtd_part_outl(0x1800da3c, 22, 22, 0x0); //[APHY fix]  		CK-Lane CK_FLD SEL.
+_rtd_part_outl(0x1800da3c, 23, 23, 0x0); //[APHY fix]  		CK-Lane CK-lane clk to B/G/R EN.
+_rtd_part_outl(0x1800da40, 8, 8, 0x0); //[APHY fix]  CK-Lane PI_EN
+_rtd_part_outl(0x1800da40, 12, 12, 0x0); //[APHY fix]  CK-Lane QCG1 Cload contrl SEL
+_rtd_part_outl(0x1800da40, 13, 13, 0x0); //[APHY fix]  CK-Lane QCG2 Cload contrl SEL
+_rtd_part_outl(0x1800da40, 15, 15, 0x0); //[APHY fix]  CK-Lane BIAS_PI_CUR_SEL
+_rtd_part_outl(0x1800da40, 21, 21, 0x0); //[APHY fix]  CK-Lane PI_EYE_EN
+_rtd_part_outl(0x1800da40, 23, 23, 0x0); //[APHY fix]  CK-Lane KI SEL
+_rtd_part_outl(0x1800da40, 25, 25, 0x0); //[APHY fix]  CK-Lane FKP_RSTB_SEL
+_rtd_part_outl(0x1800da40, 27, 26, 0x0); //[APHY fix]  CK-Lane KI_CK_SEL
+_rtd_part_outl(0x1800da40, 29, 29, 0x0); //[APHY fix]  CK-Lane ST_CODE SEL
+_rtd_part_outl(0x1800da40, 30, 30, 0x0); //[APHY fix]  CK-Lane QCG Ckin SEL.
+_rtd_part_outl(0x1800da44, 3, 2, 0x1); //[APHY fix]  CK-Lane ACDR_SEL_DIV_FLD[1:0]
+_rtd_part_outl(0x1800da44, 5, 4, 0x0); //[APHY fix]  CK-Lane ACDR_SEL_DIV_REF[1:0]
+_rtd_part_outl(0x1800da44, 7, 6, 0x0); //[APHY fix]  CK-Lane ACDR_SEL_DIV_PLL[1:0]
+_rtd_part_outl(0x1800da44, 9, 8, 0x0); //[APHY fix]  CK-Lane ACDR_SEL_DIV_TRAINING[1:0]
+_rtd_part_outl(0x1800da44, 12, 12, 0x0); //[APHY fix]  CK-Lane dummy
+_rtd_part_outl(0x1800da44, 13, 13, 0x0); //[APHY fix]  CK-Lane ACDR_SEL_FLD_0CKFB_1CKREF
+_rtd_part_outl(0x1800da44, 15, 14, 0x0); //[APHY fix]  CK-Lane no use
+_rtd_part_outl(0x1800da44, 18, 18, 0x1); //[APHY fix]  CK-Lane ACDR_RSTB_DIV_PLL ... removed
+_rtd_part_outl(0x1800da44, 24, 24, 0x0); //[APHY fix]  CK-Lane ACDR_EN_UPDN_PULSE_FILTER
+_rtd_part_outl(0x1800da44, 25, 25, 0x1); //[APHY fix]  CK-Lane ACDR_RSTB_UPDN ... dummy
+_rtd_part_outl(0x1800da44, 27, 26, 0x0); //[APHY fix]  CK-Lane ACDR_SEL_UPDN_WIDTH[1:0]
+_rtd_part_outl(0x1800da44, 28, 28, 0x1); //[APHY fix]  CK-Lane ACDR_POW_LPF_IDAC
+_rtd_part_outl(0x1800da44, 31, 29, 0x3); //[APHY fix]  CK-Lane ACDR_SEL_LPF_IDAC[2:0]
+_rtd_part_outl(0x1800da48, 0, 0, 0x1); //[APHY fix]  CK-Lane ACDR_POW_CP
+_rtd_part_outl(0x1800da48, 2, 2, 0x1); //[APHY fix]  CK-Lane ACDR_POW_IDN_BBPD
+_rtd_part_outl(0x1800da48, 3, 3, 0x0); //[APHY fix]  CK-Lane no use
+_rtd_part_outl(0x1800da48, 6, 4, 0x7); //[APHY fix]  CK-Lane ACDR_SEL_TIE_IDN_BBPD
+_rtd_part_outl(0x1800da48, 7, 7, 0x0); //[APHY fix]  CK-Lane ACDR_POW_IBIAS_IDN_HV
+_rtd_part_outl(0x1800da48, 8, 8, 0x1); //[APHY fix]  CK-Lane ACDR_POW_VCO
+_rtd_part_outl(0x1800da48, 9, 9, 0x1); //[APHY fix]  CK-Lane ACDR_POW_VCO_VDAC
+_rtd_part_outl(0x1800da48, 11, 10, 0x0); //[APHY fix]  CK-Lane ACDR_SEL_V15_VDAC
+_rtd_part_outl(0x1800da48, 14, 14, 0x0); //[APHY fix]  CK-Lane no use
+_rtd_part_outl(0x1800da48, 15, 15, 0x0); //[APHY fix]  CK-Lane no use
+_rtd_part_outl(0x1800da48, 16, 16, 0x0); //[APHY fix]  CK-Lane ACDR_POW_TEST_MODE
+_rtd_part_outl(0x1800da48, 18, 17, 0x0); //[APHY fix]  CK-Lane ACDR_SEL_TEST_MODE
+_rtd_part_outl(0x1800da48, 23, 19, 0x00); //[APHY fix]  CK-Lane no use
+_rtd_part_outl(0x1800da48, 31, 31, 0x0); //[APHY fix]  CK-Lane no use
+_rtd_part_outl(0x1800da4c, 15, 13, 0x0); //[APHY fix]  CK-Lane no use
+_rtd_part_outl(0x1800da4c, 19, 16, 0x0); //[APHY fix]  CK-Lane LE1_ISEL_IN_2 -> dummy
+_rtd_part_outl(0x1800da4c, 31, 25, 0x44); //[APHY fix]  CK-Lane no use for LEQ
+_rtd_part_outl(0x1800da50, 1, 1, 0x0); //[APHY fix]  		B-Lane INPOFF_SINGLE_EN
+_rtd_part_outl(0x1800da50, 2, 2, 0x0); //[APHY fix]  		B-Lane INNOFF_SINGLE_EN
+_rtd_part_outl(0x1800da50, 3, 3, 0x1); //[APHY fix]  		B-Lane POW_AC_COUPLE
+_rtd_part_outl(0x1800da50, 5, 4, 0x1); //[APHY fix]  		B-Lane RXVCM_SEL[1:0]
+_rtd_part_outl(0x1800da54, 21, 21, 0x1); //[APHY fix]   		B-Lane RS_CAL_EN
+_rtd_part_outl(0x1800da54, 25, 25, 0x1); //[APHY fix]   		B-Lane POW_DATALANE_BIAS
+_rtd_part_outl(0x1800da54, 26, 26, 0x0); //[APHY fix]   		B-Lane REG_FORCE_STARTUP(Const-GM)
+_rtd_part_outl(0x1800da54, 27, 27, 0x0); //[APHY fix]   		B-Lane REG_POWB_STARTUP
+_rtd_part_outl(0x1800da58, 8, 8, 0x1); //[APHY fix]  		B-Lane POW_DFE
+_rtd_part_outl(0x1800da58, 14, 12, 0x6); //[APHY fix] 		B-Lane DFE_SUMAMP_ ISEL
+_rtd_part_outl(0x1800da58, 15, 15, 0x0); //[APHY fix] 		B-Lane DFE_SUMAMP_DCGAIN_MAX
+_rtd_part_outl(0x1800da58, 19, 18, 0x0); //[APHY fix] 		B-Lane Dummy
+_rtd_part_outl(0x1800da58, 20, 20, 0x0); //[APHY fix] 		B-Lane DFE CKI_DELAY_EN
+_rtd_part_outl(0x1800da58, 21, 21, 0x0); //[APHY fix] 		B-Lane DFE CKIB_DELAY_EN
+_rtd_part_outl(0x1800da58, 22, 22, 0x0); //[APHY fix] 		B-Lane DFE CKQ_DELAY_EN
+_rtd_part_outl(0x1800da58, 23, 23, 0x0); //[APHY fix] 		B-Lane DFE CKQB_DELAY_EN
+_rtd_part_outl(0x1800da58, 24, 24, 0x0); //[APHY fix] 		B-Lane EN_EYE_MNT
+_rtd_part_outl(0x1800da58, 25, 25, 0x0); //[APHY fix] 		B-Lane DEMUX input clock phase select:(for eye mnt)
+_rtd_part_outl(0x1800da58, 26, 26, 0x0); //[APHY fix] 		B-Lane VTH_MANUAL
+_rtd_part_outl(0x1800da58, 27, 27, 0x0); //[APHY fix] 		B-Lane DA_EG_VOS_PULLLOW(koffset disable)
+_rtd_part_outl(0x1800da58, 31, 29, 0x0); //[APHY fix] 			B-Lane dummy
+_rtd_part_outl(0x1800da5c, 2, 0, 0x0); //[APHY fix]  	B-Lane DFE_TAP_DELAY
+_rtd_part_outl(0x1800da5c, 7, 7, 0x1); //[APHY fix]   		B-Lane DFE_ADAPT_EN
+_rtd_part_outl(0x1800da5c, 8, 8, 0x0); //[APHY fix]   	B-Lane rstb of dtata-lane test div8
+_rtd_part_outl(0x1800da5c, 9, 9, 0x0); //[APHY fix]   	B-Lane TRANSITION CNT enable.
+_rtd_part_outl(0x1800da5c, 16, 16, 0x0); //[APHY fix]  		B-Lane QCG1_EN
+_rtd_part_outl(0x1800da5c, 17, 17, 0x0); //[APHY fix]  		B-Lane QCG1 injection-locked EN
+_rtd_part_outl(0x1800da5c, 18, 18, 0x1); //[APHY fix]  		B-Lane QCG2_EN
+_rtd_part_outl(0x1800da5c, 19, 19, 0x0); //[APHY fix]  		B-Lane QCG2 injection-locked EN
+_rtd_part_outl(0x1800da5c, 20, 20, 0x1); //[APHY fix]  		B-Lane QCG FLD divider(/8) rstb
+_rtd_part_outl(0x1800da5c, 21, 21, 0x1); //[APHY fix]  		B-Lane QCG FLD SEL
+_rtd_part_outl(0x1800da5c, 22, 22, 0x0); //[APHY fix]  		B-Lane CK_FLD SEL.
+_rtd_part_outl(0x1800da5c, 23, 23, 0x1); //[APHY fix]  		B-Lane CK-lane clk to B/G/R EN.
+_rtd_part_outl(0x1800da60, 8, 8, 0x0); //[APHY fix]  B-Lane PI_EN
+_rtd_part_outl(0x1800da60, 12, 12, 0x0); //[APHY fix]  B-Lane QCG1 Cload contrl SEL
+_rtd_part_outl(0x1800da60, 13, 13, 0x0); //[APHY fix]  B-Lane QCG2 Cload contrl SEL
+_rtd_part_outl(0x1800da60, 15, 15, 0x0); //[APHY fix]  B-Lane BIAS_PI_CUR_SEL
+_rtd_part_outl(0x1800da60, 21, 21, 0x0); //[APHY fix]  B-Lane PI_EYE_EN
+_rtd_part_outl(0x1800da60, 23, 23, 0x0); //[APHY fix]  B-Lane KI SEL
+_rtd_part_outl(0x1800da60, 25, 25, 0x0); //[APHY fix]  B-Lane FKP_RSTB_SEL
+_rtd_part_outl(0x1800da60, 27, 26, 0x0); //[APHY fix]  B-Lane KI_CK_SEL
+_rtd_part_outl(0x1800da60, 29, 29, 0x0); //[APHY fix]  B-Lane ST_CODE SEL
+_rtd_part_outl(0x1800da60, 30, 30, 0x0); //[APHY fix]  B-Lane QCG Ckin SEL.
+_rtd_part_outl(0x1800da64, 3, 2, 0x1); //[APHY fix]  B-Lane ACDR_SEL_DIV_FLD[1:0]
+_rtd_part_outl(0x1800da64, 5, 4, 0x0); //[APHY fix]  B-Lane ACDR_SEL_DIV_REF[1:0]
+_rtd_part_outl(0x1800da64, 7, 6, 0x0); //[APHY fix]  B-Lane ACDR_SEL_DIV_PLL[1:0]
+_rtd_part_outl(0x1800da64, 9, 8, 0x0); //[APHY fix]  B-Lane ACDR_SEL_DIV_TRAINING[1:0]
+_rtd_part_outl(0x1800da64, 12, 12, 0x0); //[APHY fix]  B-Lane dummy
+_rtd_part_outl(0x1800da64, 13, 13, 0x0); //[APHY fix]  B-Lane ACDR_SEL_FLD_0CKFB_1CKREF
+_rtd_part_outl(0x1800da64, 15, 14, 0x0); //[APHY fix]  B-Lane no use
+_rtd_part_outl(0x1800da64, 18, 18, 0x1); //[APHY fix]  B-Lane ACDR_RSTB_DIV_PLL ... removed
+_rtd_part_outl(0x1800da64, 24, 24, 0x0); //[APHY fix]  B-Lane ACDR_EN_UPDN_PULSE_FILTER
+_rtd_part_outl(0x1800da64, 25, 25, 0x1); //[APHY fix]  B-Lane ACDR_RSTB_UPDN ... dummy
+_rtd_part_outl(0x1800da64, 27, 26, 0x0); //[APHY fix]  B-Lane ACDR_SEL_UPDN_WIDTH[1:0]
+_rtd_part_outl(0x1800da64, 28, 28, 0x1); //[APHY fix]  B-Lane ACDR_POW_LPF_IDAC
+_rtd_part_outl(0x1800da64, 31, 29, 0x3); //[APHY fix]  B-Lane ACDR_SEL_LPF_IDAC[2:0]
+_rtd_part_outl(0x1800da68, 0, 0, 0x1); //[APHY fix]  B-Lane ACDR_POW_CP
+_rtd_part_outl(0x1800da68, 2, 2, 0x1); //[APHY fix]  B-Lane ACDR_POW_IDN_BBPD
+_rtd_part_outl(0x1800da68, 3, 3, 0x0); //[APHY fix]  B-Lane no use
+_rtd_part_outl(0x1800da68, 6, 4, 0x7); //[APHY fix]  B-Lane ACDR_SEL_TIE_IDN_BBPD
+_rtd_part_outl(0x1800da68, 7, 7, 0x0); //[APHY fix]  B-Lane ACDR_POW_IBIAS_IDN_HV
+_rtd_part_outl(0x1800da68, 8, 8, 0x1); //[APHY fix]  B-Lane ACDR_POW_VCO
+_rtd_part_outl(0x1800da68, 9, 9, 0x1); //[APHY fix]  B-Lane ACDR_POW_VCO_VDAC
+_rtd_part_outl(0x1800da68, 11, 10, 0x0); //[APHY fix]  B-Lane ACDR_SEL_V15_VDAC
+_rtd_part_outl(0x1800da68, 14, 14, 0x0); //[APHY fix]  B-Lane no use
+_rtd_part_outl(0x1800da68, 15, 15, 0x0); //[APHY fix]  B-Lane no use
+_rtd_part_outl(0x1800da68, 16, 16, 0x0); //[APHY fix]  B-Lane ACDR_POW_TEST_MODE
+_rtd_part_outl(0x1800da68, 18, 17, 0x0); //[APHY fix]  B-Lane ACDR_SEL_TEST_MODE
+_rtd_part_outl(0x1800da68, 23, 19, 0x00); //[APHY fix]  B-Lane no use
+_rtd_part_outl(0x1800da68, 31, 31, 0x0); //[APHY fix]  B-Lane no use
+_rtd_part_outl(0x1800da6c, 15, 13, 0x1); //[APHY fix]  B-Lane no use
+_rtd_part_outl(0x1800da6c, 19, 16, 0x0); //[APHY fix]  B-Lane LE1_ISEL_IN_2 -> dummy
+_rtd_part_outl(0x1800da6c, 31, 25, 0x44); //[APHY fix]  B-Lane no use for LEQ
+_rtd_part_outl(0x1800da70, 1, 1, 0x0); //[APHY fix]  		G-Lane INPOFF_SINGLE_EN
+_rtd_part_outl(0x1800da70, 2, 2, 0x0); //[APHY fix]  		G-Lane INNOFF_SINGLE_EN
+_rtd_part_outl(0x1800da70, 3, 3, 0x1); //[APHY fix]  		G-Lane POW_AC_COUPLE
+_rtd_part_outl(0x1800da70, 5, 4, 0x1); //[APHY fix]  		G-Lane RXVCM_SEL[1:0]
+_rtd_part_outl(0x1800da74, 21, 21, 0x1); //[APHY fix]   		G-Lane RS_CAL_EN
+_rtd_part_outl(0x1800da74, 25, 25, 0x1); //[APHY fix]   		G-Lane POW_DATALANE_BIAS
+_rtd_part_outl(0x1800da74, 26, 26, 0x0); //[APHY fix]   		G-Lane REG_FORCE_STARTUP(Const-GM)
+_rtd_part_outl(0x1800da74, 27, 27, 0x0); //[APHY fix]   		G-Lane REG_POWB_STARTUP
+_rtd_part_outl(0x1800da78, 8, 8, 0x1); //[APHY fix]  		G-Lane POW_DFE
+_rtd_part_outl(0x1800da78, 14, 12, 0x6); //[APHY fix] 		G-Lane DFE_SUMAMP_ ISEL
+_rtd_part_outl(0x1800da78, 15, 15, 0x0); //[APHY fix] 		G-Lane DFE_SUMAMP_DCGAIN_MAX
+_rtd_part_outl(0x1800da78, 19, 18, 0x0); //[APHY fix] 		G-Lane Dummy
+_rtd_part_outl(0x1800da78, 20, 20, 0x0); //[APHY fix] 		G-Lane DFE CKI_DELAY_EN
+_rtd_part_outl(0x1800da78, 21, 21, 0x0); //[APHY fix] 		G-Lane DFE CKIB_DELAY_EN
+_rtd_part_outl(0x1800da78, 22, 22, 0x0); //[APHY fix] 		G-Lane DFE CKQ_DELAY_EN
+_rtd_part_outl(0x1800da78, 23, 23, 0x0); //[APHY fix] 		G-Lane DFE CKQB_DELAY_EN
+_rtd_part_outl(0x1800da78, 24, 24, 0x0); //[APHY fix] 		G-Lane EN_EYE_MNT
+_rtd_part_outl(0x1800da78, 25, 25, 0x0); //[APHY fix] 		G-Lane DEMUX input clock phase select:(for eye mnt)
+_rtd_part_outl(0x1800da78, 26, 26, 0x0); //[APHY fix] 		G-Lane VTH_MANUAL
+_rtd_part_outl(0x1800da78, 27, 27, 0x0); //[APHY fix] 		G-Lane DA_EG_VOS_PULLLOW(koffset disable)
+_rtd_part_outl(0x1800da78, 31, 29, 0x0); //[APHY fix] 			G-Lane dummy
+_rtd_part_outl(0x1800da7c, 2, 0, 0x0); //[APHY fix]  	G-Lane DFE_TAP_DELAY
+_rtd_part_outl(0x1800da7c, 7, 7, 0x1); //[APHY fix]   		G-Lane DFE_ADAPT_EN
+_rtd_part_outl(0x1800da7c, 8, 8, 0x0); //[APHY fix]   	G-Lane rstb of dtata-lane test div8
+_rtd_part_outl(0x1800da7c, 9, 9, 0x0); //[APHY fix]   	G-Lane TRANSITION CNT enable.
+_rtd_part_outl(0x1800da7c, 16, 16, 0x0); //[APHY fix]  		G-Lane QCG1_EN
+_rtd_part_outl(0x1800da7c, 17, 17, 0x0); //[APHY fix]  		G-Lane QCG1 injection-locked EN
+_rtd_part_outl(0x1800da7c, 18, 18, 0x1); //[APHY fix]  		G-Lane QCG2_EN
+_rtd_part_outl(0x1800da7c, 19, 19, 0x0); //[APHY fix]  		G-Lane QCG2 injection-locked EN
+_rtd_part_outl(0x1800da7c, 20, 20, 0x1); //[APHY fix]  		G-Lane QCG FLD divider(/8) rstb
+_rtd_part_outl(0x1800da7c, 21, 21, 0x1); //[APHY fix]  		G-Lane QCG FLD SEL
+_rtd_part_outl(0x1800da7c, 22, 22, 0x0); //[APHY fix]  		G-Lane CK_FLD SEL.
+_rtd_part_outl(0x1800da7c, 23, 23, 0x1); //[APHY fix]  		G-Lane CK-lane clk to B/G/R EN.
+_rtd_part_outl(0x1800da80, 8, 8, 0x0); //[APHY fix]  G-Lane PI_EN
+_rtd_part_outl(0x1800da80, 12, 12, 0x0); //[APHY fix]  G-Lane QCG1 Cload contrl SEL
+_rtd_part_outl(0x1800da80, 13, 13, 0x0); //[APHY fix]  G-Lane QCG2 Cload contrl SEL
+_rtd_part_outl(0x1800da80, 15, 15, 0x0); //[APHY fix]  G-Lane BIAS_PI_CUR_SEL
+_rtd_part_outl(0x1800da80, 21, 21, 0x0); //[APHY fix]  G-Lane PI_EYE_EN
+_rtd_part_outl(0x1800da80, 23, 23, 0x0); //[APHY fix]  G-Lane KI SEL
+_rtd_part_outl(0x1800da80, 25, 25, 0x0); //[APHY fix]  G-Lane FKP_RSTB_SEL
+_rtd_part_outl(0x1800da80, 27, 26, 0x0); //[APHY fix]  G-Lane KI_CK_SEL
+_rtd_part_outl(0x1800da80, 29, 29, 0x0); //[APHY fix]  G-Lane ST_CODE SEL
+_rtd_part_outl(0x1800da80, 30, 30, 0x0); //[APHY fix]  G-Lane QCG Ckin SEL.
+_rtd_part_outl(0x1800da84, 3, 2, 0x1); //[APHY fix]  G-Lane ACDR_SEL_DIV_FLD[1:0]
+_rtd_part_outl(0x1800da84, 5, 4, 0x0); //[APHY fix]  G-Lane ACDR_SEL_DIV_REF[1:0]
+_rtd_part_outl(0x1800da84, 7, 6, 0x0); //[APHY fix]  G-Lane ACDR_SEL_DIV_PLL[1:0]
+_rtd_part_outl(0x1800da84, 9, 8, 0x0); //[APHY fix]  G-Lane ACDR_SEL_DIV_TRAINING[1:0]
+_rtd_part_outl(0x1800da84, 12, 12, 0x0); //[APHY fix]  G-Lane dummy
+_rtd_part_outl(0x1800da84, 13, 13, 0x0); //[APHY fix]  G-Lane ACDR_SEL_FLD_0CKFB_1CKREF
+_rtd_part_outl(0x1800da84, 15, 14, 0x0); //[APHY fix]  G-Lane no use
+_rtd_part_outl(0x1800da84, 18, 18, 0x1); //[APHY fix]  G-Lane ACDR_RSTB_DIV_PLL ... removed
+_rtd_part_outl(0x1800da84, 24, 24, 0x0); //[APHY fix]  G-Lane ACDR_EN_UPDN_PULSE_FILTER
+_rtd_part_outl(0x1800da84, 25, 25, 0x1); //[APHY fix]  G-Lane ACDR_RSTB_UPDN ... dummy
+_rtd_part_outl(0x1800da84, 27, 26, 0x0); //[APHY fix]  G-Lane ACDR_SEL_UPDN_WIDTH[1:0]
+_rtd_part_outl(0x1800da84, 28, 28, 0x1); //[APHY fix]  G-Lane ACDR_POW_LPF_IDAC
+_rtd_part_outl(0x1800da84, 31, 29, 0x3); //[APHY fix]  G-Lane ACDR_SEL_LPF_IDAC[2:0]
+_rtd_part_outl(0x1800da88, 0, 0, 0x1); //[APHY fix]  G-Lane ACDR_POW_CP
+_rtd_part_outl(0x1800da88, 2, 2, 0x1); //[APHY fix]  G-Lane ACDR_POW_IDN_BBPD
+_rtd_part_outl(0x1800da88, 3, 3, 0x0); //[APHY fix]  G-Lane no use
+_rtd_part_outl(0x1800da88, 6, 4, 0x7); //[APHY fix]  G-Lane ACDR_SEL_TIE_IDN_BBPD
+_rtd_part_outl(0x1800da88, 7, 7, 0x0); //[APHY fix]  G-Lane ACDR_POW_IBIAS_IDN_HV
+_rtd_part_outl(0x1800da88, 8, 8, 0x1); //[APHY fix]  G-Lane ACDR_POW_VCO
+_rtd_part_outl(0x1800da88, 9, 9, 0x1); //[APHY fix]  G-Lane ACDR_POW_VCO_VDAC
+_rtd_part_outl(0x1800da88, 11, 10, 0x0); //[APHY fix]  G-Lane ACDR_SEL_V15_VDAC
+_rtd_part_outl(0x1800da88, 14, 14, 0x0); //[APHY fix]  G-Lane no use
+_rtd_part_outl(0x1800da88, 15, 15, 0x0); //[APHY fix]  G-Lane no use
+_rtd_part_outl(0x1800da88, 16, 16, 0x0); //[APHY fix]  G-Lane ACDR_POW_TEST_MODE
+_rtd_part_outl(0x1800da88, 18, 17, 0x0); //[APHY fix]  G-Lane ACDR_SEL_TEST_MODE
+_rtd_part_outl(0x1800da88, 23, 19, 0x00); //[APHY fix]  G-Lane no use
+_rtd_part_outl(0x1800da88, 31, 31, 0x0); //[APHY fix]  G-Lane no use
+_rtd_part_outl(0x1800da8c, 15, 13, 0x1); //[APHY fix]  G-Lane no use
+_rtd_part_outl(0x1800da8c, 19, 16, 0x0); //[APHY fix]  G-Lane LE1_ISEL_IN_2 -> dummy
+_rtd_part_outl(0x1800da8c, 31, 25, 0x44); //[APHY fix]  G-Lane no use for LEQ
+_rtd_part_outl(0x1800da90, 1, 1, 0x0); //[APHY fix]  		R-Lane INPOFF_SINGLE_EN
+_rtd_part_outl(0x1800da90, 2, 2, 0x0); //[APHY fix]  		R-Lane INNOFF_SINGLE_EN
+_rtd_part_outl(0x1800da90, 3, 3, 0x1); //[APHY fix]  		R-Lane POW_AC_COUPLE
+_rtd_part_outl(0x1800da90, 5, 4, 0x1); //[APHY fix]  		R-Lane RXVCM_SEL[1:0]
+_rtd_part_outl(0x1800da94, 21, 21, 0x1); //[APHY fix]   		R-Lane RS_CAL_EN
+_rtd_part_outl(0x1800da94, 25, 25, 0x1); //[APHY fix]   		R-Lane POW_DATALANE_BIAS
+_rtd_part_outl(0x1800da94, 26, 26, 0x0); //[APHY fix]   		R-Lane REG_FORCE_STARTUP(Const-GM)
+_rtd_part_outl(0x1800da94, 27, 27, 0x0); //[APHY fix]   		R-Lane REG_POWB_STARTUP
+_rtd_part_outl(0x1800da98, 8, 8, 0x1); //[APHY fix]  		R-Lane POW_DFE
+_rtd_part_outl(0x1800da98, 14, 12, 0x6); //[APHY fix] 		R-Lane DFE_SUMAMP_ ISEL
+_rtd_part_outl(0x1800da98, 15, 15, 0x0); //[APHY fix] 		R-Lane DFE_SUMAMP_DCGAIN_MAX
+_rtd_part_outl(0x1800da98, 19, 18, 0x0); //[APHY fix] 		R-Lane Dummy
+_rtd_part_outl(0x1800da98, 20, 20, 0x0); //[APHY fix] 		R-Lane DFE CKI_DELAY_EN
+_rtd_part_outl(0x1800da98, 21, 21, 0x0); //[APHY fix] 		R-Lane DFE CKIB_DELAY_EN
+_rtd_part_outl(0x1800da98, 22, 22, 0x0); //[APHY fix] 		R-Lane DFE CKQ_DELAY_EN
+_rtd_part_outl(0x1800da98, 23, 23, 0x0); //[APHY fix] 		R-Lane DFE CKQB_DELAY_EN
+_rtd_part_outl(0x1800da98, 24, 24, 0x0); //[APHY fix] 		R-Lane EN_EYE_MNT
+_rtd_part_outl(0x1800da98, 25, 25, 0x0); //[APHY fix] 		R-Lane DEMUX input clock phase select:(for eye mnt)
+_rtd_part_outl(0x1800da98, 26, 26, 0x0); //[APHY fix] 		R-Lane VTH_MANUAL
+_rtd_part_outl(0x1800da98, 27, 27, 0x0); //[APHY fix] 		R-Lane DA_EG_VOS_PULLLOW(koffset disable)
+_rtd_part_outl(0x1800da98, 31, 29, 0x0); //[APHY fix] 			R-Lane dummy
+_rtd_part_outl(0x1800da9c, 2, 0, 0x0); //[APHY fix]  	R-Lane DFE_TAP_DELAY
+_rtd_part_outl(0x1800da9c, 7, 7, 0x1); //[APHY fix]   		R-Lane DFE_ADAPT_EN
+_rtd_part_outl(0x1800da9c, 8, 8, 0x0); //[APHY fix]   	R-Lane rstb of dtata-lane test div8
+_rtd_part_outl(0x1800da9c, 9, 9, 0x0); //[APHY fix]   	R-Lane TRANSITION CNT enable.
+_rtd_part_outl(0x1800da9c, 16, 16, 0x0); //[APHY fix]  		R-Lane QCG1_EN
+_rtd_part_outl(0x1800da9c, 17, 17, 0x0); //[APHY fix]  		R-Lane QCG1 injection-locked EN
+_rtd_part_outl(0x1800da9c, 18, 18, 0x1); //[APHY fix]  		R-Lane QCG2_EN
+_rtd_part_outl(0x1800da9c, 19, 19, 0x0); //[APHY fix]  		R-Lane QCG2 injection-locked EN
+_rtd_part_outl(0x1800da9c, 20, 20, 0x1); //[APHY fix]  		R-Lane QCG FLD divider(/8) rstb
+_rtd_part_outl(0x1800da9c, 21, 21, 0x1); //[APHY fix]  		R-Lane QCG FLD SEL
+_rtd_part_outl(0x1800da9c, 22, 22, 0x0); //[APHY fix]  		R-Lane CK_FLD SEL.
+_rtd_part_outl(0x1800da9c, 23, 23, 0x1); //[APHY fix]  		R-Lane CK-lane clk to B/G/R EN.
+_rtd_part_outl(0x1800daa0, 8, 8, 0x0); //[APHY fix]  R-Lane PI_EN
+_rtd_part_outl(0x1800daa0, 12, 12, 0x0); //[APHY fix]  R-Lane QCG1 Cload contrl SEL
+_rtd_part_outl(0x1800daa0, 13, 13, 0x0); //[APHY fix]  R-Lane QCG2 Cload contrl SEL
+_rtd_part_outl(0x1800daa0, 15, 15, 0x0); //[APHY fix]  R-Lane BIAS_PI_CUR_SEL
+_rtd_part_outl(0x1800daa0, 21, 21, 0x0); //[APHY fix]  R-Lane PI_EYE_EN
+_rtd_part_outl(0x1800daa0, 23, 23, 0x0); //[APHY fix]  R-Lane KI SEL
+_rtd_part_outl(0x1800daa0, 25, 25, 0x0); //[APHY fix]  R-Lane FKP_RSTB_SEL
+_rtd_part_outl(0x1800daa0, 27, 26, 0x0); //[APHY fix]  R-Lane KI_CK_SEL
+_rtd_part_outl(0x1800daa0, 29, 29, 0x0); //[APHY fix]  R-Lane ST_CODE SEL
+_rtd_part_outl(0x1800daa0, 30, 30, 0x0); //[APHY fix]  R-Lane QCG Ckin SEL.
+_rtd_part_outl(0x1800daa4, 3, 2, 0x1); //[APHY fix]  R-Lane ACDR_SEL_DIV_FLD[1:0]
+_rtd_part_outl(0x1800daa4, 5, 4, 0x0); //[APHY fix]  R-Lane ACDR_SEL_DIV_REF[1:0]
+_rtd_part_outl(0x1800daa4, 7, 6, 0x0); //[APHY fix]  R-Lane ACDR_SEL_DIV_PLL[1:0]
+_rtd_part_outl(0x1800daa4, 9, 8, 0x0); //[APHY fix]  R-Lane ACDR_SEL_DIV_TRAINING[1:0]
+_rtd_part_outl(0x1800daa4, 12, 12, 0x0); //[APHY fix]  R-Lane dummy
+_rtd_part_outl(0x1800daa4, 13, 13, 0x0); //[APHY fix]  R-Lane ACDR_SEL_FLD_0CKFB_1CKREF
+_rtd_part_outl(0x1800daa4, 15, 14, 0x0); //[APHY fix]  R-Lane no use
+_rtd_part_outl(0x1800daa4, 18, 18, 0x1); //[APHY fix]  R-Lane ACDR_RSTB_DIV_PLL ... removed
+_rtd_part_outl(0x1800daa4, 24, 24, 0x0); //[APHY fix]  R-Lane ACDR_EN_UPDN_PULSE_FILTER
+_rtd_part_outl(0x1800daa4, 25, 25, 0x1); //[APHY fix]  R-Lane ACDR_RSTB_UPDN ... dummy
+_rtd_part_outl(0x1800daa4, 27, 26, 0x0); //[APHY fix]  R-Lane ACDR_SEL_UPDN_WIDTH[1:0]
+_rtd_part_outl(0x1800daa4, 28, 28, 0x1); //[APHY fix]  R-Lane ACDR_POW_LPF_IDAC
+_rtd_part_outl(0x1800daa4, 31, 29, 0x3); //[APHY fix]  R-Lane ACDR_SEL_LPF_IDAC[2:0]
+_rtd_part_outl(0x1800daa8, 0, 0, 0x1); //[APHY fix]  R-Lane ACDR_POW_CP
+_rtd_part_outl(0x1800daa8, 2, 2, 0x1); //[APHY fix]  R-Lane ACDR_POW_IDN_BBPD
+_rtd_part_outl(0x1800daa8, 3, 3, 0x0); //[APHY fix]  R-Lane no use
+_rtd_part_outl(0x1800daa8, 6, 4, 0x7); //[APHY fix]  R-Lane ACDR_SEL_TIE_IDN_BBPD
+_rtd_part_outl(0x1800daa8, 7, 7, 0x0); //[APHY fix]  R-Lane ACDR_POW_IBIAS_IDN_HV
+_rtd_part_outl(0x1800daa8, 8, 8, 0x1); //[APHY fix]  R-Lane ACDR_POW_VCO
+_rtd_part_outl(0x1800daa8, 9, 9, 0x1); //[APHY fix]  R-Lane ACDR_POW_VCO_VDAC
+_rtd_part_outl(0x1800daa8, 11, 10, 0x0); //[APHY fix]  R-Lane ACDR_SEL_V15_VDAC
+_rtd_part_outl(0x1800daa8, 14, 14, 0x0); //[APHY fix]  R-Lane no use
+_rtd_part_outl(0x1800daa8, 15, 15, 0x0); //[APHY fix]  R-Lane no use
+_rtd_part_outl(0x1800daa8, 16, 16, 0x0); //[APHY fix]  R-Lane ACDR_POW_TEST_MODE
+_rtd_part_outl(0x1800daa8, 18, 17, 0x0); //[APHY fix]  R-Lane ACDR_SEL_TEST_MODE
+_rtd_part_outl(0x1800daa8, 23, 19, 0x00); //[APHY fix]  R-Lane no use
+_rtd_part_outl(0x1800daa8, 31, 31, 0x0); //[APHY fix]  R-Lane no use
+_rtd_part_outl(0x1800daac, 15, 13, 0x1); //[APHY fix]  R-Lane no use
+_rtd_part_outl(0x1800daac, 19, 16, 0x0); //[APHY fix]  R-Lane LE1_ISEL_IN_2 -> dummy
+_rtd_part_outl(0x1800daac, 31, 25, 0x44); //[APHY fix]  R-Lane no use for LEQ
+_rtd_part_outl(0x1800dab4, 0, 0, 0x1); //[APHY fix]  Non-Hysteresis Amp Power
+_rtd_part_outl(0x1800dab4, 2, 1, 0x3); //[APHY fix]  CK Mode hysteresis amp Hysteresis adjustment[1:0]
+_rtd_part_outl(0x1800dab4, 3, 3, 0x0); //[APHY fix]  CK Mode detect source
+_rtd_part_outl(0x1800dab4, 5, 5, 0x0); //[APHY fix]  no use
+_rtd_part_outl(0x1800dab4, 6, 6, 0x1); //[APHY fix]  Hysteresis amp power
+_rtd_part_outl(0x1800dab4, 8, 8, 0x0); //[APHY fix]  CMU_WDPOW
+_rtd_part_outl(0x1800dab4, 9, 9, 0x0); //[APHY fix]  CMU_WDSET
+_rtd_part_outl(0x1800dab4, 10, 10, 0x0); //[APHY fix]  CMU_WDRST
+_rtd_part_outl(0x1800dab4, 11, 11, 0x1); //[APHY fix]  no use
+_rtd_part_outl(0x1800dab4, 12, 12, 0x0); //[APHY fix]  EN_TST_CKBK
+_rtd_part_outl(0x1800dab4, 13, 13, 0x0); //[APHY fix]  EN_TST_CKREF
+_rtd_part_outl(0x1800dab4, 15, 14, 0x0); //[APHY fix]  no use
+_rtd_part_outl(0x1800dab4, 23, 16, 0x6b); //[APHY fix]  dummy
+_rtd_part_outl(0x1800dab4, 31, 24, 0x04); //[APHY fix]  dummy
+_rtd_part_outl(0x1800dab8, 7, 0, 0x00); //[APHY fix]  dummy
+_rtd_part_outl(0x1800dab8, 9, 9, 0x0); //[APHY fix]  no use
+_rtd_part_outl(0x1800dab8, 10, 10, 0x0); //[APHY fix]  CMU_SEL_CS
+_rtd_part_outl(0x1800dab8, 15, 11, 0x00); //[APHY fix]  no use
+_rtd_part_outl(0x1800dab8, 23, 16, 0x00); //[APHY fix]  dummy
+_rtd_part_outl(0x1800dab8, 31, 24, 0x00); //[APHY fix]  dummy
+_rtd_part_outl(0x1800dabc, 7, 0, 0x00); //[APHY fix]  dummy
+_rtd_part_outl(0x1800dabc, 15, 8, 0x00); //[APHY fix]  dummy
+_rtd_part_outl(0x1800dabc, 23, 16, 0x00); //[APHY fix]  dummy
+_rtd_part_outl(0x1800dabc, 31, 24, 0x00); //[APHY fix]  dummy
+_rtd_part_outl(0x1800dac0, 7, 0, 0x00); //[APHY fix]  dummy
+_rtd_part_outl(0x1800dac0, 15, 8, 0x00); //[APHY fix]  dummy
+_rtd_part_outl(0x1800dac0, 23, 16, 0x00); //[APHY fix]  dummy
+_rtd_part_outl(0x1800dac0, 31, 24, 0x00); //[APHY fix]  dummy
+//=====[APHY_Para_frl]=====//
+// APHY para start
+_rtd_part_outl(0x1800da30, 9, 8, 0x2); //[APHY para]  CK-Lane RLSEL_LE1
+_rtd_part_outl(0x1800da30, 11, 10, 0x3); //[APHY para]  CK-Lane RLSEL_LE2
+_rtd_part_outl(0x1800da30, 13, 12, 0x3); //[APHY para]  CK-Lane RLSEL_NC
+_rtd_part_outl(0x1800da30, 15, 14, 0x1); //[APHY para]  CK-Lane RLSEL_TAP0
+_rtd_part_outl(0x1800da30, 19, 16, 0xc); //[APHY para]  CK-Lane RSSEL_LE1_1
+_rtd_part_outl(0x1800da30, 23, 20, 0xc); //[APHY para]  CK-Lane RSSEL_LE1_2
+_rtd_part_outl(0x1800da30, 27, 24, 0x6); //[APHY para]  CK-Lane RSSEL_LE2
+_rtd_part_outl(0x1800da30, 29, 28, 0x3); //[APHY para]  CK-Lane RSSEL_TAP0
+_rtd_part_outl(0x1800da30, 31, 30, 0x2); //[APHY para]  	CK-Lane KOFF_RANGE
+_rtd_part_outl(0x1800da34, 3, 0, 0xf); //[APHY para]    CK-Lane LE1_ISEL_IN
+_rtd_part_outl(0x1800da34, 7, 4, 0xf); //[APHY para]    CK-Lane LE2_ISEL_IN
+_rtd_part_outl(0x1800da34, 11, 8, 0xd); //[APHY para]   	CK-Lane LE_NC_ISEL_IN
+_rtd_part_outl(0x1800da34, 15, 12, 0xf); //[APHY para]  	CK-Lane TAP0_ISEL_IN
+_rtd_part_outl(0x1800da34, 17, 16, 0x0); //[APHY para]   	CK-Lane LE_IHALF[1:0]
+_rtd_part_outl(0x1800da34, 18, 18, 0x0); //[APHY para]   	CK-Lane NC_IHALF
+_rtd_part_outl(0x1800da34, 19, 19, 0x0); //[APHY para]   	CK-Lane TAP0_IHALF
+_rtd_part_outl(0x1800da34, 20, 20, 0x0); //[APHY para]   	CK-Lane EN_LEQ6G
+_rtd_part_outl(0x1800da34, 22, 22, 0x1); //[APHY para]   	CK-Lane POW_NC
+_rtd_part_outl(0x1800da34, 30, 28, 0x3); //[APHY para]   CK-Lane DATALANE_BIAS_ISEL[2:0]
+_rtd_part_outl(0x1800da34, 31, 31, 0x1); //[APHY para]   CK-Lane POW_LEQ_RL
+_rtd_part_outl(0x1800da38, 1, 1, 0x0); //[APHY para]  		CK-Lane SEL_CMFB_LS
+_rtd_part_outl(0x1800da38, 3, 2, 0x3); //[APHY para]  		CK-Lane LEQ_CUR_ADJ
+_rtd_part_outl(0x1800da38, 5, 4, 0x0); //[APHY para]  		CK-Lane PTAT_CUR_ADJ
+_rtd_part_outl(0x1800da38, 6, 6, 0x0); //[APHY para]  		CK-Lane REG_BIAS_POW_CON_GM
+_rtd_part_outl(0x1800da38, 11, 9, 0x0); //[APHY para] 		CK-Lane PTAT_CUR_ADJ_FINE
+_rtd_part_outl(0x1800da38, 16, 16, 0x0); //[APHY para] 		CK-Lane FR_CK_SEL
+_rtd_part_outl(0x1800da3c, 11, 10, 0x1); //[APHY para]   	CK-Lane DEMUX_PIX_RATE_SEL<1:0>
+_rtd_part_outl(0x1800da3c, 12, 12, 0x0); //[APHY para]   	CK-Lane DEMUX_FR_CK_SEL
+_rtd_part_outl(0x1800da3c, 15, 13, 0x1); //[APHY para]   	CK-Lane DEMUX_RATE_SEL
+_rtd_part_outl(0x1800da3c, 24, 24, 0x0); //[APHY para]  		CK-Lane QCG1_SEL_BIAS_ST
+_rtd_part_outl(0x1800da3c, 25, 25, 0x0); //[APHY para]  		CK-Lane QCG1_SEL_BIAS_RG
+_rtd_part_outl(0x1800da3c, 27, 26, 0x0); //[APHY para]  		CK-Lane QCG1 Rload SEL
+_rtd_part_outl(0x1800da3c, 31, 28, 0xd); //[APHY para]  		CK-Lane QCG1 Cload SEL
+_rtd_part_outl(0x1800da40, 0, 0, 0x0); //[APHY para]  CK-Lane QCG2_SEL_BIAS_ST
+_rtd_part_outl(0x1800da40, 1, 1, 0x0); //[APHY para]  CK-Lane QCG2_SEL_BIAS_RG
+_rtd_part_outl(0x1800da40, 3, 2, 0x0); //[APHY para]  CK-Lane QCG2 Rload SEL
+_rtd_part_outl(0x1800da40, 7, 4, 0xd); //[APHY para]  CK-Lane QCG2 Cload SEL
+_rtd_part_outl(0x1800da40, 11, 9, 0x0); //[APHY para]  CK-Lane PI_ISEL<2:0>
+_rtd_part_outl(0x1800da40, 14, 14, 0x0); //[APHY para]  CK-Lane PI_CSEL
+_rtd_part_outl(0x1800da40, 20, 18, 0x4); //[APHY para]  CK-Lane PI_DIV_SEL
+_rtd_part_outl(0x1800da40, 22, 22, 0x1); //[APHY para]  CK-Lane DCDR ckout SEL
+_rtd_part_outl(0x1800da40, 31, 31, 0x0); //[APHY para]  CK-Lane DFE Ckin SEL.
+_rtd_part_outl(0x1800da44, 11, 10, 0x1); //[APHY para]  CK-Lane ACDR_SEL_IDNBIAS_LV[1:0]
+_rtd_part_outl(0x1800da44, 17, 17, 0x1); //[APHY para]  CK-Lane ACDR_RSTB_DIV_BAND_2OR4_LV
+_rtd_part_outl(0x1800da44, 19, 19, 0x1); //[APHY para]  CK-Lane  ACDR_SEL_HS_CLK
+_rtd_part_outl(0x1800da44, 20, 20, 0x1); //[APHY para]  CK-Lane ACDR_SEL_0FR_1HR_DIV_IQ
+_rtd_part_outl(0x1800da44, 23, 21, 0x0); //[APHY para]  CK-Lane ACDR_SEL_DIV_BAND_2OR4_LV
+_rtd_part_outl(0x1800da48, 1, 1, 0x0); //[APHY para]  CK-Lane ACDR_POW_CP_INTG2_CORE
+_rtd_part_outl(0x1800da48, 13, 12, 0x2); //[APHY para]  CK-Lane ACDR_SEL_BAND_CAP
+_rtd_part_outl(0x1800da48, 26, 25, 0x1); //[APHY para]  CK-Lane BBPD_KP_SEL[1:0]
+_rtd_part_outl(0x1800da48, 28, 27, 0x1); //[APHY para]  CK-Lane BBPD_KI_SEL[1:0]
+_rtd_part_outl(0x1800da48, 29, 29, 0x0); //[APHY para]  CK-Lane BBPD_BYPASS_CTN_KP
+_rtd_part_outl(0x1800da48, 30, 30, 0x1); //[APHY para]  CK-Lane BBPD_BYPASS_CTN_KI
+_rtd_part_outl(0x1800da4c, 7, 0, 0xb5); //[APHY para]  CK-Lane CMU_SEL_M_DIV[7:0]
+_rtd_part_outl(0x1800da4c, 8, 8, 0x0); //[APHY para]  CK-Lane CMU_SEL_M_DIV[8]
+_rtd_part_outl(0x1800da4c, 9, 9, 0x0); //[APHY para]  CK-Lane CMU_SEL_PRE_M_DIV
+_rtd_part_outl(0x1800da4c, 10, 10, 0x0); //[APHY para]  CK-Lane CMU_SEL_POST_M_DIV
+_rtd_part_outl(0x1800da4c, 21, 20, 0x2); //[APHY para]  CK-Lane RLSEL_LE1_2
+_rtd_part_outl(0x1800da4c, 23, 22, 0x3); //[APHY para]  CK-Lane RLSEL_NC_2
+_rtd_part_outl(0x1800da4c, 24, 24, 0x1); //[APHY para]  CK-Lane POW_NC
+_rtd_part_outl(0x1800da50, 9, 8, 0x2); //[APHY para]  		B-Lane RLSEL_LE1
+_rtd_part_outl(0x1800da50, 11, 10, 0x3); //[APHY para]  		B-Lane RLSEL_LE2
+_rtd_part_outl(0x1800da50, 13, 12, 0x3); //[APHY para]  		B-Lane RLSEL_NC
+_rtd_part_outl(0x1800da50, 15, 14, 0x1); //[APHY para]  		B-Lane RLSEL_TAP0
+_rtd_part_outl(0x1800da50, 19, 16, 0xc); //[APHY para]  		B-Lane RSSEL_LE1_1
+_rtd_part_outl(0x1800da50, 23, 20, 0xc); //[APHY para]  		B-Lane RSSEL_LE1_2
+_rtd_part_outl(0x1800da50, 27, 24, 0x6); //[APHY para]  		B-Lane RSSEL_LE2
+_rtd_part_outl(0x1800da50, 29, 28, 0x3); //[APHY para]  		B-Lane RSSEL_TAP0
+_rtd_part_outl(0x1800da50, 31, 30, 0x2); //[APHY para]  	B-Lane KOFF_RANGE
+_rtd_part_outl(0x1800da54, 3, 0, 0xf); //[APHY para]    	B-Lane LE1_ISEL_IN
+_rtd_part_outl(0x1800da54, 7, 4, 0xf); //[APHY para]    	B-Lane LE2_ISEL_IN
+_rtd_part_outl(0x1800da54, 11, 8, 0xd); //[APHY para]   		B-Lane LE_NC_ISEL_IN
+_rtd_part_outl(0x1800da54, 15, 12, 0xf); //[APHY para]  		B-Lane TAP0_ISEL_IN
+_rtd_part_outl(0x1800da54, 17, 16, 0x0); //[APHY para]   		B-Lane LE_IHALF[1:0]
+_rtd_part_outl(0x1800da54, 18, 18, 0x0); //[APHY para]   		B-Lane NC_IHALF
+_rtd_part_outl(0x1800da54, 19, 19, 0x0); //[APHY para]   		B-Lane TAP0_IHALF
+_rtd_part_outl(0x1800da54, 20, 20, 0x0); //[APHY para]   		B-Lane EN_LEQ6G
+_rtd_part_outl(0x1800da54, 22, 22, 0x1); //[APHY para]   	B-Lane POW_NC
+_rtd_part_outl(0x1800da54, 30, 28, 0x3); //[APHY para]   		B-Lane DATALANE_BIAS_ISEL[2:0]
+_rtd_part_outl(0x1800da54, 31, 31, 0x1); //[APHY para]   		B-Lane POW_LEQ_RL
+_rtd_part_outl(0x1800da58, 1, 1, 0x0); //[APHY para]  		B-Lane SEL_CMFB_LS
+_rtd_part_outl(0x1800da58, 3, 2, 0x3); //[APHY para]  		B-Lane LEQ_CUR_ADJ
+_rtd_part_outl(0x1800da58, 5, 4, 0x0); //[APHY para]  		B-Lane PTAT_CUR_ADJ
+_rtd_part_outl(0x1800da58, 6, 6, 0x0); //[APHY para]  		B-Lane REG_BIAS_POW_CON_GM
+_rtd_part_outl(0x1800da58, 11, 9, 0x0); //[APHY para] 		B-Lane PTAT_CUR_ADJ_FINE
+_rtd_part_outl(0x1800da58, 16, 16, 0x0); //[APHY para] 		B-Lane FR_CK_SEL
+_rtd_part_outl(0x1800da5c, 11, 10, 0x1); //[APHY para]   	B-Lane DEMUX_PIX_RATE_SEL<1:0>
+_rtd_part_outl(0x1800da5c, 12, 12, 0x0); //[APHY para]   	B-Lane DEMUX_FR_CK_SEL
+_rtd_part_outl(0x1800da5c, 15, 13, 0x1); //[APHY para]   	B-Lane DEMUX_RATE_SEL
+_rtd_part_outl(0x1800da5c, 24, 24, 0x0); //[APHY para]  		B-Lane QCG1_SEL_BIAS_ST
+_rtd_part_outl(0x1800da5c, 25, 25, 0x0); //[APHY para]  		B-Lane QCG1_SEL_BIAS_RG
+_rtd_part_outl(0x1800da5c, 27, 26, 0x0); //[APHY para]  		B-Lane QCG1 Rload SEL
+_rtd_part_outl(0x1800da5c, 31, 28, 0xd); //[APHY para]  		B-Lane QCG1 Cload SEL
+_rtd_part_outl(0x1800da60, 0, 0, 0x0); //[APHY para]  B-Lane QCG2_SEL_BIAS_ST
+_rtd_part_outl(0x1800da60, 1, 1, 0x0); //[APHY para]  B-Lane QCG2_SEL_BIAS_RG
+_rtd_part_outl(0x1800da60, 3, 2, 0x0); //[APHY para]  B-Lane QCG2 Rload SEL
+_rtd_part_outl(0x1800da60, 7, 4, 0xd); //[APHY para]  B-Lane QCG2 Cload SEL
+_rtd_part_outl(0x1800da60, 11, 9, 0x0); //[APHY para]  B-Lane PI_ISEL<2:0>
+_rtd_part_outl(0x1800da60, 14, 14, 0x0); //[APHY para]  B-Lane PI_CSEL
+_rtd_part_outl(0x1800da60, 20, 18, 0x4); //[APHY para]  B-Lane PI_DIV_SEL
+_rtd_part_outl(0x1800da60, 22, 22, 0x1); //[APHY para]  B-Lane DCDR ckout SEL
+_rtd_part_outl(0x1800da60, 31, 31, 0x0); //[APHY para]  B-Lane DFE Ckin SEL.
+_rtd_part_outl(0x1800da64, 11, 10, 0x1); //[APHY para]  B-Lane ACDR_SEL_IDNBIAS_LV[1:0]
+_rtd_part_outl(0x1800da64, 17, 17, 0x1); //[APHY para]  B-Lane ACDR_RSTB_DIV_BAND_2OR4_LV
+_rtd_part_outl(0x1800da64, 19, 19, 0x1); //[APHY para]  B-Lane  ACDR_SEL_HS_CLK
+_rtd_part_outl(0x1800da64, 20, 20, 0x1); //[APHY para]  B-Lane ACDR_SEL_0FR_1HR_DIV_IQ
+_rtd_part_outl(0x1800da64, 23, 21, 0x0); //[APHY para]  B-Lane ACDR_SEL_DIV_BAND_2OR4_LV
+_rtd_part_outl(0x1800da68, 1, 1, 0x0); //[APHY para]  B-Lane ACDR_POW_CP_INTG2_CORE
+_rtd_part_outl(0x1800da68, 13, 12, 0x2); //[APHY para]  B-Lane ACDR_SEL_BAND_CAP
+_rtd_part_outl(0x1800da68, 26, 25, 0x1); //[APHY para]  B-Lane BBPD_KP_SEL[1:0]
+_rtd_part_outl(0x1800da68, 28, 27, 0x1); //[APHY para]  B-Lane BBPD_KI_SEL[1:0]
+_rtd_part_outl(0x1800da68, 29, 29, 0x0); //[APHY para]  B-Lane BBPD_BYPASS_CTN_KP
+_rtd_part_outl(0x1800da68, 30, 30, 0x1); //[APHY para]  B-Lane BBPD_BYPASS_CTN_KI
+_rtd_part_outl(0x1800da6c, 7, 0, 0xb5); //[APHY para]  B-Lane CMU_SEL_M_DIV[7:0]
+_rtd_part_outl(0x1800da6c, 8, 8, 0x0); //[APHY para]  B-Lane CMU_SEL_M_DIV[8]
+_rtd_part_outl(0x1800da6c, 9, 9, 0x0); //[APHY para]  B-Lane CMU_SEL_PRE_M_DIV
+_rtd_part_outl(0x1800da6c, 10, 10, 0x0); //[APHY para]  B-Lane CMU_SEL_POST_M_DIV
+_rtd_part_outl(0x1800da6c, 21, 20, 0x2); //[APHY para]  B-Lane RLSEL_LE1_2
+_rtd_part_outl(0x1800da6c, 23, 22, 0x3); //[APHY para]  B-Lane RLSEL_NC_2
+_rtd_part_outl(0x1800da6c, 24, 24, 0x1); //[APHY para]  B-Lane POW_NC
+_rtd_part_outl(0x1800da70, 9, 8, 0x2); //[APHY para]  		G-Lane RLSEL_LE1
+_rtd_part_outl(0x1800da70, 11, 10, 0x3); //[APHY para]  		G-Lane RLSEL_LE2
+_rtd_part_outl(0x1800da70, 13, 12, 0x3); //[APHY para]  		G-Lane RLSEL_NC
+_rtd_part_outl(0x1800da70, 15, 14, 0x1); //[APHY para]  		G-Lane RLSEL_TAP0
+_rtd_part_outl(0x1800da70, 19, 16, 0xc); //[APHY para]  		G-Lane RSSEL_LE1_1
+_rtd_part_outl(0x1800da70, 23, 20, 0xc); //[APHY para]  		G-Lane RSSEL_LE1_2
+_rtd_part_outl(0x1800da70, 27, 24, 0x6); //[APHY para]  		G-Lane RSSEL_LE2
+_rtd_part_outl(0x1800da70, 29, 28, 0x3); //[APHY para]  		G-Lane RSSEL_TAP0
+_rtd_part_outl(0x1800da70, 31, 30, 0x2); //[APHY para]  	G-Lane KOFF_RANGE
+_rtd_part_outl(0x1800da74, 3, 0, 0xf); //[APHY para]    	G-Lane LE1_ISEL_IN
+_rtd_part_outl(0x1800da74, 7, 4, 0xf); //[APHY para]    	G-Lane LE2_ISEL_IN
+_rtd_part_outl(0x1800da74, 11, 8, 0xd); //[APHY para]   		G-Lane LE_NC_ISEL_IN
+_rtd_part_outl(0x1800da74, 15, 12, 0xf); //[APHY para]  		G-Lane TAP0_ISEL_IN
+_rtd_part_outl(0x1800da74, 17, 16, 0x0); //[APHY para]   		G-Lane LE_IHALF[1:0]
+_rtd_part_outl(0x1800da74, 18, 18, 0x0); //[APHY para]   		G-Lane NC_IHALF
+_rtd_part_outl(0x1800da74, 19, 19, 0x0); //[APHY para]   		G-Lane TAP0_IHALF
+_rtd_part_outl(0x1800da74, 20, 20, 0x0); //[APHY para]   		G-Lane EN_LEQ6G
+_rtd_part_outl(0x1800da74, 22, 22, 0x1); //[APHY para]   	G-Lane POW_NC
+_rtd_part_outl(0x1800da74, 30, 28, 0x3); //[APHY para]   		G-Lane DATALANE_BIAS_ISEL[2:0]
+_rtd_part_outl(0x1800da74, 31, 31, 0x1); //[APHY para]   		G-Lane POW_LEQ_RL
+_rtd_part_outl(0x1800da78, 1, 1, 0x0); //[APHY para]  		G-Lane SEL_CMFB_LS
+_rtd_part_outl(0x1800da78, 3, 2, 0x3); //[APHY para]  		G-Lane LEQ_CUR_ADJ
+_rtd_part_outl(0x1800da78, 5, 4, 0x0); //[APHY para]  		G-Lane PTAT_CUR_ADJ
+_rtd_part_outl(0x1800da78, 6, 6, 0x0); //[APHY para]  		G-Lane REG_BIAS_POW_CON_GM
+_rtd_part_outl(0x1800da78, 11, 9, 0x0); //[APHY para] 		G-Lane PTAT_CUR_ADJ_FINE
+_rtd_part_outl(0x1800da78, 16, 16, 0x0); //[APHY para] 		G-Lane FR_CK_SEL
+_rtd_part_outl(0x1800da7c, 11, 10, 0x1); //[APHY para]   	G-Lane DEMUX_PIX_RATE_SEL<1:0>
+_rtd_part_outl(0x1800da7c, 12, 12, 0x0); //[APHY para]   	G-Lane DEMUX_FR_CK_SEL
+_rtd_part_outl(0x1800da7c, 15, 13, 0x1); //[APHY para]   	G-Lane DEMUX_RATE_SEL
+_rtd_part_outl(0x1800da7c, 24, 24, 0x0); //[APHY para]  		G-Lane QCG1_SEL_BIAS_ST
+_rtd_part_outl(0x1800da7c, 25, 25, 0x0); //[APHY para]  		G-Lane QCG1_SEL_BIAS_RG
+_rtd_part_outl(0x1800da7c, 27, 26, 0x0); //[APHY para]  		G-Lane QCG1 Rload SEL
+_rtd_part_outl(0x1800da7c, 31, 28, 0xd); //[APHY para]  		G-Lane QCG1 Cload SEL
+_rtd_part_outl(0x1800da80, 0, 0, 0x0); //[APHY para]  G-Lane QCG2_SEL_BIAS_ST
+_rtd_part_outl(0x1800da80, 1, 1, 0x0); //[APHY para]  G-Lane QCG2_SEL_BIAS_RG
+_rtd_part_outl(0x1800da80, 3, 2, 0x0); //[APHY para]  G-Lane QCG2 Rload SEL
+_rtd_part_outl(0x1800da80, 7, 4, 0xd); //[APHY para]  G-Lane QCG2 Cload SEL
+_rtd_part_outl(0x1800da80, 11, 9, 0x0); //[APHY para]  G-Lane PI_ISEL<2:0>
+_rtd_part_outl(0x1800da80, 14, 14, 0x0); //[APHY para]  G-Lane PI_CSEL
+_rtd_part_outl(0x1800da80, 20, 18, 0x4); //[APHY para]  G-Lane PI_DIV_SEL
+_rtd_part_outl(0x1800da80, 22, 22, 0x1); //[APHY para]  G-Lane DCDR ckout SEL
+_rtd_part_outl(0x1800da80, 31, 31, 0x0); //[APHY para]  G-Lane DFE Ckin SEL.
+_rtd_part_outl(0x1800da84, 11, 10, 0x1); //[APHY para]  G-Lane ACDR_SEL_IDNBIAS_LV[1:0]
+_rtd_part_outl(0x1800da84, 17, 17, 0x1); //[APHY para]  G-Lane ACDR_RSTB_DIV_BAND_2OR4_LV
+_rtd_part_outl(0x1800da84, 19, 19, 0x1); //[APHY para]  G-Lane  ACDR_SEL_HS_CLK
+_rtd_part_outl(0x1800da84, 20, 20, 0x1); //[APHY para]  G-Lane ACDR_SEL_0FR_1HR_DIV_IQ
+_rtd_part_outl(0x1800da84, 23, 21, 0x0); //[APHY para]  G-Lane ACDR_SEL_DIV_BAND_2OR4_LV
+_rtd_part_outl(0x1800da88, 1, 1, 0x0); //[APHY para]  G-Lane ACDR_POW_CP_INTG2_CORE
+_rtd_part_outl(0x1800da88, 13, 12, 0x2); //[APHY para]  G-Lane ACDR_SEL_BAND_CAP
+_rtd_part_outl(0x1800da88, 26, 25, 0x1); //[APHY para]  G-Lane BBPD_KP_SEL[1:0]
+_rtd_part_outl(0x1800da88, 28, 27, 0x1); //[APHY para]  G-Lane BBPD_KI_SEL[1:0]
+_rtd_part_outl(0x1800da88, 29, 29, 0x0); //[APHY para]  G-Lane BBPD_BYPASS_CTN_KP
+_rtd_part_outl(0x1800da88, 30, 30, 0x1); //[APHY para]  G-Lane BBPD_BYPASS_CTN_KI
+_rtd_part_outl(0x1800da8c, 7, 0, 0xb5); //[APHY para]  G-Lane CMU_SEL_M_DIV[7:0]
+_rtd_part_outl(0x1800da8c, 8, 8, 0x0); //[APHY para]  G-Lane CMU_SEL_M_DIV[8]
+_rtd_part_outl(0x1800da8c, 9, 9, 0x0); //[APHY para]  G-Lane CMU_SEL_PRE_M_DIV
+_rtd_part_outl(0x1800da8c, 10, 10, 0x0); //[APHY para]  G-Lane CMU_SEL_POST_M_DIV
+_rtd_part_outl(0x1800da8c, 21, 20, 0x2); //[APHY para]  G-Lane RLSEL_LE1_2
+_rtd_part_outl(0x1800da8c, 23, 22, 0x3); //[APHY para]  G-Lane RLSEL_NC_2
+_rtd_part_outl(0x1800da8c, 24, 24, 0x1); //[APHY para]  G-Lane POW_NC
+_rtd_part_outl(0x1800da90, 9, 8, 0x2); //[APHY para]  		R-Lane RLSEL_LE1
+_rtd_part_outl(0x1800da90, 11, 10, 0x3); //[APHY para]  		R-Lane RLSEL_LE2
+_rtd_part_outl(0x1800da90, 13, 12, 0x3); //[APHY para]  		R-Lane RLSEL_NC
+_rtd_part_outl(0x1800da90, 15, 14, 0x1); //[APHY para]  		R-Lane RLSEL_TAP0
+_rtd_part_outl(0x1800da90, 19, 16, 0xc); //[APHY para]  		R-Lane RSSEL_LE1_1
+_rtd_part_outl(0x1800da90, 23, 20, 0xc); //[APHY para]  		R-Lane RSSEL_LE1_2
+_rtd_part_outl(0x1800da90, 27, 24, 0x6); //[APHY para]  		R-Lane RSSEL_LE2
+_rtd_part_outl(0x1800da90, 29, 28, 0x3); //[APHY para]  		R-Lane RSSEL_TAP0
+_rtd_part_outl(0x1800da90, 31, 30, 0x2); //[APHY para]  	R-Lane KOFF_RANGE
+_rtd_part_outl(0x1800da94, 3, 0, 0xf); //[APHY para]    	R-Lane LE1_ISEL_IN
+_rtd_part_outl(0x1800da94, 7, 4, 0xf); //[APHY para]    	R-Lane LE2_ISEL_IN
+_rtd_part_outl(0x1800da94, 11, 8, 0xd); //[APHY para]   		R-Lane LE_NC_ISEL_IN
+_rtd_part_outl(0x1800da94, 15, 12, 0xf); //[APHY para]  		R-Lane TAP0_ISEL_IN
+_rtd_part_outl(0x1800da94, 17, 16, 0x0); //[APHY para]   		R-Lane LE_IHALF[1:0]
+_rtd_part_outl(0x1800da94, 18, 18, 0x0); //[APHY para]   		R-Lane NC_IHALF
+_rtd_part_outl(0x1800da94, 19, 19, 0x0); //[APHY para]   		R-Lane TAP0_IHALF
+_rtd_part_outl(0x1800da94, 20, 20, 0x0); //[APHY para]   		R-Lane EN_LEQ6G
+_rtd_part_outl(0x1800da94, 22, 22, 0x1); //[APHY para]   	R-Lane POW_NC
+_rtd_part_outl(0x1800da94, 30, 28, 0x3); //[APHY para]   		R-Lane DATALANE_BIAS_ISEL[2:0]
+_rtd_part_outl(0x1800da94, 31, 31, 0x1); //[APHY para]   		R-Lane POW_LEQ_RL
+_rtd_part_outl(0x1800da98, 1, 1, 0x0); //[APHY para]  		R-Lane SEL_CMFB_LS
+_rtd_part_outl(0x1800da98, 3, 2, 0x3); //[APHY para]  		R-Lane LEQ_CUR_ADJ
+_rtd_part_outl(0x1800da98, 5, 4, 0x0); //[APHY para]  		R-Lane PTAT_CUR_ADJ
+_rtd_part_outl(0x1800da98, 6, 6, 0x0); //[APHY para]  		R-Lane REG_BIAS_POW_CON_GM
+_rtd_part_outl(0x1800da98, 11, 9, 0x0); //[APHY para] 		R-Lane PTAT_CUR_ADJ_FINE
+_rtd_part_outl(0x1800da98, 16, 16, 0x0); //[APHY para] 		R-Lane FR_CK_SEL
+_rtd_part_outl(0x1800da9c, 11, 10, 0x1); //[APHY para]   	R-Lane DEMUX_PIX_RATE_SEL<1:0>
+_rtd_part_outl(0x1800da9c, 12, 12, 0x0); //[APHY para]   	R-Lane DEMUX_FR_CK_SEL
+_rtd_part_outl(0x1800da9c, 15, 13, 0x1); //[APHY para]   	R-Lane DEMUX_RATE_SEL
+_rtd_part_outl(0x1800da9c, 24, 24, 0x0); //[APHY para]  		R-Lane QCG1_SEL_BIAS_ST
+_rtd_part_outl(0x1800da9c, 25, 25, 0x0); //[APHY para]  		R-Lane QCG1_SEL_BIAS_RG
+_rtd_part_outl(0x1800da9c, 27, 26, 0x0); //[APHY para]  		R-Lane QCG1 Rload SEL
+_rtd_part_outl(0x1800da9c, 31, 28, 0xd); //[APHY para]  		R-Lane QCG1 Cload SEL
+_rtd_part_outl(0x1800daa0, 0, 0, 0x0); //[APHY para]  R-Lane QCG2_SEL_BIAS_ST
+_rtd_part_outl(0x1800daa0, 1, 1, 0x0); //[APHY para]  R-Lane QCG2_SEL_BIAS_RG
+_rtd_part_outl(0x1800daa0, 3, 2, 0x0); //[APHY para]  R-Lane QCG2 Rload SEL
+_rtd_part_outl(0x1800daa0, 7, 4, 0xd); //[APHY para]  R-Lane QCG2 Cload SEL
+_rtd_part_outl(0x1800daa0, 11, 9, 0x0); //[APHY para]  R-Lane PI_ISEL<2:0>
+_rtd_part_outl(0x1800daa0, 14, 14, 0x0); //[APHY para]  R-Lane PI_CSEL
+_rtd_part_outl(0x1800daa0, 20, 18, 0x4); //[APHY para]  R-Lane PI_DIV_SEL
+_rtd_part_outl(0x1800daa0, 22, 22, 0x1); //[APHY para]  R-Lane DCDR ckout SEL
+_rtd_part_outl(0x1800daa0, 31, 31, 0x0); //[APHY para]  R-Lane DFE Ckin SEL.
+_rtd_part_outl(0x1800daa4, 11, 10, 0x1); //[APHY para]  R-Lane ACDR_SEL_IDNBIAS_LV[1:0]
+_rtd_part_outl(0x1800daa4, 17, 17, 0x1); //[APHY para]  R-Lane ACDR_RSTB_DIV_BAND_2OR4_LV
+_rtd_part_outl(0x1800daa4, 19, 19, 0x1); //[APHY para]  R-Lane  ACDR_SEL_HS_CLK
+_rtd_part_outl(0x1800daa4, 20, 20, 0x1); //[APHY para]  R-Lane ACDR_SEL_0FR_1HR_DIV_IQ
+_rtd_part_outl(0x1800daa4, 23, 21, 0x0); //[APHY para]  R-Lane ACDR_SEL_DIV_BAND_2OR4_LV
+_rtd_part_outl(0x1800daa8, 1, 1, 0x0); //[APHY para]  R-Lane ACDR_POW_CP_INTG2_CORE
+_rtd_part_outl(0x1800daa8, 13, 12, 0x2); //[APHY para]  R-Lane ACDR_SEL_BAND_CAP
+_rtd_part_outl(0x1800daa8, 26, 25, 0x1); //[APHY para]  R-Lane BBPD_KP_SEL[1:0]
+_rtd_part_outl(0x1800daa8, 28, 27, 0x1); //[APHY para]  R-Lane BBPD_KI_SEL[1:0]
+_rtd_part_outl(0x1800daa8, 29, 29, 0x0); //[APHY para]  R-Lane BBPD_BYPASS_CTN_KP
+_rtd_part_outl(0x1800daa8, 30, 30, 0x1); //[APHY para]  R-Lane BBPD_BYPASS_CTN_KI
+_rtd_part_outl(0x1800daac, 7, 0, 0xb5); //[APHY para]  R-Lane CMU_SEL_M_DIV[7:0]
+_rtd_part_outl(0x1800daac, 8, 8, 0x0); //[APHY para]  R-Lane CMU_SEL_M_DIV[8]
+_rtd_part_outl(0x1800daac, 9, 9, 0x0); //[APHY para]  R-Lane CMU_SEL_PRE_M_DIV
+_rtd_part_outl(0x1800daac, 10, 10, 0x0); //[APHY para]  R-Lane CMU_SEL_POST_M_DIV
+_rtd_part_outl(0x1800daac, 21, 20, 0x2); //[APHY para]  R-Lane RLSEL_LE1_2
+_rtd_part_outl(0x1800daac, 23, 22, 0x3); //[APHY para]  R-Lane RLSEL_NC_2
+_rtd_part_outl(0x1800daac, 24, 24, 0x1); //[APHY para]  R-Lane POW_NC
+_rtd_part_outl(0x1800dab4, 4, 4, 0x0); //[APHY para]  CMU input clock source select:
+_rtd_part_outl(0x1800dab4, 7, 7, 0x0); //[APHY para]  CMU_CKXTAL_SEL
+_rtd_part_outl(0x1800dab8, 8, 8, 0x0); //[APHY para  CMU_SEL_CP
+//=====[DPHY_Init_Flow_frl]=====//
+// DPHY init flow start
+_rtd_part_outl(0x1800dc88, 4, 4, 0x1); //[DPHY init flow]  reg_p0_b_fifo_en
+_rtd_part_outl(0x1800dc88, 12, 12, 0x1); //[DPHY init flow]  reg_p0_g_fifo_en
+_rtd_part_outl(0x1800dc88, 20, 20, 0x1); //[DPHY init flow]  reg_p0_r_fifo_en
+_rtd_part_outl(0x1800dc88, 28, 28, 0x1); //[DPHY init flow]  reg_p0_ck_fifo_en
+_rtd_part_outl(0x1800dd6c, 1, 1, 0x1); //[DPHY init flow]  reg_p0_pow_save_10b18b_sel
+_rtd_part_outl(0x1800dd7c, 5, 0, 0x0e); //[DPHY init flow]  reg_p0_dig_debug_sel
+//DPHY fld flow start
+_rtd_part_outl(0x1800dcb8, 10, 3, 0x1e); //[DPHY fld flow]  reg_p0_b_divide_num
+_rtd_part_outl(0x1800dcbc, 11, 0, 0x2a2); //[DPHY fld flow] reg_p0_b_lock_dn_limit
+_rtd_part_outl(0x1800dcbc, 27, 16, 0x2cc); //[DPHY fld flow] reg_p0_b_lock_up_limit
+_rtd_part_outl(0x1800dcc4, 19, 8, 0x2a2); //[DPHY fld flow] reg_p0_b_coarse_lock_dn_limit
+_rtd_part_outl(0x1800dcc4, 31, 20, 0x2cc); //[DPHY fld flow] reg_p0_b_coarse_lock_up_limit
+_rtd_part_outl(0x1800dcc8, 1, 1, 0x1); //[DPHY fld flow]  reg_p0_b_fld_rstb
+_rtd_part_outl(0x1800dcd8, 10, 3, 0x1e); //[DPHY fld flow]  reg_p0_g_divide_num
+_rtd_part_outl(0x1800dcdc, 11, 0, 0x2a2); //[DPHY fld flow] reg_p0_g_lock_dn_limit
+_rtd_part_outl(0x1800dcdc, 27, 16, 0x2cc); //[DPHY fld flow] reg_p0_g_lock_up_limit
+_rtd_part_outl(0x1800dce4, 19, 8, 0x2a2); //[DPHY fld flow] reg_p0_g_coarse_lock_dn_limit
+_rtd_part_outl(0x1800dce4, 31, 20, 0x2cc); //[DPHY fld flow] reg_p0_g_coarse_lock_up_limit
+_rtd_part_outl(0x1800dce8, 1, 1, 0x1); //[DPHY fld flow]  reg_p0_g_fld_rstb
+_rtd_part_outl(0x1800dcf4, 10, 3, 0x1e); //[DPHY fld flow]  reg_p0_r_divide_num
+_rtd_part_outl(0x1800dcf8, 11, 0, 0x2a2); //[DPHY fld flow] reg_p0_r_lock_dn_limit
+_rtd_part_outl(0x1800dcf8, 27, 16, 0x2cc); //[DPHY fld flow] reg_p0_r_lock_up_limit
+_rtd_part_outl(0x1800dd00, 19, 8, 0x2a2); //[DPHY fld flow] reg_p0_r_coarse_lock_dn_limit
+_rtd_part_outl(0x1800dd00, 31, 20, 0x2cc); //[DPHY fld flow] reg_p0_r_coarse_lock_up_limit
+_rtd_part_outl(0x1800dd04, 1, 1, 0x1); //[DPHY fld flow]  reg_p0_r_fld_rstb
+_rtd_part_outl(0x1800dd10, 10, 3, 0x1e); //[DPHY fld flow]  reg_p0_ck_divide_num
+_rtd_part_outl(0x1800dd14, 11, 0, 0x2a2); //[DPHY fld flow] reg_p0_ck_lock_dn_limit
+_rtd_part_outl(0x1800dd14, 27, 16, 0x2cc); //[DPHY fld flow] reg_p0_ck_lock_up_limit
+_rtd_part_outl(0x1800dd1c, 19, 8, 0x2a2); //[DPHY fld flow] reg_p0_ck_coarse_lock_dn_limit
+_rtd_part_outl(0x1800dd1c, 31, 20, 0x2cc); //[DPHY fld flow] reg_p0_ck_coarse_lock_up_limit
+_rtd_part_outl(0x1800dd20, 1, 1, 0x1); //[DPHY fld flow]  reg_p0_ck_fld_rstb
+//=====[APHY_Init_Flow_frl]=====//
+// APHY init flow start
+_rtd_part_outl(0x1800dd3c, 9, 9, 0x1); //B //reg_p0_b_acdr_pll_config_2_1 [9] TIE VCTRL ...0
+_rtd_part_outl(0x1800dd48, 9, 9, 0x1); //G //reg_p0_b_acdr_pll_config_2_1 [9] TIE VCTRL ...0
+_rtd_part_outl(0x1800dd54, 9, 9, 0x1); //R //reg_p0_b_acdr_pll_config_2_1 [9] TIE VCTRL ...0
+_rtd_part_outl(0x1800dd60, 9, 9, 0x1); //K //reg_p0_b_acdr_pll_config_2_1 [9] TIE VCTRL ...0
+_rtd_part_outl(0x1800da18, 1, 1, 0x0); //[APHY init flow]  REG_CK_LATCH Before PSM, latch the register value of PHY. 0->1: Latch
+_rtd_part_outl(0x1800da30, 6, 6, 0x0); //[APHY init flow]  CK-Lane FAST_SW_EN
+_rtd_part_outl(0x1800da30, 7, 7, 0x0); //[APHY init flow]  CK-Lane FAST_SW_DELAY_EN
+_rtd_part_outl(0x1800da38, 17, 17, 0x1); //[APHY init flow] 	CK-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da40, 16, 16, 0x0); //[APHY init flow]  CK-Lane DCDR_RSTB
+_rtd_part_outl(0x1800da40, 17, 17, 0x0); //[APHY init flow]  CK-Lane PI_DIV rstb
+_rtd_part_outl(0x1800da40, 24, 24, 0x0); //[APHY init flow]  CK-Lane FKP_RSTB (FKP:Fast KP)
+_rtd_part_outl(0x1800da40, 28, 28, 0x1); //[APHY init flow]  CK-Lane FKT EN
+_rtd_part_outl(0x1800da44, 0, 0, 0x1); //[APHY init flow]  CK-Lane ACDR_RSTB_PFD
+_rtd_part_outl(0x1800da44, 1, 1, 0x1); //[APHY init flow]  CK-Lane ACDR_RSTB_CLK_FLD
+_rtd_part_outl(0x1800da44, 16, 16, 0x1); //[APHY init flow]  CK-Lane ACDR_RSTB_DIV_IQ
+_rtd_part_outl(0x1800da48, 24, 24, 0x1); //[APHY init flow]  CK-Lane RSTB_BBPD_KP_KI
+_rtd_part_outl(0x1800da4c, 11, 11, 0x1); //[APHY init flow]  CK-Lane RSTB_PRESCALER
+_rtd_part_outl(0x1800da4c, 12, 12, 0x1); //[APHY init flow]  CK-Lane RSTB_M_DIV
+_rtd_part_outl(0x1800da50, 6, 6, 0x0); //[APHY init flow]  	B-Lane FAST_SW_EN
+_rtd_part_outl(0x1800da50, 7, 7, 0x0); //[APHY init flow]  	B-Lane FAST_SW_DELAY_EN
+_rtd_part_outl(0x1800da58, 17, 17, 0x1); //[APHY init flow] 	B-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da60, 16, 16, 0x0); //[APHY init flow]  B-Lane DCDR_RSTB
+_rtd_part_outl(0x1800da60, 17, 17, 0x0); //[APHY init flow]  B-Lane PI_DIV rstb
+_rtd_part_outl(0x1800da60, 24, 24, 0x0); //[APHY init flow]  B-Lane FKP_RSTB (FKP:Fast KP)
+_rtd_part_outl(0x1800da60, 28, 28, 0x1); //[APHY init flow]  B-Lane FKT EN
+_rtd_part_outl(0x1800da64, 0, 0, 0x1); //[APHY init flow]  B-Lane ACDR_RSTB_PFD
+_rtd_part_outl(0x1800da64, 1, 1, 0x1); //[APHY init flow]  B-Lane ACDR_RSTB_CLK_FLD
+_rtd_part_outl(0x1800da64, 16, 16, 0x1); //[APHY init flow]  B-Lane ACDR_RSTB_DIV_IQ
+_rtd_part_outl(0x1800da68, 24, 24, 0x1); //[APHY init flow]  B-Lane RSTB_BBPD_KP_KI
+_rtd_part_outl(0x1800da6c, 11, 11, 0x1); //[APHY init flow]  B-Lane RSTB_PRESCALER
+_rtd_part_outl(0x1800da6c, 12, 12, 0x1); //[APHY init flow]  B-Lane RSTB_M_DIV
+_rtd_part_outl(0x1800da70, 6, 6, 0x0); //[APHY init flow]  	G-Lane FAST_SW_EN
+_rtd_part_outl(0x1800da70, 7, 7, 0x0); //[APHY init flow]  	G-Lane FAST_SW_DELAY_EN
+_rtd_part_outl(0x1800da78, 17, 17, 0x1); //[APHY init flow] 	G-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da80, 16, 16, 0x0); //[APHY init flow]  G-Lane DCDR_RSTB
+_rtd_part_outl(0x1800da80, 17, 17, 0x0); //[APHY init flow]  G-Lane PI_DIV rstb
+_rtd_part_outl(0x1800da80, 24, 24, 0x0); //[APHY init flow]  G-Lane FKP_RSTB (FKP:Fast KP)
+_rtd_part_outl(0x1800da80, 28, 28, 0x1); //[APHY init flow]  G-Lane FKT EN
+_rtd_part_outl(0x1800da84, 0, 0, 0x1); //[APHY init flow]  G-Lane ACDR_RSTB_PFD
+_rtd_part_outl(0x1800da84, 1, 1, 0x1); //[APHY init flow]  G-Lane ACDR_RSTB_CLK_FLD
+_rtd_part_outl(0x1800da84, 16, 16, 0x1); //[APHY init flow]  G-Lane ACDR_RSTB_DIV_IQ
+_rtd_part_outl(0x1800da88, 24, 24, 0x1); //[APHY init flow]  G-Lane RSTB_BBPD_KP_KI
+_rtd_part_outl(0x1800da8c, 11, 11, 0x1); //[APHY init flow]  G-Lane RSTB_PRESCALER
+_rtd_part_outl(0x1800da8c, 12, 12, 0x1); //[APHY init flow]  G-Lane RSTB_M_DIV
+_rtd_part_outl(0x1800da90, 6, 6, 0x0); //[APHY init flow]  	R-Lane FAST_SW_EN
+_rtd_part_outl(0x1800da90, 7, 7, 0x0); //[APHY init flow]  	R-Lane FAST_SW_DELAY_EN
+_rtd_part_outl(0x1800da98, 17, 17, 0x1); //[APHY init flow] 	R-Lane BBPD_RSTB
+_rtd_part_outl(0x1800daa0, 16, 16, 0x0); //[APHY init flow]  R-Lane DCDR_RSTB
+_rtd_part_outl(0x1800daa0, 17, 17, 0x0); //[APHY init flow]  R-Lane PI_DIV rstb
+_rtd_part_outl(0x1800daa0, 24, 24, 0x0); //[APHY init flow]  R-Lane FKP_RSTB (FKP:Fast KP)
+_rtd_part_outl(0x1800daa0, 28, 28, 0x1); //[APHY init flow]  R-Lane FKT EN
+_rtd_part_outl(0x1800daa4, 0, 0, 0x1); //[APHY init flow]  R-Lane ACDR_RSTB_PFD
+_rtd_part_outl(0x1800daa4, 1, 1, 0x1); //[APHY init flow]  R-Lane ACDR_RSTB_CLK_FLD
+_rtd_part_outl(0x1800daa4, 16, 16, 0x1); //[APHY init flow]  R-Lane ACDR_RSTB_DIV_IQ
+_rtd_part_outl(0x1800daa8, 24, 24, 0x1); //[APHY init flow]  R-Lane RSTB_BBPD_KP_KI
+_rtd_part_outl(0x1800daac, 11, 11, 0x1); //[APHY init flow]  R-Lane RSTB_PRESCALER
+_rtd_part_outl(0x1800daac, 12, 12, 0x1); //[APHY init flow]  R-Lane RSTB_M_DIV
+_rtd_part_outl(0x1800dd3c, 9, 9, 0x0); //B //reg_p0_b_acdr_pll_config_2_1 [9] TIE VCTRL ...0
+_rtd_part_outl(0x1800dd48, 9, 9, 0x0); //G //reg_p0_b_acdr_pll_config_2_1 [9] TIE VCTRL ...0
+_rtd_part_outl(0x1800dd54, 9, 9, 0x0); //R //reg_p0_b_acdr_pll_config_2_1 [9] TIE VCTRL ...0
+_rtd_part_outl(0x1800dd60, 9, 9, 0x0); //K //reg_p0_b_acdr_pll_config_2_1 [9] TIE VCTRL ...0
+//APHY acdr flow start
+_rtd_part_outl(0x1800dafc, 0, 0, 0x1); //[APHY acdr flow]  P0_ACDR_B_ACDR_EN_AFN
+_rtd_part_outl(0x1800dafc, 1, 1, 0x1); //[APHY acdr flow]  P0_ACDR_G_ACDR_EN_AFN
+_rtd_part_outl(0x1800dafc, 2, 2, 0x1); //[APHY acdr flow]  P0_ACDR_R_ACDR_EN_AFN
+_rtd_part_outl(0x1800dafc, 3, 3, 0x1); //[APHY acdr flow]  P0_ACDR_CK_ACDR_EN_AFN
+_rtd_part_outl(0x1800dafc, 4, 4, 0x1); //[APHY acdr flow]  P0_B_DEMUX_RSTB
+_rtd_part_outl(0x1800dafc, 5, 5, 0x1); //[APHY acdr flow]  P0_G_DEMUX_RSTB
+_rtd_part_outl(0x1800dafc, 6, 6, 0x1); //[APHY acdr flow]  P0_R_DEMUX_RSTB
+_rtd_part_outl(0x1800dafc, 7, 7, 0x1); //[APHY acdr flow]  P0_CK_DEMUX_RSTB
+//=====[ACDR_settings_frl]CMU_RESET=====//
+//#====================================== CMU RESET
+_rtd_part_outl(0x1800dafc, 7, 4, 0x0);
+_rtd_part_outl(0x1800dafc, 7, 4, 0xf);
+//#====================================== phase I
+//#====================================== FLD reset
+_rtd_part_outl(0x1800dcc8, 0, 0, 0x0);
+_rtd_part_outl(0x1800dce8, 0, 0, 0x0);
+_rtd_part_outl(0x1800dd04, 0, 0, 0x0);
+_rtd_part_outl(0x1800dd20, 0, 0, 0x0);
+//#5000
+//#===================================== 30000 ns pass
+//#===================================== phase II, PLL to ACDR
+//=====[ACDR_settings_frl]afn_en=====//
+//#15000
+_rtd_part_outl(0x1800dafc, 3, 0, 0xf);
+//#15000
+_rtd_part_outl(0x1800da38, 17, 17, 0); //CK-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da58, 17, 17, 0); //B-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da78, 17, 17, 0); //G-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da98, 17, 17, 0); //R-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da38, 17, 17, 1); //CK-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da58, 17, 17, 1); //B-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da78, 17, 17, 1); //G-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da98, 17, 17, 1); //R-Lane BBPD_RSTB
+_rtd_part_outl(0x1800dc88, 27, 27, 1); //DFE data enable
+_rtd_part_outl(0x1800dc88, 19, 19, 1); //DFE data enable
+_rtd_part_outl(0x1800dc88, 11, 11, 1); //DFE data enable
+_rtd_part_outl(0x1800dc88, 3, 3, 1); //DFE data enable
+//=====[Koffset_frl]=====//
+_rtd_part_outl(0x1800dd04, 0, 0, 0); //R finetunstart off
+_rtd_part_outl(0x1800dce8, 0, 0, 0); //G finetunstart off
+_rtd_part_outl(0x1800dcc8, 0, 0, 0); //B finetunstart off
+_rtd_part_outl(0x1800dd20, 0, 0, 0); //CK finetunstart off
+//========================================= STEP1 Data_Even KOFF =================================================
+_rtd_part_outl(0x1800da58, 28, 28, 1); //#B  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da5c, 6, 3, 0); //#B  DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da38, 28, 28, 1); //#CK DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da3c, 6, 3, 0); //#CK DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da78, 28, 28, 1); //#G  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da7c, 6, 3, 0); //#G  DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da98, 28, 28, 1); //#R  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da9c, 6, 3, 0); //#R  DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800dc44, 31, 0, 0x0282cf00); //B_KOFF rstn,  //[26:20] timout = 0101000, [19:14] divisor = 001000, [11:8] delay count = 11
+_rtd_part_outl(0x1800dc54, 31, 0, 0x0282cf00); //G_KOFF rstn
+_rtd_part_outl(0x1800dc64, 31, 0, 0x0282cf00); //R_KOFF rstn
+_rtd_part_outl(0x1800dc74, 31, 0, 0x0282cf00); //CK_KOFF rstn
+_rtd_part_outl(0x1800dc44, 0, 0, 1); //Release B_KOFF rstn
+_rtd_part_outl(0x1800dc54, 0, 0, 1); //Release G_KOFF rstn
+_rtd_part_outl(0x1800dc64, 0, 0, 1); //Release R_KOFF rstn
+_rtd_part_outl(0x1800dc74, 0, 0, 1); //Release CK_KOFF rstn
+//===BLANE KOFF
+_rtd_part_outl(0x1800dc4c, 28, 28, 0); //manaul_do=0, 0:Manual; 1:Auto
+_rtd_part_outl(0x1800dc4c, 18, 18, 0); //manaul_de=0, 0:Manual; 1:Auto
+_rtd_part_outl(0x1800dc50, 28, 28, 0); //manaul_eq=0, 0:Manual; 1:Auto
+_rtd_part_outl(0x1800dc50, 18, 18, 0); //manaul_eo=0, 0:Manual; 1:Auto
+_rtd_part_outl(0x1800dc50, 8, 8, 0); //manaul_ee=0, 0:Manual; 1:Auto
+_rtd_part_outl(0x1800da50, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da58, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da54, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da54, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+//B-Lane z0_ok
+_rtd_part_outl(0x1800dc50, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc50, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc4c, 29, 29, 1); //[29]z0_ok_do=1
+_rtd_part_outl(0x1800dc4c, 19, 19, 1); //[19]z0_ok_de=1
+_rtd_part_outl(0x1800dc4c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc4c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc50, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc50, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc50, 21, 21, 1); //[21]offfset_pc_eq=1
+//Enable B-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc4c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc4c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc50, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc50, 10, 10, 1); //[20]offset_en_eo=1
+//Check Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0x8); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc44, 7, 4, 0x9); //reg_p0_b_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EOOffset cal. OK Check
+_rtd_part_inl(0x1800dc44, 28, 28); //DATA OFFSET OK
+//Disable B-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc4c, 10, 10, 0); //[10]offset_en_de=1->0
+_rtd_part_outl(0x1800dc4c, 20, 20, 0); //[20]offset_en_do=1->0
+_rtd_part_outl(0x1800dc50, 0, 0, 0); //[20]offset_en_ee=1->0
+_rtd_part_outl(0x1800dc50, 10, 10, 0); //[20]offset_en_eo=1->0
+//B-Lane DCVS Offset Result
+_rtd_part_outl(0x1800dc44, 7, 4, 0); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 4, 0); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 1); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 4, 0); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 2); //reg_p0_b_offset_coef_sel[4:0]//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 4, 0); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 3); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 4, 0); //Edge_Even_Koffset
+//===G LANE KOFF
+_rtd_part_outl(0x1800dc5c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc5c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc60, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc60, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc60, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da70, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da78, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da74, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da74, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+//G-Lane z0_ok
+_rtd_part_outl(0x1800dc60, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc60, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc5c, 29, 29, 1); //[29]z0_ok_do=1
+_rtd_part_outl(0x1800dc5c, 19, 19, 1); //[19]z0_ok_de=1
+_rtd_part_outl(0x1800dc5c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc5c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc60, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc60, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc60, 21, 21, 1); //[21]offfset_pc_eq=1
+//Enable G-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc5c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc5c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc60, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc60, 10, 10, 1); //[20]offset_en_eo=1
+//G-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xA); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc54, 7, 4, 0x9); //reg_p0_g_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc54, 28, 28); //DATA OFFSET OK
+//Disable G-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc5c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc5c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc60, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc60, 10, 10, 0); //[20]offset_en_eo=0
+//G-Lane DCVS Offset Result
+_rtd_part_outl(0x1800dc54, 7, 4, 0); //reg_p0_g_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 12, 8); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 1); //reg_p0_g_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 12, 8); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 2); //reg_p0_g_offset_coef_sel[4:0]//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 12, 8); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 3); //reg_p0_g_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 12, 8); //Edge_Even_Koffset
+//===R LANE KOFF
+_rtd_part_outl(0x1800dc6c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc6c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc70, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc70, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc70, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da90, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da98, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da94, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da94, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+//R-Lane z0_ok
+_rtd_part_outl(0x1800dc70, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc70, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc6c, 29, 29, 1); //[29]z0_ok_do=1
+_rtd_part_outl(0x1800dc6c, 19, 19, 1); //[19]z0_ok_de=1
+_rtd_part_outl(0x1800dc6c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc6c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc70, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc70, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc70, 21, 21, 1); //[21]offfset_pc_eq=1
+//Enable R-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc6c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc6c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc70, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc70, 10, 10, 1); //[20]offset_en_eo=1
+//R-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xC); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc64, 7, 4, 0x9); //reg_p0_r_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc64, 28, 28); //DATA OFFSET OK
+//Disable R-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc6c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc6c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc70, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc70, 10, 10, 0); //[20]offset_en_eo=0
+//R-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc64, 7, 4, 0); //reg_p0_r_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 20, 16); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 1); //reg_p0_r_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 20, 16); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 2); //reg_p0_r_offset_coef_sel[4:0]//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 20, 16); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 3); //reg_p0_r_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 20, 16); //Edge_Even_Koffset
+//===CK LANE KOFF
+_rtd_part_outl(0x1800dc7c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc7c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc80, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc80, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc80, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da30, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da38, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da34, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da34, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+//CK-Lane z0_ok
+_rtd_part_outl(0x1800dc80, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc80, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc7c, 29, 29, 1); //[29]z0_ok_do=1
+_rtd_part_outl(0x1800dc7c, 19, 19, 1); //[19]z0_ok_de=1
+_rtd_part_outl(0x1800dc7c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc7c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc80, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc80, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc80, 21, 21, 1); //[21]offfset_pc_eq=1
+//Disable CK-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc7c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc7c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc80, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc80, 10, 10, 1); //[20]offset_en_eo=1
+//CK-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xE); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc74, 7, 4, 0x9); //reg_p0_ck_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc74, 28, 28); //DATA OFFSET OK
+//Disable CK-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc7c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc7c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc80, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc80, 10, 10, 0); //[20]offset_en_eo=0
+//CK-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc74, 7, 4, 0); //reg_p0_ck_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 28, 24); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 1); //reg_p0_ck_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 28, 24); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 2); //reg_p0_ck_offset_coef_sel[4:0]//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 28, 24); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 3); //reg_p0_ck_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 28, 24); //Edge_Even_Koffset
+//========================================= STEP2 LEQ KOFF =================================================
+//===B LANE KOFF LEQ
+_rtd_part_outl(0x1800da54, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da54, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da58, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc50, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc50, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc4c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc50, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_inl(0x1800dc44, 30, 30); //p0_b_offset_eq_ok_ro	EQ OFFSET OK
+_rtd_part_outl(0x1800dc50, 20, 20, 0); //[20]offset_en_eq=0
+//B-Lane LEQ Offset Result
+_rtd_part_outl(0x1800dc44, 7, 4, 8); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 4, 0); //EQ_Koffset
+//===G LANE KOFF LEQ
+_rtd_part_outl(0x1800da74, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da74, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da78, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc60, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc60, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc5c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc60, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_inl(0x1800dc54, 30, 30); //p0_g_offset_eq_ok_ro EQ OFFSET OK
+_rtd_part_outl(0x1800dc60, 20, 20, 0); //[20]offset_en_eq=0
+//G-Lane LEQ Offset Result
+_rtd_part_outl(0x1800dc54, 7, 4, 8); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 12, 8); //EQ_Koffset
+//===R LANE KOFF LEQ
+_rtd_part_outl(0x1800da94, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da94, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da98, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc70, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc70, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc6c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc70, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_inl(0x1800dc64, 30, 30); //p0_r_offset_eq_ok_ro EQ OFFSET OK
+_rtd_part_outl(0x1800dc70, 20, 20, 0); //[20]offset_en_eq=0
+//R-Lane LEQ Offset Result
+_rtd_part_outl(0x1800dc64, 7, 4, 8); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 20, 16); //EQ_Koffset
+//===CK LANE KOFF LEQ
+_rtd_part_outl(0x1800da34, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da34, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da38, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc80, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc80, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc7c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc80, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_inl(0x1800dc74, 30, 30); //p0_ck_offset_eq_ok_ro EQ OFFSET OK
+_rtd_part_outl(0x1800dc80, 20, 20, 0); //[20]offset_en_eq=0
+//CK-Lane LEQ Offset Result
+_rtd_part_outl(0x1800dc74, 7, 4, 8); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 28, 24); //EQ_Koffset
+//========================================= STEP3 All DCVS KOFF ==
+//B-LANE
+_rtd_part_outl(0x1800dc4c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc4c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc50, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc50, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//Check Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0x8); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc44, 7, 4, 0x9); //reg_p0_b_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EOOffset cal. OK Check
+_rtd_part_inl(0x1800dc44, 28, 28); //DATA OFFSET OK
+//Disable B-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc4c, 10, 10, 0); //[10]offset_en_de=1->0
+_rtd_part_outl(0x1800dc4c, 20, 20, 0); //[20]offset_en_do=1->0
+_rtd_part_outl(0x1800dc50, 0, 0, 0); //[20]offset_en_ee=1->0
+_rtd_part_outl(0x1800dc50, 10, 10, 0); //[20]offset_en_eo=1->0
+//===G LANE KOFF Data/Edge
+_rtd_part_outl(0x1800dc5c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc5c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc60, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc60, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//G-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xA); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc54, 7, 4, 0x9); //reg_p0_g_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc54, 28, 28); //DATA OFFSET OK
+//G-LANE
+_rtd_part_outl(0x1800dc5c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc5c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc60, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc60, 10, 10, 0); //[20]offset_en_eo=0
+//===R LANE KOFF Data/Edge
+_rtd_part_outl(0x1800dc6c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc6c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc70, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc70, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//R-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xC); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc64, 7, 4, 0x9); //reg_p0_r_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc64, 28, 28); //DATA OFFSET OK
+//Disable R-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc6c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc6c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc70, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc70, 10, 10, 0); //[20]offset_en_eo=0
+//===CK LANE KOFF Data/Edge
+_rtd_part_outl(0x1800dc7c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc7c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc80, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc80, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//CK-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xE); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc74, 7, 4, 0x9); //reg_p0_ck_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc74, 28, 28); //DATA OFFSET OK
+//Disable CK-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc7c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc7c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc80, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc80, 10, 10, 0); //[20]offset_en_eo=0
+//B-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc44, 7, 4, 0); //reg_p0_b_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 4, 0); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 1); //reg_p0_b_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 4, 0); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 2); //reg_p0_b_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 4, 0); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 3); //reg_p0_b_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 4, 0); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 8); //reg_p0_b_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 4, 0); //EQ_Koffset
+//G-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc54, 7, 4, 0); //reg_p0_g_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 12, 8); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 1); //reg_p0_g_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 12, 8); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 2); //reg_p0_g_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 12, 8); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 3); //reg_p0_g_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 12, 8); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 8); //reg_p0_g_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 12, 8); //EQ_Koffset
+//R-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc64, 7, 4, 0); //reg_p0_r_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 20, 16); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 1); //reg_p0_r_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 20, 16); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 2); //reg_p0_r_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 20, 16); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 3); //reg_p0_r_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 20, 16); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 8); //reg_p0_r_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 20, 16); //EQ_Koffset
+//CK-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc74, 7, 4, 0); //reg_p0_ck_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 28, 24); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 1); //reg_p0_ck_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 28, 24); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 2); //reg_p0_ck_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 28, 24); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 3); //reg_p0_ck_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 28, 24); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 8); //reg_p0_ck_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 28, 24); //EQ_Koffset
+//Input on
+_rtd_part_outl(0x1800da50, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da70, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da90, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da30, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da58, 28, 28, 0); //#B  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da5c, 6, 3, 0xf); //#B  DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da38, 28, 28, 0); //#CK DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da3c, 6, 3, 0xf); //#CK DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da78, 28, 28, 0); //#G  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da7c, 6, 3, 0xf); //#G  DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da98, 28, 28, 0); //#R  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da9c, 6, 3, 0xf); //#R  DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800dd04, 0, 0, 1); //R finetunstart on
+_rtd_part_outl(0x1800dce8, 0, 0, 1); //G finetunstart on
+_rtd_part_outl(0x1800dcc8, 0, 0, 1); //B finetunstart on
+_rtd_part_outl(0x1800dd20, 0, 0, 1); //CK finetunstart on
+//=====[LEQ_VTH_Tap0_3_4_Adapt_frl]=====//
+_rtd_part_outl(0x1800dd04, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dce8, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dcc8, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dd20, 0, 0, 0); //finetunstart off
+ScalerTimer_DelayXms(5);
+//DFE_Adaptation
+//===CK LANE TAP0 & LEQ & Tap3 & Tap4 Adapt
+_rtd_part_outl(0x180b7ccc, 31, 0, 0x00007400); //Timer, set eqfe_en,servo_en,timer_en=1
+_rtd_part_outl(0x180b7cd0, 31, 31, 1); //leq1_inv=1
+_rtd_part_outl(0x180b7cd0, 30, 30, 1); //leq2_inv=0
+_rtd_part_outl(0x180b7cd4, 17, 15, 0); //LEQ_GAIN1=0
+_rtd_part_outl(0x180b7cd4, 14, 12, 0); //LEQ_GAIN2=0
+_rtd_part_outl(0x180b7cd8, 22, 21, 2); //20211122_LEQ1_trans_mode=2
+_rtd_part_outl(0x180b7cd8, 20, 19, 3); //LEQ2_trans_mode=3
+_rtd_part_outl(0x180b7cd8, 28, 26, 4); //tap0_gain=4
+_rtd_part_outl(0x180b7ccc, 26, 24, 5); //20200824_tap_timer=5
+_rtd_part_outl(0x180b7ccc, 20, 18, 5); //20200825_LEQ_timer=5
+_rtd_part_outl(0x180b7ccc, 23, 21, 5); //20200825_VTH_timer=5
+_rtd_part_outl(0x180b7ccc, 13, 13, 1); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7ce8, 25, 25, 1); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7ce8, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=0
+_rtd_part_outl(0x180b7ce8, 27, 27, 0); //20211122_DFE_ADAP_EN_tap2=0
+_rtd_part_outl(0x180b7ce8, 28, 28, 1); //20211122_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7ce8, 29, 29, 1); //20211122_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7cc8, 23, 22, 0x3); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x180b7cdc, 31, 30, 0x1); //tap0_adjust_b =1
+//===B LANE  TAP0 & LEQ & Tap3 & Tap4 Adapt
+_rtd_part_outl(0x180b7c8c, 31, 0, 0x00007400); //Timer, set eqfe_en,servo_en,timer_en=1
+_rtd_part_outl(0x180b7c90, 31, 31, 1); //leq1_inv=1
+_rtd_part_outl(0x180b7c90, 30, 30, 1); //leq2_inv=0
+_rtd_part_outl(0x180b7c94, 17, 15, 0); //LEQ_GAIN1=0
+_rtd_part_outl(0x180b7c94, 14, 12, 0); //LEQ_GAIN2=0
+_rtd_part_outl(0x180b7c98, 22, 21, 2); //20211122_LEQ1_trans_mode=2
+_rtd_part_outl(0x180b7c98, 20, 19, 3); //LEQ2_trans_mode=3
+_rtd_part_outl(0x180b7c98, 28, 26, 4); //tap0_gain=4
+_rtd_part_outl(0x180b7c8c, 26, 24, 5); //20200824_tap_timer=5
+_rtd_part_outl(0x180b7c8c, 20, 18, 5); //20200825_LEQ_timer=5
+_rtd_part_outl(0x180b7c8c, 23, 21, 5); //20200825_VTH_timer=5
+_rtd_part_outl(0x180b7c8c, 13, 13, 1); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7ca8, 25, 25, 1); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7ca8, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=0
+_rtd_part_outl(0x180b7ca8, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=0
+_rtd_part_outl(0x180b7ca8, 28, 28, 1); //20211122_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7ca8, 29, 29, 1); //20211122_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7c88, 23, 22, 0x3); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x180b7c9c, 31, 30, 0x1); //tap0_adjust_b =1
+//===G LANE  TAP0 & LEQ & Tap3 & Tap4 Adapt
+_rtd_part_outl(0x180b7c4c, 31, 0, 0x00007400); //Timer, set eqfe_en,servo_en,timer_en=1
+_rtd_part_outl(0x180b7c50, 31, 31, 1); //leq1_inv=1
+_rtd_part_outl(0x180b7c50, 30, 30, 1); //leq2_inv=0
+_rtd_part_outl(0x180b7c54, 17, 15, 0); //LEQ_GAIN1=0
+_rtd_part_outl(0x180b7c54, 14, 12, 0); //LEQ_GAIN2=0
+_rtd_part_outl(0x180b7c58, 22, 21, 2); //20211122_LEQ1_trans_mode=2
+_rtd_part_outl(0x180b7c58, 20, 19, 3); //LEQ2_trans_mode=3
+_rtd_part_outl(0x180b7c58, 28, 26, 4); //tap0_gain=4
+_rtd_part_outl(0x180b7c4c, 26, 24, 5); //20200824_tap_timer=5
+_rtd_part_outl(0x180b7c4c, 20, 18, 5); //20200825_LEQ_timer=5
+_rtd_part_outl(0x180b7c4c, 23, 21, 5); //20200825_VTH_timer=5
+_rtd_part_outl(0x180b7c4c, 13, 13, 1); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7c68, 25, 25, 1); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7c68, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=0
+_rtd_part_outl(0x180b7c68, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=0
+_rtd_part_outl(0x180b7c68, 28, 28, 1); //20211122_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7c68, 29, 29, 1); //20211122_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7c48, 23, 22, 0x3); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x180b7c5c, 31, 30, 0x1); //tap0_adjust_b =1
+//===R LANE TAP0 & LEQ & Tap3 & Tap4 Adapt
+_rtd_part_outl(0x180b7c0c, 31, 0, 0x00007400); //Timer, set eqfe_en,servo_en,timer_en=1
+_rtd_part_outl(0x180b7c10, 31, 31, 1); //leq1_inv=1
+_rtd_part_outl(0x180b7c10, 30, 30, 1); //leq2_inv=0
+_rtd_part_outl(0x180b7c14, 17, 15, 0); //LEQ_GAIN1=0
+_rtd_part_outl(0x180b7c14, 14, 12, 0); //LEQ_GAIN2=0
+_rtd_part_outl(0x180b7c18, 22, 21, 2); //20211122_LEQ1_trans_mode=2
+_rtd_part_outl(0x180b7c18, 20, 19, 3); //LEQ2_trans_mode=3
+_rtd_part_outl(0x180b7c18, 28, 26, 4); //tap0_gain=4
+_rtd_part_outl(0x180b7c0c, 26, 24, 5); //20200824_tap_timer=5
+_rtd_part_outl(0x180b7c0c, 20, 18, 5); //20200825_LEQ_timer=5
+_rtd_part_outl(0x180b7c0c, 23, 21, 5); //20200825_VTH_timer=5
+_rtd_part_outl(0x180b7c0c, 13, 13, 1); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7c28, 25, 25, 1); //20210807_DFE_ADAP_EN_tap0=1
+_rtd_part_outl(0x180b7c28, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=0
+_rtd_part_outl(0x180b7c28, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=0
+_rtd_part_outl(0x180b7c28, 28, 28, 1); //20211122_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7c28, 29, 29, 1); //20211122_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7c08, 23, 22, 0x3); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x180b7c1c, 31, 30, 0x1); //tap0_adjust_b =1
+//Disable DFE adapt
+_rtd_part_outl(0x1800dd70, 3, 0, 0xf); //ck,r,g,b rstb_eq=1
+_rtd_part_outl(0x1800dd70, 7, 4, 0xf); //ck,r,g,b leq_en=1
+_rtd_part_outl(0x1800dd70, 15, 12, 0xf); //ck,r,g,b vth_en=1
+_rtd_part_outl(0x1800dd70, 11, 8, 0xf); //dfe_en=1
+_rtd_part_outl(0x1800dd04, 0, 0, 1); //finetunstart on
+_rtd_part_outl(0x1800dce8, 0, 0, 1); //finetunstart on
+_rtd_part_outl(0x1800dcc8, 0, 0, 1); //finetunstart on
+_rtd_part_outl(0x1800dd20, 0, 0, 1); //finetunstart on
+ScalerTimer_DelayXms(5);
+//CK-Lane Tap0-4 Adapt
+_rtd_part_outl(0x180b7ccc, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7ce8, 25, 25, 0); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7ce8, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=1
+_rtd_part_outl(0x180b7ce8, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=1
+_rtd_part_outl(0x180b7ce8, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7ce8, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7cc8, 23, 22, 0); //VTH_DFE_EN_B=1, VTH_EN_B=1
+//B-Lane Tap0-4 Adapt
+_rtd_part_outl(0x180b7c8c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7ca8, 25, 25, 0); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7ca8, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=1
+_rtd_part_outl(0x180b7ca8, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=1
+_rtd_part_outl(0x180b7ca8, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7ca8, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7c88, 23, 22, 0); //VTH_DFE_EN_B=1, VTH_EN_B=1
+//G-Lane Tap0-4 Adapt
+_rtd_part_outl(0x180b7c4c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7c68, 25, 25, 0); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7c68, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=1
+_rtd_part_outl(0x180b7c68, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=1
+_rtd_part_outl(0x180b7c68, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7c68, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7c48, 23, 22, 0); //VTH_DFE_EN_B=1, VTH_EN_B=1
+//R-Lane Tap0-4 Adapt
+_rtd_part_outl(0x180b7c0c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7c28, 25, 25, 0); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7c28, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=1
+_rtd_part_outl(0x180b7c28, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=1
+_rtd_part_outl(0x180b7c28, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7c28, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7c08, 23, 22, 0); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x1800dd04, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dce8, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dcc8, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dd20, 0, 0, 0); //finetunstart off
+//=====[Koffset_frl]=====//
+_rtd_part_outl(0x1800dd04, 0, 0, 0); //R finetunstart off
+_rtd_part_outl(0x1800dce8, 0, 0, 0); //G finetunstart off
+_rtd_part_outl(0x1800dcc8, 0, 0, 0); //B finetunstart off
+_rtd_part_outl(0x1800dd20, 0, 0, 0); //CK finetunstart off
+//========================================= STEP1 Data_Even KOFF =================================================
+_rtd_part_outl(0x1800da58, 28, 28, 1); //#B  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da5c, 6, 3, 0); //#B  DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da38, 28, 28, 1); //#CK DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da3c, 6, 3, 0); //#CK DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da78, 28, 28, 1); //#G  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da7c, 6, 3, 0); //#G  DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da98, 28, 28, 1); //#R  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da9c, 6, 3, 0); //#R  DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800dc44, 31, 0, 0x0282cf00); //B_KOFF rstn,  //[26:20] timout = 0101000, [19:14] divisor = 001000, [11:8] delay count = 11
+_rtd_part_outl(0x1800dc54, 31, 0, 0x0282cf00); //G_KOFF rstn
+_rtd_part_outl(0x1800dc64, 31, 0, 0x0282cf00); //R_KOFF rstn
+_rtd_part_outl(0x1800dc74, 31, 0, 0x0282cf00); //CK_KOFF rstn
+_rtd_part_outl(0x1800dc44, 0, 0, 1); //Release B_KOFF rstn
+_rtd_part_outl(0x1800dc54, 0, 0, 1); //Release G_KOFF rstn
+_rtd_part_outl(0x1800dc64, 0, 0, 1); //Release R_KOFF rstn
+_rtd_part_outl(0x1800dc74, 0, 0, 1); //Release CK_KOFF rstn
+//===BLANE KOFF
+_rtd_part_outl(0x1800dc4c, 28, 28, 0); //manaul_do=0, 0:Manual; 1:Auto
+_rtd_part_outl(0x1800dc4c, 18, 18, 0); //manaul_de=0, 0:Manual; 1:Auto
+_rtd_part_outl(0x1800dc50, 28, 28, 0); //manaul_eq=0, 0:Manual; 1:Auto
+_rtd_part_outl(0x1800dc50, 18, 18, 0); //manaul_eo=0, 0:Manual; 1:Auto
+_rtd_part_outl(0x1800dc50, 8, 8, 0); //manaul_ee=0, 0:Manual; 1:Auto
+_rtd_part_outl(0x1800da50, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da58, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da54, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da54, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+//B-Lane z0_ok
+_rtd_part_outl(0x1800dc50, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc50, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc4c, 29, 29, 1); //[29]z0_ok_do=1
+_rtd_part_outl(0x1800dc4c, 19, 19, 1); //[19]z0_ok_de=1
+_rtd_part_outl(0x1800dc4c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc4c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc50, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc50, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc50, 21, 21, 1); //[21]offfset_pc_eq=1
+//Enable B-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc4c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc4c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc50, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc50, 10, 10, 1); //[20]offset_en_eo=1
+//Check Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0x8); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc44, 7, 4, 0x9); //reg_p0_b_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EOOffset cal. OK Check
+_rtd_part_inl(0x1800dc44, 28, 28); //DATA OFFSET OK
+//Disable B-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc4c, 10, 10, 0); //[10]offset_en_de=1->0
+_rtd_part_outl(0x1800dc4c, 20, 20, 0); //[20]offset_en_do=1->0
+_rtd_part_outl(0x1800dc50, 0, 0, 0); //[20]offset_en_ee=1->0
+_rtd_part_outl(0x1800dc50, 10, 10, 0); //[20]offset_en_eo=1->0
+//B-Lane DCVS Offset Result
+_rtd_part_outl(0x1800dc44, 7, 4, 0); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 4, 0); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 1); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 4, 0); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 2); //reg_p0_b_offset_coef_sel[4:0]//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 4, 0); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 3); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 4, 0); //Edge_Even_Koffset
+//===G LANE KOFF
+_rtd_part_outl(0x1800dc5c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc5c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc60, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc60, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc60, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da70, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da78, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da74, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da74, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+//G-Lane z0_ok
+_rtd_part_outl(0x1800dc60, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc60, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc5c, 29, 29, 1); //[29]z0_ok_do=1
+_rtd_part_outl(0x1800dc5c, 19, 19, 1); //[19]z0_ok_de=1
+_rtd_part_outl(0x1800dc5c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc5c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc60, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc60, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc60, 21, 21, 1); //[21]offfset_pc_eq=1
+//Enable G-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc5c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc5c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc60, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc60, 10, 10, 1); //[20]offset_en_eo=1
+//G-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xA); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc54, 7, 4, 0x9); //reg_p0_g_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc54, 28, 28); //DATA OFFSET OK
+//Disable G-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc5c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc5c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc60, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc60, 10, 10, 0); //[20]offset_en_eo=0
+//G-Lane DCVS Offset Result
+_rtd_part_outl(0x1800dc54, 7, 4, 0); //reg_p0_g_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 12, 8); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 1); //reg_p0_g_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 12, 8); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 2); //reg_p0_g_offset_coef_sel[4:0]//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 12, 8); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 3); //reg_p0_g_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 12, 8); //Edge_Even_Koffset
+//===R LANE KOFF
+_rtd_part_outl(0x1800dc6c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc6c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc70, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc70, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc70, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da90, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da98, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da94, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da94, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+//R-Lane z0_ok
+_rtd_part_outl(0x1800dc70, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc70, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc6c, 29, 29, 1); //[29]z0_ok_do=1
+_rtd_part_outl(0x1800dc6c, 19, 19, 1); //[19]z0_ok_de=1
+_rtd_part_outl(0x1800dc6c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc6c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc70, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc70, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc70, 21, 21, 1); //[21]offfset_pc_eq=1
+//Enable R-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc6c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc6c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc70, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc70, 10, 10, 1); //[20]offset_en_eo=1
+//R-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xC); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc64, 7, 4, 0x9); //reg_p0_r_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc64, 28, 28); //DATA OFFSET OK
+//Disable R-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc6c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc6c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc70, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc70, 10, 10, 0); //[20]offset_en_eo=0
+//R-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc64, 7, 4, 0); //reg_p0_r_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 20, 16); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 1); //reg_p0_r_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 20, 16); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 2); //reg_p0_r_offset_coef_sel[4:0]//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 20, 16); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 3); //reg_p0_r_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 20, 16); //Edge_Even_Koffset
+//===CK LANE KOFF
+_rtd_part_outl(0x1800dc7c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc7c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc80, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc80, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc80, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da30, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da38, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da34, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da34, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+//CK-Lane z0_ok
+_rtd_part_outl(0x1800dc80, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc80, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc7c, 29, 29, 1); //[29]z0_ok_do=1
+_rtd_part_outl(0x1800dc7c, 19, 19, 1); //[19]z0_ok_de=1
+_rtd_part_outl(0x1800dc7c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc7c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc80, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc80, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc80, 21, 21, 1); //[21]offfset_pc_eq=1
+//Disable CK-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc7c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc7c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc80, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc80, 10, 10, 1); //[20]offset_en_eo=1
+//CK-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xE); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc74, 7, 4, 0x9); //reg_p0_ck_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc74, 28, 28); //DATA OFFSET OK
+//Disable CK-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc7c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc7c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc80, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc80, 10, 10, 0); //[20]offset_en_eo=0
+//CK-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc74, 7, 4, 0); //reg_p0_ck_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 28, 24); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 1); //reg_p0_ck_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 28, 24); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 2); //reg_p0_ck_offset_coef_sel[4:0]//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 28, 24); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 3); //reg_p0_ck_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 28, 24); //Edge_Even_Koffset
+//========================================= STEP2 LEQ KOFF =================================================
+//===B LANE KOFF LEQ
+_rtd_part_outl(0x1800da54, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da54, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da58, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc50, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc50, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc4c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc50, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_inl(0x1800dc44, 30, 30); //p0_b_offset_eq_ok_ro	EQ OFFSET OK
+_rtd_part_outl(0x1800dc50, 20, 20, 0); //[20]offset_en_eq=0
+//B-Lane LEQ Offset Result
+_rtd_part_outl(0x1800dc44, 7, 4, 8); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 4, 0); //EQ_Koffset
+//===G LANE KOFF LEQ
+_rtd_part_outl(0x1800da74, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da74, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da78, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc60, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc60, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc5c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc60, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_inl(0x1800dc54, 30, 30); //p0_g_offset_eq_ok_ro EQ OFFSET OK
+_rtd_part_outl(0x1800dc60, 20, 20, 0); //[20]offset_en_eq=0
+//G-Lane LEQ Offset Result
+_rtd_part_outl(0x1800dc54, 7, 4, 8); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 12, 8); //EQ_Koffset
+//===R LANE KOFF LEQ
+_rtd_part_outl(0x1800da94, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da94, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da98, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc70, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc70, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc6c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc70, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_inl(0x1800dc64, 30, 30); //p0_r_offset_eq_ok_ro EQ OFFSET OK
+_rtd_part_outl(0x1800dc70, 20, 20, 0); //[20]offset_en_eq=0
+//R-Lane LEQ Offset Result
+_rtd_part_outl(0x1800dc64, 7, 4, 8); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 20, 16); //EQ_Koffset
+//===CK LANE KOFF LEQ
+_rtd_part_outl(0x1800da34, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da34, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da38, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc80, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc80, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc7c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc80, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_inl(0x1800dc74, 30, 30); //p0_ck_offset_eq_ok_ro EQ OFFSET OK
+_rtd_part_outl(0x1800dc80, 20, 20, 0); //[20]offset_en_eq=0
+//CK-Lane LEQ Offset Result
+_rtd_part_outl(0x1800dc74, 7, 4, 8); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 28, 24); //EQ_Koffset
+//========================================= STEP3 All DCVS KOFF ==
+//B-LANE
+_rtd_part_outl(0x1800dc4c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc4c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc50, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc50, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//Check Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0x8); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc44, 7, 4, 0x9); //reg_p0_b_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EOOffset cal. OK Check
+_rtd_part_inl(0x1800dc44, 28, 28); //DATA OFFSET OK
+//Disable B-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc4c, 10, 10, 0); //[10]offset_en_de=1->0
+_rtd_part_outl(0x1800dc4c, 20, 20, 0); //[20]offset_en_do=1->0
+_rtd_part_outl(0x1800dc50, 0, 0, 0); //[20]offset_en_ee=1->0
+_rtd_part_outl(0x1800dc50, 10, 10, 0); //[20]offset_en_eo=1->0
+//===G LANE KOFF Data/Edge
+_rtd_part_outl(0x1800dc5c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc5c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc60, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc60, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//G-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xA); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc54, 7, 4, 0x9); //reg_p0_g_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc54, 28, 28); //DATA OFFSET OK
+//G-LANE
+_rtd_part_outl(0x1800dc5c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc5c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc60, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc60, 10, 10, 0); //[20]offset_en_eo=0
+//===R LANE KOFF Data/Edge
+_rtd_part_outl(0x1800dc6c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc6c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc70, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc70, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//R-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xC); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc64, 7, 4, 0x9); //reg_p0_r_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc64, 28, 28); //DATA OFFSET OK
+//Disable R-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc6c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc6c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc70, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc70, 10, 10, 0); //[20]offset_en_eo=0
+//===CK LANE KOFF Data/Edge
+_rtd_part_outl(0x1800dc7c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc7c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc80, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc80, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//CK-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xE); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc74, 7, 4, 0x9); //reg_p0_ck_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc74, 28, 28); //DATA OFFSET OK
+//Disable CK-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc7c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc7c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc80, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc80, 10, 10, 0); //[20]offset_en_eo=0
+//B-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc44, 7, 4, 0); //reg_p0_b_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 4, 0); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 1); //reg_p0_b_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 4, 0); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 2); //reg_p0_b_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 4, 0); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 3); //reg_p0_b_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 4, 0); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 8); //reg_p0_b_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 4, 0); //EQ_Koffset
+//G-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc54, 7, 4, 0); //reg_p0_g_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 12, 8); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 1); //reg_p0_g_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 12, 8); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 2); //reg_p0_g_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 12, 8); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 3); //reg_p0_g_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 12, 8); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 8); //reg_p0_g_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 12, 8); //EQ_Koffset
+//R-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc64, 7, 4, 0); //reg_p0_r_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 20, 16); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 1); //reg_p0_r_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 20, 16); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 2); //reg_p0_r_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 20, 16); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 3); //reg_p0_r_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 20, 16); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 8); //reg_p0_r_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 20, 16); //EQ_Koffset
+//CK-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc74, 7, 4, 0); //reg_p0_ck_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 28, 24); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 1); //reg_p0_ck_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 28, 24); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 2); //reg_p0_ck_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 28, 24); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 3); //reg_p0_ck_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 28, 24); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 8); //reg_p0_ck_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 28, 24); //EQ_Koffset
+//Input on
+_rtd_part_outl(0x1800da50, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da70, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da90, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da30, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da58, 28, 28, 0); //#B  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da5c, 6, 3, 0xf); //#B  DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da38, 28, 28, 0); //#CK DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da3c, 6, 3, 0xf); //#CK DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da78, 28, 28, 0); //#G  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da7c, 6, 3, 0xf); //#G  DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da98, 28, 28, 0); //#R  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da9c, 6, 3, 0xf); //#R  DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800dd04, 0, 0, 1); //R finetunstart on
+_rtd_part_outl(0x1800dce8, 0, 0, 1); //G finetunstart on
+_rtd_part_outl(0x1800dcc8, 0, 0, 1); //B finetunstart on
+_rtd_part_outl(0x1800dd20, 0, 0, 1); //CK finetunstart on
+//=====[Tap0_to_Tap4_Adapt_frl]=====//
+_rtd_part_outl(0x1800dd04, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dce8, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dcc8, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dd20, 0, 0, 0); //finetunstart off
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dd70, 3, 0, 0xf); //ck,r,g,b rstb_eq=1
+_rtd_part_outl(0x1800dd70, 7, 4, 0xf); //ck,r,g,b leq_en=1
+_rtd_part_outl(0x1800dd70, 15, 12, 0xf); //ck,r,g,b vth_en=1
+_rtd_part_outl(0x1800dd70, 11, 8, 0xf); //dfe_en=1
+//CK-Lane
+_rtd_part_outl(0x180b7ccc, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7ce8, 25, 25, 1); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7ce8, 26, 26, 1); //20200824_DFE_ADAP_EN_tap1=0
+_rtd_part_outl(0x180b7ce8, 27, 27, 1); //20200824_DFE_ADAP_EN_tap2=0
+_rtd_part_outl(0x180b7ce8, 28, 28, 1); //20200824_DFE_ADAP_EN_tap3=0
+_rtd_part_outl(0x180b7ce8, 29, 29, 1); //20200824_DFE_ADAP_EN_tap4=0
+_rtd_part_outl(0x180b7cc8, 23, 22, 0x3); //VTH_DFE_EN_B=1, VTH_EN_B=1
+//B-Lane
+_rtd_part_outl(0x180b7c8c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7ca8, 25, 25, 1); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7ca8, 26, 26, 1); //20200824_DFE_ADAP_EN_tap1=0
+_rtd_part_outl(0x180b7ca8, 27, 27, 1); //20200824_DFE_ADAP_EN_tap2=0
+_rtd_part_outl(0x180b7ca8, 28, 28, 1); //20200824_DFE_ADAP_EN_tap3=0
+_rtd_part_outl(0x180b7ca8, 29, 29, 1); //20200824_DFE_ADAP_EN_tap4=0
+_rtd_part_outl(0x180b7c88, 23, 22, 0x3); //VTH_DFE_EN_B=1, VTH_EN_B=1
+//G-Lane
+_rtd_part_outl(0x180b7c4c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7c68, 25, 25, 1); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7c68, 26, 26, 1); //20200824_DFE_ADAP_EN_tap1=0
+_rtd_part_outl(0x180b7c68, 27, 27, 1); //20200824_DFE_ADAP_EN_tap2=0
+_rtd_part_outl(0x180b7c68, 28, 28, 1); //20200824_DFE_ADAP_EN_tap3=0
+_rtd_part_outl(0x180b7c68, 29, 29, 1); //20200824_DFE_ADAP_EN_tap4=0
+_rtd_part_outl(0x180b7c48, 23, 22, 0x3); //VTH_DFE_EN_B=1, VTH_EN_B=1
+//R-Lane
+_rtd_part_outl(0x180b7c0c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7c28, 25, 25, 1); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7c28, 26, 26, 1); //20200824_DFE_ADAP_EN_tap1=0
+_rtd_part_outl(0x180b7c28, 27, 27, 1); //20200824_DFE_ADAP_EN_tap2=0
+_rtd_part_outl(0x180b7c28, 28, 28, 1); //20200824_DFE_ADAP_EN_tap3=0
+_rtd_part_outl(0x180b7c28, 29, 29, 1); //20200824_DFE_ADAP_EN_tap4=0
+_rtd_part_outl(0x180b7c08, 23, 22, 0x3); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x1800dd04, 0, 0, 1); //R finetunstart on
+_rtd_part_outl(0x1800dce8, 0, 0, 1); //G finetunstart on
+_rtd_part_outl(0x1800dcc8, 0, 0, 1); //B finetunstart on
+_rtd_part_outl(0x1800dd20, 0, 0, 1); //CK finetunstart on
+ScalerTimer_DelayXms(5);
+//CK-Lane
+_rtd_part_outl(0x180b7ccc, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7ce8, 25, 25, 0); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7ce8, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=1
+_rtd_part_outl(0x180b7ce8, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=1
+_rtd_part_outl(0x180b7ce8, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7ce8, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7cc8, 23, 22, 0); //VTH_DFE_EN_B=1, VTH_EN_B=1
+//B-Lane
+_rtd_part_outl(0x180b7c8c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7ca8, 25, 25, 0); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7ca8, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=1
+_rtd_part_outl(0x180b7ca8, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=1
+_rtd_part_outl(0x180b7ca8, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7ca8, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7c88, 23, 22, 0); //VTH_DFE_EN_B=1, VTH_EN_B=1
+//G-Lane
+_rtd_part_outl(0x180b7c4c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7c68, 25, 25, 0); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7c68, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=1
+_rtd_part_outl(0x180b7c68, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=1
+_rtd_part_outl(0x180b7c68, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7c68, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7c48, 23, 22, 0); //VTH_DFE_EN_B=1, VTH_EN_B=1
+//R-Lane
+_rtd_part_outl(0x180b7c0c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7c28, 25, 25, 0); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7c28, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=1
+_rtd_part_outl(0x180b7c28, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=1
+_rtd_part_outl(0x180b7c28, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7c28, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7c08, 23, 22, 0); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x1800dd04, 0, 0, 0); //R finetunstart off
+_rtd_part_outl(0x1800dce8, 0, 0, 0); //G finetunstart off
+_rtd_part_outl(0x1800dcc8, 0, 0, 0); //B finetunstart off
+_rtd_part_outl(0x1800dd20, 0, 0, 0); //CK finetunstart off
+ScalerTimer_DelayXms(5);
+//=====[Koffset_frl]=====//
+_rtd_part_outl(0x1800dd04, 0, 0, 0); //R finetunstart off
+_rtd_part_outl(0x1800dce8, 0, 0, 0); //G finetunstart off
+_rtd_part_outl(0x1800dcc8, 0, 0, 0); //B finetunstart off
+_rtd_part_outl(0x1800dd20, 0, 0, 0); //CK finetunstart off
+//========================================= STEP1 Data_Even KOFF =================================================
+_rtd_part_outl(0x1800da58, 28, 28, 1); //#B  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da5c, 6, 3, 0); //#B  DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da38, 28, 28, 1); //#CK DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da3c, 6, 3, 0); //#CK DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da78, 28, 28, 1); //#G  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da7c, 6, 3, 0); //#G  DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da98, 28, 28, 1); //#R  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da9c, 6, 3, 0); //#R  DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800dc44, 31, 0, 0x0282cf00); //B_KOFF rstn,  //[26:20] timout = 0101000, [19:14] divisor = 001000, [11:8] delay count = 11
+_rtd_part_outl(0x1800dc54, 31, 0, 0x0282cf00); //G_KOFF rstn
+_rtd_part_outl(0x1800dc64, 31, 0, 0x0282cf00); //R_KOFF rstn
+_rtd_part_outl(0x1800dc74, 31, 0, 0x0282cf00); //CK_KOFF rstn
+_rtd_part_outl(0x1800dc44, 0, 0, 1); //Release B_KOFF rstn
+_rtd_part_outl(0x1800dc54, 0, 0, 1); //Release G_KOFF rstn
+_rtd_part_outl(0x1800dc64, 0, 0, 1); //Release R_KOFF rstn
+_rtd_part_outl(0x1800dc74, 0, 0, 1); //Release CK_KOFF rstn
+//===BLANE KOFF
+_rtd_part_outl(0x1800dc4c, 28, 28, 0); //manaul_do=0, 0:Manual; 1:Auto
+_rtd_part_outl(0x1800dc4c, 18, 18, 0); //manaul_de=0, 0:Manual; 1:Auto
+_rtd_part_outl(0x1800dc50, 28, 28, 0); //manaul_eq=0, 0:Manual; 1:Auto
+_rtd_part_outl(0x1800dc50, 18, 18, 0); //manaul_eo=0, 0:Manual; 1:Auto
+_rtd_part_outl(0x1800dc50, 8, 8, 0); //manaul_ee=0, 0:Manual; 1:Auto
+_rtd_part_outl(0x1800da50, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da58, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da54, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da54, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+//B-Lane z0_ok
+_rtd_part_outl(0x1800dc50, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc50, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc4c, 29, 29, 1); //[29]z0_ok_do=1
+_rtd_part_outl(0x1800dc4c, 19, 19, 1); //[19]z0_ok_de=1
+_rtd_part_outl(0x1800dc4c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc4c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc50, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc50, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc50, 21, 21, 1); //[21]offfset_pc_eq=1
+//Enable B-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc4c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc4c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc50, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc50, 10, 10, 1); //[20]offset_en_eo=1
+//Check Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0x8); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc44, 7, 4, 0x9); //reg_p0_b_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EOOffset cal. OK Check
+_rtd_part_inl(0x1800dc44, 28, 28); //DATA OFFSET OK
+//Disable B-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc4c, 10, 10, 0); //[10]offset_en_de=1->0
+_rtd_part_outl(0x1800dc4c, 20, 20, 0); //[20]offset_en_do=1->0
+_rtd_part_outl(0x1800dc50, 0, 0, 0); //[20]offset_en_ee=1->0
+_rtd_part_outl(0x1800dc50, 10, 10, 0); //[20]offset_en_eo=1->0
+//B-Lane DCVS Offset Result
+_rtd_part_outl(0x1800dc44, 7, 4, 0); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 4, 0); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 1); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 4, 0); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 2); //reg_p0_b_offset_coef_sel[4:0]//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 4, 0); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 3); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 4, 0); //Edge_Even_Koffset
+//===G LANE KOFF
+_rtd_part_outl(0x1800dc5c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc5c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc60, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc60, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc60, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da70, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da78, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da74, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da74, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+//G-Lane z0_ok
+_rtd_part_outl(0x1800dc60, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc60, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc5c, 29, 29, 1); //[29]z0_ok_do=1
+_rtd_part_outl(0x1800dc5c, 19, 19, 1); //[19]z0_ok_de=1
+_rtd_part_outl(0x1800dc5c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc5c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc60, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc60, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc60, 21, 21, 1); //[21]offfset_pc_eq=1
+//Enable G-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc5c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc5c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc60, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc60, 10, 10, 1); //[20]offset_en_eo=1
+//G-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xA); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc54, 7, 4, 0x9); //reg_p0_g_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc54, 28, 28); //DATA OFFSET OK
+//Disable G-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc5c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc5c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc60, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc60, 10, 10, 0); //[20]offset_en_eo=0
+//G-Lane DCVS Offset Result
+_rtd_part_outl(0x1800dc54, 7, 4, 0); //reg_p0_g_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 12, 8); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 1); //reg_p0_g_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 12, 8); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 2); //reg_p0_g_offset_coef_sel[4:0]//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 12, 8); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 3); //reg_p0_g_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 12, 8); //Edge_Even_Koffset
+//===R LANE KOFF
+_rtd_part_outl(0x1800dc6c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc6c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc70, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc70, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc70, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da90, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da98, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da94, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da94, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+//R-Lane z0_ok
+_rtd_part_outl(0x1800dc70, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc70, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc6c, 29, 29, 1); //[29]z0_ok_do=1
+_rtd_part_outl(0x1800dc6c, 19, 19, 1); //[19]z0_ok_de=1
+_rtd_part_outl(0x1800dc6c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc6c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc70, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc70, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc70, 21, 21, 1); //[21]offfset_pc_eq=1
+//Enable R-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc6c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc6c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc70, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc70, 10, 10, 1); //[20]offset_en_eo=1
+//R-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xC); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc64, 7, 4, 0x9); //reg_p0_r_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc64, 28, 28); //DATA OFFSET OK
+//Disable R-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc6c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc6c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc70, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc70, 10, 10, 0); //[20]offset_en_eo=0
+//R-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc64, 7, 4, 0); //reg_p0_r_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 20, 16); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 1); //reg_p0_r_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 20, 16); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 2); //reg_p0_r_offset_coef_sel[4:0]//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 20, 16); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 3); //reg_p0_r_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 20, 16); //Edge_Even_Koffset
+//===CK LANE KOFF
+_rtd_part_outl(0x1800dc7c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc7c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc80, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc80, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc80, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da30, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da38, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da34, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da34, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+//CK-Lane z0_ok
+_rtd_part_outl(0x1800dc80, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc80, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc7c, 29, 29, 1); //[29]z0_ok_do=1
+_rtd_part_outl(0x1800dc7c, 19, 19, 1); //[19]z0_ok_de=1
+_rtd_part_outl(0x1800dc7c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc7c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc80, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc80, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc80, 21, 21, 1); //[21]offfset_pc_eq=1
+//Disable CK-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc7c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc7c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc80, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc80, 10, 10, 1); //[20]offset_en_eo=1
+//CK-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xE); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc74, 7, 4, 0x9); //reg_p0_ck_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc74, 28, 28); //DATA OFFSET OK
+//Disable CK-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc7c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc7c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc80, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc80, 10, 10, 0); //[20]offset_en_eo=0
+//CK-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc74, 7, 4, 0); //reg_p0_ck_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 28, 24); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 1); //reg_p0_ck_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 28, 24); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 2); //reg_p0_ck_offset_coef_sel[4:0]//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 28, 24); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 3); //reg_p0_ck_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 28, 24); //Edge_Even_Koffset
+//========================================= STEP2 LEQ KOFF =================================================
+//===B LANE KOFF LEQ
+_rtd_part_outl(0x1800da54, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da54, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da58, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc50, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc50, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc4c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc50, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_inl(0x1800dc44, 30, 30); //p0_b_offset_eq_ok_ro	EQ OFFSET OK
+_rtd_part_outl(0x1800dc50, 20, 20, 0); //[20]offset_en_eq=0
+//B-Lane LEQ Offset Result
+_rtd_part_outl(0x1800dc44, 7, 4, 8); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 4, 0); //EQ_Koffset
+//===G LANE KOFF LEQ
+_rtd_part_outl(0x1800da74, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da74, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da78, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc60, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc60, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc5c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc60, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_inl(0x1800dc54, 30, 30); //p0_g_offset_eq_ok_ro EQ OFFSET OK
+_rtd_part_outl(0x1800dc60, 20, 20, 0); //[20]offset_en_eq=0
+//G-Lane LEQ Offset Result
+_rtd_part_outl(0x1800dc54, 7, 4, 8); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 12, 8); //EQ_Koffset
+//===R LANE KOFF LEQ
+_rtd_part_outl(0x1800da94, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da94, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da98, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc70, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc70, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc6c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc70, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_inl(0x1800dc64, 30, 30); //p0_r_offset_eq_ok_ro EQ OFFSET OK
+_rtd_part_outl(0x1800dc70, 20, 20, 0); //[20]offset_en_eq=0
+//R-Lane LEQ Offset Result
+_rtd_part_outl(0x1800dc64, 7, 4, 8); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 20, 16); //EQ_Koffset
+//===CK LANE KOFF LEQ
+_rtd_part_outl(0x1800da34, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da34, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da38, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc80, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc80, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc7c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc80, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_inl(0x1800dc74, 30, 30); //p0_ck_offset_eq_ok_ro EQ OFFSET OK
+_rtd_part_outl(0x1800dc80, 20, 20, 0); //[20]offset_en_eq=0
+//CK-Lane LEQ Offset Result
+_rtd_part_outl(0x1800dc74, 7, 4, 8); //reg_p0_b_offset_coef_sel[4:0]	//0:Data_Even, 1:Data_Odd, 2:Edge_Even, 3:Edge_Odd, 8:EQ
+_rtd_part_inl(0x1800dc84, 28, 24); //EQ_Koffset
+//========================================= STEP3 All DCVS KOFF ==
+//B-LANE
+_rtd_part_outl(0x1800dc4c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc4c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc50, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc50, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//Check Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0x8); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc44, 7, 4, 0x9); //reg_p0_b_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EOOffset cal. OK Check
+_rtd_part_inl(0x1800dc44, 28, 28); //DATA OFFSET OK
+//Disable B-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc4c, 10, 10, 0); //[10]offset_en_de=1->0
+_rtd_part_outl(0x1800dc4c, 20, 20, 0); //[20]offset_en_do=1->0
+_rtd_part_outl(0x1800dc50, 0, 0, 0); //[20]offset_en_ee=1->0
+_rtd_part_outl(0x1800dc50, 10, 10, 0); //[20]offset_en_eo=1->0
+//===G LANE KOFF Data/Edge
+_rtd_part_outl(0x1800dc5c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc5c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc60, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc60, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//G-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xA); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc54, 7, 4, 0x9); //reg_p0_g_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc54, 28, 28); //DATA OFFSET OK
+//G-LANE
+_rtd_part_outl(0x1800dc5c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc5c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc60, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc60, 10, 10, 0); //[20]offset_en_eo=0
+//===R LANE KOFF Data/Edge
+_rtd_part_outl(0x1800dc6c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc6c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc70, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc70, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//R-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xC); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc64, 7, 4, 0x9); //reg_p0_r_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc64, 28, 28); //DATA OFFSET OK
+//Disable R-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc6c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc6c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc70, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc70, 10, 10, 0); //[20]offset_en_eo=0
+//===CK LANE KOFF Data/Edge
+_rtd_part_outl(0x1800dc7c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_outl(0x1800dc7c, 20, 20, 1); //[20]offset_en_do=1
+_rtd_part_outl(0x1800dc80, 0, 0, 1); //[20]offset_en_ee=1
+_rtd_part_outl(0x1800dc80, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//CK-Lane DCVS Offset cal. OK Check
+_rtd_part_outl(0x1800dd7c, 5, 0, 0xE); //reg_p0_dig_debug_sel; Debug port0 signal selection
+_rtd_part_outl(0x1800dc74, 7, 4, 0x9); //reg_p0_ck_offset_coef_sel
+_rtd_part_inl(0x1800dd84, 27, 27); //DE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 26, 26); //DO Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 25, 25); //EE Offset cal. OK Check
+_rtd_part_inl(0x1800dd84, 24, 24); //EO Offset cal. OK Check
+_rtd_part_inl(0x1800dc74, 28, 28); //DATA OFFSET OK
+//Disable CK-Lane DCVS KOFF
+_rtd_part_outl(0x1800dc7c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc7c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc80, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc80, 10, 10, 0); //[20]offset_en_eo=0
+//B-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc44, 7, 4, 0); //reg_p0_b_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 4, 0); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 1); //reg_p0_b_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 4, 0); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 2); //reg_p0_b_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 4, 0); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 3); //reg_p0_b_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 4, 0); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc44, 7, 4, 8); //reg_p0_b_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 4, 0); //EQ_Koffset
+//G-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc54, 7, 4, 0); //reg_p0_g_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 12, 8); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 1); //reg_p0_g_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 12, 8); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 2); //reg_p0_g_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 12, 8); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 3); //reg_p0_g_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 12, 8); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc54, 7, 4, 8); //reg_p0_g_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 12, 8); //EQ_Koffset
+//R-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc64, 7, 4, 0); //reg_p0_r_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 20, 16); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 1); //reg_p0_r_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 20, 16); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 2); //reg_p0_r_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 20, 16); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 3); //reg_p0_r_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 20, 16); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc64, 7, 4, 8); //reg_p0_r_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 20, 16); //EQ_Koffset
+//CK-Lane LEQ & DCVS Offset Result
+_rtd_part_outl(0x1800dc74, 7, 4, 0); //reg_p0_ck_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 28, 24); //Data_Even_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 1); //reg_p0_ck_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 28, 24); //Data_Odd_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 2); //reg_p0_ck_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 28, 24); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 3); //reg_p0_ck_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 28, 24); //Edge_Even_Koffset
+_rtd_part_outl(0x1800dc74, 7, 4, 8); //reg_p0_ck_offset_coef_sel[4:0]
+_rtd_part_inl(0x1800dc84, 28, 24); //EQ_Koffset
+//Input on
+_rtd_part_outl(0x1800da50, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da70, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da90, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da30, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da58, 28, 28, 0); //#B  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da5c, 6, 3, 0xf); //#B  DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da38, 28, 28, 0); //#CK DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da3c, 6, 3, 0xf); //#CK DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da78, 28, 28, 0); //#G  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da7c, 6, 3, 0xf); //#G  DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da98, 28, 28, 0); //#R  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da9c, 6, 3, 0xf); //#R  DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800dd04, 0, 0, 1); //R finetunstart on
+_rtd_part_outl(0x1800dce8, 0, 0, 1); //G finetunstart on
+_rtd_part_outl(0x1800dcc8, 0, 0, 1); //B finetunstart on
+_rtd_part_outl(0x1800dd20, 0, 0, 1); //CK finetunstart on
+//=====[ACDR_settings_frl]finetunestart_on=====//
+_rtd_part_outl(0x1800dcc8, 0, 0, 0x1); //finetunestart_r
+_rtd_part_outl(0x1800dce8, 0, 0, 0x1); //finetunestart_g
+_rtd_part_outl(0x1800dd04, 0, 0, 0x1); //finetunestart_b
+_rtd_part_outl(0x1800dd20, 0, 0, 0x1); //finetunestart_ck
+//#===================================== phase III, ACDR to koffset mode
+//=====[ACDR_settings_frl]DCDR_release=====//
+_rtd_part_outl(0x1800dc88, 4, 4, 0x0);
+_rtd_part_outl(0x1800dc88, 12, 12, 0x0);
+_rtd_part_outl(0x1800dc88, 20, 20, 0x0);
+_rtd_part_outl(0x1800dc88, 28, 28, 0x0);
+_rtd_part_outl(0x1800dc88, 4, 4, 0x1);
+_rtd_part_outl(0x1800dc88, 12, 12, 0x1);
+_rtd_part_outl(0x1800dc88, 20, 20, 0x1);
+_rtd_part_outl(0x1800dc88, 28, 28, 0x1);
+_rtd_part_outl(0x1800dc00, 0, 0, 0x0);
+_rtd_part_outl(0x1800dc00, 1, 1, 0x0);
+_rtd_part_outl(0x1800dc00, 2, 2, 0x0);
+_rtd_part_outl(0x1800dc00, 3, 3, 0x0);
+_rtd_part_outl(0x1800dc00, 0, 0, 0x1);
+_rtd_part_outl(0x1800dc00, 1, 1, 0x1);
+_rtd_part_outl(0x1800dc00, 2, 2, 0x1);
+_rtd_part_outl(0x1800dc00, 3, 3, 0x1);
+//DFE Adaptation power off
+_rtd_part_outl(0x1800da3c, 7, 7, 0); //Mark2_Modify; CK-Lane DFE_ADAPT_EN
+_rtd_part_outl(0x1800da5c, 7, 7, 0); //Mark2_Modify; B-Lane DFE_ADAPT_EN
+_rtd_part_outl(0x1800da7c, 7, 7, 0); //Mark2_Modify; G-Lane DFE_ADAPT_EN
+_rtd_part_outl(0x1800da9c, 7, 7, 0); //Mark2_Modify; R-Lane DFE_ADAPT_EN

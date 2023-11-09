@@ -1,0 +1,23 @@
+config RTK_KDRV_GPIO_LED
+    tristate "RTK_KDRV_GPIO_LED"
+    depends on RTK_KDRV_LEDS
+    depends on LEDS_CLASS
+    depends on NEW_LEDS
+    default y
+    help
+        RTK GPIO LED
+
+config RTK_KDRV_I2C_LED
+    bool "RTK_KDRV_I2C_LED"
+    default n
+    help
+        RTK GOOGLE VOICE i2c LED
+
+config RTK_KDRV_SERIAL_LED
+    tristate "RTK_KDRV_SERIAL_LED"
+    default n
+    help
+        RTK GOOGLE VOICE SERIAL LED
+
+#source "drivers/rtk_kdriver/leds/trigger/Kconfig"
+

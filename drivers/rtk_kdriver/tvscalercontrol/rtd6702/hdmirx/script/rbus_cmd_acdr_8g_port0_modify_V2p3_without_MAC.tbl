@@ -1,0 +1,1868 @@
+//=====[DFE_ini_frl]=====//
+//#include "01_RLE1025_DFE_ini_Multi-Lane_leq_trans_mode1_20200825.tbl"
+//_rtd_outl(0x18003E00,0x00000000);
+//_rtd_outl(0x18003E04,0x00000000);
+//_rtd_outl(0x18003E00,0xFFFFFFFF);
+//_rtd_outl(0x18003E04,0xFFFFFFFF);
+//RESET DFE_LEQ_DPHY, 20200825
+_rtd_outl(0x1800dd70, 0x00000000);
+//R lane
+_rtd_outl(0x180b7c00, 0x00000000);
+_rtd_outl(0x180b7c04, 0x00000000);
+_rtd_outl(0x180b7c08, 0x20C00000);
+_rtd_outl(0x180b7c0c, 0x05b47400);
+_rtd_outl(0x180b7c10, 0xc0004000);
+_rtd_outl(0x180b7c14, 0x00280000);
+_rtd_outl(0x180b7c18, 0x1038ffe0);
+_rtd_outl(0x180b7c1c, 0x7FF07FE0);
+_rtd_outl(0x180b7c20, 0x3e0383e0);
+_rtd_outl(0x180b7c24, 0x00000000);
+_rtd_outl(0x180b7c28, 0xFE9D00E7);
+_rtd_outl(0x180b7c2c, 0xFF0007C0);
+_rtd_outl(0x180b7c30, 0xff005400);
+//G lane
+_rtd_outl(0x180b7c40, 0x00000000);
+_rtd_outl(0x180b7c44, 0x00000000);
+_rtd_outl(0x180b7c48, 0x20C00000);
+_rtd_outl(0x180b7c4c, 0x05b47400);
+_rtd_outl(0x180b7c50, 0xc0004000);
+_rtd_outl(0x180b7c54, 0x00280000);
+_rtd_outl(0x180b7c58, 0x1038ffe0);
+_rtd_outl(0x180b7c5c, 0x7FF07FE0);
+_rtd_outl(0x180b7c60, 0x3e0383e0);
+_rtd_outl(0x180b7c64, 0x00000000);
+_rtd_outl(0x180b7c68, 0xFE9D00E7);
+_rtd_outl(0x180b7c6c, 0xFF0007C0);
+_rtd_outl(0x180b7c70, 0xff005400);
+//B lane
+_rtd_outl(0x180b7c80, 0x00000000);
+_rtd_outl(0x180b7c84, 0x00000000);
+_rtd_outl(0x180b7c88, 0x20C00000);
+_rtd_outl(0x180b7c8c, 0x05b47400);
+_rtd_outl(0x180b7c90, 0xc0004000); //[30]leq2_inv=1, [14] tap0_notrans=1
+_rtd_outl(0x180b7c94, 0x00280000); //LEQ_GAIN1=0,LEQ_GAIN2=0
+_rtd_outl(0x180b7c98, 0x1038ffe0); //leq1_trans_mode = 3
+_rtd_outl(0x180b7c9c, 0x7FF07FE0);
+_rtd_outl(0x180b7ca0, 0x3e0383e0);
+_rtd_outl(0x180b7ca4, 0x00000000);
+_rtd_outl(0x180b7ca8, 0xFE9D00E7); //VTH_MAX=7,VTH_MIN=0, LEQ_MIN=31, LEQ_INIT=15
+_rtd_outl(0x180b7cac, 0xFF0007C0); //TAP0 max=7'd39,run_length=3'b010, vth_init=7, tap1_max=0
+_rtd_outl(0x180b7cb0, 0xff005400);
+//CK lane
+_rtd_outl(0x180b7cc0, 0x00000000);
+_rtd_outl(0x180b7cc4, 0x00000000);
+_rtd_outl(0x180b7cc8, 0x20C00000);
+_rtd_outl(0x180b7ccc, 0x05b47400);
+_rtd_outl(0x180b7cd0, 0xc0004000);
+_rtd_outl(0x180b7cd4, 0x00280000);
+_rtd_outl(0x180b7cd8, 0x1038ffe0);
+_rtd_outl(0x180b7cdc, 0x7FF07FE0);
+_rtd_outl(0x180b7ce0, 0x3e0383e0);
+_rtd_outl(0x180b7ce4, 0x00000000);
+_rtd_outl(0x180b7ce8, 0xFE9D00E7);
+_rtd_outl(0x180b7cec, 0xFF0007C0);
+_rtd_outl(0x180b7cf0, 0xff005400);
+// *************
+//B-Lane_initial DFE Value_Start
+_rtd_part_outl(0x180b7ca8, 9, 5, 5); //VTHP_INIT_B[4:0]	9:5	R/W	0x0F		VTHP INIT
+_rtd_part_outl(0x180b7ca8, 4, 0, 5); //VTHN_INIT_B[4:0]	4:0	R/W	0x0F		VTHN INIT
+_rtd_part_outl(0x180b7ca0, 4, 0, 10); //LEQ_INIT_B[4:0]	4:0		R/W	0x00	LEQ INIT
+_rtd_part_outl(0x180b7ca4, 31, 24, 16); //TAP0_INIT_B[7:0]	31:24	R/W	0x00	TAP0 INIT
+_rtd_part_outl(0x180b7ca4, 23, 18, 0); //TAP1_INIT_B[5:0]	23:18	R/W	0x00	TAP1 INIT
+_rtd_part_outl(0x180b7ca4, 17, 12, 0); //TAP2_INIT_B[5:0]	17:12	R/W	0x00	TAP2 INIT
+_rtd_part_outl(0x180b7ca4, 11, 6, 0); //TAP3_INIT_B[5:0]	11:6	R/W	0x00	TAP3 INIT
+_rtd_part_outl(0x180b7ca4, 5, 0, 0); //TAP4_INIT_B[5:0]	5:0		R/W	0x00	TAP4 INIT
+//B-Lane DFE COEF LOAD IN
+_rtd_part_outl(0x180b7c8c, 0, 0, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP0 LOAD IN
+_rtd_part_outl(0x180b7c8c, 1, 1, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP1 LOAD IN
+_rtd_part_outl(0x180b7c8c, 2, 2, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP2 LOAD IN
+_rtd_part_outl(0x180b7c8c, 3, 3, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP3 LOAD IN
+_rtd_part_outl(0x180b7c8c, 4, 4, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP4 LOAD IN
+_rtd_part_outl(0x180b7c8c, 5, 5, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	Vth LOAD IN
+_rtd_part_outl(0x180b7c88, 31, 31, 1); //EQ_SELREG_B	31	R/W	0x0	EQ SELREG	LEQ LOAD IN
+_rtd_part_outl(0x180b7c8c, 5, 0, 0); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP LOAD IN
+_rtd_part_outl(0x180b7c88, 31, 31, 0x0); //EQ_SELREG_B	31	R/W	0x0	EQ SELREG	LEQ LOAD IN
+//B-Lane_initial DFE Value_Stop
+//*****************************
+// ***************************
+//G-Lane_initial DFE Value_Start
+_rtd_part_outl(0x180b7c68, 9, 5, 5); //VTHP_INIT_B[4:0]	9:5	R/W	0x0F		VTHP INIT
+_rtd_part_outl(0x180b7c68, 4, 0, 5); //VTHN_INIT_B[4:0]	4:0	R/W	0x0F		VTHN INIT
+_rtd_part_outl(0x180b7c60, 4, 0, 10); //LEQ_INIT_B[4:0]	4:0		R/W	0x00	LEQ INIT
+_rtd_part_outl(0x180b7c64, 31, 24, 16); //TAP0_INIT_B[7:0]	31:24	R/W	0x00	TAP0 INIT
+_rtd_part_outl(0x180b7c64, 23, 18, 0); //TAP1_INIT_B[5:0]	23:18	R/W	0x00	TAP1 INIT
+_rtd_part_outl(0x180b7c64, 17, 12, 0); //TAP2_INIT_B[5:0]	17:12	R/W	0x00	TAP2 INIT
+_rtd_part_outl(0x180b7c64, 11, 6, 0); //TAP3_INIT_B[5:0]	11:6	R/W	0x00	TAP3 INIT
+_rtd_part_outl(0x180b7c64, 5, 0, 0); //TAP4_INIT_B[5:0]	5:0		R/W	0x00	TAP4 INIT
+//G-Lane DFE COEF LOAD IN
+_rtd_part_outl(0x180b7c4c, 0, 0, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP0 LOAD IN
+_rtd_part_outl(0x180b7c4c, 1, 1, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP1 LOAD IN
+_rtd_part_outl(0x180b7c4c, 2, 2, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP2 LOAD IN
+_rtd_part_outl(0x180b7c4c, 3, 3, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP3 LOAD IN
+_rtd_part_outl(0x180b7c4c, 4, 4, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP4 LOAD IN
+_rtd_part_outl(0x180b7c4c, 5, 5, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	Vth LOAD IN
+_rtd_part_outl(0x180b7c48, 31, 31, 1); //EQ_SELREG_B	31	R/W	0x0	EQ SELREG	LEQ LOAD IN
+_rtd_part_outl(0x180b7c4c, 5, 0, 0); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP LOAD IN
+_rtd_part_outl(0x180b7c48, 31, 31, 0x0); //EQ_SELREG_B	31	R/W	0x0	EQ SELREG	LEQ LOAD IN
+//G-Lane_initial DFE Value_Stop
+//**************************************************************************************************************************************
+// *************************************************************************************************************************************
+//R-Lane_initial DFE Value_Start
+_rtd_part_outl(0x180b7c28, 9, 5, 5); //VTHP_INIT_B[4:0]	9:5	R/W	0x0F		VTHP INIT
+_rtd_part_outl(0x180b7c28, 4, 0, 5); //VTHN_INIT_B[4:0]	4:0	R/W	0x0F		VTHN INIT
+_rtd_part_outl(0x180b7c20, 4, 0, 10); //LEQ_INIT_B[4:0]	4:0		R/W	0x00	LEQ INIT
+_rtd_part_outl(0x180b7c24, 31, 24, 16); //TAP0_INIT_B[7:0]	31:24	R/W	0x00	TAP0 INIT
+//_rtd_part_outl(0x180BD420, 4, 0, 25);  			//LEQ_INIT_B[4:0]	4:0		R/W	0x00	LEQ INIT
+//_rtd_part_outl(0x180BD424, 31, 24, 10);   		//TAP0_INIT_B[7:0]	31:24	R/W	0x00	TAP0 INIT
+_rtd_part_outl(0x180b7c24, 23, 18, 0); //TAP1_INIT_B[5:0]	23:18	R/W	0x00	TAP1 INIT
+_rtd_part_outl(0x180b7c24, 17, 12, 0); //TAP2_INIT_B[5:0]	17:12	R/W	0x00	TAP2 INIT
+_rtd_part_outl(0x180b7c24, 11, 6, 0); //TAP3_INIT_B[5:0]	11:6	R/W	0x00	TAP3 INIT
+_rtd_part_outl(0x180b7c24, 5, 0, 0); //TAP4_INIT_B[5:0]	5:0		R/W	0x00	TAP4 INIT
+//R-Lane DFE COEF LOAD IN
+_rtd_part_outl(0x180b7c0c, 0, 0, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP0 LOAD IN
+_rtd_part_outl(0x180b7c0c, 1, 1, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP1 LOAD IN
+_rtd_part_outl(0x180b7c0c, 2, 2, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP2 LOAD IN
+_rtd_part_outl(0x180b7c0c, 3, 3, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP3 LOAD IN
+_rtd_part_outl(0x180b7c0c, 4, 4, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP4 LOAD IN
+_rtd_part_outl(0x180b7c0c, 5, 5, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	Vth LOAD IN
+_rtd_part_outl(0x180b7c08, 31, 31, 1); //EQ_SELREG_B	31	R/W	0x0	EQ SELREG	LEQ LOAD IN
+_rtd_part_outl(0x180b7c0c, 4, 0, 0); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP LOAD IN
+_rtd_part_outl(0x180b7c08, 31, 31, 0x0); //EQ_SELREG_B	31	R/W	0x0	EQ SELREG	LEQ LOAD IN
+//R-Lane_initial DFE Value_Stop
+//*************
+// ************
+//CK-Lane_initial DFE Value_Start
+_rtd_part_outl(0x180b7ce8, 9, 5, 5); //VTHP_INIT_B[4:0]	9:5	R/W	0x0F		VTHP INIT
+_rtd_part_outl(0x180b7ce8, 4, 0, 5); //VTHN_INIT_B`[4:0]	4:0	R/W	0x0F		VTHN INIT
+_rtd_part_outl(0x180b7ce0, 4, 0, 10); //LEQ_INIT_B[4:0]	4:0		R/W	0x00	LEQ INIT
+_rtd_part_outl(0x180b7ce4, 31, 24, 16); //TAP0_INIT_B[7:0]	31:24	R/W	0x00	TAP0 INIT
+_rtd_part_outl(0x180b7ce4, 23, 18, 0); //TAP1_INIT_B[5:0]	23:18	R/W	0x00	TAP1 INIT
+_rtd_part_outl(0x180b7ce4, 17, 12, 0); //TAP2_INIT_B[5:0]	17:12	R/W	0x00	TAP2 INIT
+_rtd_part_outl(0x180b7ce4, 11, 6, 0); //TAP3_INIT_B[5:0]	11:6	R/W	0x00	TAP3 INIT
+_rtd_part_outl(0x180b7ce4, 5, 0, 0); //TAP4_INIT_B[5:0]	5:0		R/W	0x00	TAP4 INIT
+//CK-Lane DFE COEF LOAD IN
+_rtd_part_outl(0x180b7ccc, 0, 0, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP0 LOAD IN
+_rtd_part_outl(0x180b7ccc, 1, 1, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP1 LOAD IN
+_rtd_part_outl(0x180b7ccc, 2, 2, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP2 LOAD IN
+_rtd_part_outl(0x180b7ccc, 3, 3, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP3 LOAD IN
+_rtd_part_outl(0x180b7ccc, 4, 4, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP4 LOAD IN
+_rtd_part_outl(0x180b7ccc, 5, 5, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	Vth LOAD IN
+_rtd_part_outl(0x180b7cc8, 31, 31, 1); //EQ_SELREG_B	31	R/W	0x0	EQ SELREG	LEQ LOAD IN
+_rtd_part_outl(0x180b7ccc, 5, 0, 0); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP LOAD IN
+_rtd_part_outl(0x180b7cc8, 31, 31, 0x0); //EQ_SELREG_B	31	R/W	0x0	EQ SELREG	LEQ LOAD IN
+//CK-Lane_initial DFE Value_Stop
+//**************************************************************************************************************************************
+_rtd_part_outl(0x180b7c20, 9, 5, 30); //LEQ_MIN_R[4:0]
+_rtd_part_outl(0x180b7c0c, 5, 5, 1); //TAP_LOAD_IN_B[4:0]	4:0	R/W	0x00	TAP LOAD IN
+_rtd_part_outl(0x180b7cf4, 17, 15, 3); //Adaption flow control mode
+_rtd_part_outl(0x180b7cb4, 17, 15, 3); //Adaption flow control mode
+_rtd_part_outl(0x180b7c74, 17, 15, 3); //Adaption flow control mode
+_rtd_part_outl(0x180b7c34, 17, 15, 3); //Adaption flow control mode
+//=====[ACDR_settings]set FLD=====//
+//========================================= RBUS Start =====================================================
+//======================================= mod reset
+_rtd_outl(0x1800dd2c, 0x00000302);
+_rtd_outl(0x1800dcc8, 0x00008404); //1
+_rtd_outl(0x1800dce8, 0x00008404);
+_rtd_outl(0x1800dd04, 0x00008404);
+_rtd_outl(0x1800dd20, 0x00008404);
+//======================================= set coarse up/dn limit for vco coarse tune
+_rtd_outl(0x1800dcbc, 0x80e100db);
+_rtd_outl(0x1800dcdc, 0x80e100db);
+_rtd_outl(0x1800dcf8, 0x80e100db);
+_rtd_outl(0x1800dd14, 0x80e100db);
+_rtd_outl(0x1800dcc4, 0x0ef0db09);
+_rtd_outl(0x1800dce4, 0x0ef0db09);
+_rtd_outl(0x1800dd00, 0x0ef0db09);
+_rtd_outl(0x1800dd1c, 0x0ef0db09);
+//======================================= set FLD timer
+_rtd_outl(0x1800dcc0, 0xa9878002);
+_rtd_outl(0x1800dce0, 0xa9878002);
+_rtd_outl(0x1800dcfc, 0xa9878002);
+_rtd_outl(0x1800dd18, 0xa9878002);
+_rtd_outl(0x1800dcd0, 0x00000100);
+_rtd_outl(0x1800dcf0, 0x00000100);
+_rtd_outl(0x1800dd0c, 0x00000100);
+_rtd_outl(0x1800dd28, 0x00000100);
+_rtd_outl(0x1800dcc4, 0x0ef0db20);
+_rtd_outl(0x1800dce4, 0x0ef0db20);
+_rtd_outl(0x1800dd00, 0x0ef0db20);
+_rtd_outl(0x1800dd1c, 0x0ef0db20);
+//======================================= set coarse up/dn limit for vco coarse tune
+_rtd_part_outl(0x1800dcbc, 27, 16, 0x243); //reg_p0_b_lock_up_limit
+_rtd_part_outl(0x1800dcbc, 11, 0, 0x215); //reg_p0_b_lock_dn_limit
+_rtd_part_outl(0x1800dcdc, 27, 16, 0x243); //reg_p0_g_lock_up_limit
+_rtd_part_outl(0x1800dcdc, 11, 0, 0x215); //reg_p0_g_lock_dn_limit
+_rtd_part_outl(0x1800dcf8, 27, 16, 0x243); //reg_p0_r_lock_up_limit
+_rtd_part_outl(0x1800dcf8, 11, 0, 0x215); //reg_p0_r_lock_dn_limit
+_rtd_part_outl(0x1800dd14, 27, 16, 0x243); //reg_p0_ck_lock_up_limit
+_rtd_part_outl(0x1800dd14, 11, 0, 0x215); //reg_p0_ck_lock_dn_limit
+_rtd_part_outl(0x1800dcc4, 31, 20, 0x243); //reg_p0_b_coarse_lock_up_limit
+_rtd_part_outl(0x1800dcc4, 19, 8, 0x215); //reg_p0_b_coarse_lock_dn_limit
+_rtd_part_outl(0x1800dce4, 31, 20, 0x243); //reg_p0_g_coarse_lock_up_limit
+_rtd_part_outl(0x1800dce4, 19, 8, 0x215); //reg_p0_g_coarse_lock_dn_limit
+_rtd_part_outl(0x1800dd00, 31, 20, 0x243); //reg_p0_r_coarse_lock_up_limit
+_rtd_part_outl(0x1800dd00, 19, 8, 0x215); //reg_p0_r_coarse_lock_dn_limit
+_rtd_part_outl(0x1800dd1c, 31, 20, 0x243); //reg_p0_ck_coarse_lock_up_limit
+_rtd_part_outl(0x1800dd1c, 19, 8, 0x215); //reg_p0_ck_coarse_lock_dn_limit
+//#====================================== set XTAL divide num
+_rtd_outl(0x1800dcb8, 0x86218040);
+_rtd_outl(0x1800dcd8, 0x86218040);
+_rtd_outl(0x1800dcf4, 0x86218040);
+_rtd_outl(0x1800dd10, 0x86218040);
+_rtd_part_outl(0x1800dcb8, 10, 3, 0x1E); //reg_p0_b_divide_num=30
+_rtd_part_outl(0x1800dcd8, 10, 3, 0x1E); //reg_p0_g_divide_num=30
+_rtd_part_outl(0x1800dcf4, 10, 3, 0x1E); //reg_p0_r_divide_num=30
+_rtd_part_outl(0x1800dd10, 10, 3, 0x1E); //reg_p0_ck_divide_num=30
+//#====================================== SET DPHY 12G
+_rtd_outl(0x1800dd6c, 0x00006f0d); //ACDR_EN
+_rtd_outl(0x1800dd6c, 0x00006f0f);
+//#====================================== SET APHY 12G
+//=====[ACDR_settings]set TOPini=====//
+_rtd_outl(0x1800da04, 0x0000000a);
+_rtd_outl(0x1800da08, 0x00101111);
+_rtd_outl(0x1800da10, 0x0004000c);
+_rtd_outl(0x1800da18, 0x00000001);
+//=====[ACDR_settings]set APHY ini_1=====//
+_rtd_outl(0x1800dab4, 0x046b0845); //CMU SETTING, n code=111
+_rtd_outl(0x1800da30, 0x03d09108); //DATALANE setting reg1~4
+_rtd_part_outl(0x1800da30, 1, 1, 0); //Mark2_Modify;    CK-Lane INPOFF_SINGLE_EN
+_rtd_part_outl(0x1800da30, 2, 2, 0); //Mark2_Modify;    CK-Lane INNOFF_SINGLE_EN
+_rtd_part_outl(0x1800da30, 3, 3, 1); //Mark2_Modify;    CK-Lane POW_AC_COUPLE
+_rtd_part_outl(0x1800da30, 5, 4, 1); //Mark2_Modify;    CK-Lane RXVCM_SEL[1:0]
+_rtd_part_outl(0x1800da30, 6, 6, 1); //Mark2_Modify;    CK-Lane FAST_SW_EN
+_rtd_part_outl(0x1800da30, 7, 7, 1); //Mark2_Modify;    CK-Lane FAST_SW_DELAY_EN
+_rtd_part_outl(0x1800da30, 9, 8, 2); //Mark2_Modify;    CK-Lane RLSEL_LE1
+_rtd_part_outl(0x1800da30, 11, 10, 3); //Mark2_Modify;  CK-Lane RLSEL_LE2
+_rtd_part_outl(0x1800da30, 13, 12, 3); //Mark2_Modify;  CK-Lane RLSEL_NC
+_rtd_part_outl(0x1800da30, 15, 14, 1); //Mark2_Modify;  CK-Lane RLSEL_TAP0
+_rtd_part_outl(0x1800da30, 19, 16, 12); //Mark2_Modify; CK-Lane RSSEL_LE1_1
+_rtd_part_outl(0x1800da30, 23, 20, 12); //Mark2_Modify; CK-Lane RSSEL_LE1_2
+_rtd_part_outl(0x1800da30, 27, 24, 6); //Mark2_Modify;  CK-Lane RSSEL_LE2
+_rtd_part_outl(0x1800da30, 29, 28, 3); //Mark2_Modify;  CK-Lane RSSEL_TAP0
+_rtd_part_outl(0x1800da30, 31, 30, 1); //Mark2_Modify;  CK-Lane KOFF_RANGE
+_rtd_outl(0x1800da34, 0xa3d87f77); //DATALANE setting reg5~8
+_rtd_part_outl(0x1800da34, 3, 0, 15); //Mark2_Modify;    CK-Lane LE1_ISEL_IN
+_rtd_part_outl(0x1800da34, 7, 4, 15); //Mark2_Modify;    CK-Lane LE2_ISEL_IN
+_rtd_part_outl(0x1800da34, 11, 8, 13); //Mark2_Modify;   CK-Lane LE_NC_ISEL_IN
+_rtd_part_outl(0x1800da34, 15, 12, 15); //Mark2_Modify;  CK-Lane TAP0_ISEL_IN
+_rtd_part_outl(0x1800da34, 17, 16, 0); //Mark2_Modify;   CK-Lane LE_IHALF[1:0]
+_rtd_part_outl(0x1800da34, 18, 18, 0); //Mark2_Modify;   CK-Lane NC_IHALF
+_rtd_part_outl(0x1800da34, 19, 19, 0); //Mark2_Modify;   CK-Lane TAP0_IHALF
+_rtd_part_outl(0x1800da34, 20, 20, 0); //Mark2_Modify;   CK-Lane EN_LEQ6G
+_rtd_part_outl(0x1800da34, 21, 21, 1); //Mark2_Modify;   CK-Lane RS_CAL_EN
+//_rtd_part_outl(0x1800da34, 22, 22, 1); //Mark2_Modify; CK-Lane POW_NC
+//_rtd_part_outl(0x1800da34, 23, 23, 1); //Mark2_Modify; CK-Lane POW_LEQ_KOFF
+//_rtd_part_outl(0x1800da34, 24, 24, 1); //Mark2_Modify; CK-Lane POW_LEQ
+_rtd_part_outl(0x1800da34, 25, 25, 1); //Mark2_Modify;   CK-Lane POW_DATALANE_BIAS
+_rtd_part_outl(0x1800da34, 26, 26, 0); //Mark2_Modify;   CK-Lane REG_FORCE_STARTUP(Const-GM)
+_rtd_part_outl(0x1800da34, 27, 27, 0); //Mark2_Modify;   CK-Lane REG_POWB_STARTUP
+_rtd_part_outl(0x1800da34, 30, 28, 3); //Mark2_Modify;   CK-Lane DATALANE_BIAS_ISEL[2:0]
+_rtd_part_outl(0x1800da34, 31, 31, 1); //Mark2_Modify;   CK-Lane POW_LEQ_RL
+_rtd_outl(0x1800da38, 0x30feb1f8); //DATALANE setting reg9~12
+_rtd_part_outl(0x1800da38, 0, 0, 1); //Mark2_Modify;      CK-Lane POW_CMFB_1P8_CDM
+_rtd_part_outl(0x1800da38, 1, 1, 0); //Mark2_Modify;    CK-Lane SEL_CMFB_LS
+_rtd_part_outl(0x1800da38, 3, 2, 0); //Mark2_Modify;    CK-Lane LEQ_CUR_ADJ
+_rtd_part_outl(0x1800da38, 3, 1, 3); //Mark2_Modify;      CK-Lane PTAT_CUR_ADJ_FINE
+_rtd_part_outl(0x1800da38, 5, 4, 2); //Mark2_Modify;      CK-Lane PTAT_CUR_ADJ
+_rtd_part_outl(0x1800da38, 6, 6, 1); //Mark2_Modify;      CK-Lane REG_BIAS_POW_CON_GM
+_rtd_part_outl(0x1800da38, 8, 8, 1); //Mark2_Modify;      CK-Lane POW_DFE
+_rtd_part_outl(0x1800da38, 14, 12, 6); //Mark2_Modify;    CK-Lane DFE_SUMAMP_ISEL[2:0]
+_rtd_part_outl(0x1800da38, 15, 15, 0); //Mark2_Modify;    CK-Lane SUMAMP_DCGAIN_MAX
+_rtd_part_outl(0x1800da38, 16, 16, 0); //Mark2_Modify;    CK-Lane FR_CK_SEL
+//_rtd_part_outl(0x1800da38, 17, 17, 0); //Mark2_Modify;  CK-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da38, 18, 18, 0); //Mark2_Modify;    CK-Lane BBPD_FR2HR_EN
+_rtd_part_outl(0x1800da38, 23, 22, 0); //Mark2_Modify;    CK-Lane CK_DLY_EN
+_rtd_part_outl(0x1800da38, 24, 24, 0); //Mark2_Modify;    CK-Lane EN_EYE_MNT
+_rtd_part_outl(0x1800da38, 26, 26, 0); //Mark2_Modify;    CK-Lane VTH_MANAUAL
+_rtd_part_outl(0x1800da38, 27, 27, 0); //Mark2_Modify;    CK-Lane DA_EG_VOS_PULLLOW
+_rtd_part_outl(0x1800da38, 31, 29, 0); //Mark2_Modify;    CK-Lane dummy
+_rtd_outl(0x1800da3c, 0xd1b52410); //DATALANE setting reg13~16
+//_rtd_part_outl(0x1800da3C, 2, 0, 0); //Mark2_Modify;   CK-Lane dummy
+_rtd_part_outl(0x1800da3c, 6, 3, 15); //Mark2_Modify;  CK-Lane TAP_EN[4:1]
+_rtd_part_outl(0x1800da3c, 7, 7, 1); //Mark2_Modify;   CK-Lane DFE_ADAPT_EN
+//_rtd_part_outl(0x1800da3C, 12, 12, 0); //Mark2_Modify; CK-Lane DEMUX_FR_CK_SEL
+//_rtd_part_outl(0x1800da3C, 15, 13, 1); //Mark2_Modify; CK-Lane DEMUX_RATE_SEL[2:0]
+_rtd_outl(0x1800da40, 0x515011d1); //DATALANE setting reg17~20
+//_rtd_part_outl(0x1800da40, 16, 16, 1); //Mark2_Modify; CK-Lane DCDR_RSTB
+//_rtd_part_outl(0x1800da40, 17, 17, 1); //Mark2_Modify; CK-Lane ST_CODE_SEL
+//_rtd_part_outl(0x1800da40, 20, 20, 1); //Mark2_Modify; CK-Lane CDR_CK_SEL
+//_rtd_part_outl(0x1800da40, 22, 22, 1); //Mark2_Modify; CK-Lane DCDR_CKIN_SEL
+_rtd_outl(0x1800da44, 0x700a0004); //ACDR setting reg1~4
+//_rtd_part_outl(0x1800DA44, 19, 19, 0); //Mark2_Modify; CK-Lane SEL_HS_CLK
+//_rtd_part_outl(0x1800DA44, 17, 17, 0); //Mark2_Modify; CK-Lane SEL_DIV2_OR_DIV4
+//_rtd_part_outl(0x1800DA44, 5, 4, 0); //Mark2_Modify;   CK-Lane SEL_DIV_REF[1:0]
+//_rtd_part_outl(0x1800DA44, 7, 6, 0); //Mark2_Modify;   CK-Lane SEL_DIV_PLL[1:0]
+_rtd_outl(0x1800da44, 0x721f0007); //ACDR setting reg1~4
+_rtd_outl(0x1800da48, 0x60000385); //ACDR setting reg5~8
+//_rtd_part_outl(0x1800DA48, 11, 10, 0); //Mark2_Modify; CK-Lane PIX_RATE_SEL
+_rtd_part_outl(0x1800da48, 13, 12, 0); //Mark2_Modify; CK-Lane SEL_BAND_CAP
+_rtd_outl(0x1800da48, 0x61000385); //ACDR setting reg5~8
+_rtd_outl(0x1800da4c, 0x89001890); //ACDR setting reg12~9
+//_rtd_part_outl(0x1800DA4C, 13, 13, 0); //Mark2_Modify;   CK-Lane SEL_CKREF_0CKXTAL_1CKLANE
+//_rtd_part_outl(0x1800DA4C, 12, 12, 0); //Mark2_Modify;   CK-Lane RSTB_M_DIV
+//_rtd_part_outl(0x1800DA4C, 11, 11, 0); //Mark2_Modify;   CK-Lane RSTB_PRESCALER
+//_rtd_part_outl(0x1800DA4C, 9, 9, 0); //Mark2_Modify;     CK-Lane CMU_SEL_PRE_M_DIV
+_rtd_part_outl(0x1800da4c, 8, 0, 0x90); //Mark2_Modify;     CK-Lane CMU_SEL_M_DIV[8:0]
+_rtd_part_outl(0x1800da4c, 10, 10, 0); //Mark2_Modify;   CK-Lane CMU_SEL_POST_M_DIV
+////_rtd_part_outl(0x1800da4C, 19, 16, 3); //Mark2_Modify; CK-Lane LE1_ISEL_IN_2(dummy)
+_rtd_part_outl(0x1800da4c, 21, 20, 3); //Mark2_Modify;   CK-Lane RLSEL_LE1_2
+_rtd_part_outl(0x1800da4c, 23, 22, 3); //Mark2_Modify;   CK-Lane RLSEL_NC_2
+//_rtd_part_outl(0x1800da4C, 24, 24, 1); //Mark2_Modify;   CK-Lane POW_NC2
+_rtd_outl(0x1800da50, 0x03d09108); //DATALANE setting reg1~4
+_rtd_part_outl(0x1800da50, 1, 1, 0); //Mark2_Modify;    B-Lane INPOFF_SINGLE_EN
+_rtd_part_outl(0x1800da50, 2, 2, 0); //Mark2_Modify;    B-Lane INNOFF_SINGLE_EN
+_rtd_part_outl(0x1800da50, 3, 3, 1); //Mark2_Modify;    B-Lane POW_AC_COUPLE
+_rtd_part_outl(0x1800da50, 5, 4, 1); //Mark2_Modify;    B-Lane RXVCM_SEL[1:0]
+_rtd_part_outl(0x1800da50, 6, 6, 1); //Mark2_Modify;    B-Lane FAST_SW_EN
+_rtd_part_outl(0x1800da50, 7, 7, 1); //Mark2_Modify;    B-Lane FAST_SW_DELAY_EN
+_rtd_part_outl(0x1800da50, 9, 8, 2); //Mark2_Modify;    B-Lane RLSEL_LE1
+_rtd_part_outl(0x1800da50, 11, 10, 3); //Mark2_Modify;  B-Lane RLSEL_LE2
+_rtd_part_outl(0x1800da50, 13, 12, 3); //Mark2_Modify;  B-Lane RLSEL_NC
+_rtd_part_outl(0x1800da50, 15, 14, 1); //Mark2_Modify;  B-Lane RLSEL_TAP0
+_rtd_part_outl(0x1800da50, 19, 16, 12); //Mark2_Modify; B-Lane RSSEL_LE1_1
+_rtd_part_outl(0x1800da50, 23, 20, 12); //Mark2_Modify; B-Lane RSSEL_LE1_2
+_rtd_part_outl(0x1800da50, 27, 24, 6); //Mark2_Modify;  B-Lane RSSEL_LE2
+_rtd_part_outl(0x1800da50, 29, 28, 3); //Mark2_Modify;  B-Lane RSSEL_TAP0
+_rtd_part_outl(0x1800da50, 31, 30, 1); //Mark2_Modify;  B-Lane KOFF_RANGE
+_rtd_outl(0x1800da54, 0xa3d87f77); //DATALANE setting reg5~8
+_rtd_part_outl(0x1800da54, 3, 0, 15); //Mark2_Modify;    B-Lane LE1_ISEL_IN
+_rtd_part_outl(0x1800da54, 7, 4, 15); //Mark2_Modify;    B-Lane LE2_ISEL_IN
+_rtd_part_outl(0x1800da54, 11, 8, 13); //Mark2_Modify;   B-Lane LE_NC_ISEL_IN
+_rtd_part_outl(0x1800da54, 15, 12, 15); //Mark2_Modify;  B-Lane TAP0_ISEL_IN
+_rtd_part_outl(0x1800da54, 17, 16, 0); //Mark2_Modify;   B-Lane LE_IHALF[1:0]
+_rtd_part_outl(0x1800da54, 18, 18, 0); //Mark2_Modify;   B-Lane NC_IHALF
+_rtd_part_outl(0x1800da54, 19, 19, 0); //Mark2_Modify;   B-Lane TAP0_IHALF
+_rtd_part_outl(0x1800da54, 20, 20, 0); //Mark2_Modify;   B-Lane EN_LEQ6G
+_rtd_part_outl(0x1800da54, 21, 21, 1); //Mark2_Modify;   B-Lane RS_CAL_EN
+//_rtd_part_outl(0x1800da54, 22, 22, 1); //Mark2_Modify; B-Lane POW_NC
+//_rtd_part_outl(0x1800da54, 23, 23, 1); //Mark2_Modify; B-Lane POW_LEQ_KOFF
+//_rtd_part_outl(0x1800da54, 24, 24, 1); //Mark2_Modify; B-Lane POW_LEQ
+_rtd_part_outl(0x1800da54, 25, 25, 1); //Mark2_Modify;   B-Lane POW_DATALANE_BIAS
+_rtd_part_outl(0x1800da54, 26, 26, 0); //Mark2_Modify;   B-Lane REG_FORCE_STARTUP(Const-GM)
+_rtd_part_outl(0x1800da54, 27, 27, 0); //Mark2_Modify;   B-Lane REG_POWB_STARTUP
+_rtd_part_outl(0x1800da54, 30, 28, 3); //Mark2_Modify;   B-Lane DATALANE_BIAS_ISEL[2:0]
+_rtd_part_outl(0x1800da54, 31, 31, 1); //Mark2_Modify;   B-Lane POW_LEQ_RL
+_rtd_outl(0x1800da58, 0x30feb1f8); //DATALANE setting reg9~12
+_rtd_part_outl(0x1800da58, 0, 0, 1); //Mark2_Modify;      B-Lane POW_CMFB_1P8_CDM
+//_rtd_part_outl(0x1800da58, 1, 1, 0); //Mark2_Modify;    B-Lane SEL_CMFB_LS
+//_rtd_part_outl(0x1800da58, 3, 2, 0); //Mark2_Modify;    B-Lane LEQ_CUR_ADJ
+_rtd_part_outl(0x1800da58, 3, 1, 3); //Mark2_Modify;      B-Lane PTAT_CUR_ADJ_FINE
+_rtd_part_outl(0x1800da58, 5, 4, 2); //Mark2_Modify;      B-Lane PTAT_CUR_ADJ
+_rtd_part_outl(0x1800da58, 6, 6, 1); //Mark2_Modify;      B-Lane REG_BIAS_POW_CON_GM
+_rtd_part_outl(0x1800da58, 8, 8, 1); //Mark2_Modify;      B-Lane POW_DFE
+_rtd_part_outl(0x1800da58, 14, 12, 6); //Mark2_Modify;    B-Lane DFE_SUMAMP_ISEL[2:0]
+_rtd_part_outl(0x1800da58, 15, 15, 0); //Mark2_Modify;    B-Lane SUMAMP_DCGAIN_MAX
+_rtd_part_outl(0x1800da58, 16, 16, 0); //Mark2_Modify;    B-Lane FR_CK_SEL
+//_rtd_part_outl(0x1800da58, 17, 17, 0); //Mark2_Modify;  B-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da58, 18, 18, 0); //Mark2_Modify;    B-Lane BBPD_FR2HR_EN
+_rtd_part_outl(0x1800da58, 23, 22, 0); //Mark2_Modify;    B-Lane CK_DLY_EN
+_rtd_part_outl(0x1800da58, 24, 24, 0); //Mark2_Modify;    B-Lane EN_EYE_MNT
+_rtd_part_outl(0x1800da58, 26, 26, 0); //Mark2_Modify;    B-Lane VTH_MANAUAL
+_rtd_part_outl(0x1800da58, 27, 27, 0); //Mark2_Modify;    B-Lane DA_EG_VOS_PULLLOW
+_rtd_part_outl(0x1800da58, 31, 29, 0); //Mark2_Modify;    B-Lane dummy
+_rtd_outl(0x1800da5c, 0xd1b52410); //DATALANE setting reg13~16
+//_rtd_part_outl(0x1800da5C, 2, 0, 0); //Mark2_Modify;   B-Lane dummy
+_rtd_part_outl(0x1800da5c, 6, 3, 15); //Mark2_Modify;  B-Lane TAP_EN[4:1]
+_rtd_part_outl(0x1800da5c, 7, 7, 1); //Mark2_Modify;   B-Lane DFE_ADAPT_EN
+//_rtd_part_outl(0x1800da5C, 12, 12, 0); //Mark2_Modify; B-Lane DEMUX_FR_CK_SEL
+//_rtd_part_outl(0x1800da5C, 15, 13, 1); //Mark2_Modify; B-Lane DEMUX_RATE_SEL[2:0]
+_rtd_outl(0x1800da60, 0x515011d1); //DATALANE setting reg17~20
+//_rtd_part_outl(0x1800da60, 16, 16, 1); //Mark2_Modify; B-Lane DCDR_RSTB
+//_rtd_part_outl(0x1800da60, 17, 17, 1); //Mark2_Modify; B-Lane ST_CODE_SEL
+//_rtd_part_outl(0x1800da60, 20, 20, 1); //Mark2_Modify; B-Lane CDR_CK_SEL
+//_rtd_part_outl(0x1800da60, 22, 22, 1); //Mark2_Modify; B-Lane DCDR_CKIN_SEL
+_rtd_outl(0x1800da64, 0x700a0004); //ACDR setting reg1~4
+//_rtd_part_outl(0x1800DA64, 19, 19, 0); //Mark2_Modify; B-Lane SEL_HS_CLK
+//_rtd_part_outl(0x1800DA64, 17, 17, 0); //Mark2_Modify; B-Lane SEL_DIV2_OR_DIV4
+//_rtd_part_outl(0x1800DA64, 5, 4, 0); //Mark2_Modify;   B-Lane SEL_DIV_REF[1:0]
+//_rtd_part_outl(0x1800DA64, 7, 6, 0); //Mark2_Modify;   B-Lane SEL_DIV_PLL[1:0]
+_rtd_outl(0x1800da64, 0x721f0007); //ACDR setting reg1~4
+_rtd_outl(0x1800da68, 0x60000385); //ACDR setting reg5~8
+//_rtd_part_outl(0x1800DA68, 11, 10, 0); //Mark2_Modify; B-Lane PIX_RATE_SEL
+_rtd_part_outl(0x1800da68, 13, 12, 0); //Mark2_Modify; B-Lane SEL_BAND_CAP
+_rtd_outl(0x1800da68, 0x61000385); //ACDR setting reg5~8
+_rtd_outl(0x1800da6c, 0x8900386b); //ACDR setting reg12~9
+//_rtd_part_outl(0x1800DA6C, 13, 13, 0); //Mark2_Modify;   B-Lane SEL_CKREF_0CKXTAL_1CKLANE
+//_rtd_part_outl(0x1800DA6C, 12, 12, 0); //Mark2_Modify;   B-Lane RSTB_M_DIV
+//_rtd_part_outl(0x1800DA6C, 11, 11, 0); //Mark2_Modify;   B-Lane RSTB_PRESCALER
+//_rtd_part_outl(0x1800DA6C, 9, 9, 0); //Mark2_Modify;     B-Lane CMU_SEL_PRE_M_DIV
+//_rtd_part_outl(0x1800DA6C, 8, 0, 0); //Mark2_Modify;     B-Lane CMU_SEL_M_DIV[8:0]
+//_rtd_part_outl(0x1800DA6C, 10, 10, 0); //Mark2_Modify;   B-Lane CMU_SEL_POST_M_DIV
+////_rtd_part_outl(0x1800da6C, 19, 16, 3); //Mark2_Modify; B-Lane LE1_ISEL_IN_2(dummy)
+_rtd_part_outl(0x1800da6c, 21, 20, 3); //Mark2_Modify;   B-Lane RLSEL_LE1_2
+_rtd_part_outl(0x1800da6c, 23, 22, 3); //Mark2_Modify;   B-Lane RLSEL_NC_2
+//_rtd_part_outl(0x1800da6C, 24, 24, 1); //Mark2_Modify;   B-Lane POW_NC2
+_rtd_outl(0x1800da70, 0x03d09108); //DATALANE setting reg1~4
+_rtd_part_outl(0x1800da70, 1, 1, 0); //Mark2_Modify;    G-Lane INPOFF_SINGLE_EN
+_rtd_part_outl(0x1800da70, 2, 2, 0); //Mark2_Modify;    G-Lane INNOFF_SINGLE_EN
+_rtd_part_outl(0x1800da70, 3, 3, 1); //Mark2_Modify;    G-Lane POW_AC_COUPLE
+_rtd_part_outl(0x1800da70, 5, 4, 1); //Mark2_Modify;    G-Lane RXVCM_SEL[1:0]
+_rtd_part_outl(0x1800da70, 6, 6, 1); //Mark2_Modify;    G-Lane FAST_SW_EN
+_rtd_part_outl(0x1800da70, 7, 7, 1); //Mark2_Modify;    G-Lane FAST_SW_DELAY_EN
+_rtd_part_outl(0x1800da70, 9, 8, 2); //Mark2_Modify;    G-Lane RLSEL_LE1
+_rtd_part_outl(0x1800da70, 11, 10, 3); //Mark2_Modify;  G-Lane RLSEL_LE2
+_rtd_part_outl(0x1800da70, 13, 12, 3); //Mark2_Modify;  G-Lane RLSEL_NC
+_rtd_part_outl(0x1800da70, 15, 14, 1); //Mark2_Modify;  G-Lane RLSEL_TAP0
+_rtd_part_outl(0x1800da70, 19, 16, 12); //Mark2_Modify; G-Lane RSSEL_LE1_1
+_rtd_part_outl(0x1800da70, 23, 20, 12); //Mark2_Modify; G-Lane RSSEL_LE1_2
+_rtd_part_outl(0x1800da70, 27, 24, 6); //Mark2_Modify;  G-Lane RSSEL_LE2
+_rtd_part_outl(0x1800da70, 29, 28, 3); //Mark2_Modify;  G-Lane RSSEL_TAP0
+_rtd_part_outl(0x1800da70, 31, 30, 1); //Mark2_Modify;  G-Lane KOFF_RANGE
+_rtd_outl(0x1800da74, 0xa3d87f77); //DATALANE setting reg5~8
+_rtd_part_outl(0x1800da74, 3, 0, 15); //Mark2_Modify;    G-Lane LE1_ISEL_IN
+_rtd_part_outl(0x1800da74, 7, 4, 15); //Mark2_Modify;    G-Lane LE2_ISEL_IN
+_rtd_part_outl(0x1800da74, 11, 8, 13); //Mark2_Modify;   G-Lane LE_NC_ISEL_IN
+_rtd_part_outl(0x1800da74, 15, 12, 15); //Mark2_Modify;  G-Lane TAP0_ISEL_IN
+_rtd_part_outl(0x1800da74, 17, 16, 0); //Mark2_Modify;   G-Lane LE_IHALF[1:0]
+_rtd_part_outl(0x1800da74, 18, 18, 0); //Mark2_Modify;   G-Lane NC_IHALF
+_rtd_part_outl(0x1800da74, 19, 19, 0); //Mark2_Modify;   G-Lane TAP0_IHALF
+_rtd_part_outl(0x1800da74, 20, 20, 0); //Mark2_Modify;   G-Lane EN_LEQ6G
+_rtd_part_outl(0x1800da74, 21, 21, 1); //Mark2_Modify;   G-Lane RS_CAL_EN
+//_rtd_part_outl(0x1800da74, 22, 22, 1); //Mark2_Modify; G-Lane POW_NC
+//_rtd_part_outl(0x1800da74, 23, 23, 1); //Mark2_Modify; G-Lane POW_LEQ_KOFF
+//_rtd_part_outl(0x1800da74, 24, 24, 1); //Mark2_Modify; G-Lane POW_LEQ
+_rtd_part_outl(0x1800da74, 25, 25, 1); //Mark2_Modify;   G-Lane POW_DATALANE_BIAS
+_rtd_part_outl(0x1800da74, 26, 26, 0); //Mark2_Modify;   G-Lane REG_FORCE_STARTUP(Const-GM)
+_rtd_part_outl(0x1800da74, 27, 27, 0); //Mark2_Modify;   G-Lane REG_POWB_STARTUP
+_rtd_part_outl(0x1800da74, 30, 28, 3); //Mark2_Modify;   G-Lane DATALANE_BIAS_ISEL[2:0]
+_rtd_part_outl(0x1800da74, 31, 31, 1); //Mark2_Modify;   G-Lane POW_LEQ_RL
+_rtd_outl(0x1800da78, 0x30feb1f8); //DATALANE setting reg9~12
+_rtd_part_outl(0x1800da78, 0, 0, 1); //Mark2_Modify;      G-Lane POW_CMFB_1P8_CDM
+//_rtd_part_outl(0x1800da78, 1, 1, 0); //Mark2_Modify;    G-Lane SEL_CMFB_LS
+//_rtd_part_outl(0x1800da78, 3, 2, 0); //Mark2_Modify;    G-Lane LEQ_CUR_ADJ
+_rtd_part_outl(0x1800da78, 3, 1, 3); //Mark2_Modify;      G-Lane PTAT_CUR_ADJ_FINE
+_rtd_part_outl(0x1800da78, 5, 4, 2); //Mark2_Modify;      G-Lane PTAT_CUR_ADJ
+_rtd_part_outl(0x1800da78, 6, 6, 1); //Mark2_Modify;      G-Lane REG_BIAS_POW_CON_GM
+_rtd_part_outl(0x1800da78, 8, 8, 1); //Mark2_Modify;      G-Lane POW_DFE
+_rtd_part_outl(0x1800da78, 14, 12, 6); //Mark2_Modify;    G-Lane DFE_SUMAMP_ISEL[2:0]
+_rtd_part_outl(0x1800da78, 15, 15, 0); //Mark2_Modify;    G-Lane SUMAMP_DCGAIN_MAX
+_rtd_part_outl(0x1800da78, 16, 16, 0); //Mark2_Modify;    G-Lane FR_CK_SEL
+//_rtd_part_outl(0x1800da78, 17, 17, 0); //Mark2_Modify;  G-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da78, 18, 18, 0); //Mark2_Modify;    G-Lane BBPD_FR2HR_EN
+_rtd_part_outl(0x1800da78, 23, 22, 0); //Mark2_Modify;    G-Lane CK_DLY_EN
+_rtd_part_outl(0x1800da78, 24, 24, 0); //Mark2_Modify;    G-Lane EN_EYE_MNT
+_rtd_part_outl(0x1800da78, 26, 26, 0); //Mark2_Modify;    G-Lane VTH_MANAUAL
+_rtd_part_outl(0x1800da78, 27, 27, 0); //Mark2_Modify;    G-Lane DA_EG_VOS_PULLLOW
+_rtd_part_outl(0x1800da78, 31, 29, 0); //Mark2_Modify;    G-Lane dummy
+_rtd_outl(0x1800da7c, 0xd1b52410); //DATALANE setting reg13~16
+//_rtd_part_outl(0x1800da7C, 2, 0, 0); //Mark2_Modify;   G-Lane dummy
+_rtd_part_outl(0x1800da7c, 6, 3, 15); //Mark2_Modify;  G-Lane TAP_EN[4:1]
+_rtd_part_outl(0x1800da7c, 7, 7, 1); //Mark2_Modify;   G-Lane DFE_ADAPT_EN
+//_rtd_part_outl(0x1800da7C, 12, 12, 0); //Mark2_Modify; G-Lane DEMUX_FR_CK_SEL
+//_rtd_part_outl(0x1800da7C, 15, 13, 1); //Mark2_Modify; G-Lane DEMUX_RATE_SEL[2:0]
+_rtd_outl(0x1800da80, 0x515011d1); //DATALANE setting reg17~20
+//_rtd_part_outl(0x1800da80, 16, 16, 1); //Mark2_Modify; G-Lane DCDR_RSTB
+//_rtd_part_outl(0x1800da80, 17, 17, 1); //Mark2_Modify; G-Lane ST_CODE_SEL
+//_rtd_part_outl(0x1800da80, 20, 20, 1); //Mark2_Modify; G-Lane CDR_CK_SEL
+//_rtd_part_outl(0x1800da80, 22, 22, 1); //Mark2_Modify; G-Lane DCDR_CKIN_SEL
+_rtd_outl(0x1800da84, 0x700a0004); //ACDR setting reg1~4
+//_rtd_part_outl(0x1800DA84, 19, 19, 0); //Mark2_Modify; G-Lane SEL_HS_CLK
+//_rtd_part_outl(0x1800DA84, 17, 17, 0); //Mark2_Modify; G-Lane SEL_DIV2_OR_DIV4
+//_rtd_part_outl(0x1800DA84, 5, 4, 0); //Mark2_Modify;   G-Lane SEL_DIV_REF[1:0]
+//_rtd_part_outl(0x1800DA84, 7, 6, 0); //Mark2_Modify;   G-Lane SEL_DIV_PLL[1:0]
+_rtd_outl(0x1800da84, 0x721f0007); //ACDR setting reg1~4
+_rtd_outl(0x1800da88, 0x60000385); //ACDR setting reg5~8
+//_rtd_part_outl(0x1800DA88, 11, 10, 0); //Mark2_Modify; G-Lane PIX_RATE_SEL
+_rtd_part_outl(0x1800da88, 13, 12, 0); //Mark2_Modify; G-Lane SEL_BAND_CAP
+_rtd_outl(0x1800da88, 0x61000385); //ACDR setting reg5~8
+_rtd_outl(0x1800da8c, 0x8900386b); //ACDR setting reg12~9
+//_rtd_part_outl(0x1800DA8C, 13, 13, 0); //Mark2_Modify;   G-Lane SEL_CKREF_0CKXTAL_1CKLANE
+//_rtd_part_outl(0x1800DA8C, 12, 12, 0); //Mark2_Modify;   G-Lane RSTB_M_DIV
+//_rtd_part_outl(0x1800DA8C, 11, 11, 0); //Mark2_Modify;   G-Lane RSTB_PRESCALER
+//_rtd_part_outl(0x1800DA8C, 9, 9, 0); //Mark2_Modify;     G-Lane CMU_SEL_PRE_M_DIV
+//_rtd_part_outl(0x1800DA8C, 8, 0, 0); //Mark2_Modify;     G-Lane CMU_SEL_M_DIV[8:0]
+//_rtd_part_outl(0x1800DA8C, 10, 10, 0); //Mark2_Modify;   G-Lane CMU_SEL_POST_M_DIV
+////_rtd_part_outl(0x1800da8C, 19, 16, 3); //Mark2_Modify; G-Lane LE1_ISEL_IN_2(dummy)
+_rtd_part_outl(0x1800da8c, 21, 20, 3); //Mark2_Modify;   G-Lane RLSEL_LE1_2
+_rtd_part_outl(0x1800da8c, 23, 22, 3); //Mark2_Modify;   G-Lane RLSEL_NC_2
+//_rtd_part_outl(0x1800da8C, 24, 24, 1); //Mark2_Modify;   G-Lane POW_NC2
+_rtd_outl(0x1800da90, 0x03d09108); //DATALANE setting reg1~4
+_rtd_part_outl(0x1800da90, 1, 1, 0); //Mark2_Modify;    R-Lane INPOFF_SINGLE_EN
+_rtd_part_outl(0x1800da90, 2, 2, 0); //Mark2_Modify;    R-Lane INNOFF_SINGLE_EN
+_rtd_part_outl(0x1800da90, 3, 3, 1); //Mark2_Modify;    R-Lane POW_AC_COUPLE
+_rtd_part_outl(0x1800da90, 5, 4, 1); //Mark2_Modify;    R-Lane RXVCM_SEL[1:0]
+_rtd_part_outl(0x1800da90, 6, 6, 1); //Mark2_Modify;    R-Lane FAST_SW_EN
+_rtd_part_outl(0x1800da90, 7, 7, 1); //Mark2_Modify;    R-Lane FAST_SW_DELAY_EN
+_rtd_part_outl(0x1800da90, 9, 8, 2); //Mark2_Modify;    R-Lane RLSEL_LE1
+_rtd_part_outl(0x1800da90, 11, 10, 3); //Mark2_Modify;  R-Lane RLSEL_LE2
+_rtd_part_outl(0x1800da90, 13, 12, 3); //Mark2_Modify;  R-Lane RLSEL_NC
+_rtd_part_outl(0x1800da90, 15, 14, 1); //Mark2_Modify;  R-Lane RLSEL_TAP0
+_rtd_part_outl(0x1800da90, 19, 16, 12); //Mark2_Modify; R-Lane RSSEL_LE1_1
+_rtd_part_outl(0x1800da90, 23, 20, 12); //Mark2_Modify; R-Lane RSSEL_LE1_2
+_rtd_part_outl(0x1800da90, 27, 24, 6); //Mark2_Modify;  R-Lane RSSEL_LE2
+_rtd_part_outl(0x1800da90, 29, 28, 3); //Mark2_Modify;  R-Lane RSSEL_TAP0
+_rtd_part_outl(0x1800da90, 31, 30, 1); //Mark2_Modify;  R-Lane KOFF_RANGE
+_rtd_outl(0x1800da94, 0xa3d87f77); //DATALANE setting reg5~8
+_rtd_part_outl(0x1800da94, 3, 0, 15); //Mark2_Modify;    R-Lane LE1_ISEL_IN
+_rtd_part_outl(0x1800da94, 7, 4, 15); //Mark2_Modify;    R-Lane LE2_ISEL_IN
+_rtd_part_outl(0x1800da94, 11, 8, 13); //Mark2_Modify;   R-Lane LE_NC_ISEL_IN
+_rtd_part_outl(0x1800da94, 15, 12, 15); //Mark2_Modify;  R-Lane TAP0_ISEL_IN
+_rtd_part_outl(0x1800da94, 17, 16, 0); //Mark2_Modify;   R-Lane LE_IHALF[1:0]
+_rtd_part_outl(0x1800da94, 18, 18, 0); //Mark2_Modify;   R-Lane NC_IHALF
+_rtd_part_outl(0x1800da94, 19, 19, 0); //Mark2_Modify;   R-Lane TAP0_IHALF
+_rtd_part_outl(0x1800da94, 20, 20, 0); //Mark2_Modify;   R-Lane EN_LEQ6G
+_rtd_part_outl(0x1800da94, 21, 21, 1); //Mark2_Modify;   R-Lane RS_CAL_EN
+//_rtd_part_outl(0x1800da94, 22, 22, 1); //Mark2_Modify; R-Lane POW_NC
+//_rtd_part_outl(0x1800da94, 23, 23, 1); //Mark2_Modify; R-Lane POW_LEQ_KOFF
+//_rtd_part_outl(0x1800da94, 24, 24, 1); //Mark2_Modify; R-Lane POW_LEQ
+_rtd_part_outl(0x1800da94, 25, 25, 1); //Mark2_Modify;   R-Lane POW_DATALANE_BIAS
+_rtd_part_outl(0x1800da94, 26, 26, 0); //Mark2_Modify;   R-Lane REG_FORCE_STARTUP(Const-GM)
+_rtd_part_outl(0x1800da94, 27, 27, 0); //Mark2_Modify;   R-Lane REG_POWB_STARTUP
+_rtd_part_outl(0x1800da94, 30, 28, 3); //Mark2_Modify;   R-Lane DATALANE_BIAS_ISEL[2:0]
+_rtd_part_outl(0x1800da94, 31, 31, 1); //Mark2_Modify;   R-Lane POW_LEQ_RL
+_rtd_outl(0x1800da98, 0x30feb1f8); //DATALANE setting reg9~12
+_rtd_part_outl(0x1800da98, 0, 0, 1); //Mark2_Modify;      R-Lane POW_CMFB_1P8_CDM
+//_rtd_part_outl(0x1800da98, 1, 1, 0); //Mark2_Modify;    R-Lane SEL_CMFB_LS
+//_rtd_part_outl(0x1800da98, 3, 2, 0); //Mark2_Modify;    R-Lane LEQ_CUR_ADJ
+_rtd_part_outl(0x1800da98, 3, 1, 3); //Mark2_Modify;      R-Lane PTAT_CUR_ADJ_FINE
+_rtd_part_outl(0x1800da98, 5, 4, 2); //Mark2_Modify;      R-Lane PTAT_CUR_ADJ
+_rtd_part_outl(0x1800da98, 6, 6, 1); //Mark2_Modify;      R-Lane REG_BIAS_POW_CON_GM
+_rtd_part_outl(0x1800da98, 8, 8, 1); //Mark2_Modify;      R-Lane POW_DFE
+_rtd_part_outl(0x1800da98, 14, 12, 6); //Mark2_Modify;    R-Lane DFE_SUMAMP_ISEL[2:0]
+_rtd_part_outl(0x1800da98, 15, 15, 0); //Mark2_Modify;    R-Lane SUMAMP_DCGAIN_MAX
+_rtd_part_outl(0x1800da98, 16, 16, 0); //Mark2_Modify;    R-Lane FR_CK_SEL
+//_rtd_part_outl(0x1800da98, 17, 17, 0); //Mark2_Modify;  R-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da98, 18, 18, 0); //Mark2_Modify;    R-Lane BBPD_FR2HR_EN
+_rtd_part_outl(0x1800da98, 23, 22, 0); //Mark2_Modify;    R-Lane CK_DLY_EN
+_rtd_part_outl(0x1800da98, 24, 24, 0); //Mark2_Modify;    R-Lane EN_EYE_MNT
+_rtd_part_outl(0x1800da98, 26, 26, 0); //Mark2_Modify;    R-Lane VTH_MANAUAL
+_rtd_part_outl(0x1800da98, 27, 27, 0); //Mark2_Modify;    R-Lane DA_EG_VOS_PULLLOW
+_rtd_part_outl(0x1800da98, 31, 29, 0); //Mark2_Modify;    R-Lane dummy
+_rtd_outl(0x1800da9c, 0xd1b52410); //DATALANE setting reg13~16
+//_rtd_part_outl(0x1800da9C, 2, 0, 0); //Mark2_Modify;   R-Lane dummy
+_rtd_part_outl(0x1800da9c, 6, 3, 15); //Mark2_Modify;  R-Lane TAP_EN[4:1]
+_rtd_part_outl(0x1800da9c, 7, 7, 1); //Mark2_Modify;   R-Lane DFE_ADAPT_EN
+//_rtd_part_outl(0x1800da9C, 12, 12, 0); //Mark2_Modify; R-Lane DEMUX_FR_CK_SEL
+//_rtd_part_outl(0x1800da9C, 15, 13, 1); //Mark2_Modify; R-Lane DEMUX_RATE_SEL[2:0]
+_rtd_outl(0x1800daa0, 0x515011d1); //DATALANE setting reg17~20
+//_rtd_part_outl(0x1800daA0, 16, 16, 1); //Mark2_Modify; R-Lane DCDR_RSTB
+//_rtd_part_outl(0x1800daA0, 17, 17, 1); //Mark2_Modify; R-Lane ST_CODE_SEL
+//_rtd_part_outl(0x1800daA0, 20, 20, 1); //Mark2_Modify; R-Lane CDR_CK_SEL
+//_rtd_part_outl(0x1800daA0, 22, 22, 1); //Mark2_Modify; R-Lane DCDR_CKIN_SEL
+_rtd_outl(0x1800daa4, 0x700a0004); //ACDR setting reg1~4
+//_rtd_part_outl(0x1800DAA4, 19, 19, 0); //Mark2_Modify; R-Lane SEL_HS_CLK
+//_rtd_part_outl(0x1800DAA4, 17, 17, 0); //Mark2_Modify; R-Lane SEL_DIV2_OR_DIV4
+//_rtd_part_outl(0x1800DAA4, 5, 4, 0); //Mark2_Modify;   R-Lane SEL_DIV_REF[1:0]
+//_rtd_part_outl(0x1800DAA4, 7, 6, 0); //Mark2_Modify;   R-Lane SEL_DIV_PLL[1:0]
+_rtd_outl(0x1800daa4, 0x721f0007); //ACDR setting reg1~4
+_rtd_outl(0x1800daa8, 0x60000385); //ACDR setting reg5~8
+//_rtd_part_outl(0x1800DAA8, 11, 10, 0); //Mark2_Modify; R-Lane PIX_RATE_SEL
+_rtd_part_outl(0x1800daa8, 13, 12, 0); //Mark2_Modify; R-Lane SEL_BAND_CAP
+_rtd_outl(0x1800daa8, 0x61000385); //ACDR setting reg5~8
+_rtd_outl(0x1800daac, 0x8900386b); //ACDR setting reg12~9
+//_rtd_part_outl(0x1800DAAC, 13, 13, 0); //Mark2_Modify;   R-Lane SEL_CKREF_0CKXTAL_1CKLANE
+//_rtd_part_outl(0x1800DAAC, 12, 12, 0); //Mark2_Modify;   R-Lane RSTB_M_DIV
+//_rtd_part_outl(0x1800DAAC, 11, 11, 0); //Mark2_Modify;   R-Lane RSTB_PRESCALER
+//_rtd_part_outl(0x1800DAAC, 9, 9, 0); //Mark2_Modify;     R-Lane CMU_SEL_PRE_M_DIV
+//_rtd_part_outl(0x1800DAAC, 8, 0, 0); //Mark2_Modify;     R-Lane CMU_SEL_M_DIV[8:0]
+//_rtd_part_outl(0x1800DAAC, 10, 10, 0); //Mark2_Modify;   R-Lane CMU_SEL_POST_M_DIV
+////_rtd_part_outl(0x1800daAC, 19, 16, 3); //Mark2_Modify; R-Lane LE1_ISEL_IN_2(dummy)
+_rtd_part_outl(0x1800daac, 21, 20, 3); //Mark2_Modify;   R-Lane RLSEL_LE1_2
+_rtd_part_outl(0x1800daac, 23, 22, 3); //Mark2_Modify;   R-Lane RLSEL_NC_2
+//_rtd_part_outl(0x1800daAC, 24, 24, 1); //Mark2_Modify;   R-Lane POW_NC2
+_rtd_outl(0x1800dd3c, 0x002bac0e);
+_rtd_outl(0x1800dd40, 0x002c810b);
+_rtd_outl(0x1800dd48, 0x002bac0e);
+_rtd_outl(0x1800dd4c, 0x002c810b);
+_rtd_outl(0x1800dd54, 0x002bac0e);
+_rtd_outl(0x1800dd58, 0x002c810b);
+_rtd_outl(0x1800dd60, 0x002fbc0e);
+_rtd_outl(0x1800dd64, 0x002c810b);
+//=====[ACDR_settings]set Kband=====//
+_rtd_outl(0x1800dd3c, 0x00000200);
+_rtd_outl(0x1800dd48, 0x00000200);
+_rtd_outl(0x1800dd54, 0x00000200);
+_rtd_outl(0x1800dd60, 0x00000200);
+//=====[ACDR_settings]CMU_RESET=====//
+//#====================================== CMU RESET
+_rtd_outl(0x1800dafc, 0x00000000);
+_rtd_outl(0x1800dafc, 0x000000f0);
+//#====================================== MOD reset
+_rtd_outl(0x1800dd2c, 0x00000303);
+//#====================================== phase I
+//#====================================== FLD reset
+_rtd_outl(0x1800dcc8, 0x00007706);
+_rtd_outl(0x1800dce8, 0x00007706);
+_rtd_outl(0x1800dd04, 0x00007706);
+_rtd_outl(0x1800dd20, 0x00007706);
+//#5000
+//#===================================== 30000 ns pass
+//#===================================== phase II, PLL to ACDR
+//=====[ACDR_settings]set APHY ini_2=====//
+_rtd_outl(0x1800dab4, 0x046b0845); //CMU SETTING, n code=111
+_rtd_outl(0x1800da30, 0x03d09108); //DATALANE setting reg1~4
+_rtd_part_outl(0x1800da30, 1, 1, 0); //Mark2_Modify;    CK-Lane INPOFF_SINGLE_EN
+_rtd_part_outl(0x1800da30, 2, 2, 0); //Mark2_Modify;    CK-Lane INNOFF_SINGLE_EN
+_rtd_part_outl(0x1800da30, 3, 3, 1); //Mark2_Modify;    CK-Lane POW_AC_COUPLE
+_rtd_part_outl(0x1800da30, 5, 4, 1); //Mark2_Modify;    CK-Lane RXVCM_SEL[1:0]
+_rtd_part_outl(0x1800da30, 6, 6, 1); //Mark2_Modify;    CK-Lane FAST_SW_EN
+_rtd_part_outl(0x1800da30, 7, 7, 1); //Mark2_Modify;    CK-Lane FAST_SW_DELAY_EN
+_rtd_part_outl(0x1800da30, 9, 8, 2); //Mark2_Modify;    CK-Lane RLSEL_LE1
+_rtd_part_outl(0x1800da30, 11, 10, 3); //Mark2_Modify;  CK-Lane RLSEL_LE2
+_rtd_part_outl(0x1800da30, 13, 12, 3); //Mark2_Modify;  CK-Lane RLSEL_NC
+_rtd_part_outl(0x1800da30, 15, 14, 1); //Mark2_Modify;  CK-Lane RLSEL_TAP0
+_rtd_part_outl(0x1800da30, 19, 16, 12); //Mark2_Modify; CK-Lane RSSEL_LE1_1
+_rtd_part_outl(0x1800da30, 23, 20, 12); //Mark2_Modify; CK-Lane RSSEL_LE1_2
+_rtd_part_outl(0x1800da30, 27, 24, 6); //Mark2_Modify;  CK-Lane RSSEL_LE2
+_rtd_part_outl(0x1800da30, 29, 28, 3); //Mark2_Modify;  CK-Lane RSSEL_TAP0
+_rtd_part_outl(0x1800da30, 31, 30, 1); //Mark2_Modify;  CK-Lane KOFF_RANGE
+_rtd_outl(0x1800da34, 0xa3d87f77); //DATALANE setting reg5~8
+_rtd_part_outl(0x1800da34, 3, 0, 15); //Mark2_Modify;    CK-Lane LE1_ISEL_IN
+_rtd_part_outl(0x1800da34, 7, 4, 15); //Mark2_Modify;    CK-Lane LE2_ISEL_IN
+_rtd_part_outl(0x1800da34, 11, 8, 13); //Mark2_Modify;   CK-Lane LE_NC_ISEL_IN
+_rtd_part_outl(0x1800da34, 15, 12, 15); //Mark2_Modify;  CK-Lane TAP0_ISEL_IN
+_rtd_part_outl(0x1800da34, 17, 16, 0); //Mark2_Modify;   CK-Lane LE_IHALF[1:0]
+_rtd_part_outl(0x1800da34, 18, 18, 0); //Mark2_Modify;   CK-Lane NC_IHALF
+_rtd_part_outl(0x1800da34, 19, 19, 0); //Mark2_Modify;   CK-Lane TAP0_IHALF
+_rtd_part_outl(0x1800da34, 20, 20, 0); //Mark2_Modify;   CK-Lane EN_LEQ6G
+_rtd_part_outl(0x1800da34, 21, 21, 1); //Mark2_Modify;   CK-Lane RS_CAL_EN
+//_rtd_part_outl(0x1800da34, 22, 22, 1); //Mark2_Modify; CK-Lane POW_NC
+//_rtd_part_outl(0x1800da34, 23, 23, 1); //Mark2_Modify; CK-Lane POW_LEQ_KOFF
+//_rtd_part_outl(0x1800da34, 24, 24, 1); //Mark2_Modify; CK-Lane POW_LEQ
+_rtd_part_outl(0x1800da34, 25, 25, 1); //Mark2_Modify;   CK-Lane POW_DATALANE_BIAS
+_rtd_part_outl(0x1800da34, 26, 26, 0); //Mark2_Modify;   CK-Lane REG_FORCE_STARTUP(Const-GM)
+_rtd_part_outl(0x1800da34, 27, 27, 0); //Mark2_Modify;   CK-Lane REG_POWB_STARTUP
+_rtd_part_outl(0x1800da34, 30, 28, 3); //Mark2_Modify;   CK-Lane DATALANE_BIAS_ISEL[2:0]
+_rtd_part_outl(0x1800da34, 31, 31, 1); //Mark2_Modify;   CK-Lane POW_LEQ_RL
+_rtd_outl(0x1800da38, 0x30feb1f8); //DATALANE setting reg9~12
+_rtd_part_outl(0x1800da38, 0, 0, 1); //Mark2_Modify;      CK-Lane POW_CMFB_1P8_CDM
+//_rtd_part_outl(0x1800da38, 1, 1, 0); //Mark2_Modify;    CK-Lane SEL_CMFB_LS
+//_rtd_part_outl(0x1800da38, 3, 2, 0); //Mark2_Modify;    CK-Lane LEQ_CUR_ADJ
+_rtd_part_outl(0x1800da38, 3, 1, 3); //Mark2_Modify;      CK-Lane PTAT_CUR_ADJ_FINE
+_rtd_part_outl(0x1800da38, 5, 4, 2); //Mark2_Modify;      CK-Lane PTAT_CUR_ADJ
+_rtd_part_outl(0x1800da38, 6, 6, 1); //Mark2_Modify;      CK-Lane REG_BIAS_POW_CON_GM
+_rtd_part_outl(0x1800da38, 8, 8, 1); //Mark2_Modify;      CK-Lane POW_DFE
+_rtd_part_outl(0x1800da38, 14, 12, 6); //Mark2_Modify;    CK-Lane DFE_SUMAMP_ISEL[2:0]
+_rtd_part_outl(0x1800da38, 15, 15, 0); //Mark2_Modify;    CK-Lane SUMAMP_DCGAIN_MAX
+_rtd_part_outl(0x1800da38, 16, 16, 0); //Mark2_Modify;    CK-Lane FR_CK_SEL
+//_rtd_part_outl(0x1800da38, 17, 17, 0); //Mark2_Modify;  CK-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da38, 18, 18, 0); //Mark2_Modify;    CK-Lane BBPD_FR2HR_EN
+_rtd_part_outl(0x1800da38, 23, 22, 0); //Mark2_Modify;    CK-Lane CK_DLY_EN
+_rtd_part_outl(0x1800da38, 24, 24, 0); //Mark2_Modify;    CK-Lane EN_EYE_MNT
+_rtd_part_outl(0x1800da38, 26, 26, 0); //Mark2_Modify;    CK-Lane VTH_MANAUAL
+_rtd_part_outl(0x1800da38, 27, 27, 0); //Mark2_Modify;    CK-Lane DA_EG_VOS_PULLLOW
+_rtd_part_outl(0x1800da38, 31, 29, 0); //Mark2_Modify;    CK-Lane dummy
+_rtd_outl(0x1800da3c, 0xd1b52410); //DATALANE setting reg13~16
+//_rtd_part_outl(0x1800da3C, 2, 0, 0); //Mark2_Modify;   CK-Lane dummy
+_rtd_part_outl(0x1800da3c, 6, 3, 15); //Mark2_Modify;  CK-Lane TAP_EN[4:1]
+_rtd_part_outl(0x1800da3c, 7, 7, 1); //Mark2_Modify;   CK-Lane DFE_ADAPT_EN
+//_rtd_part_outl(0x1800da3C, 12, 12, 0); //Mark2_Modify; CK-Lane DEMUX_FR_CK_SEL
+//_rtd_part_outl(0x1800da3C, 15, 13, 1); //Mark2_Modify; CK-Lane DEMUX_RATE_SEL[2:0]
+_rtd_outl(0x1800da40, 0x515011d1); //DATALANE setting reg17~20
+//_rtd_part_outl(0x1800da40, 16, 16, 1); //Mark2_Modify; CK-Lane DCDR_RSTB
+//_rtd_part_outl(0x1800da40, 17, 17, 1); //Mark2_Modify; CK-Lane ST_CODE_SEL
+//_rtd_part_outl(0x1800da40, 20, 20, 1); //Mark2_Modify; CK-Lane CDR_CK_SEL
+//_rtd_part_outl(0x1800da40, 22, 22, 1); //Mark2_Modify; CK-Lane DCDR_CKIN_SEL
+_rtd_outl(0x1800da44, 0x700a0004); //ACDR setting reg1~4
+//_rtd_part_outl(0x1800DA44, 19, 19, 0); //Mark2_Modify; CK-Lane SEL_HS_CLK
+//_rtd_part_outl(0x1800DA44, 17, 17, 0); //Mark2_Modify; CK-Lane SEL_DIV2_OR_DIV4
+//_rtd_part_outl(0x1800DA44, 5, 4, 0); //Mark2_Modify;   CK-Lane SEL_DIV_REF[1:0]
+//_rtd_part_outl(0x1800DA44, 7, 6, 0); //Mark2_Modify;   CK-Lane SEL_DIV_PLL[1:0]
+_rtd_outl(0x1800da44, 0x721f0007); //ACDR setting reg1~4
+_rtd_outl(0x1800da48, 0x60000385); //ACDR setting reg5~8
+//_rtd_part_outl(0x1800DA48, 11, 10, 0); //Mark2_Modify; CK-Lane PIX_RATE_SEL
+_rtd_part_outl(0x1800da48, 13, 12, 0); //Mark2_Modify; CK-Lane SEL_BAND_CAP
+_rtd_outl(0x1800da48, 0x61000385); //ACDR setting reg5~8
+_rtd_outl(0x1800da4c, 0x89001890); //ACDR setting reg12~9
+//_rtd_part_outl(0x1800DA4C, 13, 13, 0); //Mark2_Modify;   CK-Lane SEL_CKREF_0CKXTAL_1CKLANE
+//_rtd_part_outl(0x1800DA4C, 12, 12, 0); //Mark2_Modify;   CK-Lane RSTB_M_DIV
+//_rtd_part_outl(0x1800DA4C, 11, 11, 0); //Mark2_Modify;   CK-Lane RSTB_PRESCALER
+//_rtd_part_outl(0x1800DA4C, 9, 9, 0); //Mark2_Modify;     CK-Lane CMU_SEL_PRE_M_DIV
+_rtd_part_outl(0x1800da4c, 8, 0, 0x90); //Mark2_Modify;     CK-Lane CMU_SEL_M_DIV[8:0]
+_rtd_part_outl(0x1800da4c, 10, 10, 0); //Mark2_Modify;   CK-Lane CMU_SEL_POST_M_DIV
+////_rtd_part_outl(0x1800da4C, 19, 16, 3); //Mark2_Modify; CK-Lane LE1_ISEL_IN_2(dummy)
+_rtd_part_outl(0x1800da4c, 21, 20, 3); //Mark2_Modify;   CK-Lane RLSEL_LE1_2
+_rtd_part_outl(0x1800da4c, 23, 22, 3); //Mark2_Modify;   CK-Lane RLSEL_NC_2
+//_rtd_part_outl(0x1800da4C, 24, 24, 1); //Mark2_Modify;   CK-Lane POW_NC2
+_rtd_outl(0x1800da50, 0x03d09108); //DATALANE setting reg1~4
+_rtd_outl(0x1800da50, 0x03d09108); //DATALANE setting reg1~4
+_rtd_part_outl(0x1800da50, 1, 1, 0); //Mark2_Modify;    B-Lane INPOFF_SINGLE_EN
+_rtd_part_outl(0x1800da50, 2, 2, 0); //Mark2_Modify;    B-Lane INNOFF_SINGLE_EN
+_rtd_part_outl(0x1800da50, 3, 3, 1); //Mark2_Modify;    B-Lane POW_AC_COUPLE
+_rtd_part_outl(0x1800da50, 5, 4, 1); //Mark2_Modify;    B-Lane RXVCM_SEL[1:0]
+_rtd_part_outl(0x1800da50, 6, 6, 1); //Mark2_Modify;    B-Lane FAST_SW_EN
+_rtd_part_outl(0x1800da50, 7, 7, 1); //Mark2_Modify;    B-Lane FAST_SW_DELAY_EN
+_rtd_part_outl(0x1800da50, 9, 8, 2); //Mark2_Modify;    B-Lane RLSEL_LE1
+_rtd_part_outl(0x1800da50, 11, 10, 3); //Mark2_Modify;  B-Lane RLSEL_LE2
+_rtd_part_outl(0x1800da50, 13, 12, 3); //Mark2_Modify;  B-Lane RLSEL_NC
+_rtd_part_outl(0x1800da50, 15, 14, 1); //Mark2_Modify;  B-Lane RLSEL_TAP0
+_rtd_part_outl(0x1800da50, 19, 16, 12); //Mark2_Modify; B-Lane RSSEL_LE1_1
+_rtd_part_outl(0x1800da50, 23, 20, 12); //Mark2_Modify; B-Lane RSSEL_LE1_2
+_rtd_part_outl(0x1800da50, 27, 24, 6); //Mark2_Modify;  B-Lane RSSEL_LE2
+_rtd_part_outl(0x1800da50, 29, 28, 3); //Mark2_Modify;  B-Lane RSSEL_TAP0
+_rtd_part_outl(0x1800da50, 31, 30, 1); //Mark2_Modify;  B-Lane KOFF_RANGE
+_rtd_outl(0x1800da54, 0xa3d87f77); //DATALANE setting reg5~8
+_rtd_part_outl(0x1800da54, 3, 0, 15); //Mark2_Modify;    B-Lane LE1_ISEL_IN
+_rtd_part_outl(0x1800da54, 7, 4, 15); //Mark2_Modify;    B-Lane LE2_ISEL_IN
+_rtd_part_outl(0x1800da54, 11, 8, 13); //Mark2_Modify;   B-Lane LE_NC_ISEL_IN
+_rtd_part_outl(0x1800da54, 15, 12, 15); //Mark2_Modify;  B-Lane TAP0_ISEL_IN
+_rtd_part_outl(0x1800da54, 17, 16, 0); //Mark2_Modify;   B-Lane LE_IHALF[1:0]
+_rtd_part_outl(0x1800da54, 18, 18, 0); //Mark2_Modify;   B-Lane NC_IHALF
+_rtd_part_outl(0x1800da54, 19, 19, 0); //Mark2_Modify;   B-Lane TAP0_IHALF
+_rtd_part_outl(0x1800da54, 20, 20, 0); //Mark2_Modify;   B-Lane EN_LEQ6G
+_rtd_part_outl(0x1800da54, 21, 21, 1); //Mark2_Modify;   B-Lane RS_CAL_EN
+//_rtd_part_outl(0x1800da54, 22, 22, 1); //Mark2_Modify; B-Lane POW_NC
+//_rtd_part_outl(0x1800da54, 23, 23, 1); //Mark2_Modify; B-Lane POW_LEQ_KOFF
+//_rtd_part_outl(0x1800da54, 24, 24, 1); //Mark2_Modify; B-Lane POW_LEQ
+_rtd_part_outl(0x1800da54, 25, 25, 1); //Mark2_Modify;   B-Lane POW_DATALANE_BIAS
+_rtd_part_outl(0x1800da54, 26, 26, 0); //Mark2_Modify;   B-Lane REG_FORCE_STARTUP(Const-GM)
+_rtd_part_outl(0x1800da54, 27, 27, 0); //Mark2_Modify;   B-Lane REG_POWB_STARTUP
+_rtd_part_outl(0x1800da54, 30, 28, 3); //Mark2_Modify;   B-Lane DATALANE_BIAS_ISEL[2:0]
+_rtd_part_outl(0x1800da54, 31, 31, 1); //Mark2_Modify;   B-Lane POW_LEQ_RL
+_rtd_outl(0x1800da58, 0x30feb1f8); //DATALANE setting reg9~12
+_rtd_part_outl(0x1800da58, 0, 0, 1); //Mark2_Modify;      B-Lane POW_CMFB_1P8_CDM
+//_rtd_part_outl(0x1800da58, 1, 1, 0); //Mark2_Modify;    B-Lane SEL_CMFB_LS
+//_rtd_part_outl(0x1800da58, 3, 2, 0); //Mark2_Modify;    B-Lane LEQ_CUR_ADJ
+_rtd_part_outl(0x1800da58, 3, 1, 3); //Mark2_Modify;      B-Lane PTAT_CUR_ADJ_FINE
+_rtd_part_outl(0x1800da58, 5, 4, 2); //Mark2_Modify;      B-Lane PTAT_CUR_ADJ
+_rtd_part_outl(0x1800da58, 6, 6, 1); //Mark2_Modify;      B-Lane REG_BIAS_POW_CON_GM
+_rtd_part_outl(0x1800da58, 8, 8, 1); //Mark2_Modify;      B-Lane POW_DFE
+_rtd_part_outl(0x1800da58, 14, 12, 6); //Mark2_Modify;    B-Lane DFE_SUMAMP_ISEL[2:0]
+_rtd_part_outl(0x1800da58, 15, 15, 0); //Mark2_Modify;    B-Lane SUMAMP_DCGAIN_MAX
+_rtd_part_outl(0x1800da58, 16, 16, 0); //Mark2_Modify;    B-Lane FR_CK_SEL
+//_rtd_part_outl(0x1800da58, 17, 17, 0); //Mark2_Modify;  B-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da58, 18, 18, 0); //Mark2_Modify;    B-Lane BBPD_FR2HR_EN
+_rtd_part_outl(0x1800da58, 23, 22, 0); //Mark2_Modify;    B-Lane CK_DLY_EN
+_rtd_part_outl(0x1800da58, 24, 24, 0); //Mark2_Modify;    B-Lane EN_EYE_MNT
+_rtd_part_outl(0x1800da58, 26, 26, 0); //Mark2_Modify;    B-Lane VTH_MANAUAL
+_rtd_part_outl(0x1800da58, 27, 27, 0); //Mark2_Modify;    B-Lane DA_EG_VOS_PULLLOW
+_rtd_part_outl(0x1800da58, 31, 29, 0); //Mark2_Modify;    B-Lane dummy
+_rtd_outl(0x1800da5c, 0xd1b52410); //DATALANE setting reg13~16
+//_rtd_part_outl(0x1800da5C, 2, 0, 0); //Mark2_Modify;   B-Lane dummy
+_rtd_part_outl(0x1800da5c, 6, 3, 15); //Mark2_Modify;  B-Lane TAP_EN[4:1]
+_rtd_part_outl(0x1800da5c, 7, 7, 1); //Mark2_Modify;   B-Lane DFE_ADAPT_EN
+//_rtd_part_outl(0x1800da5C, 12, 12, 0); //Mark2_Modify; B-Lane DEMUX_FR_CK_SEL
+//_rtd_part_outl(0x1800da5C, 15, 13, 1); //Mark2_Modify; B-Lane DEMUX_RATE_SEL[2:0]
+_rtd_outl(0x1800da60, 0x515011d1); //DATALANE setting reg17~20
+//_rtd_part_outl(0x1800da60, 16, 16, 1); //Mark2_Modify; B-Lane DCDR_RSTB
+//_rtd_part_outl(0x1800da60, 17, 17, 1); //Mark2_Modify; B-Lane ST_CODE_SEL
+//_rtd_part_outl(0x1800da60, 20, 20, 1); //Mark2_Modify; B-Lane CDR_CK_SEL
+//_rtd_part_outl(0x1800da60, 22, 22, 1); //Mark2_Modify; B-Lane DCDR_CKIN_SEL
+_rtd_outl(0x1800da64, 0x700a0004); //ACDR setting reg1~4
+//_rtd_part_outl(0x1800DA64, 19, 19, 0); //Mark2_Modify; B-Lane SEL_HS_CLK
+//_rtd_part_outl(0x1800DA64, 17, 17, 0); //Mark2_Modify; B-Lane SEL_DIV2_OR_DIV4
+//_rtd_part_outl(0x1800DA64, 5, 4, 0); //Mark2_Modify;   B-Lane SEL_DIV_REF[1:0]
+//_rtd_part_outl(0x1800DA64, 7, 6, 0); //Mark2_Modify;   B-Lane SEL_DIV_PLL[1:0]
+_rtd_outl(0x1800da64, 0x721f0007); //ACDR setting reg1~4
+_rtd_outl(0x1800da68, 0x60000385); //ACDR setting reg5~8
+//_rtd_part_outl(0x1800DA68, 11, 10, 0); //Mark2_Modify; B-Lane PIX_RATE_SEL
+_rtd_part_outl(0x1800da68, 13, 12, 0); //Mark2_Modify; B-Lane SEL_BAND_CAP
+_rtd_outl(0x1800da68, 0x61000385); //ACDR setting reg5~8
+_rtd_outl(0x1800da6c, 0x8900386b); //ACDR setting reg12~9
+//_rtd_part_outl(0x1800DA6C, 13, 13, 0); //Mark2_Modify;   B-Lane SEL_CKREF_0CKXTAL_1CKLANE
+//_rtd_part_outl(0x1800DA6C, 12, 12, 0); //Mark2_Modify;   B-Lane RSTB_M_DIV
+//_rtd_part_outl(0x1800DA6C, 11, 11, 0); //Mark2_Modify;   B-Lane RSTB_PRESCALER
+//_rtd_part_outl(0x1800DA6C, 9, 9, 0); //Mark2_Modify;     B-Lane CMU_SEL_PRE_M_DIV
+//_rtd_part_outl(0x1800DA6C, 8, 0, 0); //Mark2_Modify;     B-Lane CMU_SEL_M_DIV[8:0]
+//_rtd_part_outl(0x1800DA6C, 10, 10, 0); //Mark2_Modify;   B-Lane CMU_SEL_POST_M_DIV
+////_rtd_part_outl(0x1800da6C, 19, 16, 3); //Mark2_Modify; B-Lane LE1_ISEL_IN_2(dummy)
+_rtd_part_outl(0x1800da6c, 21, 20, 3); //Mark2_Modify;   B-Lane RLSEL_LE1_2
+_rtd_part_outl(0x1800da6c, 23, 22, 3); //Mark2_Modify;   B-Lane RLSEL_NC_2
+//_rtd_part_outl(0x1800da6C, 24, 24, 1); //Mark2_Modify;   B-Lane POW_NC2
+_rtd_outl(0x1800da70, 0x03d09108); //DATALANE setting reg1~4
+_rtd_part_outl(0x1800da70, 1, 1, 0); //Mark2_Modify;    G-Lane INPOFF_SINGLE_EN
+_rtd_part_outl(0x1800da70, 2, 2, 0); //Mark2_Modify;    G-Lane INNOFF_SINGLE_EN
+_rtd_part_outl(0x1800da70, 3, 3, 1); //Mark2_Modify;    G-Lane POW_AC_COUPLE
+_rtd_part_outl(0x1800da70, 5, 4, 1); //Mark2_Modify;    G-Lane RXVCM_SEL[1:0]
+_rtd_part_outl(0x1800da70, 6, 6, 1); //Mark2_Modify;    G-Lane FAST_SW_EN
+_rtd_part_outl(0x1800da70, 7, 7, 1); //Mark2_Modify;    G-Lane FAST_SW_DELAY_EN
+_rtd_part_outl(0x1800da70, 9, 8, 2); //Mark2_Modify;    G-Lane RLSEL_LE1
+_rtd_part_outl(0x1800da70, 11, 10, 3); //Mark2_Modify;  G-Lane RLSEL_LE2
+_rtd_part_outl(0x1800da70, 13, 12, 3); //Mark2_Modify;  G-Lane RLSEL_NC
+_rtd_part_outl(0x1800da70, 15, 14, 1); //Mark2_Modify;  G-Lane RLSEL_TAP0
+_rtd_part_outl(0x1800da70, 19, 16, 12); //Mark2_Modify; G-Lane RSSEL_LE1_1
+_rtd_part_outl(0x1800da70, 23, 20, 12); //Mark2_Modify; G-Lane RSSEL_LE1_2
+_rtd_part_outl(0x1800da70, 27, 24, 6); //Mark2_Modify;  G-Lane RSSEL_LE2
+_rtd_part_outl(0x1800da70, 29, 28, 3); //Mark2_Modify;  G-Lane RSSEL_TAP0
+_rtd_part_outl(0x1800da70, 31, 30, 1); //Mark2_Modify;  G-Lane KOFF_RANGE
+_rtd_outl(0x1800da74, 0xa3d87f77); //DATALANE setting reg5~8
+_rtd_part_outl(0x1800da74, 3, 0, 15); //Mark2_Modify;    G-Lane LE1_ISEL_IN
+_rtd_part_outl(0x1800da74, 7, 4, 15); //Mark2_Modify;    G-Lane LE2_ISEL_IN
+_rtd_part_outl(0x1800da74, 11, 8, 13); //Mark2_Modify;   G-Lane LE_NC_ISEL_IN
+_rtd_part_outl(0x1800da74, 15, 12, 15); //Mark2_Modify;  G-Lane TAP0_ISEL_IN
+_rtd_part_outl(0x1800da74, 17, 16, 0); //Mark2_Modify;   G-Lane LE_IHALF[1:0]
+_rtd_part_outl(0x1800da74, 18, 18, 0); //Mark2_Modify;   G-Lane NC_IHALF
+_rtd_part_outl(0x1800da74, 19, 19, 0); //Mark2_Modify;   G-Lane TAP0_IHALF
+_rtd_part_outl(0x1800da74, 20, 20, 0); //Mark2_Modify;   G-Lane EN_LEQ6G
+_rtd_part_outl(0x1800da74, 21, 21, 1); //Mark2_Modify;   G-Lane RS_CAL_EN
+//_rtd_part_outl(0x1800da74, 22, 22, 1); //Mark2_Modify; G-Lane POW_NC
+//_rtd_part_outl(0x1800da74, 23, 23, 1); //Mark2_Modify; G-Lane POW_LEQ_KOFF
+//_rtd_part_outl(0x1800da74, 24, 24, 1); //Mark2_Modify; G-Lane POW_LEQ
+_rtd_part_outl(0x1800da74, 25, 25, 1); //Mark2_Modify;   G-Lane POW_DATALANE_BIAS
+_rtd_part_outl(0x1800da74, 26, 26, 0); //Mark2_Modify;   G-Lane REG_FORCE_STARTUP(Const-GM)
+_rtd_part_outl(0x1800da74, 27, 27, 0); //Mark2_Modify;   G-Lane REG_POWB_STARTUP
+_rtd_part_outl(0x1800da74, 30, 28, 3); //Mark2_Modify;   G-Lane DATALANE_BIAS_ISEL[2:0]
+_rtd_part_outl(0x1800da74, 31, 31, 1); //Mark2_Modify;   G-Lane POW_LEQ_RL
+_rtd_outl(0x1800da78, 0x30feb1f8); //DATALANE setting reg9~12
+_rtd_part_outl(0x1800da78, 0, 0, 1); //Mark2_Modify;      G-Lane POW_CMFB_1P8_CDM
+//_rtd_part_outl(0x1800da78, 1, 1, 0); //Mark2_Modify;    G-Lane SEL_CMFB_LS
+//_rtd_part_outl(0x1800da78, 3, 2, 0); //Mark2_Modify;    G-Lane LEQ_CUR_ADJ
+_rtd_part_outl(0x1800da78, 3, 1, 3); //Mark2_Modify;      G-Lane PTAT_CUR_ADJ_FINE
+_rtd_part_outl(0x1800da78, 5, 4, 2); //Mark2_Modify;      G-Lane PTAT_CUR_ADJ
+_rtd_part_outl(0x1800da78, 6, 6, 1); //Mark2_Modify;      G-Lane REG_BIAS_POW_CON_GM
+_rtd_part_outl(0x1800da78, 8, 8, 1); //Mark2_Modify;      G-Lane POW_DFE
+_rtd_part_outl(0x1800da78, 14, 12, 6); //Mark2_Modify;    G-Lane DFE_SUMAMP_ISEL[2:0]
+_rtd_part_outl(0x1800da78, 15, 15, 0); //Mark2_Modify;    G-Lane SUMAMP_DCGAIN_MAX
+_rtd_part_outl(0x1800da78, 16, 16, 0); //Mark2_Modify;    G-Lane FR_CK_SEL
+//_rtd_part_outl(0x1800da78, 17, 17, 0); //Mark2_Modify;  G-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da78, 18, 18, 0); //Mark2_Modify;    G-Lane BBPD_FR2HR_EN
+_rtd_part_outl(0x1800da78, 23, 22, 0); //Mark2_Modify;    G-Lane CK_DLY_EN
+_rtd_part_outl(0x1800da78, 24, 24, 0); //Mark2_Modify;    G-Lane EN_EYE_MNT
+_rtd_part_outl(0x1800da78, 26, 26, 0); //Mark2_Modify;    G-Lane VTH_MANAUAL
+_rtd_part_outl(0x1800da78, 27, 27, 0); //Mark2_Modify;    G-Lane DA_EG_VOS_PULLLOW
+_rtd_part_outl(0x1800da78, 31, 29, 0); //Mark2_Modify;    G-Lane dummy
+_rtd_outl(0x1800da7c, 0xd1b52410); //DATALANE setting reg13~16
+//_rtd_part_outl(0x1800da7C, 2, 0, 0); //Mark2_Modify;   G-Lane dummy
+_rtd_part_outl(0x1800da7c, 6, 3, 15); //Mark2_Modify;  G-Lane TAP_EN[4:1]
+_rtd_part_outl(0x1800da7c, 7, 7, 1); //Mark2_Modify;   G-Lane DFE_ADAPT_EN
+//_rtd_part_outl(0x1800da7C, 12, 12, 0); //Mark2_Modify; G-Lane DEMUX_FR_CK_SEL
+//_rtd_part_outl(0x1800da7C, 15, 13, 1); //Mark2_Modify; G-Lane DEMUX_RATE_SEL[2:0]
+_rtd_outl(0x1800da80, 0x515011d1); //DATALANE setting reg17~20
+//_rtd_part_outl(0x1800da80, 16, 16, 1); //Mark2_Modify; G-Lane DCDR_RSTB
+//_rtd_part_outl(0x1800da80, 17, 17, 1); //Mark2_Modify; G-Lane ST_CODE_SEL
+//_rtd_part_outl(0x1800da80, 20, 20, 1); //Mark2_Modify; G-Lane CDR_CK_SEL
+//_rtd_part_outl(0x1800da80, 22, 22, 1); //Mark2_Modify; G-Lane DCDR_CKIN_SEL
+_rtd_outl(0x1800da84, 0x700a0004); //ACDR setting reg1~4
+//_rtd_part_outl(0x1800DA84, 19, 19, 0); //Mark2_Modify; G-Lane SEL_HS_CLK
+//_rtd_part_outl(0x1800DA84, 17, 17, 0); //Mark2_Modify; G-Lane SEL_DIV2_OR_DIV4
+//_rtd_part_outl(0x1800DA84, 5, 4, 0); //Mark2_Modify;   G-Lane SEL_DIV_REF[1:0]
+//_rtd_part_outl(0x1800DA84, 7, 6, 0); //Mark2_Modify;   G-Lane SEL_DIV_PLL[1:0]
+_rtd_outl(0x1800da84, 0x721f0007); //ACDR setting reg1~4
+_rtd_outl(0x1800da88, 0x60000385); //ACDR setting reg5~8
+//_rtd_part_outl(0x1800DA88, 11, 10, 0); //Mark2_Modify; G-Lane PIX_RATE_SEL
+_rtd_part_outl(0x1800da88, 13, 12, 0); //Mark2_Modify; G-Lane SEL_BAND_CAP
+_rtd_outl(0x1800da88, 0x61000385); //ACDR setting reg5~8
+_rtd_outl(0x1800da8c, 0x8900386b); //ACDR setting reg12~9
+//_rtd_part_outl(0x1800DA8C, 13, 13, 0); //Mark2_Modify;   G-Lane SEL_CKREF_0CKXTAL_1CKLANE
+//_rtd_part_outl(0x1800DA8C, 12, 12, 0); //Mark2_Modify;   G-Lane RSTB_M_DIV
+//_rtd_part_outl(0x1800DA8C, 11, 11, 0); //Mark2_Modify;   G-Lane RSTB_PRESCALER
+//_rtd_part_outl(0x1800DA8C, 9, 9, 0); //Mark2_Modify;     G-Lane CMU_SEL_PRE_M_DIV
+//_rtd_part_outl(0x1800DA8C, 8, 0, 0); //Mark2_Modify;     G-Lane CMU_SEL_M_DIV[8:0]
+//_rtd_part_outl(0x1800DA8C, 10, 10, 0); //Mark2_Modify;   G-Lane CMU_SEL_POST_M_DIV
+////_rtd_part_outl(0x1800da8C, 19, 16, 3); //Mark2_Modify; G-Lane LE1_ISEL_IN_2(dummy)
+_rtd_part_outl(0x1800da8c, 21, 20, 3); //Mark2_Modify;   G-Lane RLSEL_LE1_2
+_rtd_part_outl(0x1800da8c, 23, 22, 3); //Mark2_Modify;   G-Lane RLSEL_NC_2
+//_rtd_part_outl(0x1800da8C, 24, 24, 1); //Mark2_Modify;   G-Lane POW_NC2
+_rtd_outl(0x1800da90, 0x03d09108); //DATALANE setting reg1~4
+_rtd_part_outl(0x1800da90, 1, 1, 0); //Mark2_Modify;    R-Lane INPOFF_SINGLE_EN
+_rtd_part_outl(0x1800da90, 2, 2, 0); //Mark2_Modify;    R-Lane INNOFF_SINGLE_EN
+_rtd_part_outl(0x1800da90, 3, 3, 1); //Mark2_Modify;    R-Lane POW_AC_COUPLE
+_rtd_part_outl(0x1800da90, 5, 4, 1); //Mark2_Modify;    R-Lane RXVCM_SEL[1:0]
+_rtd_part_outl(0x1800da90, 6, 6, 1); //Mark2_Modify;    R-Lane FAST_SW_EN
+_rtd_part_outl(0x1800da90, 7, 7, 1); //Mark2_Modify;    R-Lane FAST_SW_DELAY_EN
+_rtd_part_outl(0x1800da90, 9, 8, 2); //Mark2_Modify;    R-Lane RLSEL_LE1
+_rtd_part_outl(0x1800da90, 11, 10, 3); //Mark2_Modify;  R-Lane RLSEL_LE2
+_rtd_part_outl(0x1800da90, 13, 12, 3); //Mark2_Modify;  R-Lane RLSEL_NC
+_rtd_part_outl(0x1800da90, 15, 14, 1); //Mark2_Modify;  R-Lane RLSEL_TAP0
+_rtd_part_outl(0x1800da90, 19, 16, 12); //Mark2_Modify; R-Lane RSSEL_LE1_1
+_rtd_part_outl(0x1800da90, 23, 20, 12); //Mark2_Modify; R-Lane RSSEL_LE1_2
+_rtd_part_outl(0x1800da90, 27, 24, 6); //Mark2_Modify;  R-Lane RSSEL_LE2
+_rtd_part_outl(0x1800da90, 29, 28, 3); //Mark2_Modify;  R-Lane RSSEL_TAP0
+_rtd_part_outl(0x1800da90, 31, 30, 1); //Mark2_Modify;  R-Lane KOFF_RANGE
+_rtd_outl(0x1800da94, 0xa3d87f77); //DATALANE setting reg5~8
+_rtd_part_outl(0x1800da94, 3, 0, 15); //Mark2_Modify;    R-Lane LE1_ISEL_IN
+_rtd_part_outl(0x1800da94, 7, 4, 15); //Mark2_Modify;    R-Lane LE2_ISEL_IN
+_rtd_part_outl(0x1800da94, 11, 8, 13); //Mark2_Modify;   R-Lane LE_NC_ISEL_IN
+_rtd_part_outl(0x1800da94, 15, 12, 15); //Mark2_Modify;  R-Lane TAP0_ISEL_IN
+_rtd_part_outl(0x1800da94, 17, 16, 0); //Mark2_Modify;   R-Lane LE_IHALF[1:0]
+_rtd_part_outl(0x1800da94, 18, 18, 0); //Mark2_Modify;   R-Lane NC_IHALF
+_rtd_part_outl(0x1800da94, 19, 19, 0); //Mark2_Modify;   R-Lane TAP0_IHALF
+_rtd_part_outl(0x1800da94, 20, 20, 0); //Mark2_Modify;   R-Lane EN_LEQ6G
+_rtd_part_outl(0x1800da94, 21, 21, 1); //Mark2_Modify;   R-Lane RS_CAL_EN
+//_rtd_part_outl(0x1800da94, 22, 22, 1); //Mark2_Modify; R-Lane POW_NC
+//_rtd_part_outl(0x1800da94, 23, 23, 1); //Mark2_Modify; R-Lane POW_LEQ_KOFF
+//_rtd_part_outl(0x1800da94, 24, 24, 1); //Mark2_Modify; R-Lane POW_LEQ
+_rtd_part_outl(0x1800da94, 25, 25, 1); //Mark2_Modify;   R-Lane POW_DATALANE_BIAS
+_rtd_part_outl(0x1800da94, 26, 26, 0); //Mark2_Modify;   R-Lane REG_FORCE_STARTUP(Const-GM)
+_rtd_part_outl(0x1800da94, 27, 27, 0); //Mark2_Modify;   R-Lane REG_POWB_STARTUP
+_rtd_part_outl(0x1800da94, 30, 28, 3); //Mark2_Modify;   R-Lane DATALANE_BIAS_ISEL[2:0]
+_rtd_part_outl(0x1800da94, 31, 31, 1); //Mark2_Modify;   R-Lane POW_LEQ_RL
+_rtd_outl(0x1800da98, 0x30feb1f8); //DATALANE setting reg9~12
+_rtd_part_outl(0x1800da98, 0, 0, 1); //Mark2_Modify;      R-Lane POW_CMFB_1P8_CDM
+//_rtd_part_outl(0x1800da98, 1, 1, 0); //Mark2_Modify;    R-Lane SEL_CMFB_LS
+//_rtd_part_outl(0x1800da98, 3, 2, 0); //Mark2_Modify;    R-Lane LEQ_CUR_ADJ
+_rtd_part_outl(0x1800da98, 3, 1, 3); //Mark2_Modify;      R-Lane PTAT_CUR_ADJ_FINE
+_rtd_part_outl(0x1800da98, 5, 4, 2); //Mark2_Modify;      R-Lane PTAT_CUR_ADJ
+_rtd_part_outl(0x1800da98, 6, 6, 1); //Mark2_Modify;      R-Lane REG_BIAS_POW_CON_GM
+_rtd_part_outl(0x1800da98, 8, 8, 1); //Mark2_Modify;      R-Lane POW_DFE
+_rtd_part_outl(0x1800da98, 14, 12, 6); //Mark2_Modify;    R-Lane DFE_SUMAMP_ISEL[2:0]
+_rtd_part_outl(0x1800da98, 15, 15, 0); //Mark2_Modify;    R-Lane SUMAMP_DCGAIN_MAX
+_rtd_part_outl(0x1800da98, 16, 16, 0); //Mark2_Modify;    R-Lane FR_CK_SEL
+//_rtd_part_outl(0x1800da98, 17, 17, 0); //Mark2_Modify;  R-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da98, 18, 18, 0); //Mark2_Modify;    R-Lane BBPD_FR2HR_EN
+_rtd_part_outl(0x1800da98, 23, 22, 0); //Mark2_Modify;    R-Lane CK_DLY_EN
+_rtd_part_outl(0x1800da98, 24, 24, 0); //Mark2_Modify;    R-Lane EN_EYE_MNT
+_rtd_part_outl(0x1800da98, 26, 26, 0); //Mark2_Modify;    R-Lane VTH_MANAUAL
+_rtd_part_outl(0x1800da98, 27, 27, 0); //Mark2_Modify;    R-Lane DA_EG_VOS_PULLLOW
+_rtd_part_outl(0x1800da98, 31, 29, 0); //Mark2_Modify;    R-Lane dummy
+_rtd_outl(0x1800da9c, 0xd1b52410); //DATALANE setting reg13~16
+//_rtd_part_outl(0x1800da9C, 2, 0, 0); //Mark2_Modify;   R-Lane dummy
+_rtd_part_outl(0x1800da9c, 6, 3, 15); //Mark2_Modify;  R-Lane TAP_EN[4:1]
+_rtd_part_outl(0x1800da9c, 7, 7, 1); //Mark2_Modify;   R-Lane DFE_ADAPT_EN
+//_rtd_part_outl(0x1800da9C, 12, 12, 0); //Mark2_Modify; R-Lane DEMUX_FR_CK_SEL
+//_rtd_part_outl(0x1800da9C, 15, 13, 1); //Mark2_Modify; R-Lane DEMUX_RATE_SEL[2:0]
+_rtd_outl(0x1800daa0, 0x515011d1); //DATALANE setting reg17~20
+//_rtd_part_outl(0x1800daA0, 16, 16, 1); //Mark2_Modify; R-Lane DCDR_RSTB
+//_rtd_part_outl(0x1800daA0, 17, 17, 1); //Mark2_Modify; R-Lane ST_CODE_SEL
+//_rtd_part_outl(0x1800daA0, 20, 20, 1); //Mark2_Modify; R-Lane CDR_CK_SEL
+//_rtd_part_outl(0x1800daA0, 22, 22, 1); //Mark2_Modify; R-Lane DCDR_CKIN_SEL
+_rtd_outl(0x1800daa4, 0x700a0004); //ACDR setting reg1~4
+//_rtd_part_outl(0x1800DAA4, 19, 19, 0); //Mark2_Modify; R-Lane SEL_HS_CLK
+//_rtd_part_outl(0x1800DAA4, 17, 17, 0); //Mark2_Modify; R-Lane SEL_DIV2_OR_DIV4
+//_rtd_part_outl(0x1800DAA4, 5, 4, 0); //Mark2_Modify;   R-Lane SEL_DIV_REF[1:0]
+//_rtd_part_outl(0x1800DAA4, 7, 6, 0); //Mark2_Modify;   R-Lane SEL_DIV_PLL[1:0]
+_rtd_outl(0x1800daa4, 0x721f0007); //ACDR setting reg1~4
+_rtd_outl(0x1800daa8, 0x60000385); //ACDR setting reg5~8
+//_rtd_part_outl(0x1800DAA8, 11, 10, 0); //Mark2_Modify; R-Lane PIX_RATE_SEL
+_rtd_part_outl(0x1800daa8, 13, 12, 0); //Mark2_Modify; R-Lane SEL_BAND_CAP
+_rtd_outl(0x1800daa8, 0x61000385); //ACDR setting reg5~8
+_rtd_outl(0x1800daac, 0x8900386b); //ACDR setting reg12~9
+//_rtd_part_outl(0x1800DAAC, 13, 13, 0); //Mark2_Modify;   R-Lane SEL_CKREF_0CKXTAL_1CKLANE
+//_rtd_part_outl(0x1800DAAC, 12, 12, 0); //Mark2_Modify;   R-Lane RSTB_M_DIV
+//_rtd_part_outl(0x1800DAAC, 11, 11, 0); //Mark2_Modify;   R-Lane RSTB_PRESCALER
+//_rtd_part_outl(0x1800DAAC, 9, 9, 0); //Mark2_Modify;     R-Lane CMU_SEL_PRE_M_DIV
+//_rtd_part_outl(0x1800DAAC, 8, 0, 0); //Mark2_Modify;     R-Lane CMU_SEL_M_DIV[8:0]
+//_rtd_part_outl(0x1800DAAC, 10, 10, 0); //Mark2_Modify;   R-Lane CMU_SEL_POST_M_DIV
+////_rtd_part_outl(0x1800daAC, 19, 16, 3); //Mark2_Modify; R-Lane LE1_ISEL_IN_2(dummy)
+_rtd_part_outl(0x1800daac, 21, 20, 3); //Mark2_Modify;   R-Lane RLSEL_LE1_2
+_rtd_part_outl(0x1800daac, 23, 22, 3); //Mark2_Modify;   R-Lane RLSEL_NC_2
+//_rtd_part_outl(0x1800daAC, 24, 24, 1); //Mark2_Modify;   R-Lane POW_NC2
+_rtd_outl(0x1800dd3c, 0x000fac0a); //B_pll
+_rtd_outl(0x1800dd40, 0x0003a90b); //B_cdr
+_rtd_outl(0x1800dd48, 0x000fac0a); //G_pll
+_rtd_outl(0x1800dd4c, 0x0003a90b); //G_cdr
+_rtd_outl(0x1800dd54, 0x000fac0a); //R_pll
+_rtd_outl(0x1800dd58, 0x0003a90b); //R_cdr
+_rtd_outl(0x1800dd60, 0x000fbc0e); //CK_pll
+_rtd_outl(0x1800dd64, 0x0003b90b); //CK_cdr
+//=====[ACDR_settings]afn_en=====//
+//#15000
+_rtd_outl(0x1800dafc, 0x000000f4);
+_rtd_outl(0x1800dafc, 0x000000f6);
+_rtd_outl(0x1800dafc, 0x000000f7);
+_rtd_outl(0x1800dafc, 0x000000ff);
+//_rtd_outl(0x1800dc00, 0x0000000f);
+//#15000
+_rtd_part_outl(0x1800da38, 17, 17, 0); //CK-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da58, 17, 17, 0); //B-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da78, 17, 17, 0); //G-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da98, 17, 17, 0); //R-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da38, 17, 17, 1); //CK-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da58, 17, 17, 1); //B-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da78, 17, 17, 1); //G-Lane BBPD_RSTB
+_rtd_part_outl(0x1800da98, 17, 17, 1); //R-Lane BBPD_RSTB
+_rtd_part_outl(0x1800dc88, 27, 27, 1); //DFE data enable
+_rtd_part_outl(0x1800dc88, 19, 19, 1); //DFE data enable
+_rtd_part_outl(0x1800dc88, 11, 11, 1); //DFE data enable
+_rtd_part_outl(0x1800dc88, 3, 3, 1); //DFE data enable
+_rtd_outl(0x1800dc00, 0x0000000f); //R3537 add
+//=====[Koffset_frl]=====//
+//#include "04_RLE1025_KOFF_Multi_lane_20200917.tbl"
+//reg_p0_r_fine_tune_start
+//reg_p0_g_fine_tune_start
+//reg_p0_b_fine_tune_start
+//reg_p0_ck_fine_tune_start
+_rtd_part_outl(0x1800da58, 28, 28, 1); //#B  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da5c, 6, 3, 0); //#B  DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da38, 28, 28, 1); //#CK DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da3c, 6, 3, 0); //#CK DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da78, 28, 28, 1); //#G  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da7c, 6, 3, 0); //#G  DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da98, 28, 28, 1); //#R  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da9c, 6, 3, 0); //#R  DFE_TAP_EN[4:1] = 0
+_rtd_outl(0x1800dc44, 0x0282cf00); //B_KOFF rstn,  //[26:20] timout = 0101000, [19:14] divisor = 001000, [11:8] delay count = 11
+_rtd_outl(0x1800dc54, 0x0282cf00); //G_KOFF rstn
+_rtd_outl(0x1800dc64, 0x0282cf00); //R_KOFF rstn
+_rtd_outl(0x1800dc74, 0x0282cf00); //CK_KOFF rstn
+_rtd_part_outl(0x1800dc44, 0, 0, 1); //Release B_KOFF rstn
+_rtd_part_outl(0x1800dc54, 0, 0, 1); //Release G_KOFF rstn
+_rtd_part_outl(0x1800dc64, 0, 0, 1); //Release R_KOFF rstn
+_rtd_part_outl(0x1800dc74, 0, 0, 1); //Release CK_KOFF rstn
+//===BLANE KOFF, check p0_b_offset_da_ok_ro ,0x180bcc44[28]
+_rtd_part_outl(0x1800dc4c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc4c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc50, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc50, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc50, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da50, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da58, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da54, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da54, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+_rtd_part_outl(0x1800dc50, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc50, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc4c, 29, 29, 1); //[19]z0_ok_do=1
+_rtd_part_outl(0x1800dc4c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc4c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc50, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc50, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc50, 21, 21, 1); //[21]offfset_pc_eq=1
+_rtd_part_outl(0x1800dc4c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_inl(0x1800dc44, 28, 28); //DATA OFFSET OK
+//===G LANE KOFF, check p0_b_offset_da_ok_ro ,0x180bcc54[28]
+_rtd_part_outl(0x1800dc5c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc5c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc60, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc60, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc60, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da70, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da78, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da74, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da74, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+_rtd_part_outl(0x1800dc60, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc60, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc5c, 29, 29, 1); //[19]z0_ok_do=1
+_rtd_part_outl(0x1800dc5c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc5c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc60, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc60, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc60, 21, 21, 1); //[21]offfset_pc_eq=1
+_rtd_part_outl(0x1800dc5c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_inl(0x1800dc54, 28, 28); //DATA OFFSET OK
+//===R LANE KOFF, check p0_b_offset_da_ok_ro ,0x180bcc64[28]
+_rtd_part_outl(0x1800dc6c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc6c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc70, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc70, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc70, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da90, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da98, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da94, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da94, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+_rtd_part_outl(0x1800dc70, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc70, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc6c, 29, 29, 1); //[19]z0_ok_do=1
+_rtd_part_outl(0x1800dc6c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc6c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc70, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc70, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc70, 21, 21, 1); //[21]offfset_pc_eq=1
+_rtd_part_outl(0x1800dc6c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_inl(0x1800dc64, 28, 28); //DATA OFFSET OK
+//===CK LANE KOFF, check p0_b_offset_da_ok_ro ,0x180bcc74[28]
+_rtd_part_outl(0x1800dc7c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc7c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc80, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc80, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc80, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da30, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da38, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da34, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da34, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+_rtd_part_outl(0x1800dc80, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc80, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc7c, 29, 29, 1); //[19]z0_ok_do=1
+_rtd_part_outl(0x1800dc7c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc7c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc80, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc80, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc80, 21, 21, 1); //[21]offfset_pc_eq=1
+_rtd_part_outl(0x1800dc7c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_inl(0x1800dc74, 28, 28); //DATA OFFSET OK
+//========================================= STEP2 LEQ KOFF =================================================
+//===BLANE KOFF LEQ, check p0_b_offset_eq_ok_ro ,0x180bcc44[30]
+_rtd_part_outl(0x1800da54, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da54, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da58, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc50, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc50, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc4c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc50, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_outl(0x1800dc4c, 10, 10, 0); //[10]offset_en_de=1->0
+//===G LANE KOFF LEQ, check p0_b_offset_eq_ok_ro ,0x180bcc44[30]
+_rtd_part_outl(0x1800da74, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da74, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da78, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc60, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc60, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc5c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc60, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_outl(0x1800dc5c, 10, 10, 0); //[10]offset_en_de=1->0
+//===R LANE KOFF LEQ, check p0_b_offset_eq_ok_ro ,0x180bcc44[30]
+_rtd_part_outl(0x1800da94, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da94, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da98, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc70, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc70, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc6c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc70, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_outl(0x1800dc6c, 10, 10, 0);
+//===CK LANE KOFF LEQ, check p0_b_offset_eq_ok_ro ,0x180bcc45[30]
+_rtd_part_outl(0x1800da34, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da34, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da38, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc80, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc80, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc7c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc80, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_outl(0x1800dc7c, 10, 10, 0); //[10]offset_en_de=1->0
+_rtd_part_inl(0x1800dc44, 30, 30); //p0_b_offset_eq_ok_ro
+_rtd_part_inl(0x1800dc54, 30, 30); //p0_g_offset_eq_ok_ro
+_rtd_part_inl(0x1800dc64, 30, 30); //p0_r_offset_eq_ok_ro
+_rtd_part_inl(0x1800dc74, 30, 30); //p0_ck_offset_eq_ok_ro
+//========================================= STEP3 All DCVS KOFF ==
+//BLANE
+_rtd_part_outl(0x1800dc4c, 10, 10, 1); //[10]offset_en_de=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc4c, 20, 20, 1); //[20]offset_en_do=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc50, 0, 0, 1); //[20]offset_en_ee=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc50, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//===G LANE KOFF Data/Edge, check p0_b_offset_da_ok_ro ,0x180bcc44[28]
+_rtd_part_outl(0x1800dc5c, 10, 10, 1); //[10]offset_en_de=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc5c, 20, 20, 1); //[20]offset_en_do=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc60, 0, 0, 1); //[20]offset_en_ee=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc60, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//===R LANE KOFF Data/Edge, check p0_b_offset_da_ok_ro ,0x180bcc44[28]
+_rtd_part_outl(0x1800dc6c, 10, 10, 1); //[10]offset_en_de=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc6c, 20, 20, 1); //[20]offset_en_do=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc70, 0, 0, 1); //[20]offset_en_ee=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc70, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//===CK LANE KOFF Data/Edge, check p0_b_offset_da_ok_ro ,0x180bcc44[28]
+_rtd_part_outl(0x1800dc7c, 10, 10, 1); //[10]offset_en_de=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc7c, 20, 20, 1); //[20]offset_en_do=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc80, 0, 0, 1); //[20]offset_en_ee=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc80, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//Disable KOFF en
+//BLANE
+_rtd_part_outl(0x1800dc4c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc4c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc50, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc50, 10, 10, 0); //[20]offset_en_eo=0
+_rtd_part_outl(0x1800dc50, 20, 10, 0); //[20]offset_en_eq=0
+//GLANE
+_rtd_part_outl(0x1800dc5c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc5c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc60, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc60, 10, 10, 0); //[20]offset_en_eo=0
+_rtd_part_outl(0x1800dc60, 20, 10, 0); //[20]offset_en_eq=0
+//RLANE
+_rtd_part_outl(0x1800dc6c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc6c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc70, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc70, 10, 10, 0); //[20]offset_en_eo=0
+_rtd_part_outl(0x1800dc70, 20, 10, 0); //[20]offset_en_eq=0
+//CKLANE
+_rtd_part_outl(0x1800dc7c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc7c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc80, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc80, 10, 10, 0); //[20]offset_en_eo=0
+_rtd_part_outl(0x1800dc80, 20, 10, 0); //[20]offset_en_eq=0
+//Input on
+_rtd_part_outl(0x1800da50, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da70, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da90, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da30, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_inl(0x1800dc44, 28, 28); //B DATA OFFSET OK
+_rtd_part_inl(0x1800dc54, 28, 28); //G DATA OFFSET OK
+_rtd_part_inl(0x1800dc64, 28, 28); //R DATA OFFSET OK
+_rtd_part_inl(0x1800dc74, 28, 28); //CK DATA OFFSET OK
+_rtd_part_outl(0x1800da58, 28, 28, 0); //#B  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da5c, 6, 3, 0xf); //#B  DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da38, 28, 28, 0); //#CK DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da3c, 6, 3, 0xf); //#CK DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da78, 28, 28, 0); //#G  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da7c, 6, 3, 0xf); //#G  DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da98, 28, 28, 0); //#R  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da9c, 6, 3, 0xf); //#R  DFE_TAP_EN[4:1] = 0xf
+//reg_p0_r_fine_tune_start
+//reg_p0_g_fine_tune_start
+//reg_p0_b_fine_tune_start
+//reg_p0_ck_fine_tune_start
+//=====[LEQ_VTH_TAP0_Adapt]=====//
+//#include "03_RLE1025_LEQ_VTH_TAP0_Adapt_20200825.tbl"
+_rtd_part_outl(0x1800dd04, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dce8, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dcc8, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dd20, 0, 0, 0); //finetunstart off
+ScalerTimer_DelayXms(10);
+//DFE_Adaptation
+//===CK LANE TAP0 & LEQ
+_rtd_outl(0x180b7ccc, 0x00007400); //Timer, set eqfe_en,servo_en,timer_en=1
+_rtd_part_outl(0x180b7cd0, 31, 31, 1); //leq1_inv=1
+_rtd_part_outl(0x180b7cd0, 30, 30, 1); //leq2_inv=0
+_rtd_part_outl(0x180b7cd4, 17, 15, 0); //LEQ_GAIN1=0
+_rtd_part_outl(0x180b7cd4, 14, 12, 0); //LEQ_GAIN2=0
+_rtd_part_outl(0x180b7cd8, 22, 21, 1); //LEQ1_trans_mode=1
+_rtd_part_outl(0x180b7cd8, 20, 19, 3); //LEQ2_trans_mode=3
+_rtd_part_outl(0x180b7cd8, 28, 26, 4); //tap0_gain=4
+_rtd_part_outl(0x180b7ccc, 26, 24, 5); //20200824_tap_timer=5
+_rtd_part_outl(0x180b7ccc, 20, 18, 5); //20200825_LEQ_timer=5
+_rtd_part_outl(0x180b7ccc, 23, 21, 5); //20200825_VTH_timer=5
+_rtd_part_outl(0x180b7ccc, 13, 13, 1); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7ce8, 25, 25, 1); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7ce8, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=0
+_rtd_part_outl(0x180b7ce8, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=0
+_rtd_part_outl(0x180b7ce8, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=0
+_rtd_part_outl(0x180b7ce8, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=0
+_rtd_part_outl(0x180b7cc8, 23, 22, 0x3); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x180b7cdc, 31, 30, 0x1); //tap0_adjust_b =1
+//===B LANE TAP0 & LEQ
+_rtd_outl(0x180b7c8c, 0x00007400); //Timer, set eqfe_en,servo_en,timer_en=1
+_rtd_part_outl(0x180b7c90, 31, 31, 1); //leq1_inv=1
+_rtd_part_outl(0x180b7c90, 30, 30, 1); //leq2_inv=0
+_rtd_part_outl(0x180b7c94, 17, 15, 0); //LEQ_GAIN1=0
+_rtd_part_outl(0x180b7c94, 14, 12, 0); //LEQ_GAIN2=0
+_rtd_part_outl(0x180b7c98, 22, 21, 1); //LEQ1_trans_mode=1
+_rtd_part_outl(0x180b7c98, 20, 19, 3); //LEQ2_trans_mode=3
+_rtd_part_outl(0x180b7c98, 28, 26, 4); //tap0_gain=4
+_rtd_part_outl(0x180b7c8c, 26, 24, 5); //20200824_tap_timer=5
+_rtd_part_outl(0x180b7c8c, 20, 18, 5); //20200825_LEQ_timer=5
+_rtd_part_outl(0x180b7c8c, 23, 21, 5); //20200825_VTH_timer=5
+_rtd_part_outl(0x180b7c8c, 13, 13, 1); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7ca8, 25, 25, 1); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7ca8, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=0
+_rtd_part_outl(0x180b7ca8, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=0
+_rtd_part_outl(0x180b7ca8, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=0
+_rtd_part_outl(0x180b7ca8, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=0
+_rtd_part_outl(0x180b7c88, 23, 22, 0x3); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x180b7c9c, 31, 30, 0x1); //tap0_adjust_b =1
+//===G LANE TAP0 & LEQ
+_rtd_outl(0x180b7c4c, 0x00007400); //Timer, set eqfe_en,servo_en,timer_en=1
+_rtd_part_outl(0x180b7c50, 31, 31, 1); //leq1_inv=1
+_rtd_part_outl(0x180b7c50, 30, 30, 1); //leq2_inv=0
+_rtd_part_outl(0x180b7c54, 17, 15, 0); //LEQ_GAIN1=0
+_rtd_part_outl(0x180b7c54, 14, 12, 0); //LEQ_GAIN2=0
+_rtd_part_outl(0x180b7c58, 22, 21, 1); //LEQ1_trans_mode=1
+_rtd_part_outl(0x180b7c58, 20, 19, 3); //LEQ2_trans_mode=3
+_rtd_part_outl(0x180b7c58, 28, 26, 4); //tap0_gain=4
+_rtd_part_outl(0x180b7c4c, 26, 24, 5); //20200824_tap_timer=5
+_rtd_part_outl(0x180b7c4c, 20, 18, 5); //20200825_LEQ_timer=5
+_rtd_part_outl(0x180b7c4c, 23, 21, 5); //20200825_VTH_timer=5
+_rtd_part_outl(0x180b7c4c, 13, 13, 1); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7c68, 25, 25, 1); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7c68, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=0
+_rtd_part_outl(0x180b7c68, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=0
+_rtd_part_outl(0x180b7c68, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=0
+_rtd_part_outl(0x180b7c68, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=0
+_rtd_part_outl(0x180b7c48, 23, 22, 0x3); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x180b7c5c, 31, 30, 0x1); //tap0_adjust_b =1
+//===R LANE LEQ_DFE_adapat
+_rtd_outl(0x180b7c0c, 0x00007400); //Timer, set eqfe_en,servo_en,timer_en=1
+_rtd_part_outl(0x180b7c10, 31, 31, 1); //leq1_inv=1
+_rtd_part_outl(0x180b7c10, 30, 30, 1); //leq2_inv=0
+_rtd_part_outl(0x180b7c14, 17, 15, 0); //LEQ_GAIN1=0
+_rtd_part_outl(0x180b7c14, 14, 12, 0); //LEQ_GAIN2=0
+_rtd_part_outl(0x180b7c18, 22, 21, 1); //LEQ1_trans_mode=1
+_rtd_part_outl(0x180b7c18, 20, 19, 3); //LEQ2_trans_mode=3
+_rtd_part_outl(0x180b7c18, 28, 26, 4); //tap0_gain=4
+_rtd_part_outl(0x180b7c0c, 26, 24, 5); //20200824_tap_timer=5
+_rtd_part_outl(0x180b7c0c, 20, 18, 5); //20200825_LEQ_timer=5
+_rtd_part_outl(0x180b7c0c, 23, 21, 5); //20200825_VTH_timer=5
+_rtd_part_outl(0x180b7c0c, 13, 13, 1); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7c28, 25, 25, 1); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7c28, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=0
+_rtd_part_outl(0x180b7c28, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=0
+_rtd_part_outl(0x180b7c28, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=0
+_rtd_part_outl(0x180b7c28, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=0
+_rtd_part_outl(0x180b7c08, 23, 22, 0x3); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x180b7c1c, 31, 30, 0x1); //tap0_adjust_b =1
+//LEQ_DFE adapt
+_rtd_part_outl(0x1800dd70, 3, 0, 0xf); //ck,r,g,b rstb_eq=1
+_rtd_part_outl(0x1800dd70, 7, 4, 0xf); //ck,r,g,b leq_en=1
+_rtd_part_outl(0x1800dd70, 15, 12, 0xf); //ck,r,g,b vth_en=1
+_rtd_part_outl(0x1800dd70, 11, 8, 0xf); //dfe_en=1
+_rtd_part_outl(0x1800dd04, 0, 0, 1); //finetunstart on
+_rtd_part_outl(0x1800dce8, 0, 0, 1); //finetunstart on
+_rtd_part_outl(0x1800dcc8, 0, 0, 1); //finetunstart on
+_rtd_part_outl(0x1800dd20, 0, 0, 1); //finetunstart on
+ScalerTimer_DelayXms(10);
+_rtd_part_outl(0x180b7ccc, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7ce8, 25, 25, 0); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7ce8, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=1
+_rtd_part_outl(0x180b7ce8, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=1
+_rtd_part_outl(0x180b7ce8, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7ce8, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7cc8, 23, 22, 0); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x180b7c8c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7ca8, 25, 25, 0); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7ca8, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=1
+_rtd_part_outl(0x180b7ca8, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=1
+_rtd_part_outl(0x180b7ca8, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7ca8, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7c88, 23, 22, 0); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x180b7c4c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7c68, 25, 25, 0); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7c68, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=1
+_rtd_part_outl(0x180b7c68, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=1
+_rtd_part_outl(0x180b7c68, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7c68, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7c48, 23, 22, 0); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x180b7c0c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7c28, 25, 25, 0); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7c28, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=1
+_rtd_part_outl(0x180b7c28, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=1
+_rtd_part_outl(0x180b7c28, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7c28, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7c08, 23, 22, 0); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x1800dd04, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dce8, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dcc8, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dd20, 0, 0, 0); //finetunstart off
+ScalerTimer_DelayXms(10);
+//=====[Koffset_frl]=====//
+//#include "04_RLE1025_KOFF_Multi_lane_20200917.tbl"
+//reg_p0_r_fine_tune_start
+//reg_p0_g_fine_tune_start
+//reg_p0_b_fine_tune_start
+//reg_p0_ck_fine_tune_start
+_rtd_part_outl(0x1800da58, 28, 28, 1); //#B  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da5c, 6, 3, 0); //#B  DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da38, 28, 28, 1); //#CK DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da3c, 6, 3, 0); //#CK DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da78, 28, 28, 1); //#G  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da7c, 6, 3, 0); //#G  DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da98, 28, 28, 1); //#R  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da9c, 6, 3, 0); //#R  DFE_TAP_EN[4:1] = 0
+_rtd_outl(0x1800dc44, 0x0282cf00); //B_KOFF rstn,  //[26:20] timout = 0101000, [19:14] divisor = 001000, [11:8] delay count = 11
+_rtd_outl(0x1800dc54, 0x0282cf00); //G_KOFF rstn
+_rtd_outl(0x1800dc64, 0x0282cf00); //R_KOFF rstn
+_rtd_outl(0x1800dc74, 0x0282cf00); //CK_KOFF rstn
+_rtd_part_outl(0x1800dc44, 0, 0, 1); //Release B_KOFF rstn
+_rtd_part_outl(0x1800dc54, 0, 0, 1); //Release G_KOFF rstn
+_rtd_part_outl(0x1800dc64, 0, 0, 1); //Release R_KOFF rstn
+_rtd_part_outl(0x1800dc74, 0, 0, 1); //Release CK_KOFF rstn
+//===BLANE KOFF, check p0_b_offset_da_ok_ro ,0x180bcc44[28]
+_rtd_part_outl(0x1800dc4c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc4c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc50, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc50, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc50, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da50, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da58, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da54, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da54, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+_rtd_part_outl(0x1800dc50, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc50, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc4c, 29, 29, 1); //[19]z0_ok_do=1
+_rtd_part_outl(0x1800dc4c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc4c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc50, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc50, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc50, 21, 21, 1); //[21]offfset_pc_eq=1
+_rtd_part_outl(0x1800dc4c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_inl(0x1800dc44, 28, 28); //DATA OFFSET OK
+//===G LANE KOFF, check p0_b_offset_da_ok_ro ,0x180bcc54[28]
+_rtd_part_outl(0x1800dc5c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc5c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc60, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc60, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc60, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da70, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da78, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da74, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da74, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+_rtd_part_outl(0x1800dc60, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc60, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc5c, 29, 29, 1); //[19]z0_ok_do=1
+_rtd_part_outl(0x1800dc5c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc5c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc60, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc60, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc60, 21, 21, 1); //[21]offfset_pc_eq=1
+_rtd_part_outl(0x1800dc5c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_inl(0x1800dc54, 28, 28); //DATA OFFSET OK
+//===R LANE KOFF, check p0_b_offset_da_ok_ro ,0x180bcc64[28]
+_rtd_part_outl(0x1800dc6c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc6c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc70, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc70, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc70, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da90, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da98, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da94, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da94, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+_rtd_part_outl(0x1800dc70, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc70, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc6c, 29, 29, 1); //[19]z0_ok_do=1
+_rtd_part_outl(0x1800dc6c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc6c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc70, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc70, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc70, 21, 21, 1); //[21]offfset_pc_eq=1
+_rtd_part_outl(0x1800dc6c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_inl(0x1800dc64, 28, 28); //DATA OFFSET OK
+//===CK LANE KOFF, check p0_b_offset_da_ok_ro ,0x180bcc74[28]
+_rtd_part_outl(0x1800dc7c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc7c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc80, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc80, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc80, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da30, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da38, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da34, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da34, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+_rtd_part_outl(0x1800dc80, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc80, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc7c, 29, 29, 1); //[19]z0_ok_do=1
+_rtd_part_outl(0x1800dc7c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc7c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc80, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc80, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc80, 21, 21, 1); //[21]offfset_pc_eq=1
+_rtd_part_outl(0x1800dc7c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_inl(0x1800dc74, 28, 28); //DATA OFFSET OK
+//========================================= STEP2 LEQ KOFF =================================================
+//===BLANE KOFF LEQ, check p0_b_offset_eq_ok_ro ,0x180bcc44[30]
+_rtd_part_outl(0x1800da54, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da54, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da58, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc50, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc50, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc4c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc50, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_outl(0x1800dc4c, 10, 10, 0); //[10]offset_en_de=1->0
+//===G LANE KOFF LEQ, check p0_b_offset_eq_ok_ro ,0x180bcc44[30]
+_rtd_part_outl(0x1800da74, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da74, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da78, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc60, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc60, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc5c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc60, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_outl(0x1800dc5c, 10, 10, 0); //[10]offset_en_de=1->0
+//===R LANE KOFF LEQ, check p0_b_offset_eq_ok_ro ,0x180bcc44[30]
+_rtd_part_outl(0x1800da94, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da94, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da98, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc70, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc70, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc6c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc70, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_outl(0x1800dc6c, 10, 10, 0);
+//===CK LANE KOFF LEQ, check p0_b_offset_eq_ok_ro ,0x180bcc45[30]
+_rtd_part_outl(0x1800da34, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da34, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da38, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc80, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc80, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc7c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc80, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_outl(0x1800dc7c, 10, 10, 0); //[10]offset_en_de=1->0
+_rtd_part_inl(0x1800dc44, 30, 30); //p0_b_offset_eq_ok_ro
+_rtd_part_inl(0x1800dc54, 30, 30); //p0_g_offset_eq_ok_ro
+_rtd_part_inl(0x1800dc64, 30, 30); //p0_r_offset_eq_ok_ro
+_rtd_part_inl(0x1800dc74, 30, 30); //p0_ck_offset_eq_ok_ro
+//========================================= STEP3 All DCVS KOFF ==
+//BLANE
+_rtd_part_outl(0x1800dc4c, 10, 10, 1); //[10]offset_en_de=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc4c, 20, 20, 1); //[20]offset_en_do=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc50, 0, 0, 1); //[20]offset_en_ee=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc50, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//===G LANE KOFF Data/Edge, check p0_b_offset_da_ok_ro ,0x180bcc44[28]
+_rtd_part_outl(0x1800dc5c, 10, 10, 1); //[10]offset_en_de=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc5c, 20, 20, 1); //[20]offset_en_do=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc60, 0, 0, 1); //[20]offset_en_ee=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc60, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//===R LANE KOFF Data/Edge, check p0_b_offset_da_ok_ro ,0x180bcc44[28]
+_rtd_part_outl(0x1800dc6c, 10, 10, 1); //[10]offset_en_de=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc6c, 20, 20, 1); //[20]offset_en_do=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc70, 0, 0, 1); //[20]offset_en_ee=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc70, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//===CK LANE KOFF Data/Edge, check p0_b_offset_da_ok_ro ,0x180bcc44[28]
+_rtd_part_outl(0x1800dc7c, 10, 10, 1); //[10]offset_en_de=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc7c, 20, 20, 1); //[20]offset_en_do=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc80, 0, 0, 1); //[20]offset_en_ee=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc80, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//Disable KOFF en
+//BLANE
+_rtd_part_outl(0x1800dc4c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc4c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc50, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc50, 10, 10, 0); //[20]offset_en_eo=0
+_rtd_part_outl(0x1800dc50, 20, 10, 0); //[20]offset_en_eq=0
+//GLANE
+_rtd_part_outl(0x1800dc5c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc5c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc60, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc60, 10, 10, 0); //[20]offset_en_eo=0
+_rtd_part_outl(0x1800dc60, 20, 10, 0); //[20]offset_en_eq=0
+//RLANE
+_rtd_part_outl(0x1800dc6c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc6c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc70, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc70, 10, 10, 0); //[20]offset_en_eo=0
+_rtd_part_outl(0x1800dc70, 20, 10, 0); //[20]offset_en_eq=0
+//CKLANE
+_rtd_part_outl(0x1800dc7c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc7c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc80, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc80, 10, 10, 0); //[20]offset_en_eo=0
+_rtd_part_outl(0x1800dc80, 20, 10, 0); //[20]offset_en_eq=0
+//Input on
+_rtd_part_outl(0x1800da50, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da70, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da90, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da30, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_inl(0x1800dc44, 28, 28); //B DATA OFFSET OK
+_rtd_part_inl(0x1800dc54, 28, 28); //G DATA OFFSET OK
+_rtd_part_inl(0x1800dc64, 28, 28); //R DATA OFFSET OK
+_rtd_part_inl(0x1800dc74, 28, 28); //CK DATA OFFSET OK
+_rtd_part_outl(0x1800da58, 28, 28, 0); //#B  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da5c, 6, 3, 0xf); //#B  DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da38, 28, 28, 0); //#CK DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da3c, 6, 3, 0xf); //#CK DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da78, 28, 28, 0); //#G  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da7c, 6, 3, 0xf); //#G  DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da98, 28, 28, 0); //#R  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da9c, 6, 3, 0xf); //#R  DFE_TAP_EN[4:1] = 0xf
+//reg_p0_r_fine_tune_start
+//reg_p0_g_fine_tune_start
+//reg_p0_b_fine_tune_start
+//reg_p0_ck_fine_tune_start
+//=====[TAP0_to_TAP4_Adapt]=====//
+//#include "05_RLE1025_TAP0-4_Adapt_20200825.tbl"
+//_rtd_outl(0x180bd48c,0x00007400);        //Timer, set eqfe_en,servo_en,timer_en=1
+//_rtd_part_outl(0x180bd48c,26, 24,5);   //20200824_tap_timer=5
+//_rtd_part_outl(0x180bd48c,20, 18,5);   //20200825_LEQ_timer=5
+//_rtd_part_outl(0x180bd48c,23, 21,5);   //20200825_VTH_timer=5
+//_rtd_part_outl(0x180bd4a8,26, 26,1);   //20200824_DFE_ADAP_EN_tap1=1
+//_rtd_part_outl(0x180bd4a8,27, 27,1);   //20200824_DFE_ADAP_EN_tap2=1
+//_rtd_part_outl(0x180bd4a8,28, 28,1);   //20200824_DFE_ADAP_EN_tap3=1
+//_rtd_part_outl(0x180bd4a8,29, 29,1);   //20200824_DFE_ADAP_EN_tap4=1
+//_rtd_part_outl(0x180bd488,23, 22,0x3);	//VTH_DFE_EN_B=1, VTH_EN_B=1
+//_rtd_part_outl(0x180bd49c,31, 30,0x1);   //tap0_adjust_b =1
+_rtd_part_outl(0x1800dd04, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dce8, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dcc8, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dd20, 0, 0, 0); //finetunstart off
+ScalerTimer_DelayXms(10);
+_rtd_part_outl(0x1800dd70, 3, 0, 0xf); //ck,r,g,b rstb_eq=1
+_rtd_part_outl(0x1800dd70, 7, 4, 0xf); //ck,r,g,b leq_en=1
+_rtd_part_outl(0x1800dd70, 15, 12, 0xf); //ck,r,g,b vth_en=1
+_rtd_part_outl(0x1800dd70, 11, 8, 0xf); //dfe_en=1
+_rtd_part_outl(0x180b7ccc, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7ce8, 25, 25, 1); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7ce8, 26, 26, 1); //20200824_DFE_ADAP_EN_tap1=0
+_rtd_part_outl(0x180b7ce8, 27, 27, 1); //20200824_DFE_ADAP_EN_tap2=0
+_rtd_part_outl(0x180b7ce8, 28, 28, 1); //20200824_DFE_ADAP_EN_tap3=0
+_rtd_part_outl(0x180b7ce8, 29, 29, 1); //20200824_DFE_ADAP_EN_tap4=0
+_rtd_part_outl(0x180b7cc8, 23, 22, 0x3); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x180b7c8c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7ca8, 25, 25, 1); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7ca8, 26, 26, 1); //20200824_DFE_ADAP_EN_tap1=0
+_rtd_part_outl(0x180b7ca8, 27, 27, 1); //20200824_DFE_ADAP_EN_tap2=0
+_rtd_part_outl(0x180b7ca8, 28, 28, 1); //20200824_DFE_ADAP_EN_tap3=0
+_rtd_part_outl(0x180b7ca8, 29, 29, 1); //20200824_DFE_ADAP_EN_tap4=0
+_rtd_part_outl(0x180b7c88, 23, 22, 0x3); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x180b7c4c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7c68, 25, 25, 1); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7c68, 26, 26, 1); //20200824_DFE_ADAP_EN_tap1=0
+_rtd_part_outl(0x180b7c68, 27, 27, 1); //20200824_DFE_ADAP_EN_tap2=0
+_rtd_part_outl(0x180b7c68, 28, 28, 1); //20200824_DFE_ADAP_EN_tap3=0
+_rtd_part_outl(0x180b7c68, 29, 29, 1); //20200824_DFE_ADAP_EN_tap4=0
+_rtd_part_outl(0x180b7c48, 23, 22, 0x3); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x180b7c0c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7c28, 25, 25, 1); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7c28, 26, 26, 1); //20200824_DFE_ADAP_EN_tap1=0
+_rtd_part_outl(0x180b7c28, 27, 27, 1); //20200824_DFE_ADAP_EN_tap2=0
+_rtd_part_outl(0x180b7c28, 28, 28, 1); //20200824_DFE_ADAP_EN_tap3=0
+_rtd_part_outl(0x180b7c28, 29, 29, 1); //20200824_DFE_ADAP_EN_tap4=0
+_rtd_part_outl(0x180b7c08, 23, 22, 0x3); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x1800dd04, 0, 0, 1); //finetunstart on
+_rtd_part_outl(0x1800dce8, 0, 0, 1); //finetunstart on
+_rtd_part_outl(0x1800dcc8, 0, 0, 1); //finetunstart on
+_rtd_part_outl(0x1800dd20, 0, 0, 1); //finetunstart on
+ScalerTimer_DelayXms(10);
+_rtd_part_outl(0x180b7ccc, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7ce8, 25, 25, 0); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7ce8, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=1
+_rtd_part_outl(0x180b7ce8, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=1
+_rtd_part_outl(0x180b7ce8, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7ce8, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7cc8, 23, 22, 0); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x180b7c8c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7ca8, 25, 25, 0); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7ca8, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=1
+_rtd_part_outl(0x180b7ca8, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=1
+_rtd_part_outl(0x180b7ca8, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7ca8, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7c88, 23, 22, 0); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x180b7c4c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7c68, 25, 25, 0); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7c68, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=1
+_rtd_part_outl(0x180b7c68, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=1
+_rtd_part_outl(0x180b7c68, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7c68, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7c48, 23, 22, 0); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x180b7c0c, 13, 13, 0); //20210807_DFE ADAP LE=0
+_rtd_part_outl(0x180b7c28, 25, 25, 0); //20210807_DFE_ADAP_EN_tap0=0
+_rtd_part_outl(0x180b7c28, 26, 26, 0); //20200824_DFE_ADAP_EN_tap1=1
+_rtd_part_outl(0x180b7c28, 27, 27, 0); //20200824_DFE_ADAP_EN_tap2=1
+_rtd_part_outl(0x180b7c28, 28, 28, 0); //20200824_DFE_ADAP_EN_tap3=1
+_rtd_part_outl(0x180b7c28, 29, 29, 0); //20200824_DFE_ADAP_EN_tap4=1
+_rtd_part_outl(0x180b7c08, 23, 22, 0); //VTH_DFE_EN_B=1, VTH_EN_B=1
+_rtd_part_outl(0x1800dd04, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dce8, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dcc8, 0, 0, 0); //finetunstart off
+_rtd_part_outl(0x1800dd20, 0, 0, 0); //finetunstart off
+ScalerTimer_DelayXms(10);
+//=====[Koffset_frl]=====//
+//#include "04_RLE1025_KOFF_Multi_lane_20200917.tbl"
+//reg_p0_r_fine_tune_start
+//reg_p0_g_fine_tune_start
+//reg_p0_b_fine_tune_start
+//reg_p0_ck_fine_tune_start
+_rtd_part_outl(0x1800da58, 28, 28, 1); //#B  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da5c, 6, 3, 0); //#B  DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da38, 28, 28, 1); //#CK DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da3c, 6, 3, 0); //#CK DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da78, 28, 28, 1); //#G  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da7c, 6, 3, 0); //#G  DFE_TAP_EN[4:1] = 0
+_rtd_part_outl(0x1800da98, 28, 28, 1); //#R  DFE_TAP0_ICOM_EN=1
+_rtd_part_outl(0x1800da9c, 6, 3, 0); //#R  DFE_TAP_EN[4:1] = 0
+_rtd_outl(0x1800dc44, 0x0282cf00); //B_KOFF rstn,  //[26:20] timout = 0101000, [19:14] divisor = 001000, [11:8] delay count = 11
+_rtd_outl(0x1800dc54, 0x0282cf00); //G_KOFF rstn
+_rtd_outl(0x1800dc64, 0x0282cf00); //R_KOFF rstn
+_rtd_outl(0x1800dc74, 0x0282cf00); //CK_KOFF rstn
+_rtd_part_outl(0x1800dc44, 0, 0, 1); //Release B_KOFF rstn
+_rtd_part_outl(0x1800dc54, 0, 0, 1); //Release G_KOFF rstn
+_rtd_part_outl(0x1800dc64, 0, 0, 1); //Release R_KOFF rstn
+_rtd_part_outl(0x1800dc74, 0, 0, 1); //Release CK_KOFF rstn
+//===BLANE KOFF, check p0_b_offset_da_ok_ro ,0x180bcc44[28]
+_rtd_part_outl(0x1800dc4c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc4c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc50, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc50, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc50, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da50, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da58, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da54, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da54, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+_rtd_part_outl(0x1800dc50, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc50, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc4c, 29, 29, 1); //[19]z0_ok_do=1
+_rtd_part_outl(0x1800dc4c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc4c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc50, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc50, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc50, 21, 21, 1); //[21]offfset_pc_eq=1
+_rtd_part_outl(0x1800dc4c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_inl(0x1800dc44, 28, 28); //DATA OFFSET OK
+//===G LANE KOFF, check p0_b_offset_da_ok_ro ,0x180bcc54[28]
+_rtd_part_outl(0x1800dc5c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc5c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc60, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc60, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc60, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da70, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da78, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da74, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da74, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+_rtd_part_outl(0x1800dc60, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc60, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc5c, 29, 29, 1); //[19]z0_ok_do=1
+_rtd_part_outl(0x1800dc5c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc5c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc60, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc60, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc60, 21, 21, 1); //[21]offfset_pc_eq=1
+_rtd_part_outl(0x1800dc5c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_inl(0x1800dc54, 28, 28); //DATA OFFSET OK
+//===R LANE KOFF, check p0_b_offset_da_ok_ro ,0x180bcc64[28]
+_rtd_part_outl(0x1800dc6c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc6c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc70, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc70, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc70, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da90, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da98, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da94, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da94, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+_rtd_part_outl(0x1800dc70, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc70, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc6c, 29, 29, 1); //[19]z0_ok_do=1
+_rtd_part_outl(0x1800dc6c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc6c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc70, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc70, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc70, 21, 21, 1); //[21]offfset_pc_eq=1
+_rtd_part_outl(0x1800dc6c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_inl(0x1800dc64, 28, 28); //DATA OFFSET OK
+//===CK LANE KOFF, check p0_b_offset_da_ok_ro ,0x180bcc74[28]
+_rtd_part_outl(0x1800dc7c, 28, 28, 0); //manaul_do=0
+_rtd_part_outl(0x1800dc7c, 18, 18, 0); //manaul_de=0
+_rtd_part_outl(0x1800dc80, 28, 28, 0); //manaul_eq=0
+_rtd_part_outl(0x1800dc80, 18, 18, 0); //manaul_eo=0
+_rtd_part_outl(0x1800dc80, 8, 8, 0); //manaul_ee=0
+_rtd_part_outl(0x1800da30, 0, 0, 1); //INOFF_EN =0 ->1
+_rtd_part_outl(0x1800da38, 0, 0, 0); //REG_B_9[0] POW_CMFB_LEQ 1->0
+_rtd_part_outl(0x1800da34, 23, 22, 0); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  1->0
+_rtd_part_outl(0x1800da34, 24, 24, 0); //REG_B_8[0] POW_LEQ:  1->0
+_rtd_part_outl(0x1800dc80, 19, 19, 1); //[19]z0_ok_eo=1
+_rtd_part_outl(0x1800dc80, 9, 9, 1); //[9] z0_ok_ee=1
+_rtd_part_outl(0x1800dc7c, 29, 29, 1); //[19]z0_ok_do=1
+_rtd_part_outl(0x1800dc7c, 21, 21, 1); //[20]offset_pc_do=1
+_rtd_part_outl(0x1800dc7c, 11, 11, 1); //[20]offset_pc_de=1
+_rtd_part_outl(0x1800dc80, 1, 1, 1); //[20]offset_pc_ee=1
+_rtd_part_outl(0x1800dc80, 11, 11, 1); //[20]offset_pc_eo=1
+_rtd_part_outl(0x1800dc80, 21, 21, 1); //[21]offfset_pc_eq=1
+_rtd_part_outl(0x1800dc7c, 10, 10, 1); //[10]offset_en_de=1
+_rtd_part_inl(0x1800dc74, 28, 28); //DATA OFFSET OK
+//========================================= STEP2 LEQ KOFF =================================================
+//===BLANE KOFF LEQ, check p0_b_offset_eq_ok_ro ,0x180bcc44[30]
+_rtd_part_outl(0x1800da54, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da54, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da58, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc50, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc50, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc4c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc50, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_outl(0x1800dc4c, 10, 10, 0); //[10]offset_en_de=1->0
+//===G LANE KOFF LEQ, check p0_b_offset_eq_ok_ro ,0x180bcc44[30]
+_rtd_part_outl(0x1800da74, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da74, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da78, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc60, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc60, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc5c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc60, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_outl(0x1800dc5c, 10, 10, 0); //[10]offset_en_de=1->0
+//===R LANE KOFF LEQ, check p0_b_offset_eq_ok_ro ,0x180bcc44[30]
+_rtd_part_outl(0x1800da94, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da94, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da98, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc70, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc70, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc6c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc70, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_outl(0x1800dc6c, 10, 10, 0);
+//===CK LANE KOFF LEQ, check p0_b_offset_eq_ok_ro ,0x180bcc45[30]
+_rtd_part_outl(0x1800da34, 23, 22, 3); //REG_B_7[7:6] POW_LEQ_KOFF, POW_NC:  0->1
+_rtd_part_outl(0x1800da34, 24, 24, 1); //REG_B_8[0] POW_LEQ:  0->1
+_rtd_part_outl(0x1800da38, 0, 0, 1); //REG_B_9[0] POW_CMFB_LEQ 0->1
+_rtd_part_outl(0x1800dc80, 19, 19, 0); //[19]z0_ok_eo=0
+_rtd_part_outl(0x1800dc80, 9, 9, 0); //[9] z0_ok_ee=0
+_rtd_part_outl(0x1800dc7c, 29, 29, 0); //[19]z0_ok_do=0
+_rtd_part_outl(0x1800dc80, 20, 20, 1); //[21]offset_en_eq=0->1
+_rtd_part_outl(0x1800dc7c, 10, 10, 0); //[10]offset_en_de=1->0
+_rtd_part_inl(0x1800dc44, 30, 30); //p0_b_offset_eq_ok_ro
+_rtd_part_inl(0x1800dc54, 30, 30); //p0_g_offset_eq_ok_ro
+_rtd_part_inl(0x1800dc64, 30, 30); //p0_r_offset_eq_ok_ro
+_rtd_part_inl(0x1800dc74, 30, 30); //p0_ck_offset_eq_ok_ro
+//========================================= STEP3 All DCVS KOFF ==
+//BLANE
+_rtd_part_outl(0x1800dc4c, 10, 10, 1); //[10]offset_en_de=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc4c, 20, 20, 1); //[20]offset_en_do=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc50, 0, 0, 1); //[20]offset_en_ee=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc50, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//===G LANE KOFF Data/Edge, check p0_b_offset_da_ok_ro ,0x180bcc44[28]
+_rtd_part_outl(0x1800dc5c, 10, 10, 1); //[10]offset_en_de=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc5c, 20, 20, 1); //[20]offset_en_do=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc60, 0, 0, 1); //[20]offset_en_ee=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc60, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//===R LANE KOFF Data/Edge, check p0_b_offset_da_ok_ro ,0x180bcc44[28]
+_rtd_part_outl(0x1800dc6c, 10, 10, 1); //[10]offset_en_de=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc6c, 20, 20, 1); //[20]offset_en_do=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc70, 0, 0, 1); //[20]offset_en_ee=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc70, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//===CK LANE KOFF Data/Edge, check p0_b_offset_da_ok_ro ,0x180bcc44[28]
+_rtd_part_outl(0x1800dc7c, 10, 10, 1); //[10]offset_en_de=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc7c, 20, 20, 1); //[20]offset_en_do=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc80, 0, 0, 1); //[20]offset_en_ee=1
+ScalerTimer_DelayXms(5);
+_rtd_part_outl(0x1800dc80, 10, 10, 1); //[20]offset_en_eo=1
+ScalerTimer_DelayXms(5);
+//Disable KOFF en
+//BLANE
+_rtd_part_outl(0x1800dc4c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc4c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc50, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc50, 10, 10, 0); //[20]offset_en_eo=0
+_rtd_part_outl(0x1800dc50, 20, 10, 0); //[20]offset_en_eq=0
+//GLANE
+_rtd_part_outl(0x1800dc5c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc5c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc60, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc60, 10, 10, 0); //[20]offset_en_eo=0
+_rtd_part_outl(0x1800dc60, 20, 10, 0); //[20]offset_en_eq=0
+//RLANE
+_rtd_part_outl(0x1800dc6c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc6c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc70, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc70, 10, 10, 0); //[20]offset_en_eo=0
+_rtd_part_outl(0x1800dc70, 20, 10, 0); //[20]offset_en_eq=0
+//CKLANE
+_rtd_part_outl(0x1800dc7c, 10, 10, 0); //[10]offset_en_de=0
+_rtd_part_outl(0x1800dc7c, 20, 20, 0); //[20]offset_en_do=0
+_rtd_part_outl(0x1800dc80, 0, 0, 0); //[20]offset_en_ee=0
+_rtd_part_outl(0x1800dc80, 10, 10, 0); //[20]offset_en_eo=0
+_rtd_part_outl(0x1800dc80, 20, 10, 0); //[20]offset_en_eq=0
+//Input on
+_rtd_part_outl(0x1800da50, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da70, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da90, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_outl(0x1800da30, 0, 0, 0); //INOFF_EN =0 Input_on
+_rtd_part_inl(0x1800dc44, 28, 28); //B DATA OFFSET OK
+_rtd_part_inl(0x1800dc54, 28, 28); //G DATA OFFSET OK
+_rtd_part_inl(0x1800dc64, 28, 28); //R DATA OFFSET OK
+_rtd_part_inl(0x1800dc74, 28, 28); //CK DATA OFFSET OK
+_rtd_part_outl(0x1800da58, 28, 28, 0); //#B  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da5c, 6, 3, 0xf); //#B  DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da38, 28, 28, 0); //#CK DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da3c, 6, 3, 0xf); //#CK DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da78, 28, 28, 0); //#G  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da7c, 6, 3, 0xf); //#G  DFE_TAP_EN[4:1] = 0xf
+_rtd_part_outl(0x1800da98, 28, 28, 0); //#R  DFE_TAP0_ICOM_EN=0
+_rtd_part_outl(0x1800da9c, 6, 3, 0xf); //#R  DFE_TAP_EN[4:1] = 0xf
+//reg_p0_r_fine_tune_start
+//reg_p0_g_fine_tune_start
+//reg_p0_b_fine_tune_start
+//reg_p0_ck_fine_tune_start
+//=====[ACDR_settings]finetunestart_on=====//
+_rtd_outl(0x1800dd04, 0x00007707); //finetunestart_r
+_rtd_outl(0x1800dce8, 0x00007707); //finetunestart_g
+_rtd_outl(0x1800dcc8, 0x00007707); //finetunestart_b
+_rtd_outl(0x1800dd20, 0x00007707); //finetunestart_ck
+//#15000
+//#===================================== 30000 ns pass
+//#===================================== phase III, ACDR to koffset mode
+//=====[ACDR_settings]DCDR_release=====//
+_rtd_outl(0x1800dc88, 0x69696969);
+_rtd_outl(0x1800dc88, 0x79797979);
+_rtd_outl(0x1800dc00, 0x0000000f);
+//#50000

@@ -1,0 +1,6 @@
+__crc_hw_semaphore_try_lock = 0x393a2129;
+__crc_hw_semaphore_unlock = 0x6c3a3e25;
+__crc_pll_info_bush = 0xda9889a4;
+__crc_pll_info_disp = 0x18d2f8bd;
+__crc_Check_PLL27X_Settings = 0x811a0955;
+__crc_CRT_CLK_OnOff = 0x5b05af89;

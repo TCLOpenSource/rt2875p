@@ -1,0 +1,5 @@
+__crc_CLOCK_GetPTS = 0xa8cb2141;
+__crc_CLOCK_GetAVSyncPTS = 0x4275b085;
+__crc_IOCTL_GetBufferInfo = 0xe55f547c;
+__crc_IOCTL_SetPrivateInfo = 0xe05705da;
+__crc_IOCTLEX_ReleaseBuffer = 0xf3440e60;

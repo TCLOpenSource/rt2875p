@@ -1,0 +1,10 @@
+__crc_rtk_ddc_lib_enable = 0xa7ece3ab;
+__crc_rtk_ddc_lib_sync_reset = 0x4711f4b9;
+__crc_rtk_ddc_lib_crt_on = 0xc9c05fc7;
+__crc_rtk_ddc_lib_set_sda_delay = 0x948cab8f;
+__crc_rtk_ddc_lib_set_write_debounce = 0x74860adf;
+__crc_rtk_ddc_lib_write_edid = 0xe2365fe3;
+__crc_rtk_ddc_lib_read_edid = 0xd3035498;
+__crc_rtk_ddc_lib_get_ddc_state = 0x038fb856;
+__crc_rtk_ddc_lib_set_edid_address = 0x9f2c16d8;
+__crc_rtk_ddc_lib_aux_rx_enable = 0x680a63df;

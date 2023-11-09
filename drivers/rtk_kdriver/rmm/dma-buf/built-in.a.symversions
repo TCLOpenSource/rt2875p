@@ -1,0 +1,9 @@
+__crc_dvr_heap_enable_debug = 0x87bdf9b0;
+__crc_dvr_heap_free_register_callback = 0xecbb796e;
+__crc_dvr_heap_free_ve_addr = 0x4a5e2282;
+__crc_dvr_heap_alloc_ve_addr = 0x3b45affd;
+__crc_dvr_heap_set_ve_addr = 0x8da2d293;
+__crc_dvr_heap_buf_ops = 0x9bef5ef6;
+__crc_dmaheap_get_stamp = 0xe08e8004;
+__crc_dmaheap_to_phys = 0x624419b2;
+__crc_vbm_heap_dump_chunk_list = 0x904e2787;

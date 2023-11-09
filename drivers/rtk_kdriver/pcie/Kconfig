@@ -1,0 +1,12 @@
+menu "RTK PCIE RC Driver "
+
+
+config RTK_KDRV_PCIE
+	tristate "REALTEK TV PCIe controller"
+	select PCI_MSI_IRQ_DOMAIN
+	select PCIE_DW_HOST
+	help
+	  Say Y here if you want support for DesignWare core based PCIe host
+	  controller found in REALTEK TV SoC.
+
+endmenu

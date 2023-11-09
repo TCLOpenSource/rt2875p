@@ -1,0 +1,9 @@
+__crc_rtk_alarm_init = 0xa5d50608;
+__crc_rtk_rtc_early_init = 0x352f6b37;
+__crc_rtk_rtc_ip_init = 0x1bee07f4;
+__crc_rtk_rtc_read_persistent_clock = 0x06eb3921;
+__crc_rtk_rtc_mips_set_mmss = 0xdc8ef35a;
+__crc_rtk_rtc_read_alarm_persistent_clock = 0xf5032dcf;
+__crc_rtk_rtc_set_alarm_mmss = 0x92135d95;
+__crc_rtk_rtc_alarm_aie_enable = 0xef37054c;
+__crc_rtk_rtc_alarm_aie_state = 0xff0736b3;

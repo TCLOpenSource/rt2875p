@@ -1,0 +1,2 @@
+KBUILD_CFLAGS += -Werror
+obj-$(CONFIG_REALTEK_MEMORY_MANAGEMENT) += rmm.o
